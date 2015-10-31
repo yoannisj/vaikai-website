@@ -17,8 +17,8 @@ module.exports = function(env) {
           dest: './'
         },
         files: {
-          main: './*.html.nunjucks',
-          watch: './**/*.html.nunjucks'
+          main: './*.nunjucks',
+          watch: './**/*.nunjucks'
         }
       },
 

@@ -1,6 +1,5 @@
 var slurp = require('../slurp');
 var getTemplateData = require('../helpers/get-template-data');
-var renameTemplateFile = require('../helpers/rename-template-file');
 var getNunjucksSetup = require('../helpers/get-nunjucks-setup');
 
 var njOptions = slurp.options('nunjucksHtml', {
@@ -12,7 +11,6 @@ function compileTemplates() {
     .pipe(slurp.plumber())
     .pipe(slurp.plugin('data', getTemplateData))
     .pipe(slurp.plugin('nunjucksHtml', njOptions))
-    .pipe(slurp.plugin('rename', renameTemplateFile))
     .pipe(slurp.plugin('prettify'))
     .pipe(slurp.dest('templates'))
     .pipe(slurp.env.watch ? slurp.plugin('livereload') : slurp.noop());

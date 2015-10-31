@@ -1,7 +1,6 @@
 // =============================================================================
-// =VaiKai - Layout config
+// =VaiKai - Base
 // =============================================================================
 
-@import "aleksi/lengths/convert";
-
-$base-spacing-vertical: convert-length($base-line-height, 'px');
+@import "base/typography";
+@import "base/layout";

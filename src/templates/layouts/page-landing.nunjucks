@@ -1,0 +1,10 @@
+{% extends "layouts/page.nunjucks" %}
+
+{% block body %}
+  <div class="page page--landing">
+    <div class="page-wrap">
+      {{ super() }}
+    </div>
+  </div>
+{% endblock %}
+

@@ -12,18 +12,22 @@
     <meta name="keywords" content="" />
 
     <!-- =Scripts-preload -->
-    <script src="{{ 'js/vendor/modernizr.js'|url }}"></script>
+    {% block head_scripts %}
+      <script src="{{ 'js/vendor/modernizr.js'|url }}"></script>
+    {% endblock %}
 
     <!-- =Stylesheets -->
-    <link rel="stylesheet" href="css/main.css" />
-    <!--[if lt IE 9]>
-      <link rel="stylesheet" media="screen" href="css/screen-old-ie9.css" />
-    <![endif]-->
+    {% block head_styles %}
+      <link rel="stylesheet" href="css/main.css" />
+      <!--[if lt IE 9]>
+        <link rel="stylesheet" media="screen" href="css/screen-old-ie9.css" />
+      <![endif]-->
 
-    <link rel="stylesheet" media="print" href="css/print.css" />
-    <!--[if lt IE 9]>
-      <link rel="stylesheet" media="print" href="css/print-old-ie9.css" />
-    <![endif]-->
+      <link rel="stylesheet" media="print" href="css/print.css" />
+      <!--[if lt IE 9]>
+        <link rel="stylesheet" media="print" href="css/print-old-ie9.css" />
+      <![endif]-->
+    {% endblock %}
 
     <!-- =Icons-->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -36,11 +40,12 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 
-      <div class="container">
+
+      {% block body %}
         <!-- =Header -->
         <header role="banner">
           {% block body_header %}
-            {% include "partials/nav.html.nunjucks" %}
+            {% include "partials/nav.nunjucks" %}
           {% endblock %}
         </header>
 
@@ -54,7 +59,7 @@
           {% block body_footer %}{% endblock %}
         </footer>
       </div>
-    </div>
+      {% endblock %}
 
     <!-- =Body-end -->
     {% block body_end %}
