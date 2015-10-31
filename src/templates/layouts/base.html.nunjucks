@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- =Robots -->
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- =Scripts-preload -->
+    <script src="{{ 'js/vendor/modernizr.js'|url }}"></script>
+
+    <!-- =Stylesheets -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!--[if lt IE 9]>
+      <link rel="stylesheet" media="screen" href="css/screen-old-ie9.css" />
+    <![endif]-->
+
+    <link rel="stylesheet" media="print" href="css/print.css" />
+    <!--[if lt IE 9]>
+      <link rel="stylesheet" media="print" href="css/print-old-ie9.css" />
+    <![endif]-->
+
+    <!-- =Icons-->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+  </head>
+
+  <body>
+    <div class="root">
+      <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+      <div class="container">
+        <!-- =Header -->
+        <header role="banner">
+          {% block body_header %}
+            {% include "partials/nav.html.nunjucks" %}
+          {% endblock %}
+        </header>
+
+        <!-- =Main -->
+        <main role="main">
+          {% block body_main %}{% endblock %}
+        </main>
+
+        <!-- =Footer -->
+        <footer role="footer">
+          {% block body_footer %}{% endblock %}
+        </footer>
+      </div>
+    </div>
+
+    <!-- =Body-end -->
+    {% block body_end %}
+
+      {% set jQueryCdnFile = 'jquery-1.11.3.js' if app.environment == 'dev' else 'jquery-1.11.3.min.js' %}
+
+      <!-- =Scripts-third-party -->
+      <script src="https://code.jquery.com/{{ jQueryCdnFile }}"></script>
+      <script>window.jQuery || document.write('<script src="./js/vendor/jquery.js"><\/script>')</script>
+
+      {% if app.watch %}
+        <!-- =Scripts-watch -->
+        <script src="{{ app.servers.livereload.url }}"></script>
+        <script src="{{ app.servers.webpackDev.url }}"></script>
+      {% endif %}
+
+      <!-- =Scripts-custom -->
+      <script src="{{ 'js/main.js'|webpackurl }}"></script>
+
+    {% endblock %}
+  </body>
+</html>

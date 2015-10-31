@@ -1,0 +1,28 @@
+/* =============================================================================
+ * =VaiKai - Webfonts
+ * ========================================================================== */
+
+@import "config/typography";
+
+@each $webfont, $cuts in $webfonts
+{
+  @each $cut in $cuts
+  {
+    // get cut properties
+    $style: nth($cut, 1);
+    $weight: nth($cut, 2);
+    $s: str-slice($style, 1, 1);
+    $w: $weight/100;
+
+    @font-face {
+      font-family: $webfont;
+      src: url('#{$webfonts-src-path}/#{$webfont}/#{$webfont}-#{$s}#{$w}.eot'); /* IE9 Compat Modes */
+      src: url('#{$webfonts-src-path}/#{$webfont}/#{$webfont}-#{$s}#{$w}.eot?#iefix') format('embedded-opentype'), /* lt IE9 */
+        url('#{$webfonts-src-path}/#{$webfont}/#{$webfont}-#{$s}#{$w}.woff') format('woff'), /* Modern Browsers */
+        url('#{$webfonts-src-path}/#{$webfont}/#{$webfont}-#{$s}#{$w}.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('#{$webfonts-src-path}/#{$webfont}/#{$webfont}-#{$s}#{$w}.svg') format('truetype'); /* Legacy iOS */
+      font-style: $style;
+      font-weight: $weight;
+    }
+  }
+}

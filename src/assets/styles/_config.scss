@@ -1,0 +1,10 @@
+// =============================================================================
+// =VaiKai - Sass Config
+// =============================================================================
+
+// import config data from the 'data' folder
+@import "data/breakpoints.json";
+@import "data/images.json";
+
+@import "config/typography";
+@import "config/layout";

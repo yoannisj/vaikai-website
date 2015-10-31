@@ -1,0 +1,33 @@
+{
+  "name": "vaikai-website",
+  "description": "Static website for Vai Kai UG",
+  "main": "www/index.html",
+  "authors": [
+    "Yoannis Jamar <yoannis.j@gmail.com>"
+  ],
+  "license": "Unlicense",
+  "keywords": [
+    "website",
+    "static",
+    "html5",
+    "css3",
+    "javascript",
+    "bower",
+    "gulp",
+    "nodejs",
+    "webpack",
+    "nunjucks",
+    "sass",
+    "commonjs"
+  ],
+  "moduleType": [],
+  "homepage": "http://vaikai.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
