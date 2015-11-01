@@ -1,0 +1,188 @@
+// =============================================================================
+// =TOOLS - LAYOUT
+// =============================================================================
+
+// =MIXINS
+// =============================================================================
+
+// =bleed
+// -----------------------------------------------------------------------------
+@mixin bleed( $amount, $unit: 'rem', $from: $base-font-size, $to: $from )
+{
+  margin-left: -1 * convert-length($amount, $unit, $from, $to);
+  margin-right: -1 * convert-length($amount, $unit, $from, $to);
+}
+
+// =gutter
+// -----------------------------------------------------------------------------
+@mixin gutter( $amount, $unit: 'rem', $from: $base-font-size, $to: $from )
+{
+  padding-left: convert-length($amount, $unit, $from, $to);
+  padding-right: convert-length($amount, $unit, $from, $to);
+}
+
+// =v-align()
+// -----------------------------------------------------------------------------
+@mixin v-align($valign: "middle")
+{
+  @at-root (without: media) {
+    @extend .ws-collapse;
+  }
+
+  &:before,
+  & > * {
+    display: inline-block;
+    vertical-align: unquote($valign);
+  }
+
+  &:before {
+    content: " ";
+    height: 100%;
+    speak: none; /* you never know */
+  }
+
+  & > * {
+    @at-root (without: media) {
+      @extend .ws-reset;
+    }
+  }
+}
+
+// =cover
+// -----------------------------------------------------------------------------
+@mixin cover()
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// =aspect-ratio
+// -----------------------------------------------------------------------------
+@mixin aspect-ratio( $dimen )
+{
+  $w: nth($dimen, 1);
+  $h: nth($dimen, 2);
+
+  position: relative;
+  max-width: $w; // dont let ratio 'out-grow' with padding
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0; // aspect-ratio
+    padding-top: percentage($h/$w); // aspect-ratio
+  }
+
+  > * {
+    @include cover;
+  }
+}
+
+/* =min-aspect-ratio( $dimen )
+ * -------------------------------------------------------------------------- */
+@mixin min-aspect-ratio( $dimen )
+{
+  $w: nth($dimen, 1);
+  $h: nth($dimen, 2);
+
+  & > *,
+  &:before {
+    float: left; // overlap but stay in document flow
+    margin-right: -100%; // overlap but stay in document flow
+    width: 100%; // have layout
+  }
+
+  &:before,
+  &:after {
+    content: "";
+  }
+
+  &:before {
+    height: 0; // aspect-ratio
+    padding-top: percentage($h/$w); // aspect-ratio
+  }
+
+  &:after {
+    clear: both; // contain :before and > *
+  }
+}
+
+// =flex-aspect-ratio( $dimensions )
+// -----------------------------------------------------------------------------
+@mixin flex-aspect-ratio( $dimensions )
+{
+  // default aspect-ratio
+  $df-dimen: map-get($dimensions, 'df');
+  $w: nth($df-dimen, 1);
+  $h: nth($df-dimen, 2);
+
+  position: relative;
+  // set default aspect-ratio limit
+  max-width: $w;
+
+  > * {
+    @include cover;
+  }
+
+  &:before {
+    content: "";
+    position: static;
+    display: block;
+    width: 100%;
+    height: 0; // aspect-ratio
+
+    // set default aspect-ratio
+    padding-top: percentage($h/$w);// aspect-ratio
+  }
+
+  // breakpoint specific aspect-ratios
+  @each $bp, $bp-dimen in map-remove($dimensions, 'df')
+  {
+    $w: nth($bp-dimen, 1);
+    $h: nth($bp-dimen, 2);
+
+    @include shift('>#{$bp}')
+    {
+      max-width: $w; // update aspect-ratio limit
+      // update aspect-ratio
+      &:before { padding-top: percentage($h/$w); }
+    }
+  }
+}
+
+// =fluid-aspect-ratio( $start-size, $end-size)
+// -----------------------------------------------------------------------------
+/// http://voormedia.com/blog/2012/11/responsive-background-images-with-fixed-or-fluid-aspect-ratios
+
+@mixin fluid-aspect-ratio( $start-size, $end-size )
+{
+  $start-w: nth($start-size, 1);
+  $start-h: nth($start-size, 2);
+  $end-w: nth($end-size, 1);
+  $end-h: nth($end-size, 2);
+
+  $slope: ($end-h - $start-h) / ($end-w - $start-w);
+  $height: $start-h - ($start-w * $slope);
+
+  position: relative;
+  // set start and end aspect-ratio limits
+  max-width: $end-w;
+  min-width: $start-w;
+
+  &:before {
+    content: "";
+    box-sizing: content-box;
+    display: block;
+    width: 100%;
+    height: $height;
+    padding: percentage($slope) 0 0;
+  }
+
+  > * {
+    @include cover;
+  }
+}

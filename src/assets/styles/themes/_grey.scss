@@ -1,0 +1,24 @@
+// =============================================================================
+// =gray THEME
+// =============================================================================
+
+@import "config/colors";
+
+// =settings
+// -----------------------------------------------------------------------------
+$gray-theme-color: $base-text-color;
+$gray-theme-background: $light-gray;
+$gray-theme-input-background-active: $white;
+
+/* =theme-gray
+ * -------------------------------------------------------------------------- */
+
+.theme-gray
+{
+  color: $gray-theme-color;
+  background: $gray-theme-background;
+
+  .form-input:focus {
+    background: $gray-theme-input-background-active;
+  }
+}

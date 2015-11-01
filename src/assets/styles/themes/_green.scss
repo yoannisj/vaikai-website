@@ -1,0 +1,45 @@
+// =============================================================================
+// =GREEN THEME
+// =============================================================================
+
+@import "config/colors";
+
+// =settings
+// -----------------------------------------------------------------------------
+$green-theme-color: $white;
+$green-theme-background: $green;
+$green-theme-input-background-active: $mid-green;
+$green-theme-slider-bullet-color: $light-gray;
+$green-theme-slider-bullet-color-active: $yellow;
+
+/* =theme-green
+ * -------------------------------------------------------------------------- */
+
+.theme-green
+{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  color: $green-theme-color;
+  background: $green-theme-background;
+
+  %hN {
+    color: inherit;
+  }
+
+  .form-input:focus {
+    background: $green-theme-input-background-active;
+  }
+
+  .js-slider-control-nav a
+  {
+    &:after {
+      background: $green-theme-slider-bullet-color;
+    }
+
+    &:hover:after,
+    &.js-slider-active:after {
+      background: $green-theme-slider-bullet-color-active;
+    }
+  }
+}

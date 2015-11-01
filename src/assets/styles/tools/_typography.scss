@@ -1,0 +1,77 @@
+// =============================================================================
+// =TOOLS - TYPOGRAPHY
+// =============================================================================
+
+@import "aleksi/lengths/convert";
+@import "aleksi/general/default-to";
+
+// =DEFAULTS
+// =============================================================================
+$base-font-size: 16px !default;
+$typescale: () !default;
+$font-size-unit: 'em' !default;
+$line-height-unit: null !default;
+
+// =FUNCTIONS
+// =============================================================================
+
+// =typescale-font-size( $step[, $unit, $from, $to ])
+// -----------------------------------------------------------------------------
+@function typescale-font-size($step, $unit: 'px', $from: $base-font-size, $to: $from)
+{
+  // get typescale font-size
+  $step-fs: nth(map-get($typescale, $step), 1);
+
+  // return in correct unit
+  @return convert-length($step-fs, $unit, $from, $to);
+}
+
+// =typescale-line-height( $step[, $unit, $from, $to ])
+// -----------------------------------------------------------------------------
+@function typescale-line-height($step, $unit: 'px', $context: $base-font-size)
+{
+  // get typescale step settings
+  $step-settings: map-get($typescale, $step);
+  $step-fs: nth($step-settings, 1);
+  $step-lh: nth($step-settings, 2);
+  $unitless: unitless($step-lh);
+
+  @if $unit == null {
+    @return if($unitless, $step-lh, $step-lh/$step-fs);
+  }
+
+  // make sure `$step-lh` can be converted into `$unit`
+  $step-lh: if($unitless, $step-lh * $from, $step-lh);
+
+  @return convert-length($step-lh, $unit, $step-fs, $context);
+}
+
+// =MIXINS
+// =============================================================================
+
+// =typescale-font-size( $step[, $unit, $from, $to ])
+// -----------------------------------------------------------------------------
+@mixin typescale-font-size($step, $unit: $font-size-unit, $from: $base-font-size, $to: $from)
+{
+  font-size: typescale-font-size($step, $unit, $from, $to);
+}
+
+// =typescale-line-height( $step[, $unit, $context ])
+// -----------------------------------------------------------------------------
+@mixin typescale-line-height($step, $unit: $line-height-unit, $context: $base-font-size)
+{
+  line-height: typescale-line-height($step, $unit, $context);
+}
+
+// =typescale( $step[, $from,  $to, $units ])
+// -----------------------------------------------------------------------------
+@mixin typescale( $step, $from: $base-font-size, $to: $from, $units: ())
+{
+  // default units
+  $fs-unit: default-to(map-get($units, 'font-size'), $font-size-unit);
+  $lh-unit: default-to(map-get($units, 'line-height'), $line-height-unit);
+
+  // styles
+  @include typescale-font-size($step, $fs-unit, $from, $to);
+  @include typescale-line-height($step, $lh-unit, $from);
+}

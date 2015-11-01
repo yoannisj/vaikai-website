@@ -1,0 +1,40 @@
+// =============================================================================
+// =YELLOW THEME
+// =============================================================================
+
+@import "config/colors";
+
+// =settings
+// -----------------------------------------------------------------------------
+$yellow-theme-color: $white;
+$yellow-theme-background: $yellow;
+$yellow-theme-input-background-active: $mid-yellow;
+$yellow-theme-slider-bullet-color: $light-gray;
+$yellow-theme-slider-bullet-color-active: $blue;
+
+/* =theme-yellow
+ * -------------------------------------------------------------------------- */
+
+.theme-yellow
+{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $yellow-theme-color;
+  background: $yellow-theme-background;
+
+  %hN {
+    color: inherit;
+  }
+
+  .form-input:focus {
+    background: $yellow-theme-input-background-active;
+  }
+
+  .js-slider-control-nav a {
+    background: $yellow-theme-slider-bullet-color;
+
+    &.js-slider-active {
+      background: $yellow-theme-slider-bullet-color-active;
+    }
+  }
+}

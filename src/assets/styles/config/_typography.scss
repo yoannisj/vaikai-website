@@ -3,8 +3,7 @@
 // =============================================================================
 
 // =Fonts
-// =============================================================================
-
+// -----------------------------------------------------------------------------
 $webfonts-src-path: '../fonts';
 $webfonts: (
   'itc-avant-garde': (
@@ -12,11 +11,43 @@ $webfonts: (
   )
 );
 
-// =Typesetting
-// =============================================================================
+// =Units
+// -----------------------------------------------------------------------------
+$font-size-unit: 'rem';
+$line-height-unit: null;
 
-$font-size-root: 16px;
+// =Font-stacks
+// -----------------------------------------------------------------------------
 
-$base-font-size: 18px;
-$base-line-height: 1.5;
-$font-family-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// http://www.cssfontstack.com/Arial
+$arial-font-stack: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+// http://www.cssfontstack.com/Helvetica
+$helvetica-font-stack: "Helvetica Neue",Helvetica, Arial, sans-serif;
+
+// OSX - http://www.cssfontstack.com/Geneva
+// WIN - http://www.cssfontstack.com/Franklin-Gothic-Medium
+$verlag-font-stack: "Verlag A", "Verlag B", Geneva, "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Tahoma, Verdana, Arial, sans-serif;
+
+// (TODO: Check for fallback fonts...)
+$avant-garde-font-stack: "itc-avant-garde", "Helvetica Neue", Helvetica, sans-serif;
+
+// =Typescale
+// -----------------------------------------------------------------------------
+
+$typescale: (
+  "giga"    : 80px 68px,
+  "mega"    : 66px 54px,
+  "kilo"    : 50px 50px,
+
+  "alpha"   : 34px 34px,
+  "beta"    : 30px 28px,
+  "gamma"   : 28px 28px,
+  "delta"   : 24px 28px,
+  "epsilon" : 22px 26px,
+  "zeta"    : 20px 24px,
+
+  "base"    : 18px 24px,
+  "micro"   : 16px 27px,
+  "nano"    : 14px 17px
+);

@@ -1,0 +1,31 @@
+// =============================================================================
+// =VaiKai - Colors Config
+// =============================================================================
+
+// =Primitive Colors
+// =============================================================================
+$white: #fff;
+$black: #000;
+
+$gray: #7e7e7e;
+$light-gray: #f7f7f7;
+$mid-gray: #cbcbcb;
+
+$blue: #1fa0ca;
+$mid-blue: darken($blue, 5%);
+$dark-blue: #1e708b;
+
+$yellow: #fcca74;
+$mid-yellow: darken($yellow, 5%);
+
+$green: #91c2bc;
+$mid-green: darken($green, 5%);
+
+// =Base Colors
+// -----------------------------------------------------------------------------
+
+$base-text-color: $gray;
+$base-background-color: $white;
+
+$base-link-color: $blue;
+$base-link-color-active: $green;

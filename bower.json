@@ -31,6 +31,7 @@
     "tests"
   ],
   "devDependencies": {
-    "sass-aleksi": "~0.1.3"
+    "shift": "~0.1.2",
+    "sass-aleksi": "~0.2.1"
   }
 }

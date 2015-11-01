@@ -1,0 +1,14 @@
+// =============================================================================
+// =Vai Kai - Breakpoints config
+// =============================================================================
+
+@import "shift/set";
+@import "data/breakpoints.json";
+
+// feed shift with breakpoints from 'data'
+@each $bp, $width in $breakpoints
+{
+  @include shift-set('width', $bp, $width);
+}
+
+@include shift-set('height', 'm', 700px);

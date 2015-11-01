@@ -1,0 +1,35 @@
+// =============================================================================
+// =VaiKai - Base Config
+// =============================================================================
+
+@import "shift";
+@import "config/colors";
+@import "config/typography";
+@import "tools/typography";
+
+// =Base
+// -----------------------------------------------------------------------------
+
+$root-font-size: 14px;
+$base-font-size: 14px;
+$base-font-size-s: 18px;
+$base-line-height: typescale-line-height('base', 'px');
+$base-font-family: $helvetica-font-stack;
+$base-font-weight: 300;
+
+$base-text-color: $gray;
+$base-background-color: $white;
+
+// =Links
+// -----------------------------------------------------------------------------
+
+$base-link-style: null;
+$base-link-color: $blue;
+$base-link-color-active: $green;
+
+// =Headings
+// -----------------------------------------------------------------------------
+
+$base-heading-font-family: $avant-garde-font-stack;
+$base-heading-font-weight: 400;
+$base-heading-color: $dark-blue;

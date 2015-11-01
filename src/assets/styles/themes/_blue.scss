@@ -1,0 +1,45 @@
+// =============================================================================
+// =BLUE THEME
+// =============================================================================
+
+@import "config/colors";
+
+// =settings
+// -----------------------------------------------------------------------------
+$blue-theme-color: $white;
+$blue-theme-background: $blue;
+$blue-theme-input-background-active: $mid-blue;
+$blue-theme-slider-bullet-color: $white;
+$blue-theme-slider-bullet-color-active: $yellow;
+
+/* =theme-blue
+ * -------------------------------------------------------------------------- */
+
+.theme-blue
+{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  color: $blue-theme-color;
+  background: $blue-theme-background;
+
+  %hN {
+    color: inherit;
+  }
+
+  .form-input:focus {
+    background: $blue-theme-input-background-active;
+  }
+
+  .js-slider-control-nav a
+  {
+    &:after {
+      background: $blue-theme-slider-bullet-color;
+    }
+
+    &:hover:after,
+    &.js-slider-active:after {
+      background: $blue-theme-slider-bullet-color-active;
+    }
+  }
+}

@@ -1,6 +1,115 @@
 // =============================================================================
-// =VaiKai - Base
+// =VaiKai - Base Styles
 // =============================================================================
 
-@import "base/typography";
-@import "base/layout";
+@import "SassyStrings";
+@import "aleksi/lengths/convert";
+
+@import "tools/typography";
+@import "config/base";
+
+/* =general
+ * -------------------------------------------------------------------------- */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: percentage($root-font-size/16px);
+  line-height: $base-line-height;
+  color: $base-text-color;
+  background: $base-background-color;
+}
+
+body
+{
+  margin: 0;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  @include typescale('micro');
+
+  @include shift('>s') {
+    @include typescale('base');
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+ul, ol, dd,
+p, figure,
+pre, table, fieldset, hr {
+  margin-top: 0;
+  margin-bottom: convert-length($base-line-height, 'rem');
+}
+
+/* =links
+ * -------------------------------------------------------------------------- */
+
+a {
+  color: $base-link-color;
+  text-decoration: inherit;
+
+  &:hover, &:active, &.focus {
+    color: $base-link-color-active;
+  }
+}
+
+/* =images
+ * -------------------------------------------------------------------------- */
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* =headings
+ * -------------------------------------------------------------------------- */
+
+%hN {
+  font-family: $base-heading-font-family;
+  font-weight: $base-heading-font-weight;
+  text-rendering: optimizeLegibility;
+  color: $base-heading-color;
+}
+
+h1, .h1 { @extend %hN; @extend .alpha; }
+h2, .h2 { @extend %hN; @extend .beta; }
+h3, .h3 { @extend %hN; @extend .gamma; }
+h4, .h4 { @extend %hN; @extend .delta; }
+h5, .h5 { @extend %hN; @extend .epsilon; }
+h6, .h6 { @extend %hN; @extend .zeta; }
+
+@include shift('>s')
+{
+  h1, .h1 { @extend .s-giga; }
+  h2, .h2 { @extend .s-mega; }
+  h3, .h3 { @extend .s-kilo; }
+  h4, .h4 { @extend .s-alpha; }
+  h5, .h5 { @extend .s-beta; }
+  h6, .h6 { @extend .s-gamma; }
+}
+
+/* =smallprint
+ * -------------------------------------------------------------------------- */
+
+small, .small,
+.smallprint {
+  @include typescale-font-size('nano');
+}
+
+@include shift('>s')
+{
+  .smallprint {
+    @extend .s-micro;
+  }
+
+  small, .small,
+  .smallprint {
+    @include typescale-font-size('micro');
+  }
+}
+
+// fix nested <small> elements
+.smallprint small {
+  font-size: 1em;
+}
