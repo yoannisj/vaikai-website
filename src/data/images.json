@@ -1,1 +1,14 @@
-{}
+[{
+  "name": "Blue Avakai",
+  "path": "./media/images/avakai",
+  "size": [ 500, 200 ]
+},
+
+{
+  "name": "Natural Avakai",
+  "path": "./media/images/avakai",
+  "size": {
+    "breakpoint": 420,
+    "size": [ 600, 200 ]
+  }
+}]

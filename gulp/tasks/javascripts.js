@@ -13,8 +13,6 @@ var wpConfig = slurp.options('webpack', {
   plugins: getWebpackPlugins()
 });
 
-slurp.log('wpDevServer publicPath', wpConfig.devServer.publicPath);
-
 module.exports = function(done) {
   // For development, serve files with webpack-dev-server
   // @link http://webpack.github.io/docs/webpack-dev-server.html

@@ -4,9 +4,11 @@ module.exports = function(env) {
     paths: {
       src: './src',
       dest: './www',
+      lib: './lib',
+      content:'<%= paths.src %>/content',
+      data: '<%= paths.src %>/data',
       bower: './bower_components',
-      public: 'http://vaikai.local',
-      data: '<%= paths.src %>/data'
+      public: 'http://vaikai.local'
     },
 
     tasks: {
@@ -17,7 +19,7 @@ module.exports = function(env) {
           dest: './'
         },
         files: {
-          main: './*.nunjucks',
+          main: './pages/*.nunjucks',
           watch: './**/*.nunjucks'
         }
       },

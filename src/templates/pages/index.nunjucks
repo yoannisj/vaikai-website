@@ -1,0 +1,219 @@
+{% extends "layouts/page-landing.nunjucks" %}
+{% import "macros/image.nunjucks" as image %}
+{% import "macros/ratio.nunjucks" as ratio %}
+
+{% block head_styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ 'css/index.css'|url }}"></link>
+{% endblock %}
+
+{% block body_header %}{% endblock %}
+
+{% block body_main %}
+
+  {# =Intro #}
+  <section id="intro" class="theme-green">
+    <div class="chunk chunk--split">
+      <div class="chunk-inner">
+
+        <div class="split">
+          {# =Intro-Media #}
+          <div class="split-media split-left span-4of12 m-span-6of12">
+            {# img.lazyflex() #}
+          </div>
+          {# /Intro-Media #}
+
+          {# =Intro-Text #}
+          <div class="split-body split-right span-8of12 m-span-6fo12">
+            <div class="centrum centrum--left">
+              <h2>{{ content.intro.title }}</h2>
+              <p>{{ content.intro.text }}</p>
+              <a class="js-btn" data-action="video:play" href="#intro-video">
+                {# {{ icon.pre('play', 'Watch video') }} #}
+                <span class="pre-icon icon-lg icon-play" aria-hidden="true"></span> Watch video
+              </a>
+            </div>
+          </div>
+          {# /Intro-Text #}
+        </div>
+
+      </div>
+    </div>
+
+    <div id="intro-video" class="popup js-collapse">
+      <a class="popup-backdrop" href="#">Back</a>
+      <div class="popup-inner">
+        <a class="popup-close sticker" href="#">
+          {# icon.solo('close') #}
+          <span class="icon icon-close" aria-hidden="true"></span>
+          <span class="u-sronly">Close</span>
+        </a>
+        {# {{ video.embed( content.intro.videoUrl )) }} #}
+      </div>
+    </div>
+  </section>
+  {# /Intro #}
+
+  {# =Features #}
+  <section id="features" class="theme-gray">
+
+    {# =Features-Intro #}
+    <div class="chunk chunk--assert">
+      <div class="chunk-inner assert">
+
+        <h2 class="assert-title">{{ content.features.title }}</h2>
+        <div class="assert-body">
+          <p>{{ content.features.intro }}</p>
+        </div>
+
+      </div>
+    </div>
+    {# /Features-Intro #}
+
+    {# =Features-List #}
+    <div class="chunk chunk--expand">
+      <div id="features-expand" class="chunk-inner expand">
+        <ul class="expand-items">
+          {% for feature in content.features.entries %}
+            <li id="feature-{{ feature.title|slug }}" class="expand-item {{ 'expand-primary' if loop.index <= 6 }}">
+              <h3>{{ feature.title }}</h3>
+              <p>{{ feature.description }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+
+        <div class="expand-ctrls">
+          <div class="expand-toggle">
+            <button class="btn js-toggle" data-action="expand:expand" data-target="#features-expand">
+              <span class="js-toggle-label active">The full list of specs is here</span>
+              <span class="js-toggle-label">Show less specs</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {# /Features-List #}
+
+  </section>
+  {# /Features #}
+
+  {# =Unpacking #}
+  <aside id="unpacking">
+    <div class="chunk chunk--cover">
+      <div class="chunk-inner cover">
+        <div class="cover-media">
+          {# {{ video.embed() }} #}
+        </div>
+        <div class="cover-body u-fly-bottom">
+          <h2 class="cover-title u-sronly">{{ content.unpacking.title }}</h2>
+          <p>{{ content.unpacking.byline }}</p>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+  {# /Unpacking #}
+
+  {# =Preorder #}
+  <section id="preorder" class="theme-gray">
+    <div class="chunk chunk--split">
+      <div class="chunk-inner split">
+        <div class="split-media split-left">
+
+        </div>
+        <div class="split-body split-right">
+          <div class="centrum centrum--left">
+            <header>
+              <h2>{{ content.preorder.title }}</h2>
+              <p>{{ content.preorder.byline }}</p>
+            </header>
+            <div>
+              <p>{{ content.preorder.content }}</p>
+            </div>
+            <footer>
+              <a href="{{ content.preorder.url }}" data-target="#preorder-popup">Preorder your Avakai here</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# {{ popup() }} #}
+    <div id="preorder-popup" class="popup js-collapse">
+      <a href="#preorder" class="popup-backdrop">Back</a>
+      <div class="popup-inner">
+        <a class="popup-close js-close" href="#" data-target="#preorder-popup">Close</a>
+        {# {{ embed.celery() }} #}
+      </div>
+    </div>
+  </section>
+  {# /Preorder #}
+
+  {# =Playdate #}
+  <aside id="playdate" class="theme-yellow">
+    <div class="chunk chunk--quote">
+      <figure class="chunk-inner quote">
+        <blockquote class="quote-text">{{ content.playdate.quote.text|safe }}</blockquote>
+        {% if content.playdate.quote.author %}
+          <figcaption class="quote-caption u-sronly">
+            <a class="quote-author" href="{{ content.playdate.author.url }}" targe="{{ content.playdate.author.url|linktarget }}">{{ content.playdate.author.name }}</a>
+          </figcaption>
+        {% endif %}
+      </figure>
+    </div>
+
+    <div class="chunk chunk--pack">
+      <div class="chunk-inner pack">
+        <ul class="pack-items">
+          {% for media in content.playdate.media %}
+            {# <li>{{ image.lazyflex(media.name, media.sizes) }}</li> #}
+            <li>{{ media.name }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </aside>
+  {# /Playdate #}
+
+  {# =Recognition #}
+  <aside id="recognition">
+    <div class="chunk chunk--slider">
+      <div class="chunk-inner slider">
+      <h3 class="u-sronly">{{ content.recognition.title }}</h3>
+      <ul class="slider-items">
+        {% for mention in content.recognition.mentions %}
+          <li>
+            <figure class="mention">
+              <blockquote>{{ mention.text }}</blockquote>
+              <figcaption>
+                <a class="mention-author" href="{{ mention.author.url }}">
+                  {# {{ icon.logo() }} #}
+                  <span class="epi-logo logo-{{ mention.author.name|slug }}" aria-hidden="true"></span>
+                  <strong class="mention-name">{{ mention.author.name }}</strong>
+                </a>
+              </figcaption>
+            </figure>
+            </li>
+        {% endfor %}
+      </ul>
+  </aside>
+  {# /Recognition #}
+
+  {# =Subscribe #}
+  <section id="subscribe" class="">
+    <div class="chunk chunk--assert">
+      <div class="chunk-inner">
+
+      </div>
+    </div>
+  </section>
+  {# /Subscribe #}
+
+{% endblock %}
+
+{% block body_footer %}{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  <script src="{{ 'js/index.js'|webpackurl }}"></script>
+{% endblock %}

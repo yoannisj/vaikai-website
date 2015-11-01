@@ -1,1 +1,1 @@
-{% extends 'layouts/base.nunjucks' %}
+{% extends "layouts/base.nunjucks" %}

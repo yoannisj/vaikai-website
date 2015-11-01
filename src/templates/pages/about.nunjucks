@@ -1,8 +1,3 @@
----
-title: 'Home'
-name: 'home'
-rel: 'home'
----
 {% extends "layouts/page-landing.nunjucks" %}
 {% import "macros/image.nunjucks" as image %}
 {% import "macros/ratio.nunjucks" as ratio %}
@@ -15,7 +10,6 @@ rel: 'home'
 {% block body_header %}{% endblock %}
 
 {% block body_main %}
-
   {# =Intro #}
   <section id="intro" class="theme-green">
     <div class="chunk chunk--split">
@@ -78,24 +72,24 @@ rel: 'home'
     {# =Features-List #}
     <div class="chunk chunk--expand">
       <div id="features-expand" class="chunk-inner expand">
-          <ul class="expand-items">
-            {% for feature in content.features.entries %}
-              <li id="feature-{{ feature.title|slug }}" class="expand-item {{ 'expand-primary' if loop.index <= 6 }}">
-                <h3>{{ feature.title }}</h3>
-                <p>{{ feature.description }}</p>
-              </li>
-            {% endfor %}
-          </ul>
+        <ul class="expand-items">
+          {% for feature in content.features.entries %}
+            <li id="feature-{{ feature.title|slug }}" class="expand-item {{ 'expand-primary' if loop.index <= 6 }}">
+              <h3>{{ feature.title }}</h3>
+              <p>{{ feature.description }}</p>
+            </li>
+          {% endfor %}
+        </ul>
 
-          <div class="expand-ctrls">
-            <div class="expand-toggle">
-              <button class="btn js-toggle" data-action="expand:expand" data-target="#features-expand">
-                <span class="js-toggle-label active">The full list of specs is here</span>
-                <span class="js-toggle-label">Show less specs</span>
-              </button>
-            </div>
+        <div class="expand-ctrls">
+          <div class="expand-toggle">
+            <button class="btn js-toggle" data-action="expand:expand" data-target="#features-expand">
+              <span class="js-toggle-label active">The full list of specs is here</span>
+              <span class="js-toggle-label">Show less specs</span>
+            </button>
           </div>
         </div>
+      </div>
     </div>
     {# /Features-List #}
 
@@ -120,7 +114,7 @@ rel: 'home'
   {# /Unpacking #}
 
   {# =Preorder #}
-  <section id="preorder">
+  <section id="preorder" class="theme-gray">
     <div class="chunk chunk--split">
       <div class="chunk-inner split">
         <div class="split-media split-left">
@@ -155,7 +149,7 @@ rel: 'home'
   {# /Preorder #}
 
   {# =Playdate #}
-  <aside id="quote">
+  <aside id="playdate" class="theme-yellow">
     <div class="chunk chunk--quote">
       <figure class="chunk-inner quote">
         <blockquote class="quote-text">{{ content.playdate.quote.text|safe }}</blockquote>
@@ -203,6 +197,16 @@ rel: 'home'
       </ul>
   </aside>
   {# /Recognition #}
+
+  {# =Subscribe #}
+  <section id="subscribe" class="">
+    <div class="chunk chunk--assert">
+      <div class="chunk-inner">
+
+      </div>
+    </div>
+  </section>
+  {# /Subscribe #}
 
 {% endblock %}
 

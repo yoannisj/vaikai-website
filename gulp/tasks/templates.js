@@ -1,5 +1,5 @@
 var slurp = require('../slurp');
-var getTemplateData = require('../helpers/get-template-data');
+var getTemplateData = require('../helpers/get-data-template');
 var getNunjucksSetup = require('../helpers/get-nunjucks-setup');
 
 var njOptions = slurp.options('nunjucksHtml', {
