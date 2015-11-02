@@ -1,0 +1,16 @@
+{# =Reaction #}
+<aside id="reaction">
+  <div class="chunk chunk--cover">
+    <div class="chunk-inner cover">
+      <div class="cover-media">
+        {{ video.vimeo('130435350') }}
+      </div>
+      <div class="cover-body u-fly-bottom">
+        <h2 class="cover-title u-sronly">Reaction</h2>
+        <p>How children react on  our Avakai.<br/>
+          Watch the unpacking party.</p>
+      </div>
+    </div>
+  </div>
+</aside>
+{# /Reaction #}

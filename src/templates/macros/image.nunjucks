@@ -1,0 +1,28 @@
+
+{# =illustration #}
+{% macro illustration(src, fallback) %}
+  <img src="{{ src|url }}" />
+{% endmacro %}
+
+
+{# =lazy #}
+{% macro lazy(src, size, ratio=false) %}
+  {# {% set width = size[0] %}
+  {% set height = size[1] %}
+  {% set ratio = (height/width) * 100 %} #}
+
+  <div class="ratio {{ 'ratio'|modify(ratio) }}" role="presentation">
+    <!--[if gt IE 8]><!-->
+      <img class="lazyload" alt=""
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        data-src="{{ src }}"
+      />
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+      <img src="http://www.placehold.it/600x600" alt="" />
+    <![endif]-->
+    <noscript>
+      <img src="{{ src }}" alt="" />
+    </noscript>
+  </div>
+{% endmacro %}

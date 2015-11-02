@@ -14,6 +14,29 @@
     <!-- =Scripts-preload -->
     {% block head_scripts %}
       <script src="{{ 'js/vendor/modernizr.js'|url }}"></script>
+      <script>
+      function loadJS(u){var r=document.getElementsByTagName("script")[0],s=document.createElement("script");s.src=u;r.parentNode.insertBefore(s,r);}
+
+      if(!window.HTMLPictureElement || !('sizes' in document.createElement('img'))){
+        loadJS("{{ 'js/vendor/ls.respimg.js'|url }}");
+      }
+    </script>
+    <script src="{{ 'js/vendor/ls.parent-fit.js'|url }}"></script>
+    <script src="{{ 'js/vendor/ls.bgset.js'|url }}"></script>
+    <script src="{{ 'js/vendor/lazysizes.js'|url }}"></script>
+    <script>
+      window.lazySizesConfig = window.lazySizesConfig || {};
+      window.lazySizesConfig.customMedia = {
+        "--s": "(max-width: 540px)",
+        "s--": "(min-width: 540px)",
+        "--sm": "(max-width: 700px)",
+        "sm--": "(min-width: 700px)",
+        "--m": "(max-width: 920px)",
+        "m--": "(min-width: 920px)",
+        "--l": "(max-width: 1200px)",
+        "l--": "(min-width: 1200px)"
+      };
+    </script>
     {% endblock %}
 
     <!-- =Stylesheets -->
@@ -45,7 +68,7 @@
         <!-- =Header -->
         <header role="banner">
           {% block body_header %}
-            {% include "partials/nav.nunjucks" %}
+            {% include "partials/navbar.nunjucks" %}
           {% endblock %}
         </header>
 

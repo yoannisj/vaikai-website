@@ -1,0 +1,5 @@
+{% import 'macros/image.nunjucks' as image %}
+
+{% macro illustration(object) %}
+  {{ image.illustration(object.src, object.fallback)}}
+{% endmacro %}

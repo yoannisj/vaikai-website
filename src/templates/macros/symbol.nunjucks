@@ -1,0 +1,28 @@
+{# =Logo #}
+{% macro logo(name, label, classname='') %}
+  <span class="logo {{ 'logo'|modify(name) ~ ' ' ~ classname }}">{{ label }}</span>
+{% endmacro %}
+
+{# =Icon #}
+{% macro icon(name, label) %}
+  <span class="icon {{ 'icon'|modify(name) }}" aria-hidden="true"></span>
+  <span class="u-sronly">{{ label }}</span>
+{% endmacro %}
+
+{# =preIcon #}
+{% macro preIcon(name, label) %}
+  <span class="pre-icon {{ 'icon'|modify(name) }}" aria-hidden="true"></span>
+  {{ label }}
+{% endmacro %}
+
+{# =postIcon #}
+{% macro postIcon(name, label) %}
+  {{ label }}
+  <span class="post-icon {{ 'icon'|modify(name) }}" aria-hidden="true"></span>
+{% endmacro %}
+
+{# =epiIcons #}
+{% macro epiIcon(name, label) %}
+  <span class="epi-icon {{ 'icon'|modify(name) }}" aria-hidden="true"></span>
+  {{ label }}
+{% endmacro %}

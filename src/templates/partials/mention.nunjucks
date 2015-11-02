@@ -1,0 +1,12 @@
+{% import 'macros/symbol.nunjucks' as symbol %}
+
+<figure class="mention">
+  <blockquote>{{ mention.content }}</blockquote>
+  <figcaption>
+    <a class="mention-author" href="{{ mention.author.url }}">
+      {% set logoname = mention.author.name|compactify %}
+      {{ symbol.logo(logoname, mention.author.name, 'mention-autor') }}
+      <strong class="mention-name">{{ mention.author.name }}</strong>
+    </a>
+  </figcaption>
+</figure>

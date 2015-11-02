@@ -1,0 +1,31 @@
+{% import 'macros/popup.nunjucks' as popup %}
+
+{# =Preorder #}
+<section id="preorder" class="theme-gray">
+  <div class="chunk chunk--split">
+    <div class="chunk-inner">
+      <div class="split">
+        <div class="split-media split-left">
+
+        </div>
+        <div class="split-body split-right">
+          <div class="centrum centrum--left">
+            <header>
+              <h2>Limited Edition!</h2>
+              <p><strong>Be part of the first production and get a 20% discount.</strong></p>
+            </header>
+            <div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam ligula id est ullamcorper bibendum. Phasellus sodales turpis nunc, sed gravida mi mattis a.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam ligula id est ullamcorper bibendum. Phasellus sodales turpis nunc, sed gravida mi mattis a.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam ligula id est ullamcorper bibendum. Phasellus sodales turpis nunc, sed gravida mi mattis a.</p>
+            </div>
+            <footer>
+              <a class="btn" href="{{ content.preorder.url }}" data-target="#preorder-popup">Preorder your Avakai here</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{ popup.celery('preorder-popup') }}
+</section>
+{# /Preorder #}

@@ -1,0 +1,73 @@
+{% import 'macros/popup.nunjucks' as popup %}
+{% import 'macros/image.nunjucks' as image %}
+
+{% set galleryItems = [
+  {
+    src: 'http://www.placehold.it/600x600',
+    size: [600, 600],
+    ratio: '1by1'
+  },
+  {
+    src: 'http://www.placehold.it/600x600',
+    size: [600, 600],
+    ratio: '1by1'
+  },
+  {
+    src: 'http://www.placehold.it/600x600',
+    size: [600, 600],
+    ratio: '1by1'
+  },
+  {
+    src: 'http://www.placehold.it/600x600',
+    size: [600, 600],
+    ratio: '1by1'
+  }
+] %}
+
+
+{# =Playdates #}
+<aside id="playdates" class="theme-yellow">
+  <div class="chunk chunk--quote">
+    <div class="chunk-inner">
+      <h3 class="u-sronly">Playdates</h3>
+
+      <figure class="quote">
+        <div class="quote-content">
+          <p>Avakai stimulate the senses and the imagination of children.<br />With Avakai your kids never leave the playground!</p>
+        </div>
+        {# <figcaption class="quote-credit u-sronly">
+          <a class="quote-author" href="{{ content.playdate.author.url }}" targe="{{ content.playdate.author.url|linktarget }}">{{ content.playdate.author.name }}</a>
+        </figcaption> #}
+      </div>
+    </figure>
+  </div>
+
+  <div class="chunk chunk--pack">
+    <div class="chunk-inner">
+      <div class="pack">
+        <ul class="grid pack-items">
+          {% for galleryItem in galleryItems %}
+            <li class="pack-item s-span-6of12 m-span-3of12">
+              {{ image.lazy(galleryItem.src, galleryItem.size, galleryItem.ratio) }}
+            </li>
+          {% endfor %}
+        <ul>
+      </div>
+    </div>
+  </div>
+
+  {% call popup.base('playdates-gallery') %}
+    <div class="gallery js-slider">
+      <ul class="gallery-items js-slider-items">
+        {% for galleryItem in galleryItems %}
+
+          <li class="gallery-item">
+            {{ image.lazy(galleryItem.src, galleryItem.size, galleryItem.ratio)}}
+          </li>
+
+        {% endfor %}
+      </ul>
+    </div>
+  {% endcall %}
+</aside>
+{# /Playdate #}

@@ -1,0 +1,16 @@
+{# =Testimonial #}
+<aside id="testimonial">
+  <div class="chunk chunk--slider chunk--quote">
+    <div class="chunk-inner">
+    <h3 class="u-sronly">Testimonial</h3>
+
+    <div class="slider">
+      <ul class="slider-items">
+        {% for mention in content.entries.mentions %}
+          <li>
+            {% include "partials/mention.nunjucks" %}
+          </li>
+        {% endfor %}
+      </ul>
+</aside>
+{# /Testimonial #}

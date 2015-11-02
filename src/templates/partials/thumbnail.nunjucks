@@ -1,0 +1,12 @@
+{% import 'macros/object.nunjucks' as object %}
+
+<div class="thumb">
+  <div class="thumb-obj">
+    {{ object[thumbnail.object.type](thumbnail.object) }}
+  </div>
+
+  <div class="thumb-body">
+    <h3>{{ thumbnail.title }}</h3>
+    <p>{{ thumbnail.description }}</p>
+  </div>
+</div>

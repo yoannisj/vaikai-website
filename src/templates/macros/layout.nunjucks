@@ -1,0 +1,5 @@
+{% import "macros/chunk.nunjucks" as chunk %}
+
+{% macro chunk(layout, content) %}
+  {{ chunk[layout](content) }}
+{% endmacro %}

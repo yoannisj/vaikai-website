@@ -1,0 +1,49 @@
+{% import 'macros/video.nunjucks' as vid %}
+{% import 'macros/symbol.nunjucks' as symbol %}
+
+{# =Base
+ # ========================================================================== #}
+
+{% macro base(name, parent='', classname='') %}
+  <div id="{{ name }}" class="popup {{ classname }}">
+    <a class="popup-backdrop" href="#{{ parent }}">Back</a>
+    <div class="popup-wrap">
+      <a class="popup-close js-ctrl" href="#{{ parent }}" data-action="popup:close" data-target="#{{ name }}">
+        {{ symbol.icon('close', 'Close') }}
+      </a>
+      <div class="popup-body">
+        {{ caller() }}
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{# =Video
+ # ========================================================================== #}
+{% macro video(name, id, settings, parent='') %}
+  {% call base(name, parent) %}
+
+    {{ vid.vimeo(id, settings) }}
+
+  {% endcall %}
+{% endmacro %}
+
+{# =Gallery
+ # ========================================================================== #}
+{% macro gallery(name, items, parent='') %}
+  {% call base(name, parent) %}
+
+    <div class="gallery gallery--popup"></div>
+
+  {% endcall %}
+{% endmacro %}
+
+{# =Celery
+ # ========================================================================== #}
+{% macro celery() %}
+  {% call base(name, parent) %}
+
+    <div class="celery celery--popup"></div>
+
+  {% endcall %}
+{% endmacro %}

@@ -1,0 +1,20 @@
+{# =link #}
+{% macro link(action, target, labels, classname='') %}
+  <a class="{{ classname }} js-toggle" data-target="#{{ target }}">
+    <span class="js-toggle-on"></span>
+    <span class="js-toggle-off"></span>
+  </a>
+{% endmacro %}
+
+{# =button #}
+{% macro button(action, target, labels, classname='') %}
+  <button class="u-jsonly js-toggle {{ classname }} " data-target="#{{ target }}">
+    <span class="js-toggle-on">{{ labels.on }}</span>
+    <span class="js-toggle-off">{{ labels.off }}</span>
+  </a>
+{% endmacro %}
+
+{# =switch #}
+{# {% macro switch(action, target, labels, classname='') %}
+  <input type="checkbox" />
+{% endmacro %} #}

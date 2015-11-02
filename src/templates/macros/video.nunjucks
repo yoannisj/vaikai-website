@@ -1,0 +1,33 @@
+{# =Defaults #}
+{% set defaults = {
+  api: '0',
+  size: [928, 522]
+} %}
+
+{% set vimeoDef = defaults|merge({
+  color: '1fa0ca',
+  portrait: '0',
+  byline: '0',
+  title: '0'
+}) %}
+
+{# =video #}
+{% macro base(type, url, size=defaults.size) %}
+  <div class="js-video {{ 'js-video'|modify(type) }}">
+    {# TODO: fallback thumbnail link #}
+    {{ caller() }}
+  </div>
+{% endmacro %}
+
+{# =vimeo #}
+{% macro vimeo(vimeoId, size=vimeoDef.size, settings=vimeoDef) %}
+
+  {% call base('vimeo', 'https://vimeo.com/' + vimeoId, size) %}
+
+    <iframe class="js-video-player u-jsonly"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+      src="https://player.vimeo.com/video/{{ vimeoId }}?{{ settings.api }}&amp;color={{ settings.color }}&amp;title={{ settings.title }}&amp;byline={{ settings.byline }}&amp;portrait={{ settings.portrait }}" width="{{ size[0] }}" height="{{ size[1] }}"
+    ></iframe>
+
+  {% endcall %}
+{% endmacro %}

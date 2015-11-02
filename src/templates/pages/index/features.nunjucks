@@ -1,0 +1,50 @@
+{% import 'macros/toggle.nunjucks' as toggle %}
+{% import 'macros/thumbnail.nunjucks' as thumbnail %}
+
+{% set featuresExpandLabels = {
+  on: 'The full list of specs is here',
+  off: 'Show most magical features only'
+} %}
+
+{# =Features #}
+<section id="features" class="theme-gray">
+
+  <!-- =Features-Intro -->
+  <div class="chunk chunk--assert">
+    <div class="chunk-inner assert">
+
+      <h2 class="assert-title">Freedom to play with incredible features</h2>
+      <div class="assert-body">
+        <p>The avakai family is a real piece of craftmanship. It’s build from FSC wood and the inside is packed with real cool and playful techniques. So not only the senses but also the imagination of your child will be stimulated. Here are some examples of what the Avakai can do.</p>
+      </div>
+
+    </div>
+  </div>
+  <!-- /Features-Intro -->
+
+  <!-- =Features-List -->
+  <div class="chunk chunk--expand">
+    <div class="chunk-inner">
+      <div id="features-expand" class="expand">
+        <ul class="grid expand-items">
+          {% for feature in content.entries.features %}
+
+            <li id="feature-{{ feature.title|slugify }}" class="grid-cell expand-item {{ 'expand-summary' if loop.index <= 6 }} m-span-4of12">
+              {% set thumbnail = feature %}
+              {% include 'partials/thumbnail.nunjucks' %}
+            </li>
+
+          {% endfor %}
+        </ul>
+
+        <div class="expand-ctrls">
+          <div class="expand-toggle">
+            {{ toggle.button('expand:expand', 'features-expand',featuresExpandLabels, 'u-jsonly')}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Features-List -->
+
+</section>
