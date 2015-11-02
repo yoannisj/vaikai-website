@@ -1,0 +1,75 @@
+// =============================================================================
+// =LOGO
+// =============================================================================
+
+@import "aleksi/lengths/convert";
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$icon-size: 40px;
+$icon-size-medium: 80px;
+$icon-size-large: 120px;
+$icon-size-xlarge: 200px;
+
+/* =icon-core
+ * -------------------------------------------------------------------------- */
+
+%icon-core {
+  display: inline-block;
+  background-repeat: no-repeat;
+  white-space: nowrap;
+}
+
+/* =icon
+ * -------------------------------------------------------------------------- */
+
+.icon {
+  @extend .ir;
+  @extend %icon-core;
+
+  width: convert-length($icon-size, 'em');
+  height: convert-length($icon-size, 'em');
+  line-height: convert-length($icon-size, 'em');
+  background-position: center;
+  background-size: convert-length($icon-size, 'em') convert-length($icon-size, 'em');
+}
+
+/* =icon--<size>
+ * -------------------------------------------------------------------------- */
+
+.icon--md {
+  width: convert-length($icon-size-medium, 'em');
+  height: convert-length($icon-size-medium, 'em');
+  line-height: convert-length($icon-size-medium, 'em');
+  background-size: convert-length($icon-size-medium, 'em') convert-length($icon-size-medium, 'em');
+}
+
+.icon--lg {
+  width: convert-length($icon-size-large, 'em');
+  height: convert-length($icon-size-large, 'em');
+  line-height: convert-length($icon-size-large, 'em');
+  background-size: convert-length($icon-size-large, 'em') convert-length($icon-size-large, 'em');
+}
+
+.icon--xl {
+  width: convert-length($icon-size-xlarge, 'em');
+  height: convert-length($icon-size-xlarge, 'em');
+  line-height: convert-length($icon-size-xlarge, 'em');
+  background-size: convert-length($icon-size-xlarge, 'em') convert-length($icon-size-xlarge, 'em');
+}
+
+/* =icon--<image>
+ * -------------------------------------------------------------------------- */
+
+.icon--twitter { background-image: url(../images/icon-twitter.png); }
+.icon--facebook { background-image: url(../images/icon-facebook.png); }
+.icon--instagram { background-image: url(../images/icon-instagram.png); }
+
+.icon--menu { background-image: url(../images/icon-menu.png); }
+.icon--close { background-image: url(../images/icon-close.png); }
+.icon--play { background-image: url(../images/icon-play.png); }
+
+.icon--feedback { background-image: url(../images/icon-feedback.png); }
+.icon--sensors { background-image: url(../images/icon-sensors.png); }
+.icon--bluetooth { background-image: url(../images/icon-bluetooth.png); }

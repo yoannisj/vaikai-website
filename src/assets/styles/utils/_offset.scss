@@ -1,0 +1,38 @@
+// =============================================================================
+// =OFFSET UTIL
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+@import "config/layout";
+
+// =settings
+// -----------------------------------------------------------------------------
+$offset-num-columns: $layout-columns;
+$offset-breakpoints: 'm';
+
+/* =offset
+ * -------------------------------------------------------------------------- */
+
+@for $i from 1 through $offset-num-columns
+{
+  .offset-#{$i}of#{$offset-num-columns} {
+    margin-left: percentage($i/$offset-num-columns);
+  }
+}
+
+/* =<bp>-offset
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $offset-breakpoints
+{
+  @include shift('>m')
+  {
+    @for $i from 1 through $offset-num-columns
+    {
+      .#{$bp}-offset-#{$i}of#{$offset-num-columns} {
+        margin-left: percentage($i/$offset-num-columns);
+      }
+    }
+  }
+}

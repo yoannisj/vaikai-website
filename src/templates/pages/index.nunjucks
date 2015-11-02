@@ -16,8 +16,8 @@
   {% include 'pages/index/testimonial.nunjucks' %}
   {% include 'pages/index/subscribe.nunjucks' %}
 
-  <div class="chunk chunk--splash">
-    <div class="chunk chunk-inner">
+  <div class="chunk chunk--narrow">
+    <div class="chunk-inner">
       <div class="splash">
 
 

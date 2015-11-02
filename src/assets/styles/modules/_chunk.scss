@@ -1,0 +1,29 @@
+// =============================================================================
+// =VaiKai - Chunk Module
+// =============================================================================
+
+.chunk {
+  position: relative;
+  overflow: hidden;
+}
+
+.chunk-inner {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include shift('>s') {
+    padding: 0 40px;
+  }
+
+  .chunk--bleed & {
+    max-width: none;
+    padding: 0;
+  }
+
+  .chunk--narrow & {
+    max-width: 1120px;
+  }
+
+}

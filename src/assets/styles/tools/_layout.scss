@@ -25,8 +25,11 @@
 // -----------------------------------------------------------------------------
 @mixin v-align($valign: "middle")
 {
-  @at-root (without: media) {
-    @extend .ws-collapse;
+  @at-root (without: media)
+  {
+    & {
+      @extend .ws-collapse;
+    }
   }
 
   &:before,
@@ -41,8 +44,9 @@
     speak: none; /* you never know */
   }
 
-  & > * {
-    @at-root (without: media) {
+
+  @at-root (without: media) {
+    & > * {
       @extend .ws-reset;
     }
   }

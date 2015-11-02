@@ -11,7 +11,9 @@
   {% set height = size[1] %}
   {% set ratio = (height/width) * 100 %} #}
 
-  <div class="ratio {{ 'ratio'|modify(ratio) }}" role="presentation">
+  {% if ratio %}
+    <div class="ratio-{{ ratio }}" role="presentation">
+  {% endif %}
     <!--[if gt IE 8]><!-->
       <img class="lazyload" alt=""
         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -24,5 +26,8 @@
     <noscript>
       <img src="{{ src }}" alt="" />
     </noscript>
-  </div>
+
+  {% if ratio %}
+    </div>
+  {% endif %}
 {% endmacro %}

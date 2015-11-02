@@ -7,6 +7,7 @@
 $webfonts-src-path: '../fonts';
 $webfonts: (
   'itc-avant-garde': (
+    normal 400,
     normal 500,
   )
 );
@@ -35,19 +36,22 @@ $avant-garde-font-stack: "itc-avant-garde", "Helvetica Neue", Helvetica, sans-se
 // =Typescale
 // -----------------------------------------------------------------------------
 
+  // "epsilon" : 24px 30px,
+
 $typescale: (
   "giga"    : 80px 68px,
-  "mega"    : 66px 54px,
-  "kilo"    : 50px 50px,
+  "mega"    : 60px 56px,
+  "kilo"    : 46px 50px,
 
-  "alpha"   : 34px 34px,
-  "beta"    : 30px 28px,
-  "gamma"   : 28px 28px,
-  "delta"   : 24px 28px,
-  "epsilon" : 22px 26px,
-  "zeta"    : 20px 24px,
+  "alpha"   : 38px 48px,
+  "beta"    : 34px 40px,
+  "gamma"   : 28px 34px,
+  "delta"   : 26px 32px,
 
-  "base"    : 18px 24px,
-  "micro"   : 16px 27px,
+  "epsilon" : 22px 28px,
+  "zeta"    : 20px 27px,
+
+  "base"    : 18px 26px,
+  "micro"   : 16px 22px,
   "nano"    : 14px 17px
 );

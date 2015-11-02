@@ -1,3 +1,2 @@
-var breakpoints = require('data/breakpoints.js');
-
-console.log(breakpoints);
+// var breakpoints = require('data/breakpoints.js');
+// console.log(breakpoints);

@@ -1,0 +1,50 @@
+// =============================================================================
+// =LINK
+// =============================================================================
+
+/* =link-quiet
+ * -------------------------------------------------------------------------- */
+
+.link-quiet {
+  color: inherit;
+}
+
+/* =link-back
+ * -------------------------------------------------------------------------- */
+
+.link-back {
+  font-family: $verlag-font-stack;
+  font-size: typescale-font-size('zeta', 'rem');
+  font-weight: 400;
+}
+
+/* =link-video
+ * -----------------------------------------------------------------------------
+ * Use in conjunction with a `.ratio-<aspect>` class that corresponds to the
+ * video's poster aspect-ratio.
+ */
+
+.link-video
+{
+  z-index: 0;
+  display: inline-block; // contain nested <video> element
+  width: 100%;
+
+  &:before {
+    position: relative;
+    z-index: 1;
+    background: url(../images/video-play.png) center center no-repeat;
+    background-size: 45px 45px;
+  }
+}
+
+.link-video:hover:before {
+  opacity: 0.5;
+}
+
+@include shift('>s')
+{
+  .link-video:before {
+    background-size: 90px 90px;
+  }
+}

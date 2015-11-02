@@ -3,27 +3,36 @@
 {% import 'macros/symbol.nunjucks' as symbol %}
 
 {# =Intro #}
-<section id="intro" class="theme-green">
-  <div class="chunk chunk--split">
+<section id="intro" class="section theme-green">
+  <div class="chunk chunk--narrow">
     <div class="chunk-inner">
 
-      <div class="split">
+      <div class="split grid">
         <!-- =Intro-Media -->
-        <div class="split-media split-left span-4of12 m-span-6of12">
+        <div class="split-media grid-cell span-4of12 m-span-6of12">
           {# {{ img.lazyflex() }} #}
+
+          <!-- =AVAKAI-DUO-LEAD -->
+          <div class="avk-duo-lead" role="presentation">
+            <div class="avk-trunc animateme" role="presentation"
+              data-when="span" data-from="0" data-to="0.5" data-translatey="-200" data-easing="linear"
+            >
+              {{ image.lazy('images/avakai-blue-trunc.png') }}
+            </div>
+          </div>
         </div>
         <!-- /Intro-Media -->
 
         <!-- =Intro-Text -->
-        <div class="split-body split-right span-8of12 m-span-6fo12">
-          <div class="centrum centrum--left">
+        <div class="split-body grid-cell span-8of12 m-span-6of12">
+          <div class="landmark centrum centrum--left">
             <h2>Less Screentime<br />
               more play</h2>
-            <p>Meet the Avakai family.<br />
+            <p class="s-zeta m-delta">Meet the Avakai family.<br />
               A couple of beautiful designed wooden toys that are intuitive, playful and connective to eachother and the world.</p>
-            <a class="js-btn" data-action="video:play" href="#intro-video">
-              {{ symbol.preIcon('play', 'Watch Video') }}
-            </a>
+            <p class="landmark"><a class="link-quiet shoutout js-btn" href="http://www.vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#intro-video">
+              {{ symbol.preIcon('play', 'watch video') }}
+            </a></p>
           </div>
         </div>
         <!-- /Intro-Text -->

@@ -1,0 +1,33 @@
+// =============================================================================
+// =PERSPECTIVE - UTIL
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+
+// =settings
+// -----------------------------------------------------------------------------
+$perspective-depth: 100px;
+$perspective-breakpoints: ();
+
+/* =perspective
+ * -------------------------------------------------------------------------- */
+
+.perspective {
+  perspective: $perspective-depth;
+  transform-style: preserve-3d;
+}
+
+/* =<bp>-perspective
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $overlay-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    .#{$bp}-perspective {
+      perspective: $perspective-depth;
+      transform-style: preserve-3d;
+    }
+  }
+}

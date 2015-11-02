@@ -1,0 +1,35 @@
+// =============================================================================
+// =VaiKai - Quote Module
+// =============================================================================
+
+@import "aleksi/lengths/convert";
+
+// =settings
+// -----------------------------------------------------------------------------
+$quote-font-family: $avant-garde-font-stack;
+$quote-typescale: 'alpha';
+$quote-font-weight: 400;
+
+$quote-sign-font-family: Georgia, serif;
+$quote-sign-font-size: 86px;
+$quote-sign-font-line-height: 0.5;
+$quote-sign-color: $blue;
+
+/* =quote
+ * -------------------------------------------------------------------------- */
+
+.quote:before {
+  content: "”";
+  text-align: center;
+  vertical-align: middle;
+
+  font-family: $quote-sign-font-family;
+  font-size: convert-length($quote-sign-font-size, 'rem');
+  line-height: $quote-sign-font-line-height;
+  color: $quote-sign-color;
+}
+
+.quote-text {
+  font-family: $quote-font-family;
+  font-weight: $quote-font-weight;
+}

@@ -9,6 +9,8 @@
 $yellow-theme-color: $white;
 $yellow-theme-background: $yellow;
 $yellow-theme-input-background-active: $mid-yellow;
+
+$yellow-theme-quote-sign-color: inherit;
 $yellow-theme-slider-bullet-color: $light-gray;
 $yellow-theme-slider-bullet-color-active: $blue;
 
@@ -28,6 +30,10 @@ $yellow-theme-slider-bullet-color-active: $blue;
 
   .form-input:focus {
     background: $yellow-theme-input-background-active;
+  }
+
+  .quote:before {
+    color: $yellow-theme-quote-sign-color;
   }
 
   .js-slider-control-nav a {

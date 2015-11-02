@@ -1,0 +1,22 @@
+// =============================================================================
+// =FLEX-RATIO
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+@import "config/layout";
+@import "tools/layout";
+
+// =settings
+// -----------------------------------------------------------------------------
+$flex-ratios: () !default;
+
+/* =ratio-<flex-aspect>
+ * -------------------------------------------------------------------------- */
+
+@each $ratio, $dimen in $flex-ratios
+{
+  .ratio-#{$ratio} {
+    @include flex-aspect-ratio($dimen);
+  }
+}

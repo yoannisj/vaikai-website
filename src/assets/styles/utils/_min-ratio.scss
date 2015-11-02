@@ -1,0 +1,42 @@
+// =============================================================================
+// =UTILS - MIN-RATIO
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+@import "config/layout";
+@import "tools/layout";
+
+// =settings
+// -----------------------------------------------------------------------------
+$min-ratios: (
+  '16by9': 960px 540px,
+  '4by3': 960px 720px,
+  '1by1': 960px 960px
+) !default;
+
+/* =min-ratio
+ * -------------------------------------------------------------------------- */
+
+@each $ratio, $dimen in $min-ratios
+{
+  .min-ratio-#{$ratio} {
+    @include min-aspect-ratio($dimen);
+  }
+}
+
+/* =<bp>-min-ratio
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $ratio-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    @each $ratio, $dimen in $ratios
+    {
+      .#{$bp}-min-ratio-#{$ratio} {
+        @include min-aspect-ratio($dimen);
+      }
+    }
+  }
+}

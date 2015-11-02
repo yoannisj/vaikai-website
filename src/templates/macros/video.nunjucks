@@ -13,7 +13,14 @@
 
 {# =video #}
 {% macro base(type, url, size=defaults.size) %}
-  <div class="js-video {{ 'js-video'|modify(type) }}">
+
+  {% set width = size[0] %}
+  {% set height = size[1] %}
+  {% set ratio = (height/width) * 100 %}
+
+  <div class="ratio-16by9 js-video {{ 'js-video'|modify(type) }}"
+    {# style="padding-top:{{ ratio }}%;" #}
+  >
     {# TODO: fallback thumbnail link #}
     {{ caller() }}
   </div>
@@ -24,9 +31,9 @@
 
   {% call base('vimeo', 'https://vimeo.com/' + vimeoId, size) %}
 
-    <iframe class="js-video-player u-jsonly"
+    <iframe id="vimeo-{{ vimeoId }}" class="js-video-player u-jsonly"
       frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-      src="https://player.vimeo.com/video/{{ vimeoId }}?{{ settings.api }}&amp;color={{ settings.color }}&amp;title={{ settings.title }}&amp;byline={{ settings.byline }}&amp;portrait={{ settings.portrait }}" width="{{ size[0] }}" height="{{ size[1] }}"
+      src="https://player.vimeo.com/video/{{ vimeoId }}?{{ settings.api }}&amp;color={{ settings.color }}&amp;title={{ settings.title }}&amp;byline={{ settings.byline }}&amp;portrait={{ settings.portrait }}" {% if size != 'flex' %}width="{{ size[0] }}" height="{{ size[1] }}"{% endif %}
     ></iframe>
 
   {% endcall %}

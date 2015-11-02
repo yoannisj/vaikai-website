@@ -1,0 +1,117 @@
+// =============================================================================
+// =BTN ELEMENT
+// =============================================================================
+
+@import "config/colors";
+@import "tools/layout";
+
+// =settings
+// -----------------------------------------------------------------------------
+$btn-font-family: $avant-garde-font-stack;
+$btn-font-size: typescale-font-size('zeta');
+$btn-min-width: 120px;
+$btn-height: 40px;
+$btn-gutter: 15px;
+
+$btn-font-size-m: typescale-font-size('delta');
+$btn-min-width-m: 200px;
+$btn-height-m: 50px;
+$btn-gutter-m: 20px;
+
+$btn-color: $white;
+$btn-color-active: $btn-color;
+$btn-background: $blue;
+$btn-background-active: $mid-blue;
+
+$btn-color-cta: $white;
+$btn-color-cta-active: $btn-color-cta;
+$btn-background-cta: $yellow;
+$btn-background-cta-active: $mid-yellow;
+
+$btn-adjust-valign: 3px;
+
+/* =btn-core
+ * -------------------------------------------------------------------------- */
+
+%btn-core {
+  display: inline-block;
+  height: convert-length($btn-height, 'em', $btn-font-size);
+  padding: 0; // reset <button> elements
+  border: none;
+
+  font-family: $btn-font-family;
+  font-size: convert-length($btn-font-size, 'rem');
+  // line-height: convert-length($btn-height, 'em', $btn-font-size);
+  line-height: convert-length($btn-height + $btn-adjust-valign, 'em', $btn-font-size);
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+  color: $btn-color;
+  background: $btn-background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+
+  &:hover, &:active &.focus {
+    color: $btn-color-active;
+    background: $btn-background-active;
+  }
+
+  @include shift('>m') {
+    font-size: convert-length($btn-font-size-m, 'rem');
+    line-height: convert-length($btn-height-m + $btn-adjust-valign, 'em', $btn-font-size-m);
+    height: convert-length($btn-height-m, 'em', $btn-font-size-m);
+  }
+}
+
+/* =btn
+ * -------------------------------------------------------------------------- */
+
+.btn {
+  @extend %btn-core;
+  min-width: convert-length($btn-min-width, 'em', $btn-font-size);
+  @include gutter($btn-gutter, 'em', $btn-font-size);
+
+  @include shift('>s') {
+    min-width: convert-length($btn-min-width-m, 'em', $btn-font-size-m);
+    @include gutter($btn-gutter-m, 'em', $btn-font-size-m);
+  }
+}
+
+/* =btn--<theme>
+ * -------------------------------------------------------------------------- */
+
+.btn--invert {
+  color: $btn-background;
+  background: $btn-color;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+
+  &:hover, &:active &.focus {
+    color: $btn-color-active;
+    background: $btn-background-active;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.btn--cta {
+  color: $btn-color-cta;
+  background: $btn-background-cta;
+
+  &:hover, &:active &.focus {
+    color: $btn-color-cta-active;
+    background: $btn-background-cta-active;
+  }
+}
+
+/* =btn--<behaviour>
+ * -------------------------------------------------------------------------- */
+
+.btn--toggle
+{
+  &.is-on > .js-toggle-off { display: none; }
+  &.is-off > .js-toggle-on { display: none; }
+}

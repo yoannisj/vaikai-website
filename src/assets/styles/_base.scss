@@ -2,10 +2,10 @@
 // =VaiKai - Base Styles
 // =============================================================================
 
-@import "SassyStrings";
 @import "aleksi/lengths/convert";
 
 @import "tools/typography";
+@import "config/layout";
 @import "config/base";
 
 /* =general
@@ -39,7 +39,7 @@ ul, ol, dd,
 p, figure,
 pre, table, fieldset, hr {
   margin-top: 0;
-  margin-bottom: convert-length($base-line-height, 'rem');
+  margin-bottom: convert-length($base-spacing-vertical, 'rem');
 }
 
 /* =links
@@ -73,20 +73,30 @@ img {
 }
 
 h1, .h1 { @extend %hN; @extend .alpha; }
-h2, .h2 { @extend %hN; @extend .beta; }
-h3, .h3 { @extend %hN; @extend .gamma; }
-h4, .h4 { @extend %hN; @extend .delta; }
-h5, .h5 { @extend %hN; @extend .epsilon; }
-h6, .h6 { @extend %hN; @extend .zeta; }
+h2, .h2 { @extend %hN; @extend .gamma; }
+h3, .h3 { @extend %hN; @extend .delta; }
+h4, .h4 { @extend %hN; @extend .epsilon; }
+h5, .h5 { @extend %hN; @extend .zeta; }
+h6, .h6 { @extend %hN; @extend .base; }
 
 @include shift('>s')
 {
-  h1, .h1 { @extend .s-giga; }
-  h2, .h2 { @extend .s-mega; }
-  h3, .h3 { @extend .s-kilo; }
-  h4, .h4 { @extend .s-alpha; }
-  h5, .h5 { @extend .s-beta; }
-  h6, .h6 { @extend .s-gamma; }
+  h1, .h1 { @extend .s-mega; }
+  h2, .h2 { @extend .s-alpha; }
+  h3, .h3 { @extend .s-beta; }
+  h4, .h4 { @extend .s-delta; }
+  h5, .h5 { @extend .s-epsilon; }
+  h6, .h6 { @extend .s-zeta; }
+}
+
+@include shift('>m')
+{
+  h1, .h1 { @extend .m-giga; }
+  h2, .h2 { @extend .m-mega; }
+  h3, .h3 { @extend .m-kilo; }
+  h4, .h4 { @extend .m-beta; }
+  h5, .h5 { @extend .m-delta; }
+  h6, .h6 { @extend .m-epsilon; }
 }
 
 /* =smallprint
@@ -112,4 +122,28 @@ small, .small,
 // fix nested <small> elements
 .smallprint small {
   font-size: 1em;
+}
+
+
+/* =strong
+ * -------------------------------------------------------------------------- */
+
+strong {
+  font-weight: inherit;
+  text-decoration: underline;
+}
+
+/* =figure
+ * -------------------------------------------------------------------------- */
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* =blockquote
+ * -------------------------------------------------------------------------- */
+
+blockquote {
+  margin: 0;
 }

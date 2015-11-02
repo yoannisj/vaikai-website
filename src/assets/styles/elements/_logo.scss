@@ -1,0 +1,60 @@
+// =============================================================================
+// =LOGO
+// =============================================================================
+
+// =settings
+// -----------------------------------------------------------------------------
+$logo-width-vaikai: 70px;
+$logo-height-vaikai: 57px;
+$logo-width-fastco: 158px;
+$logo-height-fastco: 38px;
+$logo-width-core77: 102px;
+$logo-height-core77: 36px;
+$logo-width-psfk: 37px;
+$logo-height-psfk: 37px;
+
+/* =logo
+ * -------------------------------------------------------------------------- */
+
+.logo {
+  @extend .ir;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo--vaikai
+{
+  width: convert-length($logo-width-vaikai, 'rem');
+  height: convert-length($logo-height-vaikai, 'rem');
+  background-image: url('../images/logo-vaikai.svg');
+  background-size: convert-length($logo-width-vaikai, 'rem') convert-length($logo-height-vaikai, 'rem');
+
+  .no-svg & {
+    background-image: url('../images/logo-vaikai.png');
+  }
+}
+
+.logo--fastcompany
+{
+  width: convert-length($logo-width-fastco, 'rem');
+  height: convert-length($logo-height-fastco, 'rem');
+  background-image: url('../images/logo-fastco.jpg');
+  background-size: convert-length($logo-width-fastco, 'rem') convert-length($logo-height-fastco, 'rem');
+}
+
+.logo--core77
+{
+  width: convert-length($logo-width-core77, 'rem');
+  height: convert-length($logo-height-core77, 'rem');
+  background-image: url('../images/logo-core77.png');
+  background-size: convert-length($logo-width-core77, 'rem') convert-length($logo-height-core77, 'rem');
+}
+
+.logo--psfk
+{
+  width: convert-length($logo-width-psfk, 'rem');
+  height: convert-length($logo-height-psfk, 'rem');
+  background-image: url('../images/logo-psfk.png');
+  background-size: convert-length($logo-width-psfk, 'rem') convert-length($logo-height-psfk, 'rem');
+}

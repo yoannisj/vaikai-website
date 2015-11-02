@@ -7,8 +7,8 @@
 {% endmacro %}
 
 {# =button #}
-{% macro button(action, target, labels, classname='') %}
-  <button class="u-jsonly js-toggle {{ classname }} " data-target="#{{ target }}">
+{% macro button(action, target, labels, state='off', classname='') %}
+  <button class="btn btn--toggle is-{{ state }} js-only js-toggle {{ classname }} " data-target="#{{ target }}">
     <span class="js-toggle-on">{{ labels.on }}</span>
     <span class="js-toggle-off">{{ labels.off }}</span>
   </a>

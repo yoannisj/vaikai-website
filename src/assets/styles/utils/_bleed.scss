@@ -1,0 +1,47 @@
+// =============================================================================
+// =UTILS - BLEED
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+
+// =settings
+// -----------------------------------------------------------------------------
+$bleed-amount: 100rem;
+$bleed-breakpoints: 'm';
+
+/* =bleed
+ * -------------------------------------------------------------------------- */
+
+.bleed,
+.bleed-left {
+  margin-left: -1 * $bleed-amount;
+  padding-left: $bleed-amount;
+}
+
+.bleed,
+.bleed-right {
+  margin-right: -1 * $bleed-amount;
+  padding-right: $bleed-amount;
+}
+
+/* =<bp>-bleed
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $bleed-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    .#{$bp}-bleed,
+    .#{$bp}-bleed-left {
+      margin-left: -1 * $bleed-amount;
+      padding-left: $bleed-amount;
+    }
+
+    .#{$bp}-bleed,
+    .#{$bp}-bleed-right {
+      margin-right: -1 * $bleed-amount;
+      padding-right: $bleed-amount;
+    }
+  }
+}

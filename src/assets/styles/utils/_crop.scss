@@ -1,0 +1,54 @@
+// =============================================================================
+// =CROP - UTIL
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+
+// =settings
+// -----------------------------------------------------------------------------
+$crop-breakpoints: ('sm');
+
+// =mixin
+// -----------------------------------------------------------------------------
+
+@mixin crop()
+{
+  position: relative;
+  overflow: hidden;
+
+  > *, img {
+    position: absolute;
+    top: -999px;
+    right: -999px;
+    bottom: -999px;
+    left: -999px;
+
+    /* cover */
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: none;
+    max-height: none;
+
+    /* center */
+    margin: auto;
+  }
+}
+
+/* =crop
+ * -------------------------------------------------------------------------- */
+
+.crop { @include crop; }
+
+/* =<bp>-crop
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $crop-breakpoints
+{
+  @include shift('#{$bp}')
+  {
+    .#{$bp}-crop { @include crop; }
+  }
+}

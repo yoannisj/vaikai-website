@@ -1,0 +1,63 @@
+
+@import "aleksi/lengths/convert";
+@import "config/colors";
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$mention-name-font-family: $avant-garde-font-stack;
+$mention-name-font-size: typescale-font-size('micro');
+$mention-name-font-weight: 500;
+$mention-name-color: $gray;
+
+$mention-separator-size: 9px;
+$mention-separator-spacing: 10px;
+$mention-separator-spacing-s: 20px;
+$mention-separator-color: $mid-gray;
+
+/* =mentions
+ * -------------------------------------------------------------------------- */
+
+.mention {
+  max-width: 400px;
+  margin: 20px auto 60px;
+}
+
+.mention-quote {
+  margin: 0;
+}
+
+.mention-quote
+{
+  &:before { content: '“'; }
+  &:after { content: '”'; }
+
+}
+
+.mention-caption:before {
+  content: "";
+  display: inline-block;
+  width: convert-length($mention-separator-size, 'rem');
+  height: convert-length($mention-separator-size, 'rem');
+  margin: convert-length($mention-separator-spacing, 'rem') 0;
+  border-radius: convert-length($mention-separator-size/2, 'rem');
+  background-color: $mention-separator-color;
+
+  @include shift(">s")
+  {
+    margin: convert-length($mention-separator-spacing-s, 'rem') 0;
+  }
+}
+
+.mention-credit {
+  display: block;
+}
+
+.mention-name {
+  display: block;
+  font-size: convert-length($mention-name-font-size, 'rem');
+  font-weight: $mention-name-font-weight;
+  color: $mention-name-color;
+  text-transform: uppercase;
+  text-decoration: none;
+}

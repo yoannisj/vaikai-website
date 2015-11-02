@@ -1,0 +1,31 @@
+// =============================================================================
+// =UTILS - SR-ONLY
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+@import "tools/accessibility";
+
+// =settings
+// -----------------------------------------------------------------------------
+$sr-only-breakpoints: 's' 'sm' 'm' 'l';
+
+/* =sr-only
+ * -----------------------------------------------------------------------------
+ * Visually hidden, but discoverable by screen-readers.
+ */
+
+.sr-only {
+  @include sr-only;
+}
+
+/* =<bp>-sr-only
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $sr-only-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    .#{$bp}-sr-only { @include sr-only; }
+  }
+}

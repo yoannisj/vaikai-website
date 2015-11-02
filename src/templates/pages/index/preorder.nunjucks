@@ -1,24 +1,25 @@
 {% import 'macros/popup.nunjucks' as popup %}
 
 {# =Preorder #}
-<section id="preorder" class="theme-gray">
-  <div class="chunk chunk--split">
+<section id="preorder" class="section theme-gray">
+  <div class="chunk chunk--narrow">
     <div class="chunk-inner">
-      <div class="split">
-        <div class="split-media split-left">
+      <div class="split grid">
+        <div class="split-media grid-cell m-span-5of12">
 
         </div>
-        <div class="split-body split-right">
-          <div class="centrum centrum--left">
+        <div class="split-body grid-cell m-span-7of12">
+          <div class="landmark centrum centrum--left">
             <header>
-              <h2>Limited Edition!</h2>
-              <p><strong>Be part of the first production and get a 20% discount.</strong></p>
+              <h2 class="h4">Be part of the first production and get a <strong>20% discount.</strong></h2>
             </header>
             <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam ligula id est ullamcorper bibendum. Phasellus sodales turpis nunc, sed gravida mi mattis a.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam ligula id est ullamcorper bibendum. Phasellus sodales turpis nunc, sed gravida mi mattis a.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam ligula id est ullamcorper bibendum. Phasellus sodales turpis nunc, sed gravida mi mattis a.</p>
+              <p>We sketched, we designed, we tested and had a lot of fun. Finally the Avakai can come to life and we are really excited about that. The hearts of the first dolls will start beating for the first time in March 2016. There will only be a limited amount of 500 pre-orders available, so be quick to pre-oder your Avakai now.</p>
+              <p>Be one of the first families to give your kids a creative and screen-less way to spend quality time. In the meantime we are convincing our ambitious woodcrafters to hurry up and carve more Avakai to make the world a little happier.</p>
+              <p>Adopting an Avakai is really easy, just klick below. </p>
             </div>
-            <footer>
-              <a class="btn" href="{{ content.preorder.url }}" data-target="#preorder-popup">Preorder your Avakai here</a>
+            <footer class="landmark">
+              <a class="btn btn--cta" href="https://shop.trycelery.com/page/avakai" target="_blank" data-target="#preorder-popup">Preorder your Avakai here</a>
             </footer>
           </div>
         </div>

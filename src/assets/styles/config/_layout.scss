@@ -13,7 +13,14 @@ $layout-gutter-m: 40px;
 
 // =vertical spacing
 // -----------------------------------------------------------------------------
-$base-spacing-vertical: convert-length($base-line-height, 'px');
+$base-spacing-vertical: convert-length($base-font-size, 'px');
 
 // =ratios
 // -----------------------------------------------------------------------------
+
+$ratios: (
+  '16by9': 960px 540px,
+  '3by2': 600px 400px,
+  '1by1': 960px 960px,
+  "iphone": 236px 420px
+);

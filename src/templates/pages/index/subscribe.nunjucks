@@ -1,11 +1,13 @@
 {# =Subscribe #}
-<section id="subscribe" class="">
-  <div class="chunk chunk--assert">
+<section id="subscribe" class="section theme-green">
+  <div class="chunk">
     <div class="chunk-inner">
-      <div class="assert">
-        <h3 class="asset-title">We would love to stay in touch</h3>
-        <p class="assert-text">The avakai family is a real piece of craftmanship. It’s build from FSC wood and the inside is packed with real cool and playful techniques. So not only the senses but also the imagination of your child will be stimulated. Here are some examples of what the Avakai can do.</p>
-        <button class="btn">Subscribe</button>
+      <div class="landmark assert align-center">
+        <h3 class="assert-title">We would love to stay in touch</h3>
+        <p class="s-zeta m-epsilon">The avakai family is a real piece of craftmanship. It’s build from FSC wood and the inside is packed with real cool and playful techniques. So not only the senses but also the imagination of your child will be stimulated. Here are some examples of what the Avakai can do.</p>
+        <footer class="landmark">
+          <button class="btn">Yes, keep me in the loop!</button>
+        </footer>
       </div>
     </div>
   </div>

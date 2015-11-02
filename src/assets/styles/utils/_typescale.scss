@@ -1,0 +1,38 @@
+// =============================================================================
+// =UTILS - TYPESCALE
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+@import "config/typography";
+@import "tools/typography";
+
+// =settings
+// -----------------------------------------------------------------------------
+$typescale-breakpoints: 's' 'sm' 'm' 'l' 'xl';
+
+/* =typescale
+ * -------------------------------------------------------------------------- */
+
+@each $step, $settings in $typescale
+{
+  .#{$step} {
+    @include typescale( $step );
+  }
+}
+
+/* =<bp>-typescale
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $typescale-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    @each $step, $settings in $typescale
+    {
+      .#{$bp}-#{$step} {
+        @include typescale($step);
+      }
+    }
+  }
+}

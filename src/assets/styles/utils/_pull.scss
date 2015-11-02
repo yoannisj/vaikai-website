@@ -1,0 +1,40 @@
+// =============================================================================
+// =PULL UTIL
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+@import "config/layout";
+
+// =settings
+// -----------------------------------------------------------------------------
+$pull-num-columns: $layout-columns;
+$pull-breakpoints: 's' 'sm' 'm' 'l';
+
+/* =pull-<columns>
+ * -------------------------------------------------------------------------- */
+
+@for $i from 1 through $pull-num-columns
+{
+  .pull-#{$i}of#{$pull-num-columns} {
+    position: relative;
+    left: percentage($i/$pull-num-columns);
+  }
+}
+
+/* =<bp>-pull-<columns>
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $pull-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    @for $i from 1 through $pull-num-columns
+    {
+      .#{$bp}-pull-#{$i}of#{$pull-num-columns} {
+        position: relative;
+        right: percentage($i/$pull-num-columns);
+      }
+    }
+  }
+}

@@ -31,6 +31,10 @@ $blue-theme-slider-bullet-color-active: $yellow;
     background: $blue-theme-input-background-active;
   }
 
+  .btn {
+    @extend .btn--invert;
+  }
+
   .js-slider-control-nav a
   {
     &:after {

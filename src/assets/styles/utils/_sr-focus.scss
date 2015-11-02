@@ -1,0 +1,30 @@
+// =============================================================================
+// =SR-FOCUS UTIL
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+
+// =settings
+// -----------------------------------------------------------------------------
+$sr-focus-breakpoints: 's' 'sm' 'm' 'l';
+
+/* =sr-focus
+ * -----------------------------------------------------------------------------
+ * Visually hidden, but discoverable by screen-readers and focusable.
+ */
+
+.sr-focus {
+  @include sr-focus;
+}
+
+/* =<bp>-sr-focus
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $sr-focus-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    .#{$bp}-sr-focus { @include sr-focus; }
+  }
+}

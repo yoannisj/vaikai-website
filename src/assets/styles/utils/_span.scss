@@ -1,0 +1,46 @@
+// =============================================================================
+// =SPAN UTIL
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+@import "config/layout";
+
+// =settings
+// -----------------------------------------------------------------------------
+$span-num-columns: $layout-columns;
+$span-asymetrical-ratio: 1.618;
+$span-fraction-major: 1/$span-asymetrical-ratio;
+$span-fraction-minor: 1 - (1/$span-asymetrical-ratio);
+$span-breakpoints: 's' 'sm' 'm' 'l';
+
+/* =span-<columns>
+ * -------------------------------------------------------------------------- */
+@for $i from 1 through $span-num-columns
+{
+  .span-#{$i}of#{$span-num-columns} {
+    width: percentage($i/$span-num-columns);
+  }
+}
+
+.span-major { width: percentage($span-fraction-major); }
+.span-minor { width: percentage($span-fraction-minor); }
+
+/* =<bp>-span-<columns>
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $span-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    @for $i from 1 through $span-num-columns
+    {
+      .#{$bp}-span-#{$i}of#{$span-num-columns} {
+        width: percentage($i/$span-num-columns);
+      }
+    }
+
+    .#{$bp}-span-major { width: percentage($span-fraction-major); }
+    .#{$bp}-span-minor { width: percentage($span-fraction-minor); }
+  }
+}

@@ -1,0 +1,50 @@
+// =============================================================================
+// =VaiKai - Carousel Module
+// =============================================================================
+
+
+.has-slider .carousel-items {
+  margin: 0;
+}
+
+.has-slider .carousel-item {
+  box-sizing: content-box;
+}
+
+.carousel-control-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 40px;
+  text-align: center;
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 11px;
+    cursor: pointer;
+    text-indent: 110%;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 7px;
+      width: 11px;
+      height: 11px;
+      border-radius: 6px;
+      background: $mid-gray;
+    }
+
+    &:hover:after,
+    &.carousel-active:after {
+      background: $blue;
+    }
+  }
+}

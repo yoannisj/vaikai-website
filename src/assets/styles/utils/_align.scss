@@ -1,0 +1,59 @@
+// =============================================================================
+// =UTILS - ALIGN
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+@import "tools/layout";
+
+// =settings
+// -----------------------------------------------------------------------------
+$align-breakpoints: 'sm' 'm';
+
+/* =align-<side>
+ * -------------------------------------------------------------------------- */
+
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+.align-center { text-align: center; }
+.align-sides { text-align: justified; }
+
+.align-top { @include v-align('top'); }
+.align-bottom { @include v-align('bottom'); }
+.align-middle { @include v-align('middle'); }
+
+.align-none
+{
+  text-align: inherit;
+
+  > * {
+    vertical-align: inherit;
+  }
+}
+
+/* =<bp>-align-<side>
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $align-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    .#{$bp}-align-left { text-align: left; }
+    .#{$bp}-align-right { text-align: right; }
+    .#{$bp}-align-center { text-align: center; }
+    .#{$bp}-align-sides { text-align: justified; }
+
+    .#{$bp}-align-top { @include v-align('top'); }
+    .#{$bp}-align-bottom { @include v-align('bottom'); }
+    .#{$bp}-align-middle { @include v-align('middle'); }
+
+    .#{$bp}-align-none
+    {
+      text-align: inherit;
+
+      > * {
+        vertical-align: inherit;
+      }
+    }
+  }
+}

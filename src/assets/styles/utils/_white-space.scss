@@ -1,0 +1,47 @@
+// =============================================================================
+// =UTILS - WHITE-SPACE
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+@import "config/base";
+
+// =settings
+// -----------------------------------------------------------------------------
+$ws-breakpoints: ();
+
+/* =ws
+ * -------------------------------------------------------------------------- */
+
+.ws-collapse {
+  font-family: sans-serif;
+  text-rendering: optimizeSpeed;
+  letter-spacing: -0.31em;
+}
+
+.ws-reset {
+  font-family: $base-font-family; /* reset base-font */
+  text-rendering: auto;
+  letter-spacing: normal;
+}
+
+/* =<bp>-ws
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $ws-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    .#{$bp}-ws-collapse {
+      font-family: sans-serif;
+      text-rendering: optimizeSpeed;
+      letter-spacing: -0.31em;
+    }
+
+    .#{$bp}-ws-reset {
+      font-family: $base-font-family; /* reset base-font */
+      text-rendering: auto;
+      letter-spacing: normal;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+// =============================================================================
+// =ICON-LINK
+// =============================================================================
+
+@import "elements/icon";
+
+// =settings
+// -----------------------------------------------------------------------------
+$icon-link-color-active: null;
+$icon-link-background-active: null;
+$icon-link-opacity-active: 0.5;
+$icon-link-transition-active: none;
+
+/* =icon-link
+ * -------------------------------------------------------------------------- */
+
+.icon-link
+{
+  @extend .icon;
+  transition: $icon-link-transition-active;
+
+  &:hover, &:active {
+    color: $icon-link-color-active;
+    background-color: $icon-link-background-active;
+    opacity: $icon-link-opacity-active;
+  }
+}

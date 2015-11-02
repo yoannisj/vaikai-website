@@ -7,15 +7,15 @@
 } %}
 
 {# =Features #}
-<section id="features" class="theme-gray">
+<section id="features" class="section theme-gray align-center">
 
   <!-- =Features-Intro -->
-  <div class="chunk chunk--assert">
-    <div class="chunk-inner assert">
+  <div class="chunk">
+    <div class="chunk-inner">
 
-      <h2 class="assert-title">Freedom to play with incredible features</h2>
-      <div class="assert-body">
-        <p>The avakai family is a real piece of craftmanship. It’s build from FSC wood and the inside is packed with real cool and playful techniques. So not only the senses but also the imagination of your child will be stimulated. Here are some examples of what the Avakai can do.</p>
+      <div class="assert landmark">
+        <h2 class="h3">Freedom to play with incredible features</h2>
+        <p class="s-zeta m-epsilon">The avakai family is a real piece of craftmanship. It’s build from FSC wood and the inside is packed with real cool and playful techniques. So not only the senses but also the imagination of your child will be stimulated. Here are some examples of what the Avakai can do.</p>
       </div>
 
     </div>
@@ -23,13 +23,14 @@
   <!-- /Features-Intro -->
 
   <!-- =Features-List -->
-  <div class="chunk chunk--expand">
+  <div class="chunk">
     <div class="chunk-inner">
+
       <div id="features-expand" class="expand">
-        <ul class="grid expand-items">
+        <ul class="grid expand-items uilist">
           {% for feature in content.entries.features %}
 
-            <li id="feature-{{ feature.title|slugify }}" class="grid-cell expand-item {{ 'expand-summary' if loop.index <= 6 }} m-span-4of12">
+            <li id="feature-{{ feature.title|slugify }}" class="grid-cell expand-item {{ 'expand-summary' if loop.index <= 6 }} s-span-6of12 m-span-4of12">
               {% set thumbnail = feature %}
               {% include 'partials/thumbnail.nunjucks' %}
             </li>
@@ -37,12 +38,13 @@
           {% endfor %}
         </ul>
 
-        <div class="expand-ctrls">
+        <div class="expand-ctrls landmark">
           <div class="expand-toggle">
-            {{ toggle.button('expand:expand', 'features-expand',featuresExpandLabels, 'u-jsonly')}}
+            {{ toggle.button('expand:expand', 'features-expand',featuresExpandLabels, 'on', 'u-jsonly')}}
           </div>
         </div>
       </div>
+
     </div>
   </div>
   <!-- /Features-List -->

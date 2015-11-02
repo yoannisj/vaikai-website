@@ -1,0 +1,43 @@
+// =============================================================================
+// =EPI-ICON
+// =============================================================================
+
+@import "aleksi/lengths/convert";
+@import "elements/icon";
+
+// =settings
+// -----------------------------------------------------------------------------
+$epi-icon-gutter: 10px;
+
+/* =epi-icon
+ * -------------------------------------------------------------------------- */
+
+.epi-icon {
+  @extend %icon-core;
+
+  background-position: center top;
+  min-height: convert-length($icon-size, 'em');
+  padding-top: convert-length($icon-size + $epi-icon-gutter, 'em');
+  background-size: $icon-size $icon-size;
+}
+
+/* =epi-icon--<size>
+ * -------------------------------------------------------------------------- */
+
+.epi-icon--md {
+  padding-top: convert-length($icon-size-medium + $epi-icon-gutter, 'em');
+  min-height: convert-length($icon-size-medium, 'em');
+  background-size: $icon-size-medium $icon-size-medium;
+}
+
+.epi-icon--lg {
+  padding-top: convert-length($icon-size-large + $epi-icon-gutter, 'em');
+  min-height: convert-length($icon-size-large, 'em');
+  background-size: $icon-size-large $icon-size-large;
+}
+
+.epi-icon--xl {
+  padding-top: convert-length($icon-size-xlarge + $epi-icon-gutter, 'em');
+  min-height: convert-length($icon-size-xlarge, 'em');
+  background-size: $icon-size-xlarge $icon-size-xlarge;
+}

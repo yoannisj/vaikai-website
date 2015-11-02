@@ -1,0 +1,109 @@
+// =============================================================================
+// =UTILS - OVERLAY
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+
+// =settings
+// -----------------------------------------------------------------------------
+$overlay-z-index: 20;
+$overlay-breakpoints: 'm';
+
+/* =overlay
+ * -------------------------------------------------------------------------- */
+
+.overlay,
+.overlay-right,
+.overlay-left,
+.overlay-top,
+.overlay-bottom {
+  position: absolute;
+  z-index: $overlay-z-index;
+}
+
+.overlay,
+.overlay-top,
+.overlay-right,
+.overlay-left {
+  top: 0;
+}
+
+.overlay-right {
+  right: 0
+}
+
+.overlay-bottom {
+  bottom: 0
+}
+
+.overlay,
+.overlay-top,
+.overlay-bottom,
+.overlay-left {
+  left: 0;
+}
+
+.overlay,
+.overlay-top,
+.overlay-bottom {
+  width: 100%;
+}
+
+.overlay,
+.overlay-right,
+.overlay-left {
+  height: 100%;
+}
+
+/* =<bp>-overlay
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $overlay-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    .#{$bp}-overlay,
+    .#{$bp}-overlay-right,
+    .#{$bp}-overlay-left,
+    .#{$bp}-overlay-top,
+    .#{$bp}-overlay-bottom {
+      position: absolute;
+      z-index: $overlay-z-index;
+    }
+
+    .#{$bp}-overlay,
+    .#{$bp}-overlay-top,
+    .#{$bp}-overlay-right,
+    .#{$bp}-overlay-left {
+      top: 0;
+    }
+
+    .#{$bp}-overlay-right {
+      right: 0
+    }
+
+    .#{$bp}-overlay-bottom {
+      bottom: 0
+    }
+
+    .#{$bp}-overlay,
+    .#{$bp}-overlay-top,
+    .#{$bp}-overlay-bottom,
+    .#{$bp}-overlay-left {
+      left: 0;
+    }
+
+    .#{$bp}-overlay,
+    .#{$bp}-overlay-top,
+    .#{$bp}-overlay-bottom {
+      width: 100%;
+    }
+
+    .#{$bp}-overlay,
+    .#{$bp}-overlay-right,
+    .#{$bp}-overlay-left {
+      height: 100%;
+    }
+  }
+}

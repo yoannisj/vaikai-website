@@ -1,0 +1,43 @@
+// =============================================================================
+// =VaiKai - Grid Modules
+// =============================================================================
+
+@import "tools/layout";
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$grid-gutter: 20px;
+$grid-gutter-m: 40px;
+
+/* =grid
+ * -------------------------------------------------------------------------- */
+
+.grid {
+  @extend .ws-collapse;
+  @include bleed($grid-gutter);
+}
+
+.grid--middle:before {
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.grid--middle .grid-cell {
+  vertical-align: middle;
+}
+
+/* =grid-cell
+ * -------------------------------------------------------------------------- */
+
+.grid-cell {
+  @extend .ws-reset;
+
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  @include gutter($grid-gutter);
+
+}

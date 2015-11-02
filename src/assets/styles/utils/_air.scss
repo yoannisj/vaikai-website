@@ -1,0 +1,43 @@
+// =============================================================================
+// =AIR - UTILS
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+
+// =settings
+// -----------------------------------------------------------------------------
+$air-spacing: 10px;
+$air-breakpoints: ();
+
+/* =air
+ * -------------------------------------------------------------------------- */
+
+.air > * {
+  margin-right: convert-length($air-spacing, 'rem');
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.air-none > *{
+  margin-right: 0;
+}
+
+/* =<bp>-air
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $air-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    .#{$bp}-air {
+      margin-right: convert-length($air-spacing, 'rem');
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

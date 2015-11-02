@@ -1,0 +1,23 @@
+// =============================================================================
+// =HLIST ELEMENT
+// =============================================================================
+
+.hlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > * {
+    @extend .inline;
+  }
+
+  > *:after {
+    content: "|";
+    margin-right: convert-length(10px, 'em');
+    margin-left: convert-length(10px, 'em');
+  }
+
+  > *:last-child:after {
+    display: none;
+  }
+}

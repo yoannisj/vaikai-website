@@ -1,0 +1,40 @@
+// =============================================================================
+// =PUSH UTIL
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+@import "config/layout";
+
+// =settings
+// -----------------------------------------------------------------------------
+$push-num-columns: $layout-columns;
+$push-breakpoints: 's' 'sm' 'm' 'l';
+
+/* =push-<columns>
+ * -------------------------------------------------------------------------- */
+
+@for $i from 1 through $push-num-columns
+{
+  .push-#{$i}of#{$push-num-columns} {
+    position: relative;
+    left: percentage($i/$push-num-columns);
+  }
+}
+
+/* =<bp>-push-<columns>
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $push-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    @for $i from 1 through $push-num-columns
+    {
+      .#{$bp}-push-#{$i}of#{$push-num-columns} {
+        position: relative;
+        left: percentage($i/$push-num-columns);
+      }
+    }
+  }
+}

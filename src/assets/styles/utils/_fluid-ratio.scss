@@ -1,0 +1,30 @@
+// =============================================================================
+// =FLUID-RATIO
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+@import "config/layout";
+@import "tools/layout";
+
+// =settings
+// -----------------------------------------------------------------------------
+$fluid-ratios: (
+  'fluid': (
+    'min': 300px 400px,
+    'max': 1040px 585px
+  )
+) !default;
+
+/* =ratio-<fluid-aspect>
+ * -------------------------------------------------------------------------- */
+
+@each $ratio, $dimen in $fluid-ratios
+{
+  $min: map-get($dimen, 'min');
+  $max: map-get($dimen, 'max');
+
+  .ratio-#{$ratio} {
+    @include fluid-aspect-ratio($min, $max);
+  }
+}

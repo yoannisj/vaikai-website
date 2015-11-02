@@ -1,0 +1,30 @@
+// =============================================================================
+// =UTILS - FLOAT
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+
+// =settings
+// -----------------------------------------------------------------------------
+$float-breakpoints: ();
+
+/* =float
+ * -------------------------------------------------------------------------- */
+
+.float-left { float: left; }
+.float-right { float: right; }
+.float-none { float: none; }
+
+/* =<bp>-float
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $float-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    .#{$bp}-float-left { float: left; }
+    .#{$bp}-float-right { float: right; }
+    .#{$bp}-float-none { float: none; }
+  }
+}

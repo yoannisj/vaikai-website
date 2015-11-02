@@ -1,0 +1,24 @@
+// =============================================================================
+// =LANDMARK
+// =============================================================================
+
+// =settings
+// -----------------------------------------------------------------------------
+$landmark-spacing: 40px;
+$landmark-spacing-s: 60px;
+
+/* =landmark
+ * -------------------------------------------------------------------------- */
+
+.landmark {
+  margin-top: convert-length($landmark-spacing, 'rem');
+  margin-bottom: convert-length($landmark-spacing, 'rem');
+}
+
+@include shift('>s')
+{
+  .landmark {
+    margin-top: convert-length($landmark-spacing-s, 'rem');
+    margin-bottom: convert-length($landmark-spacing-s, 'rem');
+  }
+}

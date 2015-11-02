@@ -1,0 +1,94 @@
+// =============================================================================
+// =UTILS - FLY
+// =============================================================================
+
+@import "shift";
+@import "config/breakpoints";
+
+// =settings
+// -----------------------------------------------------------------------------
+$fly-breakpoints: 'm';
+
+/* =fly
+ * -------------------------------------------------------------------------- */
+
+.fly,
+.fly-top,
+.fly-topright,
+.fly-right,
+.fly-bottomright,
+.fly-bottom,
+.fly-bottomleft,
+.fly-left,
+.fly-topleft {
+  position: absolute;
+}
+
+.fly-top,
+.fly-topright,
+.fly-topleft {
+  top: 0;
+}
+
+.fly-topright,
+.fly-right,
+.fly-bottomright {
+  right: 0;
+}
+
+.fly-bottomright,
+.fly-bottom,
+.fly-bottomleft {
+  bottom: 0;
+}
+
+.fly-bottomleft,
+.fly-left,
+.fly-topleft {
+  left: 0;
+}
+
+/* =<bp>-fly
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $fly-breakpoints
+{
+  @include shift('>#{$bp}')
+  {
+    .#{$bp}-fly,
+    .#{$bp}-fly-top,
+    .#{$bp}-fly-topright,
+    .#{$bp}-fly-right,
+    .#{$bp}-fly-bottomright,
+    .#{$bp}-fly-bottom,
+    .#{$bp}-fly-bottomleft,
+    .#{$bp}-fly-left,
+    .#{$bp}-fly-topleft {
+      position: absolute;
+    }
+
+    .#{$bp}-fly-top,
+    .#{$bp}-fly-topright,
+    .#{$bp}-fly-topleft {
+      top: 0;
+    }
+
+    .#{$bp}-fly-topright,
+    .#{$bp}-fly-right,
+    .#{$bp}-fly-bottomright {
+      right: 0;
+    }
+
+    .#{$bp}-fly-bottomright,
+    .#{$bp}-fly-bottom,
+    .#{$bp}-fly-bottomleft {
+      bottom: 0;
+    }
+
+    .#{$bp}-fly-bottomleft,
+    .#{$bp}-fly-left,
+    .#{$bp}-fly-topleft {
+      left: 0;
+    }
+  }
+}
