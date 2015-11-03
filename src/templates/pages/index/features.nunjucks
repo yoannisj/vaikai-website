@@ -27,20 +27,22 @@
     <div class="chunk-inner">
 
       <div id="features-expand" class="expand">
-        <ul class="grid expand-items uilist">
-          {% for feature in content.entries.features %}
+        <div class="expand-body is-expanded js-slider" data-num-items="1" data-destroy="540">
+          <ul class="grid expand-items uilist js-slider-items">
+            {% for feature in content.entries.features %}
 
-            <li id="feature-{{ feature.title|slugify }}" class="grid-cell expand-item {{ 'expand-summary' if loop.index <= 6 }} s-span-6of12 m-span-4of12">
-              {% set thumbnail = feature %}
-              {% include 'partials/thumbnail.nunjucks' %}
-            </li>
+              <li id="feature-{{ feature.title|slugify }}" class="grid-cell expand-item {{ 'expand-summary' if loop.index <= 6 }} js-slider-item s-span-6of12 m-span-4of12">
+                {% set thumbnail = feature %}
+                {% include 'partials/thumbnail.nunjucks' %}
+              </li>
 
-          {% endfor %}
-        </ul>
+            {% endfor %}
+          </ul>
+        </div>
 
         <div class="expand-ctrls landmark">
           <div class="expand-toggle">
-            {{ toggle.button('expand:expand', 'features-expand',featuresExpandLabels, 'on', 'u-jsonly')}}
+            {{ toggle.link('expand:expand', 'features-expand', false, featuresExpandLabels, 'off', 'btn') }}
           </div>
         </div>
       </div>

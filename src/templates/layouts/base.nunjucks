@@ -73,12 +73,12 @@
         </header>
 
         <!-- =Main -->
-        <main class="page-main" role="main">
+        <main class="page-main menu-push" role="main">
           {% block body_main %}{% endblock %}
         </main>
 
         <!-- =Footer -->
-        <footer class="page-footer theme-gray" role="footer">
+        <footer class="page-footer menu-push theme-gray" role="footer">
           {% block body_footer %}
             {% include "partials/footer.nunjucks" %}
           {% endblock %}

@@ -50,6 +50,13 @@
 @import "themes/blue";
 @import "themes/yellow";
 
+/* =Widgets
+ * ========================================================================== */
+
+@import "widgets/toggle";
+@import "widgets/slider";
+@import "widgets/expand";
+
 /* =Utils
  * ========================================================================== */
 @import "utils";

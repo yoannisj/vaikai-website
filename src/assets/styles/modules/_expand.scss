@@ -3,3 +3,7 @@
 // =============================================================================
 
 @import "shift/breakpoint";
+
+.expand-body.has-slider + .expand-ctrls {
+  display: none;
+}

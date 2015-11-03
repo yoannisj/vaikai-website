@@ -6,10 +6,10 @@
 
       <h3 class="sr-only">Testimonial</h3>
       <div class="quote landmark">
-        <div class="carousel js-slider">
-          <ul class="grid carousel-items uilist">
+        <div class="carousel js-slider" data-num-items="1, 3 920px">
+          <ul class="grid carousel-items uilist js-slider-items">
             {% for mention in content.entries.mentions %}
-              <li class="grid-cell carousel-item m-span-4of12">
+              <li class="grid-cell carousel-item js-slider-item m-span-4of12">
                 {% include "partials/mention.nunjucks" %}
               </li>
             {% endfor %}

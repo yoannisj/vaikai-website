@@ -37,5 +37,8 @@
 
 {% block body_end %}
   {{ super() }}
+  <script src="{{ 'js/vendor/jquery.flexslider.js'|url }}"></script>
+  <script src="{{ 'js/vendor/jquery.scrollme.js'|url }}"></script>
+
   <script src="{{ 'js/index.js'|webpackurl }}"></script>
 {% endblock %}

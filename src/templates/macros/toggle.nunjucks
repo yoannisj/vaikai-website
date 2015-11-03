@@ -1,16 +1,24 @@
 {# =link #}
-{% macro link(action, target, labels, classname='') %}
-  <a class="{{ classname }} js-toggle" data-target="#{{ target }}">
-    <span class="js-toggle-on"></span>
-    <span class="js-toggle-off"></span>
+{% macro link(action, target, href=false, labels=false, state='off', classname='') %}
+  <a class="js-toggle is-{{ state }} {{ classname }}"{% if href %} href="{{ href }}" data-target="#{{ target }}"{% else %} href="#{{ target }}"{% endif %} data-action="{{ action }}">
+    {% if not labels %}
+      {{ caller() }}
+    {% else %}
+      <span class="js-toggle-on">{{ labels.on }}</span>
+      <span class="js-toggle-off">{{ labels.off }}</span>
+    {% endif %}
   </a>
 {% endmacro %}
 
 {# =button #}
-{% macro button(action, target, labels, state='off', classname='') %}
-  <button class="btn btn--toggle is-{{ state }} js-only js-toggle {{ classname }} " data-target="#{{ target }}">
-    <span class="js-toggle-on">{{ labels.on }}</span>
-    <span class="js-toggle-off">{{ labels.off }}</span>
+{% macro button(action, target, labels=false, state='off', classname='') %}
+  <button class="btn is-{{ state }} js-only js-toggle {{ classname }} " data-target="#{{ target }}" data-action="{{ action }}">
+    {% if not labels %}
+      {{ caller() }}
+    {% else %}
+      <span class="js-toggle-on">{{ labels.on }}</span>
+      <span class="js-toggle-off">{{ labels.off }}</span>
+    {% endif %}
   </a>
 {% endmacro %}
 

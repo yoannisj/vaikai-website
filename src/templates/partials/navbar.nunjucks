@@ -9,8 +9,9 @@
 
     <!-- =NAVBAR-TOGGLE -->
     <div class="navbar-toggle" role="presentation">
-      <a class="navbar-icon js-toggle" href="#menu">
-        {{ symbol.icon('menu', 'Toggle menu') }}
+      <a class="navbar-icon js-toggle is-off" href="#menu">
+        {{ symbol.icon('menu', 'Toggle menu', 'js-toggle-on') }}
+        {{ symbol.icon('close', 'Close menu', 'js-toggle-off') }}
       </a>
     </div>
   </div>

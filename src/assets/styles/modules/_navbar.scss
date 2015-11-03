@@ -25,9 +25,11 @@ $navbar-link-gutter: 15px;
 $navbar-icon-width: 50px;
 $navbar-icon-size: 22px;
 
+$navbar-logo-height: 40px;
 $navbar-btn-font-size: typescale-font-size('epsilon');
 
 $navbar-height-s: 80px;
+$navbar-logo-height-s: 56px;
 
 /* =navbar
  * -------------------------------------------------------------------------- */
@@ -90,6 +92,12 @@ body,
   vertical-align: middle;
 }
 
+.navbar-logo {
+  height: convert-length($navbar-logo-height, 'rem');
+  background-size: auto convert-length($navbar-logo-height, 'rem');
+  background-position: left center;
+}
+
 .navbar-title {
   margin: 0;
 }
@@ -134,6 +142,11 @@ body,
   .navbar-link,
   .navbar-btn {
     line-height: convert-length($navbar-height-s, 'rem');
+  }
+
+  .navbar-logo {
+    height: convert-length($navbar-logo-height-s, 'rem');
+    background-size: auto convert-length($navbar-logo-height-s, 'rem');
   }
 }
 

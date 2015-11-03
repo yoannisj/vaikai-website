@@ -1,3 +1,8 @@
 // =============================================================================
-// =VaiKai - Carousel Module
+// =VaiKai - Toggle Widget
 // =============================================================================
+
+.js-toggle.is-on .js-toggle-on,
+.js-toggle.is-off .js-toggle-off {
+  display: none;
+}

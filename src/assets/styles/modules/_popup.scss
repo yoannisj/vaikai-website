@@ -50,27 +50,35 @@ body.has-popup {
   width: 100%;
   height: 100%;
   background: $white;
+
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.popup-body {
+.popup-wrap {
   position: relative;
   z-index: 1;
   width: 100%;
   padding: 20px;
 }
 
-.popup-close {
+.popup-close
+{
   position: absolute;
   z-index: 2;
   width: convert-length(40px, 'rem');
   line-height: convert-length(40px, 'rem');
+  font-size: 12px;
   top: 0;
   left: 5px;
+
+  color: $white;
   background-color: $blue;
   border-radius: 500px;
-  background-size: convert-length(20px, 'rem') convert-length(20px, 'rem');
 
-  &:hover, &:active {
+  &:focus, &:hover, &:active {
+    color: $white;
     background-color: $mid-blue;
   }
 }
@@ -81,7 +89,7 @@ body.has-popup {
     background: rgba($black, 0.5);
   }
 
-  .popup-body {
+  .popup-wrap {
     width: auto;
     height: auto;
     max-width: 80%;
@@ -96,7 +104,6 @@ body.has-popup {
     left: auto;
     width: convert-length(60px, 'rem');
     line-height: convert-length(60px, 'rem');
-    background-size: auto auto;
-
+    font-size: typescale-font-size('base');
   }
 }

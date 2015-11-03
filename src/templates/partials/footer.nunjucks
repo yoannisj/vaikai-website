@@ -4,27 +4,27 @@
   <div class="social-nav">
     <ul class="social-links hlist">
       <li>
-        <a class="sticker sticker--facebook" href="https://www.facebook.com/vaikai" >
+        <a target="_blank" class="sticker sticker--facebook" href="https://www.facebook.com/vaikai" >
           {{ symbol.icon('facebook-fill', 'Facebook') }}
         </a>
       </li>
       <li>
-        <a class="sticker sticker--twitter" href="https://www.twitter.com/vaikai" >
+        <a target="_blank" class="sticker sticker--twitter" href="https://www.twitter.com/vaikai" >
           {{ symbol.icon('twitter-fill', 'Twitter') }}
         </a>
       </li>
       <li>
-        <a class="sticker sticker--pinterest" href="https://www.pinterest.com/vaikai" >
+        <a target="_blank" class="sticker sticker--pinterest" href="https://www.pinterest.com/vaikai" >
           {{ symbol.icon('pinterest', 'Pinterest') }}
         </a>
       </li>
       <li>
-        <a class="sticker sticker--instagram" href="https://www.instagram.com/vaikai" >
+        <a target="_blank" class="sticker sticker--instagram" href="https://www.instagram.com/vaikai" >
           {{ symbol.icon('instagram-fill', 'Instagram') }}
         </a>
       </li>
       <li>
-        <a class="sticker sticker--youtube" href="https://www.youtube.com/vaikai" >
+        <a target="_blank" class="sticker sticker--youtube" href="https://www.youtube.com/vaikai" >
           {{ symbol.icon('youtube', 'Youtube') }}
         </a>
       </li>

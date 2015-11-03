@@ -56,4 +56,62 @@
     "src": "/images/feature-illustration.png",
     "fallback": "/images/feature-illustration.png"
   }
+}, {
+  "title": "Hiding games.",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam ligula id est ullamcorper bibendum. Phasellus sodales turpis nunc, sed gravida mi mattis a.",
+  "object": {
+    "type": "illustration",
+    "src": "/images/feature-illustration.png",
+    "fallback": "/images/feature-illustration.png"
+  }
+},
+
+{
+  "title": "Message from Abroad",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam ligula id est ullamcorper bibendum. Phasellus sodales turpis nunc, sed gravida mi mattis a.",
+  "object": {
+    "type": "illustration",
+    "src": "/images/feature-illustration.png",
+    "fallback": "/images/feature-illustration.png"
+  }
+},
+
+{
+  "title": "Distance",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore itaque neque hic molestias aliquam cupiditate illo in esse. Deserunt aperiam expedita pariatur doloribus ullam, repellat provident praesentium ipsam delectus ab.",
+  "object": {
+    "type": "illustration",
+    "src": "/images/feature-illustration.png",
+    "fallback": "/images/feature-illustration.png"
+  }
+},
+
+{
+  "title": "Rich Feedback",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam ligula id est ullamcorper bibendum. Phasellus sodales turpis nunc, sed gravida mi mattis a.",
+  "object": {
+    "type": "illustration",
+    "src": "/images/feature-illustration.png",
+    "fallback": "/images/feature-illustration.png"
+  }
+},
+
+{
+  "title": "Age 4-7 and more",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam ligula id est ullamcorper bibendum. Phasellus sodales turpis nunc, sed gravida mi mattis a.",
+  "object": {
+    "type": "illustration",
+    "src": "/images/feature-illustration.png",
+    "fallback": "/images/feature-illustration.png"
+  }
+},
+
+{
+  "title": "Hiding games.",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam ligula id est ullamcorper bibendum. Phasellus sodales turpis nunc, sed gravida mi mattis a.",
+  "object": {
+    "type": "illustration",
+    "src": "/images/feature-illustration.png",
+    "fallback": "/images/feature-illustration.png"
+  }
 }]

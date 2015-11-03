@@ -44,3 +44,15 @@
   overflow: hidden;
   position: relative;
 }
+
+.js-video--vimeo {
+  width: 10000px !important;
+  max-width: 100% !important;
+}
+
+.popup-close
+{
+  &:focus, &:hover, &:active {
+    color: $white !important;
+  }
+}

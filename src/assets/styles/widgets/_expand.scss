@@ -1,3 +1,7 @@
 // =============================================================================
-// =VaiKai - Carousel Module
+// =VaiKai - Expand Widget
 // =============================================================================
+
+.expand.is-collapsed .expand-item:not(.expand-summary) {
+  display: none;
+}
