@@ -1,3 +1,116 @@
 /* =============================================================================
  * =VaiKai - Index stylesheet
  * ========================================================================== */
+
+@import "shift/breakpoint";
+@import "tools/layout";
+@import "config/breakpoints";
+
+/* =Intro
+ * ========================================================================== */
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$avk-dimensions-trunc: 289px 549px;
+$avk-dimensions-base: 289px 198px;
+$avk-dimensions-natural: 207px 504px;
+$avakai-base-overlap-height: 42px;
+
+$avk-duo-height: 500px;
+$avk-duo-height-sm: 600px;
+$avk-duo-height-m: 700px;
+
+
+/* =avk-<image>
+ * -------------------------------------------------------------------------- */
+
+.avk-trunc,
+.avk-base,
+.avk-natural {
+  // fix ratio when 'img' get's wrappped inside a 'picture' element
+  // by responsive images' polyfill
+  // - 'img' should be positioned absolutely, not 'picture'
+  > picture { position: static; }
+  > picture > img { @include cover; }
+}
+
+.avk-trunc { @include aspect-ratio($avk-dimensions-trunc); }
+.avk-base { @include aspect-ratio($avk-dimensions-base); }
+.avk-natural { @include aspect-ratio($avk-dimensions-natural); }
+
+/* make trunc and base overlap */
+.avk-trunc {
+  $trunc-width: nth($avk-dimensions-trunc, 1);
+  $trunc-offset: percentage($avakai-base-overlap-height/$trunc-width);
+  margin-bottom: -1 * $trunc-offset;
+}
+
+/* display trunc in front of base */
+.avk-trunc { z-index: 2; }
+.avk-base { z-index: 1; }
+
+/* =avk-duo
+ * -------------------------------------------------------------------------- */
+
+.avk-duo {
+  position: relative;
+  height: $avk-duo-height;
+
+  @include shift('>sm') {
+    height: $avk-duo-height-sm;
+  }
+
+  @include shift('>m') {
+   height: $avk-duo-height-m;
+  }
+}
+
+.avk-duo-lead {
+  position: absolute;
+  z-index: 2; /* in front of 'avk-duo-lead' */
+  right: 5%;
+  bottom: -30px;
+  width: 125%;
+  max-width: 190px;
+}
+
+.avk-duo-follow {
+  position: absolute;
+  z-index: 1; /* behind 'avk-duo-lead' */
+
+  /* show only on larger screens */
+  visibility: hidden;
+}
+
+@include shift('>sm')
+{
+  .avk-duo-lead {
+    bottom: -50px;
+    right: 35%;
+    width: 240px;
+    max-width: none;
+  }
+
+  .avk-duo-follow {
+    right: 0;
+    bottom: -30px;
+    width: 180px;
+
+    /* gets on stage! */
+    visibility: visible;
+  }
+}
+
+@include shift('>m')
+{
+  .avk-duo-lead {
+    right: 45%;
+    width: 290px;
+  }
+
+  .avk-duo-follow {
+    right: 5%;
+    width: 210px;
+  }
+}
