@@ -1,8 +1,0 @@
-{% import "macros/popup.nunjucks" as popup %}
-
-<div class="section">
-  <h3>Test Section</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim ipsam exercitationem nulla similique officiis, facere expedita nemo earum. Aspernatur, consectetur soluta culpa maiores sed illo quod ipsam, est explicabo!</p>
-</div>
-
-{{ popup.video('foo', 'http://www.vimeo.com/dezfez') }}

@@ -2,16 +2,36 @@
 // =LOGO
 // =============================================================================
 
+@import "sassy-maps";
+
 // =settings
 // -----------------------------------------------------------------------------
-$logo-width-vaikai: 70px;
-$logo-height-vaikai: 57px;
-$logo-width-fastco: 158px;
-$logo-height-fastco: 38px;
-$logo-width-core77: 102px;
-$logo-height-core77: 36px;
-$logo-width-psfk: 37px;
-$logo-height-psfk: 37px;
+
+$logos: (
+  'vaikai': (
+    'size': 67px 55px,
+    'type': 'svg'
+  ),
+  'fastcompany': (
+    'size': 158px 38px,
+    'type': 'jpg'
+  ),
+  'core77': (
+    'size': 102px 36px,
+    'type': 'png'
+  ),
+  'psfk': (
+    'size': 37px,
+    'type': 'png'
+  )
+);
+
+$logo-sizes: (
+  'vaikai': (
+    'md': 105px 86px,
+    'lg': 144px 118px
+  )
+);
 
 /* =logo
  * -------------------------------------------------------------------------- */
@@ -23,38 +43,65 @@ $logo-height-psfk: 37px;
   background-position: center;
 }
 
-.logo--vaikai
-{
-  width: convert-length($logo-width-vaikai, 'rem');
-  height: convert-length($logo-height-vaikai, 'rem');
-  background-image: url('../images/logo-vaikai.svg');
-  background-size: convert-length($logo-width-vaikai, 'rem') convert-length($logo-height-vaikai, 'rem');
+/* =logo--<brand>
+ * -------------------------------------------------------------------------- */
 
-  .no-svg & {
-    background-image: url('../images/logo-vaikai.png');
+@each $brand, $settings in $logos
+{
+  $dimen: map-get($settings, 'size');
+  $type: map-get($settings, 'type');
+  $w: nth($dimen, 1);
+  $h: if(length($dimen) >= 2, nth($dimen, 2), $w);
+
+  .logo--#{$brand}
+  {
+    width: convert-length($w, 'rem');
+    height: convert-length($h, 'rem');
+    background-size: convert-length($w, 'rem') convert-length($h, 'rem');
+
+    @if ($type == 'svg')
+    {
+      background-image: url('../images/logo-#{$brand}.svg');
+
+      .no-svg & {
+        background-image: url('../images/logo-#{$brand}.png');
+      }
+    }
+
+    @else {
+      background-image: url('../images/logo-#{$brand}.#{$type}');
+    }
+
   }
 }
 
-.logo--fastcompany
-{
-  width: convert-length($logo-width-fastco, 'rem');
-  height: convert-length($logo-height-fastco, 'rem');
-  background-image: url('../images/logo-fastco.jpg');
-  background-size: convert-length($logo-width-fastco, 'rem') convert-length($logo-height-fastco, 'rem');
-}
+/* =logo--<size>
+ * -------------------------------------------------------------------------- */
 
-.logo--core77
+@each $brand, $sizes in $logo-sizes
 {
-  width: convert-length($logo-width-core77, 'rem');
-  height: convert-length($logo-height-core77, 'rem');
-  background-image: url('../images/logo-core77.png');
-  background-size: convert-length($logo-width-core77, 'rem') convert-length($logo-height-core77, 'rem');
-}
+  @each $sz, $dimen in $sizes
+  {
+    $type: map-get-deep($logos, $brand, 'type');
+    $w: nth($dimen, 1);
+    $h: if(length($dimen) >= 2, nth($dimen, 2), $w);
 
-.logo--psfk
-{
-  width: convert-length($logo-width-psfk, 'rem');
-  height: convert-length($logo-height-psfk, 'rem');
-  background-image: url('../images/logo-psfk.png');
-  background-size: convert-length($logo-width-psfk, 'rem') convert-length($logo-height-psfk, 'rem');
+    .logo--#{$brand}.logo--#{$sz}
+    {
+      width: convert-length($w, 'rem');
+      height: convert-length($h, 'rem');
+      background-size: convert-length($w, 'rem') convert-length($h, 'rem');
+
+      @if ($type == 'svg')
+      {
+        .no-svg & {
+          background-image: url('../images/logo-#{$brand}-#{$sz}.png');
+        }
+      }
+
+      @else {
+        background-image: url('../images/logo-#{$brand}-#{$sz}.#{$type}');
+      }
+    }
+  }
 }

@@ -1,6 +1,7 @@
 {% import 'macros/symbol.nunjucks' as symbol %}
 {% import 'macros/image.nunjucks' as image %}
 {% import 'macros/popup.nunjucks' as popup %}
+{% import 'macros/video.nunjucks' as video %}
 
 {# =Reaction #}
 <aside id="reaction" class="section">

@@ -1,5 +1,6 @@
 {% extends "layouts/page-landing.nunjucks" %}
-{% import 'macros/video.nunjucks' as video %}
+
+{% import 'macros/symbol.nunjucks' as symbol %}
 
 {% block head_styles %}
   {{ super() }}
@@ -18,10 +19,17 @@
 
   <div class="chunk chunk--narrow">
     <div class="chunk-inner">
-      <div class="splash">
 
+      <div class="splash landmark align-center">
+        <div class="splash-object">
+          <p>{{ symbol.logo('vaikai', 'VaiKai', 'logo--lg') }}</p>
+        </div>
 
+        <div class="splash-body">
+          <p class="tagline zeta s-gamma m-beta">Intuitive connected wooden toys</p>
+        </div>
       </div>
+
     </div>
   </div>
 

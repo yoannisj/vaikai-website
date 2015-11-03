@@ -1,0 +1,19 @@
+// =============================================================================
+// =VaiKai - Tagline Element
+// =============================================================================
+
+@import 'config/colors';
+@import 'config/typography';
+
+// =settings
+// -----------------------------------------------------------------------------
+$tagline-font-family: $avant-garde-font-stack;
+$tagline-color: $yellow;
+
+/* =tagline
+ * -------------------------------------------------------------------------- */
+
+.tagline {
+  font-family: $tagline-font-family;
+  color: $tagline-color;
+}

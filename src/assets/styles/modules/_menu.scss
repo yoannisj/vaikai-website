@@ -1,0 +1,302 @@
+/* =============================================================================
+ * =VaiKai - Menu Module
+ * ========================================================================== */
+
+@import "config/breakpoints";
+@import "elements/icon-link";
+
+// =settings
+// -----------------------------------------------------------------------------
+$menu-width-stacked: 230px;
+$menu-width-stacked-s: 300px;
+$menu-height-inline: $navbar-height-s;
+$menu-gutter-stacked: 20px;
+$menu-gutter-inline: 0;
+
+$menu-font-family: $avant-garde-font-stack;
+$menu-font-weight: 400;
+$menu-font-size-stacked: typescale-font-size('delta');
+$menu-font-size-stacked-s: typescale-font-size('beta');
+$menu-font-size-inline: $navbar-font-size;
+$menu-color-stacked: $white;
+$menu-background-stacked: $blue;
+$menu-color-inline: inherit;
+$menu-background-inline: inherit;
+
+// menu-push
+$menu-push-duration: 0.5s;
+$menu-push-timing: ease-out;
+
+// menu-grouping
+$menu-group-spacing-stacked: 20px;
+$menu-group-spacing-inline: $navbar-group-spacing;
+$menu-item-spacing-stacked: 0px;
+$menu-item-spacing-inline: $navbar-item-spacing;
+
+// menu-link
+$menu-link-height-stacked: 55px;
+$menu-link-height-stacked-s: 65px;
+$menu-link-height-inline: $menu-height-inline;
+$menu-link-gutter-stacked: $menu-gutter-stacked;
+$menu-link-gutter-inline: $navbar-link-gutter;
+$menu-link-font-size: 22px;
+
+$menu-link-color-stacked: $menu-color-stacked;
+$menu-link-background-stacked: transparent;
+$menu-link-color-stacked-active: $white;
+$menu-link-background-stacked-active: darken($menu-background-stacked, 5%);
+
+$menu-link-color-inline: $blue;
+$menu-link-background-inline: transparent;
+$menu-link-color-inline-active: $blue;
+$menu-link-background-inline-active: $light-gray;
+
+// menu-icon
+$menu-icon-size-stacked: 45px;
+$menu-icon-size-stacked-s: 60px;
+$menu-icon-size-inline: $navbar-icon-width;
+
+$menu-icon-color-stacked: $menu-background-stacked;
+$menu-icon-background-stacked: $menu-color-stacked;
+$menu-icon-color-stacked-active: $menu-color-stacked;
+$menu-icon-background-stacked-active: darken($menu-background-stacked, 5%);
+
+$menu-icon-color-inline: $blue;
+$menu-icon-background-inline: transparent;
+$menu-icon-color-inline-active: $menu-icon-color-inline;
+$menu-icon-background-inline-active: $light-gray;
+
+// menu-sub
+$menu-sub-font-size: typescale-font-size('zeta');
+$menu-sub-font-size-s: typescale-font-size('epsilon');
+
+/* =menu
+ * -------------------------------------------------------------------------- */
+
+body.has-menu-open {
+  overflow: hidden;
+}
+
+.menu-push,
+.menu {
+  transition: transform $menu-push-duration $menu-push-timing;
+}
+
+.has-menu-open .menu-push {
+  transform: translate3d(-1 * $menu-width-stacked, 0, 0);
+}
+
+.has-menu-open .menu {
+  transform: translate3d(0,0,0);
+}
+
+.menu
+{
+  // fixed menu
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: $menu-width-stacked;
+  height: 100%;
+
+  font-family: $menu-font-family;
+  font-weight: $menu-font-weight;
+  font-size: convert-length($menu-font-size-stacked, 'rem');
+  color: $menu-color-stacked;
+  background: $menu-background-stacked;
+
+  transform: translate3d($menu-width-stacked,0,0);
+
+  // translate fallback
+  .no-js &,
+  .no-csstransforms3d &
+  {
+    display: none;
+
+    .has-menu-open & {
+      display: block;
+    }
+  }
+}
+
+.menu-backdrop
+{
+  position: absolute;
+  top: 0;
+  right: 100%;
+  width: 9999px;
+  height: 100%;
+  cursor: pointer;
+  display: none;
+
+  .has-menu-open & {
+    display: block;
+  }
+}
+
+.menu-inner {
+  height: 100%;
+  overflow: auto;
+  @include gutter($menu-gutter-stacked, 'rem');
+}
+
+.menu-group {
+  margin-bottom: convert-length($menu-group-spacing-stacked, 'rem');
+}
+
+.menu-item {
+  margin-bottom: convert-length($menu-item-spacing-stacked, 'rem');
+}
+
+.menu-sub {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: convert-length($menu-gutter-stacked, 'rem');
+
+  font-size: convert-length($menu-sub-font-size, 'em', $menu-font-size-stacked);
+}
+
+.menu-link
+{
+  @include bleed($menu-gutter-stacked);
+  @include gutter($menu-gutter-stacked);
+
+  // full span, single-line
+  display: block;
+  line-height: convert-length($menu-link-height-stacked, 'em', $menu-font-size-stacked);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: $menu-link-color-stacked;
+  background: $menu-link-background-stacked;
+
+  &:hover, &:active, &.active {
+    color: $menu-link-color-stacked-active;
+    background: $menu-link-background-stacked-active;
+  }
+}
+
+.menu-icon {
+  width: convert-length($menu-icon-size-stacked, 'rem');
+  line-height: convert-length($menu-icon-size-stacked, 'rem');
+  border-radius: 500px; /* force circle */
+  color: $menu-icon-color-stacked;
+  background-color: $menu-icon-background-stacked;
+
+  &:hover, &:active, &.active {
+    color: $menu-icon-color-stacked-active;
+    background-color: $menu-icon-background-stacked-active;
+  }
+}
+
+@include shift('>s')
+{
+  .has-menu-open .menu-push {
+    transform: translate3d(-1 * $menu-width-stacked-s, 0, 0);
+  }
+
+  .menu {
+    width: $menu-width-stacked-s;
+    font-size: convert-length($menu-font-size-stacked-s, 'rem');
+    transform: translate3d($menu-width-stacked-s,0,0);
+  }
+
+  .menu-link {
+    line-height: convert-length($menu-link-height-stacked-s, 'em', $menu-font-size-stacked-s);
+  }
+
+  .menu-icon {
+    width: convert-length($menu-icon-size-stacked-s, 'rem');
+    line-height: convert-length($menu-icon-size-stacked-s, 'rem');
+  }
+
+  .menu-sub {
+    font-size: convert-length($menu-sub-font-size-s, 'em', $menu-font-size-stacked-s);
+  }
+}
+
+@include shift('>m')
+{
+  .has-menu-open .menu-push,
+  .menu-push,
+  .menu {
+    transition: none;
+    transform: none;
+  }
+
+  .menu-backdrop,
+  .has-menu-open .menu-backdrop,
+  .menu-close,
+  .menu-sub {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    height: convert-length($menu-height-inline, 'rem');
+
+    font-size: convert-length($menu-font-size-inline, 'rem');
+    color: $menu-color-inline;
+    background: $menu-background-inline;
+  }
+
+  .menu-inner {
+    height: auto;
+    overflow: hidden;
+    @include gutter($menu-gutter-inline);
+  }
+
+  .menu-group:first-child,
+  .menu-item:first-child {
+    margin-left: 0;
+  }
+
+  .menu-group {
+    float: left;
+    margin: 0 0 0 $menu-group-spacing-inline;
+  }
+
+  .menu-item {
+    float: left;
+    margin-left: $menu-item-spacing-inline;
+  }
+
+  .menu-link
+  {
+    @include bleed($menu-item-spacing-inline/2);
+    @include gutter($menu-link-gutter-inline);
+
+    line-height: convert-length($menu-link-height-inline, 'rem');
+    color: $menu-link-color-inline;
+    background-color: $menu-link-background-inline;
+
+    &:hover, &:active, &.active {
+      color: $menu-link-color-inline-active;
+      background: $menu-link-background-inline-active;
+    }
+  }
+
+  .menu-icon
+  {
+    width: convert-length($menu-icon-size-inline, 'rem');
+    line-height: convert-length($menu-height-inline, 'rem');
+    border-radius: 0;
+    color: $menu-icon-color-inline;
+    background-color: $menu-icon-background-inline;
+
+    &:hover, &:active, &.active {
+      color: $menu-icon-color-inline-active;
+      background-color: $menu-icon-background-inline-active;
+    }
+  }
+}
+
+@include shift('h<m')
+{
+  .menu-sub {
+    display: none;
+  }
+}

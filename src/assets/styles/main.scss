@@ -21,9 +21,13 @@
 @import "elements/uilist";
 @import "elements/hlist";
 @import "elements/shoutout";
+@import "elements/tagline";
 
 /* =Modules
  * ========================================================================== */
+
+@import "modules/navbar";
+@import "modules/menu";
 
 @import "modules/chunk";
 @import "modules/grid";

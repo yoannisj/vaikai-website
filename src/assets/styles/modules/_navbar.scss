@@ -1,0 +1,143 @@
+// =============================================================================
+// =VaiKai - Navbar Module
+// =============================================================================
+
+@import "aleksi/lengths/convert";
+@import "config/base";
+@import "config/colors";
+@import "config/breakpoints";
+@import "tools/layout";
+@import "elements/icon-link";
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$navbar-z-index: 1000;
+$navbar-height: 55px;
+$navbar-gutter: 0;
+$navbar-font-family: $helvetica-font-stack;
+$navbar-font-size: typescale-font-size('zeta');
+$navbar-background: $white;
+
+$navbar-group-spacing: 30px;
+$navbar-item-spacing: 0px;
+$navbar-link-gutter: 15px;
+$navbar-icon-width: 50px;
+
+$navbar-height-s: 75px;
+
+/* =navbar
+ * -------------------------------------------------------------------------- */
+
+body,
+.navbar-target {
+  padding-top: convert-length($navbar-height, 'rem');
+}
+
+.navbar-target {
+  margin-top: -1 * convert-length($navbar-height, 'rem');
+}
+
+.navbar {
+  position: fixed;
+  z-index: $navbar-z-index;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: convert-length($navbar-height, 'rem');
+  @include gutter($navbar-gutter - $navbar-group-spacing/2);
+
+  font-family: $navbar-font-family;
+  font-size: convert-length($navbar-font-size, 'rem');
+  background: $navbar-background;
+}
+
+.navbar-brand {
+  float: left;
+}
+
+.navbar-toggle {
+  float: right;
+}
+
+.navbar-group {
+  float: right;
+  margin-left: $navbar-group-spacing;
+}
+
+.navbar-item {
+  float: left;
+  margin-left: $navbar-item-spacing;
+
+  &:fist-child & {
+    margin-left: 0;
+  }
+}
+
+.navbar-title,
+.navbar-logo,
+.navbar-icon,
+.navbar-link,
+.navbar-btn {
+  height: convert-length($navbar-height, 'rem');
+  line-height: convert-length($navbar-height, 'rem');
+  font-size: inherit;
+  vertical-align: middle;
+}
+
+.navbar-title {
+    margin: 0;
+}
+
+.navbar-link {
+  @include bleed($navbar-item-spacing/2, 'rem');
+  @include gutter($navbar-link-gutter, 'rem');
+}
+
+.navbar-icon {
+  width: convert-length($navbar-icon-width, 'rem');
+}
+
+.navbar-btn {
+  @include bleed($navbar-item-spacing/2);
+}
+
+@include shift('>s')
+{
+  body,
+  .navbar-target {
+    padding-top: convert-length($navbar-height-s, 'rem');
+  }
+
+  .navbar-target {
+    margin-top: -1 * convert-length($navbar-height-s, 'rem');
+  }
+
+  .navbar,
+  .navbar-title,
+  .navbar-logo,
+  .navbar-icon,
+  .navbar-link,
+  .navbar-btn {
+    height: convert-length($navbar-height-s, 'rem');
+  }
+
+  .navbar-title,
+  .navbar-logo,
+  .navbar-icon,
+  .navbar-link,
+  .navbar-btn {
+    line-height: convert-length($navbar-height-s, 'rem');
+  }
+}
+
+@include shift(">m")
+{
+  .navbar-toggle {
+    display: none;
+  }
+
+  .navbar-menu {
+    float: right;
+  }
+}
