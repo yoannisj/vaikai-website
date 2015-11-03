@@ -1,0 +1,58 @@
+// =============================================================================
+// =VaiKai - sticker Element
+// =============================================================================
+
+@import "aleksi/lengths/convert";
+@import "shift/breakpoint";
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$sticker-size: 40px;
+$sticker-size-s: 55px;
+$sticker-font-size: typescale-font-size('nano');
+$sticker-font-size-s: typescale-font-size('base');
+
+$sticker-text-color: $white;
+$sticker-colors: (
+  'facebook': #3b5998,
+  'twitter': #00aced,
+  'pinterest': #cb2027,
+  'instagram': #53b4b3,
+  'youtube': #e0771f
+);
+
+/* =sticker
+ * -------------------------------------------------------------------------- */
+
+.sticker
+{
+  display: inline-block;
+  width: convert-length($sticker-size, 'rem');
+  font-size: convert-length($sticker-font-size, 'rem');
+  line-height: convert-length($sticker-size, 'rem');
+  border-radius: convert-length(ceil($sticker-size/2), 'rem');
+
+  &, &:focus, &:hover, &:active {
+    color: $sticker-text-color;
+  }
+
+  &:focus, &:hover, &:active {
+    opacity: 0.85;
+  }
+
+  @include shift('>s') {
+    width: convert-length($sticker-size-s, 'rem');
+    font-size: convert-length($sticker-font-size-s, 'rem');
+    line-height: convert-length($sticker-size-s, 'rem');
+    border-radius: convert-length(ceil($sticker-size-s/2), 'rem');
+  }
+}
+
+/* =sticker--<color>
+ * -------------------------------------------------------------------------- */
+
+@each $color, $color-value in $sticker-colors
+{
+  .sticker--#{$color} { background-color: $color-value; }
+}

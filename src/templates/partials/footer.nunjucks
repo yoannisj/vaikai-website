@@ -1,0 +1,43 @@
+{% import 'macros/symbol.nunjucks' as symbol %}
+
+<div class="footer-nav landmark align-center">
+  <div class="social-nav">
+    <ul class="social-links hlist">
+      <li>
+        <a class="sticker sticker--facebook" href="https://www.facebook.com/vaikai" >
+          {{ symbol.icon('facebook-fill', 'Facebook') }}
+        </a>
+      </li>
+      <li>
+        <a class="sticker sticker--twitter" href="https://www.twitter.com/vaikai" >
+          {{ symbol.icon('twitter-fill', 'Twitter') }}
+        </a>
+      </li>
+      <li>
+        <a class="sticker sticker--pinterest" href="https://www.pinterest.com/vaikai" >
+          {{ symbol.icon('pinterest', 'Pinterest') }}
+        </a>
+      </li>
+      <li>
+        <a class="sticker sticker--instagram" href="https://www.instagram.com/vaikai" >
+          {{ symbol.icon('instagram-fill', 'Instagram') }}
+        </a>
+      </li>
+      <li>
+        <a class="sticker sticker--youtube" href="https://www.youtube.com/vaikai" >
+          {{ symbol.icon('youtube', 'Youtube') }}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <nav class="subnav">
+    <ul class="subnav-links hlist hlist--pipe">
+      <li><a href="{{ 'contact.html'|url }}">Contact</a></li>
+      <li><a href="{{ 'jobs.html'|url }}">Jobs</a></li>
+      <li><a href="{{ 'imprint.html'|url }}">Imprint</a></li>
+      <li><a href="{{ 'data-and-privacy.html'|url }}">Data and Privacy</a></li>
+      <li><a href="{{ 'press.html'|url }}">Press</a></li>
+    </ul>
+  </nav>
+</div>

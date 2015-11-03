@@ -15,8 +15,8 @@ $menu-gutter-inline: 0;
 
 $menu-font-family: $avant-garde-font-stack;
 $menu-font-weight: 400;
-$menu-font-size-stacked: typescale-font-size('delta');
-$menu-font-size-stacked-s: typescale-font-size('beta');
+$menu-font-size-stacked: typescale-font-size('zeta');
+$menu-font-size-stacked-s: typescale-font-size('epsilon');
 $menu-font-size-inline: $navbar-font-size;
 $menu-color-stacked: $white;
 $menu-background-stacked: $blue;
@@ -52,7 +52,9 @@ $menu-link-color-inline-active: $blue;
 $menu-link-background-inline-active: $light-gray;
 
 // menu-icon
-$menu-icon-size-stacked: 45px;
+$menu-icon-size-stacked: 50px;
+$menu-icon-size-stacked: 50px;
+$menu-icon-size-stacked-s: 60px;
 $menu-icon-size-stacked-s: 60px;
 $menu-icon-size-inline: $navbar-icon-width;
 
@@ -67,8 +69,8 @@ $menu-icon-color-inline-active: $menu-icon-color-inline;
 $menu-icon-background-inline-active: $light-gray;
 
 // menu-sub
-$menu-sub-font-size: typescale-font-size('zeta');
-$menu-sub-font-size-s: typescale-font-size('epsilon');
+$menu-sub-font-size: typescale-font-size('base');
+$menu-sub-font-size-s: typescale-font-size('zeta');
 
 /* =menu
  * -------------------------------------------------------------------------- */
@@ -98,6 +100,7 @@ body.has-menu-open {
   right: 0;
   width: $menu-width-stacked;
   height: 100%;
+  overflow: auto;
 
   font-family: $menu-font-family;
   font-weight: $menu-font-weight;
@@ -149,12 +152,14 @@ body.has-menu-open {
 }
 
 .menu-sub {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: convert-length($menu-gutter-stacked, 'rem');
-
+  margin-top: 80px;
   font-size: convert-length($menu-sub-font-size, 'em', $menu-font-size-stacked);
+
+  // position: absolute;
+  // right: 0;
+  // bottom: 0;
+  // left: convert-length($menu-gutter-stacked, 'rem');
+
 }
 
 .menu-link
@@ -178,9 +183,13 @@ body.has-menu-open {
   }
 }
 
-.menu-icon {
+.menu-icon
+{
+  display: inline-block;
   width: convert-length($menu-icon-size-stacked, 'rem');
   line-height: convert-length($menu-icon-size-stacked, 'rem');
+  text-align: center;
+
   border-radius: 500px; /* force circle */
   color: $menu-icon-color-stacked;
   background-color: $menu-icon-background-stacked;

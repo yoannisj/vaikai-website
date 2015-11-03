@@ -2,19 +2,36 @@
 // =HLIST ELEMENT
 // =============================================================================
 
-.hlist {
-  margin: 0;
+@import "config/colors";
+
+// =settings
+// -----------------------------------------------------------------------------
+$hlist-separator-color: $blue;
+$hlist-separator-spacing: 20px;
+
+/* =hlist
+ * -------------------------------------------------------------------------- */
+
+.hlist
+{
   padding: 0;
   list-style: none;
 
   > * {
     @extend .inline;
   }
+}
 
+/* =hlist--<separator>
+ * -------------------------------------------------------------------------- */
+
+.hlist--pipe
+{
   > *:after {
     content: "|";
-    margin-right: convert-length(10px, 'em');
-    margin-left: convert-length(10px, 'em');
+    color: $hlist-separator-color;
+    margin-right: convert-length($hlist-separator-spacing/2, 'em');
+    margin-left: convert-length($hlist-separator-spacing/2, 'em');
   }
 
   > *:last-child:after {

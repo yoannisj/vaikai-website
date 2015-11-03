@@ -35,8 +35,6 @@
 
 {% endblock %}
 
-{% block body_footer %}{% endblock %}
-
 {% block body_end %}
   {{ super() }}
   <script src="{{ 'js/index.js'|webpackurl }}"></script>

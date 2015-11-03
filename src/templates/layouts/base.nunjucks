@@ -66,20 +66,22 @@
 
       {% block body %}
         <!-- =Header -->
-        <header role="banner">
+        <header class="page-header" role="banner">
           {% block body_header %}
             {% include "partials/navbar.nunjucks" %}
           {% endblock %}
         </header>
 
         <!-- =Main -->
-        <main role="main">
+        <main class="page-main" role="main">
           {% block body_main %}{% endblock %}
         </main>
 
         <!-- =Footer -->
-        <footer role="footer">
-          {% block body_footer %}{% endblock %}
+        <footer class="page-footer theme-gray" role="footer">
+          {% block body_footer %}
+            {% include "partials/footer.nunjucks" %}
+          {% endblock %}
         </footer>
       </div>
       {% endblock %}
