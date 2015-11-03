@@ -1,0 +1,71 @@
+// =============================================================================
+// =VaiKai - Banner Module
+// =============================================================================
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$banner-body-spacing: 45px;
+$banner-body-spacing-s: 90px;
+
+/* =banner
+ * -------------------------------------------------------------------------- */
+
+.banner-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-object {
+  position: relative;
+  left: -50px;
+}
+
+.banner-body {
+  margin-left: 135px;
+  margin-top: convert-length($banner-body-spacing, 'rem');
+  margin-bottom: convert-length($banner-body-spacing, 'rem');
+}
+
+.banner-title {
+  margin: 0;
+}
+
+.banner-avk-front,
+.banner-avk-back {
+  position: absolute;
+}
+
+.banner-avk-front {
+  z-index: 2;
+  bottom: -8px;
+  left: 20px;
+  width: 70px;
+}
+
+.banner-avk-back {
+  z-index: 1;
+  bottom: -15px;
+  left: 80px;
+  width: 50px;
+}
+
+@include shift('>s')
+{
+  .banner-avk-front {
+    bottom: -15px;
+    width: 140px;
+  }
+
+  .banner-avk-back {
+    bottom: -30px;
+    left: 115px;
+    width: 100px;
+  }
+
+  .banner-body {
+    margin-left: 235px;
+    margin-top: convert-length($banner-body-spacing-s, 'rem');
+    margin-bottom: convert-length($banner-body-spacing-s, 'rem');
+  }
+}

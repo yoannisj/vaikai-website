@@ -5,6 +5,7 @@
     <!-- =NAVBAR-BRAND -->
     <div class="navbar-brand" role="presentation">
       <h1 class="navbar-title"><a class="navbar-logo logo logo--vaikai" href="./index.html">Vai Kai</a></h1>
+      <span class="navbar-tagline tagline">Intuitive connected wooden toys</span>
     </div>
 
     <!-- =NAVBAR-TOGGLE -->

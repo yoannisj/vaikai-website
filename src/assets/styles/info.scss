@@ -1,0 +1,82 @@
+/* =============================================================================
+ * =Info Pages Stylesheet
+ * ========================================================================== */
+
+@import "aleksi/lengths/convert";
+@import "shift/breakpoint";
+@import "tools/layout";
+@import "config/colors";
+@import "config/breakpoints";
+
+@import "utils/median";
+
+// =settings
+// -----------------------------------------------------------------------------
+$page-gutter: 20px;
+$page-gutter-s: 40px;
+$page-inner-width: 1000px;
+$page-inner-width-wide: 1140px;
+$page-inner-width-narrow: 800px;
+
+/* =page
+ * -------------------------------------------------------------------------- */
+
+.page {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-header {}
+.page-main {}
+
+.page-footer {}
+
+.page-inner,
+.page-inner-wide,
+.page-inner-narrow {
+  @extend .median;
+
+  box-sizing: content-box;
+  max-width: convert-length($page-inner-width, 'rem');
+  @include gutter($page-gutter);
+}
+
+.page-inner-wide {
+  max-width: convert-length($page-inner-width-wide, 'rem');
+}
+
+.page-inner-narrow {
+  max-width: convert-length($page-inner-width-narrow, 'rem');
+}
+
+.page-bleed,
+.page-bleed-left {
+  margin-left: -1 * convert-length($page-gutter, 'rem');
+  padding-left: convert-length($page-gutter, 'rem');
+}
+
+.page-bleed,
+.page-bleed-right {
+  margin-right: -1 * convert-length($page-gutter, 'rem');
+  padding-right: convert-length($page-gutter, 'rem');
+}
+
+.page-fullbleed {
+  @include bleed(999px);
+  @include gutter(999px);
+}
+
+@include shift(">s")
+{
+  .page-inner,
+  .page-inner-wide,
+  .page-inner-narrow {
+    @include gutter($page-gutter-s);
+  }
+
+  .page-bleed {
+    @include bleed($page-gutter-s);
+    @include gutter($page-gutter-s);
+  }
+}

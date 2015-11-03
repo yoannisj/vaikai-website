@@ -59,7 +59,6 @@ body,
 
 .navbar-brand {
   float: left;
-  margin-left: 20px;
 }
 
 .navbar-toggle {
@@ -99,7 +98,12 @@ body,
 }
 
 .navbar-title {
-  margin: 0;
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.navbar-tagline {
+  display: none;
 }
 
 .navbar-link {
@@ -115,6 +119,8 @@ body,
   @include bleed($navbar-item-spacing/2);
   font-size: convert-length($navbar-btn-font-size, 'rem');
 }
+
+
 
 @include shift('>s')
 {
@@ -152,6 +158,10 @@ body,
 
 @include shift(">m")
 {
+  .navbar-tagline {
+    display: inline-block;
+  }
+
   .navbar-toggle {
     display: none;
   }

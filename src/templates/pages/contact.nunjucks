@@ -1,0 +1,56 @@
+{% extends "layouts/page-info.nunjucks" %}
+
+{% block head_styles %}
+  {{ super() }}
+{% endblock %}
+
+{% block body_header %}
+  {{ super() }}
+
+  <div class="page-banner banner menu-push theme-green">
+    <div class="page-inner banner-inner" role="presentation">
+      <div class="banner-object overlay-left" role="presenation">
+        <div class="banner-avk-front avk-trunc" role="presentation">
+          <img src="{{ '/images/avakai-blue-trunc.png'|url }}" alt="" />
+        </div>
+        <div class="banner-avk-back avk-natural" role="presentation">
+          <img src="{{ '/images/avakai-natural.png'|url }}" alt="" />
+        </div>
+      </div>
+      <div class="banner-body">
+        <h1 class="banner-title h2">Contact</h1>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block body_main %}
+  {{ super() }}
+
+  <div class="page-inner" role="presentation">
+    <section class="copy">
+      <div class="landmark">
+        <h2 class="h3">Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</h2>
+        <p>Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus vitae dignissimos labore molestias possimus, expedita laudantium, fugit ut tempore deleniti saepe numquam facilis nesciunt alias explicabo ea! Id, eveniet, officiis!</p>
+      </div>
+      <div class="landmark">
+        <h3 class="h4">Vehicula Venenatis Egestas</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut quaerat cupiditate, laboriosam, laudantium deserunt sed asperiores debitis est reprehenderit, repudiandae quos ratione assumenda nisi voluptatem deleniti. Debitis neque, placeat error.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+      </div>
+      <div class="landmark">
+        <h3 class="h4">Fermentum Malesuada Pharetra Nibh</h3>
+        <p>Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, obcaecati iusto quae est iure non tempora necessitatibus animi, ut, consequatur ipsa, blanditiis quis cumque. Autem quos iste dolor asperiores nemo?</p>
+        <footer class="landmark">
+          <p><a class="link-back" href="./index.html"><span class="icon icon--arrowleft" aria-hidden="true"></span> Back to home</a></p>
+        </footer>
+      </div>
+    </section>
+  </div>
+
+{% endblock %}

@@ -1,1 +1,6 @@
 {% extends "layouts/page.nunjucks" %}
+
+{% block head_styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ 'css/info.css'|url }}"></link>
+{% endblock %}

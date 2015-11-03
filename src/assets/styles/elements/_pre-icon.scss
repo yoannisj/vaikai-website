@@ -14,30 +14,5 @@ $pre-icon-gutter: 8px;
 
 .pre-icon {
   @extend %icon-core;
-
-  padding-left: convert-length($icon-size + $pre-icon-gutter, 'em');
-  line-height: convert-length($icon-size, 'em');
-  background-position: left center;
-  background-size: auto 100%;
-}
-
-/* =pre-icon--<size>
- * -------------------------------------------------------------------------- */
-
-.pre-icon--md {
-  padding-left: convert-length($icon-size-medium + $pre-icon-gutter, 'em');
-  line-height: convert-length($icon-size-medium, 'em');
-  // background-size: auto convert-length($icon-size-medium, 'em');
-}
-
-.pre-icon--lg {
-  padding-left: convert-length($icon-size-large + $pre-icon-gutter, 'em');
-  line-height: convert-length($icon-size-large, 'em');
-  // background-size: auto convert-length($icon-size-medium, 'em');
-}
-
-.pre-icon--xl {
-  padding-left: convert-length($icon-size-xlarge + $pre-icon-gutter, 'em');
-  line-height: convert-length($icon-size-xlarge, 'em');
-  // background-size: auto convert-length($icon-size-medium, 'em');
+  margin-right: convert-length($pre-icon-gutter, 'em');
 }
