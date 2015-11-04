@@ -158,15 +158,17 @@ body,
 
 @include shift(">m")
 {
-  .navbar-tagline {
-    display: inline-block;
-  }
-
   .navbar-toggle {
     display: none;
   }
 
   .navbar-menu {
     float: right;
+  }
+}
+
+@include shift('>l') {
+  .navbar-tagline {
+    display: inline-block;
   }
 }

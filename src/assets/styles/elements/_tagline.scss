@@ -16,4 +16,5 @@ $tagline-color: $yellow;
 .tagline {
   font-family: $tagline-font-family;
   color: $tagline-color;
+  text-transform: lowercase
 }

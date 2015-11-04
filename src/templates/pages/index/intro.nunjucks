@@ -39,7 +39,7 @@
         <!-- =Intro-Text -->
         <div class="split-body grid-cell span-8of12 sm-span-6of12">
           <div class="landmark centrum centrum--left">
-            <h2>Less Screentime<br />
+            <h2 class="giga" style="white-space:nowrap;">Less Screentime<br />
               more play</h2>
             <p class="s-zeta m-delta">Meet the Avakai family.<br />
               A couple of beautiful designed wooden toys that are intuitive, playful and connective to eachother and the world.</p>

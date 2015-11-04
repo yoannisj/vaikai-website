@@ -34,7 +34,7 @@
   <nav class="subnav">
     <ul class="subnav-links hlist hlist--pipe">
       <li><a href="{{ 'contact.html'|url }}">Contact</a></li>
-      <li><a href="{{ 'jobs.html'|url }}">Jobs</a></li>
+      <li><a href="{{ 'carreers.html'|url }}">Carreers</a></li>
       <li><a href="{{ 'imprint.html'|url }}">Imprint</a></li>
       <li><a href="{{ 'data-and-privacy.html'|url }}">Data and Privacy</a></li>
       <li><a href="{{ 'press.html'|url }}">Press</a></li>
