@@ -10,8 +10,7 @@
 $shout-out-font-family: $avant-garde-font-stack;
 $shout-out-font-size: typescale-font-size('zeta');
 $shout-out-font-size-s: typescale-font-size('epsilon');
-$shout-out-font-size-m: typescale-font-size('epsilon');
-$shout-out-letter-spacing: 0.05em;
+$shout-out-font-size-m: typescale-font-size('delta');
 
 /* =shoutout
  * -------------------------------------------------------------------------- */
@@ -19,8 +18,6 @@ $shout-out-letter-spacing: 0.05em;
 .shoutout {
   font-family: $shout-out-font-family;
   font-size: convert-length($shout-out-font-size, 'em');
-  text-transform: uppercase;
-  letter-spacing: $shout-out-letter-spacing;
 
   @include shift('>s') {
     font-size: convert-length($shout-out-font-size-s, 'em');

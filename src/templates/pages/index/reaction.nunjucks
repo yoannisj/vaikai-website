@@ -14,7 +14,7 @@
         <div class="cover-body fly-bottom">
           <h2 class="cover-title sr-only">Reaction</h2>
           <p class="epsilon s-gamma m-alpha">
-            {{ symbol.icon('play', 'Play Video', 'icon--md') }}<br/>
+            {{ symbol.epiIcon('play', '', 'icon--xl') }}
             How children react on  our Avakai.<br/>
             Watch the unpacking party.</p>
         </div>

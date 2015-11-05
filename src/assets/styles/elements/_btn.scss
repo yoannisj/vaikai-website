@@ -8,15 +8,15 @@
 // =settings
 // -----------------------------------------------------------------------------
 $btn-font-family: $avant-garde-font-stack;
-$btn-font-size: typescale-font-size('zeta');
+$btn-font-size: typescale-font-size('micro');
 $btn-min-width: 120px;
-$btn-height: 40px;
-$btn-gutter: 20px;
+$btn-height: 45px;
+$btn-gutter: 10px;
 
 $btn-font-size-m: typescale-font-size('delta');
 $btn-min-width-m: 200px;
-$btn-height-m: 50px;
-$btn-gutter-m: 25px;
+$btn-height-m: 55px;
+$btn-gutter-m: 20px;
 
 $btn-color: $white;
 $btn-color-active: $btn-color;
@@ -41,9 +41,9 @@ $btn-adjust-valign: 3px;
 
   font-family: $btn-font-family;
   font-size: convert-length($btn-font-size, 'rem');
-  // line-height: convert-length($btn-height, 'em', $btn-font-size);
   line-height: convert-length($btn-height + $btn-adjust-valign, 'em', $btn-font-size);
   vertical-align: middle;
+  // white-space: nowrap;
   text-align: center;
   text-decoration: none;
 

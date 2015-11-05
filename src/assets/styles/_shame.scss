@@ -14,32 +14,6 @@
   max-width: none !important;
 }
 
-.icon--play {
-  background-image: url('../images/video-play.svg') !important;
-}
-
-.cover-body .icon--play
-{
-  width: 80px !important;
-  height: 80px !important;
-  background-size: 80px 80px !important;
-  margin-bottom: 20px !important;
-
-  @include shift('>sm') {
-    width: 120px !important;
-    height: 120px !important;
-    background-size: 120px 120px !important;
-    margin-bottom: 40px !important;
-  }
-
-  @include shift('>l') {
-    width: 200px !important;
-    height: 200px !important;
-    background-size: 200px 200px !important;
-    margin-bottom: 60px !important;
-  }
-}
-
 .page-footer {
   overflow: hidden;
   position: relative;
