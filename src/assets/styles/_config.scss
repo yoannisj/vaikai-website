@@ -2,8 +2,8 @@
 // =VaiKai - Sass Config
 // =============================================================================
 
-// import config data from the 'data' folder
-@import "data/images.json";
+// import shared data from the 'data.json' file
+@import "../../data.json";
 
 // import all config settings
 @import "config/colors";

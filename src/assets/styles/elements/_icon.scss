@@ -26,6 +26,7 @@ $glyph-icon-youtube: "\e90a";
 /* =icon
  * -------------------------------------------------------------------------- */
 
+%icon-core,
 .icon {
   display: inline-block; // allow setting fixed width
   font-family: $icon-font-family;
@@ -36,7 +37,7 @@ $glyph-icon-youtube: "\e90a";
   text-transform: none;
 
   font-size: 2em;
-  line-height: 0.5 !important;
+  line-height: 0.5; /* fix icon's height in text lines */
   vertical-align: middle;
 
   /* Better Font Rendering =========== */

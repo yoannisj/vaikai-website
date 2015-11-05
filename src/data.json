@@ -1,0 +1,30 @@
+{
+  "website": {
+    "title": "Vai Kai",
+    "domain": "'vaikai.com'",
+    "homepage": "'http:\/\/vaikai.com'",
+    "description": "Static website for Vai Kai UG",
+    "keywords": [
+      "vai kai",
+      "toys",
+      "technology",
+      "wood",
+      "responsible",
+      "education",
+      "play",
+      "internet of things",
+      "berlin"
+    ],
+    "authors": [
+      "'Yoannis Jamar <yoannis.j@gmail.com>'"
+    ]
+  },
+
+  "breakpoints": {
+    "s": 540,
+    "sm": 700,
+    "m": 920,
+    "l": 1200,
+    "xl": 1700
+  }
+}

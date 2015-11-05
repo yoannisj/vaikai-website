@@ -3,7 +3,7 @@
 // =============================================================================
 
 @import "shift/set";
-@import "data/breakpoints.json";
+@import "../../data.json";
 
 // feed shift with breakpoints from 'data'
 @each $bp, $width in $breakpoints
