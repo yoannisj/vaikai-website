@@ -8,9 +8,10 @@ module.exports = function() {
   // get data from the 'data' folder
 
   var dataPath = path.join('../../', slurp.config.paths.data);
-  var data = requireDir(dataPath, {
-    camelcase: true
-  });
+  // var data = requireDir(dataPath, {
+  //   camelcase: true
+  // });
+  var data = require(dataPath);
 
   // move the data inside the 'website.json' file to
   // the root of the returned object (=templating global)

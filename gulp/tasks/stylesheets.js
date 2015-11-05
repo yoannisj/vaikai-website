@@ -3,11 +3,10 @@ var slurp = require('../slurp');
 // compilation of stylesheets
 function compileStylesheets() {
 
-  // slurp.log(slurp.options('sass').importer == importOnce ? 'match!': 'no-match..');
-
   return slurp.src('stylesheets')
     .pipe(slurp.plumber())
-    .pipe(slurp.plugin('sass'))
+    // .pipe(slurp.plugin('sass'))
+    .pipe(slurp.plugin('compass'))
     .pipe(slurp.plugin('postcss'))
     .pipe(slurp.env.dev ? slurp.noop() : slurp.plugin('minifyCss'))
     .pipe(slurp.dest('stylesheets'))

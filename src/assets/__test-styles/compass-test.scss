@@ -1,0 +1,20 @@
+@import "aleksi/lengths/convert";
+@import "shift/set";
+@import "shift/breakpoint";
+
+@import "test-vars.json";
+@import "module-test";
+@import "sub-module-test";
+
+body:before {
+  content: "compass test compiled.. yes yes yes!";
+  font-family: $test-font-family;
+}
+
+
+@include shift-set('width', 's', 500px);
+@include shift('>s') {
+  body:before {
+    content: 'compass test shifted to w>500px';
+  }
+}
