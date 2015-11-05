@@ -7,6 +7,7 @@
 
 // =settings
 // -----------------------------------------------------------------------------
+$pre-icon-size: 26px;
 $pre-icon-gutter: 8px;
 
 /* =pre-icon
@@ -14,5 +15,10 @@ $pre-icon-gutter: 8px;
 
 .pre-icon {
   @extend %icon-core;
-  margin-right: convert-length($pre-icon-gutter, 'em');
+  margin-right: convert-length($pre-icon-gutter, 'rem');
+
+  &:before {
+    font-size: convert-length($pre-icon-size, 'em');
+    // line-height: $base-line-height * ($pre-icon-size/$base-font-size);
+  }
 }
