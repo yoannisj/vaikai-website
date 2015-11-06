@@ -13,12 +13,19 @@ $pre-icon-gutter: 8px;
 /* =pre-icon
  * -------------------------------------------------------------------------- */
 
-.pre-icon {
+.pre-icon
+{
   @extend %icon-core;
   margin-right: convert-length($pre-icon-gutter, 'rem');
+  font-size: convert-length($pre-icon-size, 'em');
+}
 
-  &:before {
-    font-size: convert-length($pre-icon-size, 'em');
-    // line-height: $base-line-height * ($pre-icon-size/$base-font-size);
+/* =pre-icon--<size>
+ * -------------------------------------------------------------------------- */
+
+@each $sz, $font-size in $icon-sizes
+{
+  .pre-icon.icon--#{$sz} {
+    font-size: convert-length(($font-size/$icon-size) * $pre-icon-size, 'em');
   }
 }

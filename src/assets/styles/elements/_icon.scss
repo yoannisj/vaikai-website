@@ -11,20 +11,21 @@
 $icon-font-family: 'vaikai-icons';
 $icon-size: 32px;
 $icon-sizes: (
-  'md': 44px,
-  'lg': 80px
+  'md': 50px,
+  'lg': 88px
 );
 
 $codepoint-icon-menu: "\e900";
 $codepoint-icon-close: "\e901";
-$codepoint-icon-send: "\e902";
-$codepoint-icon-twitter: "\e903";
-$codepoint-icon-facebook: "\e904";
-$codepoint-icon-instagram: "\e905";
-$codepoint-icon-twitter-fill: "\e906";
-$codepoint-icon-facebook-fill: "\e907";
-$codepoint-icon-instagram-fill: "\e908";
-$codepoint-icon-pinterest: "\e909";
+$codepoint-icon-play: "\e90b";
+$codepoint-icon-send: "\e908";
+$codepoint-icon-twitter: "\e902";
+$codepoint-icon-facebook: "\e903";
+$codepoint-icon-instagram: "\e904";
+$codepoint-icon-facebook-fill: "\e905";
+$codepoint-icon-instagram-fill: "\e906";
+$codepoint-icon-pinterest: "\e907";
+$codepoint-icon-twitter-fill: "\e909";
 $codepoint-icon-youtube: "\e90a";
 
 /* =%icon-core
@@ -38,7 +39,7 @@ $codepoint-icon-youtube: "\e90a";
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  text-align: left;
+  text-align: center; // allow to set a fixed width
 
   /* fix vertical alignment and line height (variable font-size) */
   line-height: 1;
@@ -52,26 +53,58 @@ $codepoint-icon-youtube: "\e90a";
 /* =icon
  * -------------------------------------------------------------------------- */
 
-.icon {
+.icon
+{
   @extend %icon-core;
   font-size: convert-length($icon-size, "em");
-  // line-height: $base-line-height * ($icon-size/$base-font-size);
 }
 
 /* =icon--<glyph>
  * -------------------------------------------------------------------------- */
 
-.icon--close:before { content: $codepoint-icon-close }
-.icon--facebook-fill:before { content: $codepoint-icon-facebook-fill; }
-.icon--facebook:before { content: $codepoint-icon-facebook; }
-.icon--instagram-fill:before { content: $codepoint-icon-instagram-fill; }
-.icon--instagram:before { content: $codepoint-icon-instagram; }
 .icon--menu:before { content: $codepoint-icon-menu; }
-.icon--pinterest:before { content: $codepoint-icon-pinterest; }
+.icon--close:before { content: $codepoint-icon-close; }
+.icon--play:before { content: $codepoint-icon-play; }
 .icon--send:before { content: $codepoint-icon-send; }
-.icon--twitter-fill:before { content: $codepoint-icon-twitter-fill; }
 .icon--twitter:before { content: $codepoint-icon-twitter; }
+.icon--facebook:before { content: $codepoint-icon-facebook; }
+.icon--instagram:before { content: $codepoint-icon-instagram; }
+.icon--twitter-fill:before { content: $codepoint-icon-twitter-fill; }
+.icon--facebook-fill:before { content: $codepoint-icon-facebook-fill; }
+.icon--instagram-fill:before { content: $codepoint-icon-instagram-fill; }
+.icon--pinterest:before { content: $codepoint-icon-pinterest; }
 .icon--youtube:before { content: $codepoint-icon-youtube; }
+
+/* play icons have additional, circular background */
+.icon--play
+{
+  &, &:before {
+    position: relative;
+  }
+
+  &:before {
+    z-index: 1;
+  }
+
+  &:after {
+    transition: opacity 0.2s ease-out;
+
+    content: "";
+    speak: none;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background-image: radial-gradient(circle closest-side, #fff 0%, #fff 80%, transparent 80%, transparent 100%);
+  }
+
+  &:hover:after {
+    opacity: 0;
+  }
+}
 
 /* =icon--<size>
  * -------------------------------------------------------------------------- */

@@ -3,41 +3,31 @@
 // =============================================================================
 
 @import "aleksi/lengths/convert";
+@import "config/base";
 @import "elements/icon";
 
 // =settings
 // -----------------------------------------------------------------------------
-$epi-icon-gutter: 10px;
+$epi-icon-size: $icon-size;
+$epi-icon-gutter: $base-line-height;
 
 /* =epi-icon
  * -------------------------------------------------------------------------- */
 
-.epi-icon {
+.epi-icon
+{
   @extend %icon-core;
-
-  background-position: center top;
-  min-height: convert-length($icon-size, 'em');
-  padding-top: convert-length($icon-size + $epi-icon-gutter, 'em');
-  background-size: $icon-size $icon-size;
+  display: block;
+  font-size: convert-length($epi-icon-size, 'em');
+  margin-bottom: convert-length($epi-icon-gutter, 'rem');
 }
 
 /* =epi-icon--<size>
  * -------------------------------------------------------------------------- */
 
-.epi-icon--md {
-  padding-top: convert-length($icon-size-medium + $epi-icon-gutter, 'em');
-  min-height: convert-length($icon-size-medium, 'em');
-  background-size: $icon-size-medium $icon-size-medium;
-}
-
-.epi-icon--lg {
-  padding-top: convert-length($icon-size-large + $epi-icon-gutter, 'em');
-  min-height: convert-length($icon-size-large, 'em');
-  background-size: $icon-size-large $icon-size-large;
-}
-
-.epi-icon--xl {
-  padding-top: convert-length($icon-size-xlarge + $epi-icon-gutter, 'em');
-  min-height: convert-length($icon-size-xlarge, 'em');
-  background-size: $icon-size-xlarge $icon-size-xlarge;
+@each $sz, $font-size in $icon-sizes
+{
+  .epi-icon.icon--#{$sz} {
+    font-size: convert-length(($font-size/$icon-size) * $epi-icon-size, 'em');
+  }
 }
