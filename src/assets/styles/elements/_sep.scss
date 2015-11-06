@@ -1,0 +1,62 @@
+// =============================================================================
+// =VaiKai - Bullet element
+// =============================================================================
+
+@import "config/colors";
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$pipe-spacing: 20px;
+$pipe-color: $mid-gray;
+
+$bullet-size: 9px;
+$bullet-spacing: 20px;
+$bullet-color: $mid-gray;
+
+/* =sep
+ * -------------------------------------------------------------------------- */
+
+%sep
+{
+  > *:after {
+    content: "";
+    display: inline-block;
+  }
+
+  > :last-child:after {
+    display: none;
+  }
+}
+
+/* =sep-pipe
+ * -------------------------------------------------------------------------- */
+
+.sep-pipe
+{
+  @extend %sep;
+
+  > *:after {
+    content: "|";
+    margin: 0 convert-length($pipe-spacing/2, 'rem');
+    color: $pipe-color;
+  }
+}
+
+/* =sep-bullet
+ * -------------------------------------------------------------------------- */
+
+.sep-bullet
+{
+  @extend %sep;
+
+  &:after {
+    vertical-align: middle;
+    width: convert-length($bullet-size, 'rem');
+    height: convert-length($bullet-size, 'rem');
+    margin: 0 convert-length($bullet-spacing, 'rem');
+
+    border-radius: convert-length($bullet-size/2, 'rem');
+    background-color: $bullet-color;
+  }
+}

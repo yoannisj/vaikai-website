@@ -4,21 +4,23 @@
 
 // =Primitive Colors
 // =============================================================================
+
 $white: #fff;
 $black: #000;
 
-$dark-gray: #444444;
+$light-gray: #f9f9f9;
 $gray: #7e7e7e;
 $mid-gray: #cbcbcb;
-$light-gray: #f9f9f9;
+$dark-gray: #444444;
 
-$blue: #0f99c6;
 $blue: #0f99c6;
 $mid-blue: darken($blue, 5%);
 $dark-blue: #1e708b;
 
 $yellow: #fcca74;
 $mid-yellow: darken($yellow, 5%);
+$dark-yellow: darken($yellow, 15%);
 
 $green: #91c2bc;
 $mid-green: darken($green, 5%);
+$dark-green: darken($green, 15%);

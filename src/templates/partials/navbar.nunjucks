@@ -34,13 +34,13 @@
             <a class="menu-link" href="{{ 'faq.html'|url }}">FAQ</a>
           </li>
           <li class="menu-item">
-            <a class="menu-link" href="{{ 'about.html'|url }}">About VaiKai</a>
+            <a class="menu-link" href="{{ 'about.html'|url }}">About Vaikai</a>
           </li>
         </ul>
       </div>
 
       <div class="menu-group menu-social m-hide l-show" role="presentation">
-        <ul class="uilist line air">
+        <ul class="hlist">
           <li class="menu-item">
             <a class="menu-icon" href="http://www.twitter.com/vaikai" target="_blank">
               {{ symbol.icon('twitter', 'Twitter') }}
