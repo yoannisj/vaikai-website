@@ -24,11 +24,11 @@ $green-theme-slider-bullet-color-active: $yellow;
   color: $green-theme-color;
   background: $green-theme-background;
 
-  a {
-    &:hover, &:active, &.focus {
-      color: $green-theme-link-color-active;
-    }
-  }
+  // a {
+  //   &:hover, &:active, &.focus {
+  //     color: $green-theme-link-color-active;
+  //   }
+  // }
 
   %hN {
     color: inherit;
