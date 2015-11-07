@@ -18,15 +18,20 @@ $quote-sign-color: $blue;
 /* =quote
  * -------------------------------------------------------------------------- */
 
-.quote:before {
-  content: "”";
-  text-align: center;
-  vertical-align: middle;
+.quote
+{
+  margin-top: convert-length($quote-sign-font-size * $quote-sign-font-line-height, 'em');
 
-  font-family: $quote-sign-font-family;
-  font-size: convert-length($quote-sign-font-size, 'rem');
-  line-height: $quote-sign-font-line-height;
-  color: $quote-sign-color;
+  &:before {
+    content: "”";
+    text-align: center;
+    vertical-align: middle;
+
+    font-family: $quote-sign-font-family;
+    font-size: convert-length($quote-sign-font-size, 'rem');
+    line-height: $quote-sign-font-line-height;
+    color: $quote-sign-color;
+  }
 }
 
 .quote-text {

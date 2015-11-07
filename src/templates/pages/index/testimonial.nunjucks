@@ -3,9 +3,8 @@
 
   <div class="chunk">
     <div class="chunk-inner">
-
-      <h3 class="sr-only">Testimonial</h3>
       <div class="quote landmark">
+        <h3>What others are saying</h3>
         <div class="carousel js-slider" data-num-items="1, 3 920px">
           <ul class="grid carousel-items uilist js-slider-items">
             {% for mention in content.entries.mentions %}
@@ -16,7 +15,6 @@
           </ul>
         </div>
       </div>
-
     </div>
   </div>
 </aside>
