@@ -1,0 +1,94 @@
+// =============================================================================
+// =VaiKai - Form Module
+// =============================================================================
+
+@import "config/colors";
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$form-group-spacing: 50px;
+$form-group-spacing-m: 30px;
+$form-field-spacing: 10px;
+
+$form-input-font-size: typescale-font-size('base');
+$form-input-font-size-s: typescale-font-size('zeta');
+$form-input-height: 50px;
+$form-input-border-width: 2px;
+$form-input-max-width: 440px;
+$form-input-placeholder-transition: opacity 0.35s ease-out;
+$form-input-placeholder-font-family: Georgia, serif;
+$form-input-background-active: $light-gray;
+
+/* =form
+ * -------------------------------------------------------------------------- */
+
+.form-group {
+  margin: 0 0 convert-length($form-group-spacing, 'rem') 0;
+}
+
+.form-field {
+  margin: 0 0 convert-length($form-field-spacing, 'rem') 0;
+}
+
+.form-input
+{
+  width: 100%; /* full width */
+  max-width: convert-length($form-input-max-width, 'em', $form-input-font-size);
+  height: convert-length($form-input-height, 'em', $form-input-font-size);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: $form-input-border-width solid;
+
+  font-size: convert-length($form-input-font-size, 'rem');
+  line-height: convert-length($form-input-height, 'em', $form-input-font-size);
+  text-align: center;
+  color: inherit;
+  background: transparent;
+
+  &:focus {
+    outline: 0;
+    background: $form-input-background-active;
+  }
+
+  @include shift('>s') {
+    font-size: convert-length($form-input-font-size-s, 'rem');
+  }
+}
+
+/* =input-placeholders
+ * -------------------------------------------------------------------------- */
+
+.form-input
+{
+  &::-webkit-input-placeholder {
+    font-family: $form-input-placeholder-font-family;
+    font-style: italic;
+    color: inherit;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    font-family: $form-input-placeholder-font-family;
+    font-style: italic;
+    color: inherit;
+  }
+
+  &::-moz-placeholder { /* Firefox 19+ */
+    font-family: $form-input-placeholder-font-family;
+    font-style: italic;
+    color: inherit;
+  }
+
+  &:-ms-input-placeholder {
+    font-family: $form-input-placeholder-font-family;
+    font-style: italic;
+    color: inherit;
+  }
+
+  &:focus::-webkit-input-placeholder { color: #000; opacity: 0.15; }
+  &:focus:-moz-placeholder { color: #000; opacity: 0.15; }
+  &:focus::-moz-placeholder { color: #000; opacity: 0.15; }
+  &:focus:-ms-input-placeholder { color: #000; opacity: 0.15; }
+}
+
