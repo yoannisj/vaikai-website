@@ -2,8 +2,14 @@
 // =VaiKai - Slider Widget
 // =============================================================================
 
+.has-slider .js-slider-items {
+  box-sizing: content-box;
+  margin: 0;
+}
+
 .has-slider .js-slider-item {
   box-sizing: content-box;
+  display: block;
 }
 
 .js-slider-control-nav {

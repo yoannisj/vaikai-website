@@ -41,8 +41,7 @@
           <div class="landmark centrum centrum--left">
             <h2 class="h1 m-giga">Less Screentime<br />
               more play</h2>
-            <p class="s-zeta m-delta">Meet the Avakai family.<br />
-              A couple of beautiful designed wooden toys that are intuitive, playful and connective to eachother and the world.</p>
+            <p class="s-zeta m-delta">Meet the Avakai Family<br/>Crafted wooden toy twins that enable kids to discover free play and a connected world without screens. </p>
             <p class="landmark"><a class="link-quiet shoutout js-toggle" href="http://www.vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#intro-video">
               {{ symbol.preIcon('play', 'watch video', 'icon--md') }}
             </a></p>

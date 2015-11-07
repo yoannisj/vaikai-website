@@ -11,12 +11,11 @@
       <div class="cover">
         <div class="cover-object ratio-flex" style="background-image: url({{ 'images/unpacking-poster.jpg'|url }});">
         </div>
-        <div class="cover-body fly-bottom">
-          <h2 class="cover-title sr-only">Reaction</h2>
-          <div class="epsilon s-gamma m-alpha">
-            <a class="link-reset landmark median-auto js-toggle js-video-toggle" href="http://vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#vimeo-130435350">{{ symbol.icon('play', 'Play', 'icon--lg') }}</a>
-            <p>How children react on  our Avakai.<br/>
-              Watch the unpacking party.</p>
+        <div class="cover-body overlay nucleon">
+          <div class="landmark">
+            <h2 class="epsilon s-gamma m-alpha"><a class="link-reset js-toggle js-video-toggle" href="http://vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#vimeo-130435350">{{ symbol.icon('play', 'Watch the unpacking video', 'icon--lg') }}</a></h2>
+            <p class="epsilon s-gamma m-alpha">How children react on  our Avakai.<br/>Watch the unpacking party.</p>
+          </div>
         </div>
       </div>
 

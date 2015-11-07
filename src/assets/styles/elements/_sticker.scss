@@ -33,12 +33,8 @@ $sticker-colors: (
   line-height: convert-length($sticker-size, 'rem');
   border-radius: convert-length(ceil($sticker-size/2), 'rem');
 
-  &, &:focus, &:hover, &:active {
+  &, &:focus, &:hover, &:active, &.active {
     color: $sticker-text-color;
-  }
-
-  &:focus, &:hover, &:active {
-    opacity: 0.85;
   }
 
   @include shift('>s') {
@@ -54,5 +50,12 @@ $sticker-colors: (
 
 @each $color, $color-value in $sticker-colors
 {
-  .sticker--#{$color} { background-color: $color-value; }
+  .sticker--#{$color}
+  {
+    background-color: $color-value;
+
+    &:focus, &.focus, &:hover, &:active, &.active {
+      background-color: darken($color-value, 7%);
+    }
+  }
 }

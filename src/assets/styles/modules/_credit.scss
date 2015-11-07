@@ -1,0 +1,34 @@
+// =============================================================================
+// =VaiKai - Credit Module
+// =============================================================================
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$credit-logo-spacing: 10px;
+$credit-name-font-family: $avant-garde-font-stack;
+$credit-name-font-weight: 400;
+
+/* =credit
+ * -------------------------------------------------------------------------- */
+
+.credit-logo,
+.credit-name,
+.credit-description {
+  display: block;
+}
+
+.credit-logo,
+.credit-name {
+  text-decoration: none;
+}
+
+.credit-logo {
+  margin-bottom: convert-length($credit-logo-spacing, 'em');
+}
+
+.credit-name {
+  @extend .fullcaps;
+  font-family: $credit-name-font-family;
+  font-weight: $credit-name-font-weight;
+}

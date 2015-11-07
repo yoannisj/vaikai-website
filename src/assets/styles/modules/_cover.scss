@@ -3,6 +3,9 @@
 // =============================================================================
 
 $cover-font-family: $avant-garde-font-stack;
+$cover-body-width: 90%;
+$cover-body-max-width: 800px;
+$cover-body-offset: 10%; // relative to width
 
 .cover
 {
@@ -17,19 +20,22 @@ $cover-font-family: $avant-garde-font-stack;
   background-size: cover;
 }
 
-.cover-body {
+.cover-body
+{
   left: 0;
   right: 0;
-  width: 90%;
-  max-width: 800px;
-  margin: 40px auto 10%;
+  width: $cover-body-width;
+  max-width: $cover-body-max-width;
+  height: 100%;
+  margin: auto;
+  padding-top: $cover-body-offset;
 
   font-family: $cover-font-family;
   color: white;
   text-align: center;
   text-shadow: 2px 1px 1px rgba(0,0,0,0.25);
 
-  @include shift('>m') {
-    margin-bottom: 5%;
+  %hN {
+    color: inherit;
   }
 }
