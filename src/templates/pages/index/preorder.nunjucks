@@ -1,12 +1,15 @@
 {% import 'macros/popup.nunjucks' as popup %}
+{% import 'macros/image.nunjucks' as image %}
 
 {# =Preorder #}
 <section id="preorder" class="section theme-gray">
   <div class="chunk chunk--narrow">
     <div class="chunk-inner">
-      <div class="split grid">
-        <div class="split-media grid-cell m-span-5of12">
-
+      <div class="split grid grid--middle">
+        <div class="avk-preorder split-media grid-cell m-span-5of12">
+          <div class="avk-preorder-duo align-right hide m-show">
+            {{ image.lazy('images/avakai-duo.png') }}
+          </div>
         </div>
         <div class="split-body grid-cell m-span-7of12">
           <div class="landmark centrum centrum--left">

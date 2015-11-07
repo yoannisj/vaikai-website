@@ -12,14 +12,18 @@
 // =settings
 // -----------------------------------------------------------------------------
 
+$avk-duo-height: 500px;
+$avk-duo-height-sm: 600px;
+$avk-duo-height-m: 740px;
+
 $avk-dimensions-trunc: 289px 549px;
 $avk-dimensions-base: 289px 198px;
 $avk-dimensions-natural: 207px 504px;
 $avakai-base-overlap-height: 42px;
 
-$avk-duo-height: 500px;
-$avk-duo-height-sm: 600px;
-$avk-duo-height-m: 740px;
+$avk-preorder-height: 380px;
+$avk-preorder-height-sm: 620px;
+$avk-dimensions-duo: 820px 640px;
 
 /* =avk-<image>
  * -------------------------------------------------------------------------- */
@@ -48,6 +52,9 @@ $avk-duo-height-m: 740px;
 /* display trunc in front of base */
 .avk-trunc { z-index: 2; }
 .avk-base { z-index: 1; }
+
+/* =Intro
+ * ========================================================================== */
 
 /* =avk-duo
  * -------------------------------------------------------------------------- */
@@ -111,5 +118,27 @@ $avk-duo-height-m: 740px;
   .avk-duo-follow {
     right: 5%;
     width: 210px;
+  }
+}
+
+/* =Pre-order
+ * ========================================================================== */
+
+/* =avk-preorder
+ * -------------------------------------------------------------------------- */
+
+@include shift('>m')
+{
+  .avk-preorder {
+    min-height: 615px;
+  }
+
+  .avk-preorder-duo
+  {
+    position: absolute;
+    top: 0;
+    right: percentage(7/12);
+    bottom: 0;
+    left: 0;
   }
 }
