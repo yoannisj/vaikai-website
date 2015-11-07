@@ -1,0 +1,26 @@
+// =============================================================================
+// =VaiKai - Nucleon Utility
+// =============================================================================
+
+/* =nucleon
+ * -------------------------------------------------------------------------- */
+
+.nucleon {
+  @extend .ws-collapse;
+  text-align: center;
+}
+
+.nucleon:before,
+.nucleon > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nucleon:before {
+  content: "";
+  height: 100%;
+}
+
+.nucleon > * {
+  @extend .ws-reset;
+}
