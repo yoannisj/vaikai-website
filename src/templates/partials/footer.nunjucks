@@ -44,7 +44,7 @@
     <div class="subnav">
       <ul class="subnav-links hlist sep-pipe">
         <li><a class="link-quiet" href="{{ 'contact.html'|url }}">Contact</a></li>
-        <li><a class="link-quiet" href="{{ 'carreers.html'|url }}">Carreers</a></li>
+        <li><a class="link-quiet" href="{{ 'careers.html'|url }}">Careers</a></li>
         <li><a class="link-quiet" href="{{ 'imprint.html'|url }}">Imprint</a></li>
         <li><a class="link-quiet" href="{{ 'data-and-privacy.html'|url }}">Data and Privacy</a></li>
         <li><a class="link-quiet" href="{{ 'press.html'|url }}">Press</a></li>
