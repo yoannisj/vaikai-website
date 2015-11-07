@@ -5,27 +5,27 @@
   <div class="social-nav">
     <ul class="social-links hlist">
       <li>
-        <a target="_blank" class="sticker sticker--facebook" href="https://www.facebook.com/vaikai" >
+        <a target="_blank" class="sticker sticker--facebook" href="https://www.facebook.com/vaikaiplay/" >
           {{ symbol.icon('facebook-fill', 'Facebook') }}
         </a>
       </li>
       <li>
-        <a target="_blank" class="sticker sticker--twitter" href="https://www.twitter.com/vaikai" >
+        <a target="_blank" class="sticker sticker--twitter" href="https://twitter.com/vai_kai" >
           {{ symbol.icon('twitter-fill', 'Twitter') }}
         </a>
       </li>
       <li>
-        <a target="_blank" class="sticker sticker--pinterest" href="https://www.pinterest.com/vaikai" >
+        <a target="_blank" class="sticker sticker--pinterest" href="https://www.pinterest.com/vai_kai/" >
           {{ symbol.icon('pinterest', 'Pinterest') }}
         </a>
       </li>
       <li>
-        <a target="_blank" class="sticker sticker--instagram" href="https://www.instagram.com/vaikai" >
+        <a target="_blank" class="sticker sticker--instagram" href="https://instagram.com/vai_kai/" >
           {{ symbol.icon('instagram-fill', 'Instagram') }}
         </a>
       </li>
       <li>
-        <a target="_blank" class="sticker sticker--youtube" href="https://www.youtube.com/vaikai" >
+        <a target="_blank" class="sticker sticker--youtube" href="https://www.youtube.com/channel/UCvf8cDV9Yf19zT4xTqQLcOg" >
           {{ symbol.icon('youtube', 'Youtube') }}
         </a>
       </li>
