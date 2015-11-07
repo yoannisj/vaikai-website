@@ -5,6 +5,13 @@
 @import "aleksi/lengths/convert";
 @import "shift/breakpoint";
 
+@include shift('l')
+{
+  #intro .h1 {
+    white-space: nowrap;
+  }
+}
+
 #reaction .ratio-16by9 {
   max-width: none;
 }

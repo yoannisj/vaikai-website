@@ -167,7 +167,8 @@ body,
   }
 }
 
-@include shift('>l') {
+@include shift('>l')
+{
   .navbar-tagline {
     display: inline-block;
   }
