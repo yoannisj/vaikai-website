@@ -8,17 +8,17 @@
   <div class="chunk chunk--bleed">
     <div class="chunk-inner">
 
-      <a class="cover block-link js-toggle js-video-toggle" href="http://vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#vimeo-130435350">
+      <div class="cover">
         <div class="cover-object ratio-flex" style="background-image: url({{ 'images/unpacking-poster.jpg'|url }});">
         </div>
         <div class="cover-body fly-bottom">
           <h2 class="cover-title sr-only">Reaction</h2>
-          <p class="epsilon s-gamma m-alpha">
-            {{ symbol.epiIcon('play', '', 'icon--lg') }}
-            How children react on  our Avakai.<br/>
-            Watch the unpacking party.</p>
+          <div class="epsilon s-gamma m-alpha">
+            <a class="link-reset landmark median-auto js-toggle js-video-toggle" href="http://vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#vimeo-130435350">{{ symbol.icon('play', 'Play', 'icon--lg') }}</a>
+            <p>How children react on  our Avakai.<br/>
+              Watch the unpacking party.</p>
         </div>
-      </a>
+      </div>
 
     </div>
   </div>

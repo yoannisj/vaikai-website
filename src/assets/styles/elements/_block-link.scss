@@ -2,8 +2,12 @@
 // =VaiKai - Block-Link Element
 // =============================================================================
 
-.block-link {
+.block-link
+{
   display: block;
-  color: inherit;
   text-decoration: none;
+
+  &, &:focus, &.focus, &:hover, &.hover, &:active, &.active {
+    color: inherit;
+  }
 }

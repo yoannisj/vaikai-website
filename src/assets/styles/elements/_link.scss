@@ -9,11 +9,21 @@
   color: inherit;
 }
 
+/* =link-reset
+ * -------------------------------------------------------------------------- */
+
+.link-reset
+{
+  &, &:focus, &.focus, &:hover, &:active, &.active {
+    color: inherit;
+  }
+}
+
 /* =link-back
  * -------------------------------------------------------------------------- */
 
 .link-back {
-  font-family: $verlag-font-stack;
+  font-family: $avant-garde-font-stack;
   font-size: typescale-font-size('zeta', 'rem');
   font-weight: 400;
 }
