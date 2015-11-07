@@ -29,6 +29,7 @@ $sliders.each(function() {
       animation: "slide",
       smoothHeight: false,
       slideshow: false,
+      animationLoop: false,
       animationSpeed: 600,
       directionNav: false,
       keyboard: true,

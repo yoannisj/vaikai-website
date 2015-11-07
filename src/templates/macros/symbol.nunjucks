@@ -1,6 +1,12 @@
 {# =Logo #}
-{% macro logo(name, label, classname='') %}
-  <span class="logo {{ 'logo'|modify(name) ~ ' ' ~ classname }}">{{ label }}</span>
+{% macro logo(logo, label, classname='') %}
+  {# allow creating a logo on the fly by passing a hash object #}
+  {% if logo|datatype == 'object' %}
+    <span class="logo {{ classname }}" style="background-image:url({{ logo.path|url }}); width: {{ logo.width }}px; height: {{ logo.height }}px; background-size: {{ logo.width ~ 'px ' ~ logo.height ~ 'px' }};">{{ label }}</span>
+  {# or pass the logo name if already built with css #}
+  {% else %}
+    <span class="logo {{ 'logo'|modify(logo) ~ ' ' ~ classname }}">{{ label }}</span>
+  {% endif %}
 {% endmacro %}
 
 {# =Icon #}
@@ -21,30 +27,8 @@
   <span class="post-icon {{ 'icon'|modify(name) ~ ' ' ~ classname }}" aria-hidden="true"></span>
 {% endmacro %}
 
-{# =epiIcons #}
+{# =epiIcon #}
 {% macro epiIcon(name, label, classname='') %}
   <span class="epi-icon {{ 'icon'|modify(name) ~ ' ' ~ classname  }}" aria-hidden="true"></span>
   {{ label }}
 {% endmacro %}
-
-{# =Icon #}
-{# {% macro icon(name, label, classname='') %}
-  <span class="icon {{ 'icon'|modify(name) ~ ' ' ~ classname  }}"><span class="sr-only">{{ label }}</span></span>
-{% endmacro %} #}
-
-{# =preIcon #}
-{# {% macro preIcon(name, label, classname='') %}
-  <span class="pre-icon {{ 'icon'|modify(name) ~ ' ' ~ classname }}">{{ label }}</span>
-{% endmacro %} #}
-
-{# =postIcon #}
-{# {% macro postIcon(name, label, classname='') %}
-  {{ label }}
-  <span class="post-icon {{ 'icon'|modify(name) ~ ' ' ~ classname }}" aria-hidden="true"><br />{{ label }}</span>
-{% endmacro %} #}
-
-{# =epiIcons #}
-{# {% macro epiIcon(name, label, classname='') %}
-  <span class="epi-icon {{ 'icon'|modify(name) ~ ' ' ~ classname  }}" aria-hidden="true">{{ label }}</span>
-  {{ label }}
-{% endmacro %} #}

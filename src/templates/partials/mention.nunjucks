@@ -3,10 +3,28 @@
 <figure class="mention">
   <blockquote class="mention-quote">{{ mention.content }}</blockquote>
   <figcaption class="mention-caption">
-    <a class="mention-credit link-quiet" href="{{ mention.author.url }}">
-      {% set logoname = mention.author.name|compactify %}
-      {{ symbol.logo(logoname, mention.author.name, 'mention-author') }}
-      <strong class="mention-name">{{ mention.author.name }}</strong>
-    </a>
+
+    {% if mention.credit.url %}
+      <a class="mention-credit link-quiet" href="{{ mention.credit.url }}" target="{{ mention.credit.url|linktarget }}">
+    {% else %}
+      <p class="mention-credit credit">
+    {% endif %}
+
+      {% if mention.credit.logo %}
+        <strong class="credit-logo">{{ symbol.logo(mention.credit.logo, mention.credit.name) }}</strong>
+        <small class="credit-name">{{ mention.credit.name }}</small>
+      {% else %}
+        <strong class="credit-name zeta">{{ mention.credit.name }}</strong>
+      {% endif %}
+
+      {% if mention.credit.description %}
+        <small class="credit-description">{{ mention.credit.description }}</small>
+      {% endif %}
+
+    {% if mention.credit.url %}
+      </a>
+    {% else %}
+      </p>
+    {% endif %}
   </figcaption>
 </figure>
