@@ -2,6 +2,17 @@
 // =VaiKai - Chunk Module
 // =============================================================================
 
+@import "aleksi/lengths/convert";
+
+// =settings
+// -----------------------------------------------------------------------------
+$chunk-max-width: 1240px;
+$chunk-gutter: 20px;
+$chunk-gutter-s: 40px;
+
+/* =chunk
+ * -------------------------------------------------------------------------- */
+
 .chunk {
   position: relative;
   overflow: hidden;
@@ -9,16 +20,22 @@
 
 .chunk-inner {
   width: 100%;
-  max-width: 1240px;
+  max-width: $chunk-max-width;
   margin: 0 auto;
-  padding: 0 20px;
+  padding-left: convert-length($chunk-gutter, 'em');
+  padding-right: convert-length($chunk-gutter, 'em');
 
   @include shift('>s') {
-    padding: 0 40px;
+    padding-left: convert-length($chunk-gutter-s, 'em');
+    padding-right: convert-length($chunk-gutter-s, 'em');
   }
 
-  .chunk--bleed & {
+  .chunk--bleed &,
+  .chunk--fullbleed & {
     max-width: none;
+  }
+
+  .chunk--fullbleed & {
     padding: 0;
   }
 

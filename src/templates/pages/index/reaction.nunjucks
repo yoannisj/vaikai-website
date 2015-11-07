@@ -5,7 +5,7 @@
 
 {# =Reaction #}
 <aside id="reaction" class="section">
-  <div class="chunk chunk--bleed">
+  <div class="chunk chunk--fullbleed">
     <div class="chunk-inner">
 
       <div class="cover">

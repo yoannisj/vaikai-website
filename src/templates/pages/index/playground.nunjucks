@@ -32,11 +32,11 @@
 {# =Playdates #}
 <aside id="playdates" class="section theme-yellow">
   {# =Playdates-Quote #}
-  <div class="chunk">
+  <div class="chunk chunk--bleed">
     <div class="chunk-inner">
 
       <div class="quote landmark align-center">
-        <h3 class="sr-only">Playdates</h3>
+        <h3 class="sr-only">Playground</h3>
         <div class="quote-text">
           <p class="epsilon s-gamma m-beta l-alpha">Avakai stimulate all senses and activate your children’s imagination.<br />With Avakai your kids never leave the playground!.</p>
         </div>
@@ -50,7 +50,7 @@
   {# /Playdates-Quote #}
 
   {# =Playdates-Gallery #}
-  <div class="chunk chunk--bleed">
+  <div class="chunk chunk--fullbleed">
     <div class="chunk-inner">
       <div class="pack">
         <ul class="grid pack-items uilist cf">

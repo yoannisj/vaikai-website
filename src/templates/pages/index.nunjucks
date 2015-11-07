@@ -13,7 +13,7 @@
   {% include 'pages/index/features.nunjucks' %}
   {% include 'pages/index/reaction.nunjucks' %}
   {% include 'pages/index/preorder.nunjucks' %}
-  {% include 'pages/index/playdates.nunjucks' %}
+  {% include 'pages/index/playground.nunjucks' %}
   {% include 'pages/index/testimonial.nunjucks' %}
   {% include 'pages/index/subscribe.nunjucks' %}
 
