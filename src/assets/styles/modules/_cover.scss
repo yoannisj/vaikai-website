@@ -8,15 +8,11 @@ $cover-font-family: $avant-garde-font-stack;
 {
   position: relative;
   background: black;
-
-  &:hover .cover-object {
-    opacity: 0.7;
-  }
 }
 
 .cover-object {
   @include fluid-aspect-ratio(320px 320px, 1600px 750px);
-  opacity: 0.8;
+  opacity: 0.75;
   background: none center center no-repeat #f7f7f7;
   background-size: cover;
 }
