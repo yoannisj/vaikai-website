@@ -1,0 +1,44 @@
+// =============================================================================
+// =VaiKai - Star Element
+// =============================================================================
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$star-size: 30px;
+$star-sizes: (
+  "sm": 24px,
+  "md": 42px,
+  "lg": 60px
+);
+
+/* =star
+ * -------------------------------------------------------------------------- */
+
+.star
+{
+  display: inline-block;
+  width: convert-length($star-size, 'rem');
+  height: convert-length($star-size, 'rem');
+  background: url('../images/star.svg') center center no-repeat;
+  background-size: 100% auto;
+
+  .no-svg & {
+    background-image: url('../images/star.png');
+  }
+}
+
+/* =star--<size>
+ * -------------------------------------------------------------------------- */
+
+@each $sz, $dimen in $star-sizes
+{
+  .star--#{$sz} {
+    width: convert-length($dimen, 'rem');
+    height: convert-length($dimen, 'rem');
+
+    .no-svg & {
+      background-image: url('../images/star-#{$sz}.png');
+    }
+  }
+}

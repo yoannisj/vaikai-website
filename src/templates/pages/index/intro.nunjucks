@@ -15,15 +15,45 @@
 
           <!-- =AVAKAI-DUO-LEAD -->
           <div class="avk-duo-lead" role="presentation">
+            <!-- =AVK-TRUNC  -->
             <div class="avk-trunc animateme" role="presentation"
               data-when="span" data-from="0" data-to="0.5" data-translatey="-200" data-easing="linear"
             >
               {{ image.lazy('images/avakai-blue-trunc.png') }}
             </div>
-            <div class="avk-base animateme" role="presentation"
+
+            <!-- =AVK-BASE-BACK  -->
+            <div class="avk-base-back animateme" role="presentation"
               data-when="span" data-from="0.25" data-to="1.5" data-translatey="-100" data-easing="easein"
             >
-              {{ image.lazy('images/avakai-blue-base.png') }}
+              {{ image.lazy('images/avakai-blue-base-back.png') }}
+            </div>
+
+            <!-- =AVK-BASE-FRONT  -->
+            <div class="avk-base-front animateme" role="presentation"
+              data-when="span" data-from="0.25" data-to="1.5" data-translatey="-100" data-easing="easein"
+            >
+              {{ image.lazy('images/avakai-blue-base-front.png') }}
+            </div>
+
+            <!-- =AVAKAI-TREASURE -->
+            <div class="avk-treasure" role="presentation" aria-hidden="true">
+              <span class="star star-one animateme"
+                data-when="span" data-from="0.12" data-to="0.51" data-easing="easeinout"
+                data-opacity="1" data-translatex="-15" data-translatey="-70" data-scale="1.5"
+              ></span>
+              <span class="star star-two star--sm animateme"
+                data-when="span" data-from="0.2" data-to="0.6" data-easing="easein"
+                data-opacity="1" data-translatex="-30" data-translatey="-130" data-scale="1.35"></span>
+              <span class="star star-three star--sm animateme"
+                data-when="span" data-from="0.07" data-to="0.59" data-easing="easeinout"
+                data-opacity="1" data-translatex="40" data-translatey="-150" data-scale="1.35"></span>
+              <span class="star star-four star--md animateme"
+                data-when="span" data-from="0.15" data-to="0.7" data-easing="easein"
+                data-opacity="1" data-translatex="60" data-translatey="-90" data-scale="1.35"></span>
+              <span class="star star-five star--lg animateme"
+                data-when="span" data-from="0.05" data-to="0.58" data-easing="easeinout"
+                data-opacity="1" data-translatex="10" data-translatey="-120" data-scale="1.2"></span>
             </div>
           </div>
 

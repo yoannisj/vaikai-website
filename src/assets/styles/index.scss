@@ -17,9 +17,11 @@ $avk-duo-height-sm: 600px;
 $avk-duo-height-m: 740px;
 
 $avk-dimensions-trunc: 289px 549px;
-$avk-dimensions-base: 289px 198px;
+$avk-dimensions-base-front: 289px 186px;
+$avk-dimensions-base-back: 289px 22px;
 $avk-dimensions-natural: 207px 504px;
 $avakai-base-overlap-height: 42px;
+$avakai-base-back-overlap-height: 13px;
 
 $avk-preorder-height: 380px;
 $avk-preorder-height-sm: 620px;
@@ -29,7 +31,8 @@ $avk-dimensions-duo: 820px 640px;
  * -------------------------------------------------------------------------- */
 
 .avk-trunc,
-.avk-base,
+.avk-base-front,
+.avk-base-back,
 .avk-natural {
   // fix ratio when 'img' get's wrappped inside a 'picture' element
   // by responsive images' polyfill
@@ -39,7 +42,8 @@ $avk-dimensions-duo: 820px 640px;
 }
 
 .avk-trunc { @include aspect-ratio($avk-dimensions-trunc); }
-.avk-base { @include aspect-ratio($avk-dimensions-base); }
+.avk-base-front { @include aspect-ratio($avk-dimensions-base-front); }
+.avk-base-back { @include aspect-ratio($avk-dimensions-base-back); }
 .avk-natural { @include aspect-ratio($avk-dimensions-natural); }
 
 /* make trunc and base overlap */
@@ -49,9 +53,43 @@ $avk-dimensions-duo: 820px 640px;
   margin-bottom: -1 * $trunc-offset;
 }
 
+/* base-front and make base-back overlap */
+.avk-base-back {
+  $base-back-width: nth($avk-dimensions-base-back, 1);
+  $base-back-offset: percentage($avakai-base-back-overlap-height/$base-back-width);
+  margin-bottom: -1 * $base-back-offset;
+}
+
+.avk-treasure {
+  position: absolute;
+  z-index: 3;
+  bottom: 160px;
+  left: 0;
+  right: 0;
+
+  .star {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+
+    .no-js & {
+      opacity: 1;
+    }
+  }
+
+  /* position stars somewhere in the middle */
+  .star-one   { left: 40%; }
+  .star-two   { left: 25%; }
+  .star-three { left: 50%; }
+  .star-four  { left: 50%; }
+  .star-five  { left: 30%; }
+}
+
 /* display trunc in front of base */
-.avk-trunc { z-index: 2; }
-.avk-base { z-index: 1; }
+.avk-trunc { z-index: 3; }
+.avk-base-front { z-index: 2; }
+.avk-treasure { z-index: 1; }
+.avk-base-back { z-index: 0; }
 
 /* =Intro
  * ========================================================================== */
