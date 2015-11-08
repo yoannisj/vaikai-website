@@ -81,12 +81,17 @@ h6, .h6 { @extend %hN; @extend .base; }
 
 @include shift('>s')
 {
-  h1, .h1 { @extend .s-mega; }
+  h1, .h1 { @extend .s-kilo; }
   h2, .h2 { @extend .s-alpha; }
   h3, .h3 { @extend .s-beta; }
   h4, .h4 { @extend .s-delta; }
   h5, .h5 { @extend .s-epsilon; }
   h6, .h6 { @extend .s-zeta; }
+}
+
+@include shift('>sm')
+{
+  h1, .h1 { @extend .sm-mega; }
 }
 
 @include shift('>m')

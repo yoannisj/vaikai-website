@@ -43,14 +43,22 @@ body,
   margin-top: -1 * convert-length($navbar-height, 'rem');
 }
 
+.navbar,
+.navbar-title,
+.navbar-logo,
+.navbar-icon,
+.navbar-link,
+.navbar-btn {
+  height: convert-length($navbar-height, 'rem');
+}
+
 .navbar {
+  @include gutter($navbar-gutter - $navbar-group-spacing/2);
   position: fixed;
   z-index: $navbar-z-index;
   top: 0;
   left: 0;
   width: 100%;
-  height: convert-length($navbar-height, 'rem');
-  @include gutter($navbar-gutter - $navbar-group-spacing/2);
 
   font-family: $navbar-font-family;
   font-size: convert-length($navbar-font-size, 'rem');
@@ -85,7 +93,6 @@ body,
 .navbar-icon,
 .navbar-link,
 .navbar-btn {
-  height: convert-length($navbar-height, 'rem');
   line-height: convert-length($navbar-height, 'rem');
   font-size: inherit;
   vertical-align: middle;

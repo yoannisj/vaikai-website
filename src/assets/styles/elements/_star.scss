@@ -2,6 +2,9 @@
 // =VaiKai - Star Element
 // =============================================================================
 
+@import "config/colors";
+@import "elements/icon";
+
 // =settings
 // -----------------------------------------------------------------------------
 
@@ -12,33 +15,36 @@ $star-sizes: (
   "lg": 60px
 );
 
+$star-colors: (
+  'white': $white,
+  'yellow': $yellow
+);
+
 /* =star
  * -------------------------------------------------------------------------- */
 
-.star
-{
-  display: inline-block;
-  width: convert-length($star-size, 'rem');
-  height: convert-length($star-size, 'rem');
-  background: url('../images/star.svg') center center no-repeat;
-  background-size: 100% auto;
+.star {
+  @extend %icon-core;
+  @extend .icon--star;
+  font-size: convert-length($star-size, 'rem');
+}
 
-  .no-svg & {
-    background-image: url('../images/star.png');
+/* =star--<color>
+ * -------------------------------------------------------------------------- */
+
+@each $color, $val in $star-colors
+{
+  .star--#{$color} {
+    color: $val;
   }
 }
 
 /* =star--<size>
  * -------------------------------------------------------------------------- */
 
-@each $sz, $dimen in $star-sizes
+@each $sz, $font-size in $star-sizes
 {
   .star--#{$sz} {
-    width: convert-length($dimen, 'rem');
-    height: convert-length($dimen, 'rem');
-
-    .no-svg & {
-      background-image: url('../images/star-#{$sz}.png');
-    }
+    font-size: convert-length($font-size, 'rem');
   }
 }

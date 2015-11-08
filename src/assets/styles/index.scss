@@ -60,32 +60,54 @@ $avk-dimensions-duo: 820px 640px;
   margin-bottom: -1 * $base-back-offset;
 }
 
+/* =avk-treasure
+ * -------------------------------------------------------------------------- */
+
 .avk-treasure {
   position: absolute;
   z-index: 3;
-  bottom: 160px;
+  bottom: 200px;
   left: 0;
   right: 0;
 
   .star {
     position: absolute;
     bottom: 0;
-    opacity: 0;
-
-    .no-js & {
-      opacity: 1;
-    }
   }
 
   /* position stars somewhere in the middle */
-  .star-one   { left: 40%; }
-  .star-two   { left: 25%; }
-  .star-three { left: 50%; }
-  .star-four  { left: 50%; }
-  .star-five  { left: 30%; }
+  .star-one {
+    margin-left: 40%;
+    top: -80px;
+    left: -15px;
+  }
+
+  .star-two {
+    margin-left: 25%;
+    top: -110px;
+    left: -10px;
+  }
+
+  .star-three {
+    margin-left: 50%;
+    top: -125px;
+    left: 45px;
+  }
+
+  .star-four {
+    margin-left: 50%;
+    top: -100px;
+    left: 60px;
+  }
+
+  .star-five  {
+    margin-left: 30%;
+    top: -130px;
+    left: 30px;
+  }
 }
 
-/* display trunc in front of base */
+/* layer images in correct order */
 .avk-trunc { z-index: 3; }
 .avk-base-front { z-index: 2; }
 .avk-treasure { z-index: 1; }

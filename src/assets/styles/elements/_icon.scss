@@ -27,6 +27,7 @@ $codepoint-icon-instagram-fill: "\e906";
 $codepoint-icon-pinterest: "\e907";
 $codepoint-icon-twitter-fill: "\e909";
 $codepoint-icon-youtube: "\e90a";
+$codepoint-icon-star: "\e90c";
 
 /* =%icon-core
  * -------------------------------------------------------------------------- */
@@ -74,6 +75,7 @@ $codepoint-icon-youtube: "\e90a";
 .icon--instagram-fill:before { content: $codepoint-icon-instagram-fill; }
 .icon--pinterest:before { content: $codepoint-icon-pinterest; }
 .icon--youtube:before { content: $codepoint-icon-youtube; }
+.icon--star:before { content: $codepoint-icon-star; }
 
 /* play icons have additional, circular background */
 .icon--play

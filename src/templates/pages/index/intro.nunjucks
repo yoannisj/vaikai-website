@@ -39,21 +39,21 @@
             <!-- =AVAKAI-TREASURE -->
             <div class="avk-treasure" role="presentation" aria-hidden="true">
               <span class="star star-one animateme"
-                data-when="span" data-from="0.12" data-to="0.51" data-easing="easeinout"
-                data-opacity="1" data-translatex="-15" data-translatey="-70" data-scale="1.5"
+                data-when="span" data-to="0.2" data-from="0.54" data-easing="easeinout"
+                data-opacity="0" data-translatex="15" data-translatey="80" data-scale="0.667"
               ></span>
               <span class="star star-two star--sm animateme"
-                data-when="span" data-from="0.2" data-to="0.6" data-easing="easein"
-                data-opacity="1" data-translatex="-30" data-translatey="-130" data-scale="1.35"></span>
+                data-when="span" data-to="0.2" data-from="0.63" data-easing="easeout"
+                data-opacity="0" data-translatex="10" data-translatey="110" data-scale="0.75"></span>
               <span class="star star-three star--sm animateme"
-                data-when="span" data-from="0.07" data-to="0.59" data-easing="easeinout"
-                data-opacity="1" data-translatex="40" data-translatey="-150" data-scale="1.35"></span>
-              <span class="star star-four star--md animateme"
-                data-when="span" data-from="0.15" data-to="0.7" data-easing="easein"
-                data-opacity="1" data-translatex="60" data-translatey="-90" data-scale="1.35"></span>
-              <span class="star star-five star--lg animateme"
-                data-when="span" data-from="0.05" data-to="0.58" data-easing="easeinout"
-                data-opacity="1" data-translatex="10" data-translatey="-120" data-scale="1.2"></span>
+                data-when="span" data-to="0.07" data-from="0.62" data-easing="easeinout"
+                data-opacity="0" data-translatex="-45" data-translatey="125" data-scale="0.75"></span>
+              <span class="star star-four star--md star--yellow animateme"
+                data-when="span" data-to="0.15" data-from="0.73" data-easing="easeout"
+                data-opacity="0" data-translatex="-60" data-translatey="100" data-scale="0.75"></span>
+              <span class="star star-five star--lg star--yellow  animateme"
+                data-when="span" data-to="0.05" data-from="0.61" data-easing="easeinout"
+                data-opacity="0" data-translatex="-30" data-translatey="130" data-scale="0.833"></span>
             </div>
           </div>
 
@@ -69,7 +69,7 @@
         <!-- =Intro-Text -->
         <div class="split-body grid-cell span-8of12 sm-span-6of12">
           <div class="landmark centrum centrum--left">
-            <h2 class="h1 m-giga">Less Screentime<br />
+            <h2 class="h1">Less Screentime<br />
               more play</h2>
             <p class="s-zeta m-delta">Meet the Avakai Family<br/>Crafted wooden toy twins that enable kids to discover free play and a connected world without screens. </p>
             <p class="landmark"><a class="link-quiet shoutout js-toggle" href="http://www.vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#intro-video">
