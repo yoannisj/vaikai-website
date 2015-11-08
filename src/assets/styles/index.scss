@@ -124,21 +124,56 @@ $avk-dimensions-duo: 820px 640px;
 /* =Pre-order
  * ========================================================================== */
 
-/* =avk-preorder
+/* =avk-limiteded
  * -------------------------------------------------------------------------- */
 
-@include shift('>m')
+.avk-limiteded {
+  position: relative;
+}
+
+.stamp--limiteded {
+  top: 50%;
+  left: 0;
+  width: convert-length(120px, 'em');
+  margin-left: convert-length(-40px, 'em');
+}
+
+@include shift('>l')
 {
-  .avk-preorder {
-    min-height: 615px;
+  .stamp--limiteded {
+    width: convert-length(178px, 'em');
+    margin-left: convert-length(-110px, 'em');
+  }
+}
+
+/* =Makers
+ * ========================================================================== */
+
+.avk-makers {
+  position: relative;
+  padding-top: convert-length(55px, 'em');
+}
+
+/* =stamp-imaginedby
+ * -------------------------------------------------------------------------- */
+
+.stamp--imaginedby {
+  top: 0;
+  left: 50%;
+  margin-top: convert-length(-35px, 'em');
+  margin-left: convert-length(-140px, 'em');
+  transform: rotate(10deg);
+}
+
+@include shift('>sm')
+{
+  .avk-markers {
+    padding-top: convert-length(30px, 'em');
   }
 
-  .avk-preorder-duo
-  {
-    position: absolute;
-    top: 0;
-    right: percentage(7/12);
-    bottom: 0;
-    left: 0;
+  .stamp--imaginedby {
+    margin-top: convert-length(-10px, 'em');
+    margin-left: convert-length(-280px, 'em');
+    transform: rotate(0deg);
   }
 }

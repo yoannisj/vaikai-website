@@ -7,7 +7,8 @@
     <div class="chunk-inner">
       <div class="split grid grid--middle">
         <div class="avk-preorder split-media grid-cell m-span-5of12">
-          <div class="avk-preorder-duo align-right hide m-show">
+          <div class="avk-limiteded align-right hide m-show">
+            <strong class="stamp stamp--limiteded">Limited Edition</strong>
             {{ image.lazy('images/avakai-duo.png') }}
           </div>
         </div>

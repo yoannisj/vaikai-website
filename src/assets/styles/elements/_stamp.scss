@@ -1,0 +1,56 @@
+// =============================================================================
+// =VaiKai - Stamp Element
+// =============================================================================
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$stamps: (
+  'limiteded': (
+    'text': 'limited edition!',
+    'path': '../images/limitededition-bigger.svg',
+    'width': 178,
+    'height': 135,
+  ),
+  'imaginedby': (
+    'text': 'imagined with love by',
+    'path': '../images/imaginedby.svg',
+    'width': 260,
+    'height': 110,
+  )
+);
+
+/* =stamp
+ * -------------------------------------------------------------------------- */
+
+.stamp
+{
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  display: block;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    background: none center center no-repeat transparent;
+    background-size: 100% auto;
+  }
+}
+
+@each $stamp, $settings in $stamps
+{
+  $width: 1px * map-get($settings, 'width');
+  $height: 1px * map-get($settings, 'height');
+
+  .stamp--#{$stamp}
+  {
+    width: convert-length($width, 'em');
+
+    &:before {
+      padding-top: percentage($height/$width);
+      background-image: url(map-get($settings, 'path'));
+    }
+  }
+}

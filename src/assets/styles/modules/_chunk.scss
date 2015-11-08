@@ -7,6 +7,7 @@
 // =settings
 // -----------------------------------------------------------------------------
 $chunk-max-width: 1240px;
+$chunk-max-width-narrow: 1120px;
 $chunk-gutter: 20px;
 $chunk-gutter-s: 40px;
 
@@ -40,7 +41,7 @@ $chunk-gutter-s: 40px;
   }
 
   .chunk--narrow & {
-    max-width: 1120px;
+    max-width: $chunk-max-width-narrow;
   }
 
 }

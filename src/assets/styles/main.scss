@@ -9,21 +9,23 @@
 /* =Elements
  * ========================================================================== */
 
+@import "elements/uilist";
+@import "elements/hlist";
+@import "elements/sep";
+
 @import "elements/logo";
 @import "elements/icon";
 @import "elements/pre-icon";
 @import "elements/epi-icon";
 @import "elements/link";
-@import "elements/icon-link";
 @import "elements/block-link";
 @import "elements/btn";
 @import "elements/icon-btn";
-@import "elements/uilist";
-@import "elements/hlist";
+@import "elements/stamp";
+
+@import "elements/sticker";
 @import "elements/shoutout";
 @import "elements/tagline";
-@import "elements/sticker";
-@import "elements/sep";
 
 /* =Modules
  * ========================================================================== */
