@@ -22,7 +22,7 @@
               <p>Be one of the first families to give them a new home and your kids a creative and screen less way to spend quality time. Pre order below!</p>
             </div>
             <footer class="landmark">
-              <a class="btn btn--cta" href="https://shop.trycelery.com/page/avakai" target="_blank" data-target="#preorder-popup">Preorder your Avakai here</a>
+              <a class="btn btn--cta" data-celery="{{ data.celery.id }}" data-celery-version="{{ data.celery.version }}" href="{{ data.celery.url }}" target="_blank">Pre-order your Avakai here</a>
             </footer>
           </div>
         </div>

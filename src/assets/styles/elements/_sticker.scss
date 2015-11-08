@@ -33,7 +33,7 @@ $sticker-colors: (
   line-height: convert-length($sticker-size, 'rem');
   border-radius: convert-length(ceil($sticker-size/2), 'rem');
 
-  &, &:focus, &:hover, &:active, &.active {
+  &, &:focus, &.focus, &:hover, &:active, &.active {
     color: $sticker-text-color;
   }
 

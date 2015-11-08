@@ -2,7 +2,7 @@
   "website": {
     "title": "Vai Kai",
     "domain": "'vaikai.com'",
-    "homepage": "'http:\/\/vaikai.com'",
+    "homepage": "'http://vaikai.com'",
     "description": "Static website for Vai Kai UG",
     "keywords": [
       "vai kai",
@@ -15,9 +15,69 @@
       "internet of things",
       "berlin"
     ],
-    "authors": [
-      "'Yoannis Jamar <yoannis.j@gmail.com>'"
-    ]
+    "author": "Vai Kai UG",
+    "web-author": "Yoannis Jamar"
+  },
+
+  "main-nav": {
+    "avakai": {
+      "title": "Avakai",
+      "url": "'./index.html'"
+    },
+    "faq": {
+      "title": "FAQ",
+      "url": "'./faq.html'"
+    },
+    "about": {
+      "title": "About Vai Kai",
+      "url": "'./about.html'"
+    }
+  },
+
+  "sub-nav": {
+    "contact": {
+      "title": "Contact",
+      "url": "'./contact.html'"
+    },
+    "careers": {
+      "title": "Careers",
+      "url": "'./careers.html'"
+    },
+    "imprint": {
+      "title": "Imprint",
+      "url": "'./imprint.html'"
+    },
+    "data-and-privacy": {
+      "title": "Data and Privacy",
+      "url": "'./data-and-privacy.html'"
+    },
+    "press": {
+      "title": "Press",
+      "url": "'http://vaikai.com/press'"
+    }
+  },
+
+  "social": {
+    "facebook": {
+      "title": "Facebook",
+      "url": "'https://www.facebook.com/vaikaiplay/'"
+    },
+    "twitter": {
+      "title": "Twitter",
+      "url": "'https://twitter.com/vai_kai'"
+    },
+    "instagram": {
+      "title": "Instagram",
+      "url": "'https://instagram.com/vai_kai/'"
+    },
+    "pinterest": {
+      "title": "Pinterest",
+      "url": "'https://www.pinterest.com/vai_kai/'"
+    },
+    "youtube": {
+      "title": "Title",
+      "url": "'https://www.youtube.com/channel/Cvf8cDV9Yf19zT4xTqQLcOg'"
+    }
   },
 
   "breakpoints": {
@@ -26,5 +86,22 @@
     "m": 920,
     "l": 1280,
     "xl": 1700
+  },
+
+  "logos": [],
+  "imgsizes": [],
+
+  "celery": {
+    "url": "'https://shop.trycelery.com/page/avakai'",
+    "id": "559b055db75d810300dfb1e6",
+    "version": "v2"
+  },
+
+  "google-analytics": {
+    "tracking-code": "UA-61997920-1"
+  },
+
+  "facebook": {
+    "pixel-id": 6033122367801
   }
 }

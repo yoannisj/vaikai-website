@@ -24,8 +24,11 @@ module.exports = function() {
     // add 'app' global with environment infos
     env.addGlobal('app', appData);
 
+    // expose website infos under the 'site' global
+    env.addGlobal('site', websiteData.website);
+
     // add website global with website infos
-    env.addGlobal('site', websiteData);
+    env.addGlobal('data', websiteData);
 
     // add 'content' global with website's full content
     // TODO: add a query function instead ?

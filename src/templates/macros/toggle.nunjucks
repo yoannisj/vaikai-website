@@ -1,5 +1,5 @@
 {# =link #}
-{% macro link(action, target, href=false, labels=false, state='off', classname='') %}
+{% macro link(target, action, href=false, labels=false, state='off', classname='') %}
   <a class="js-toggle is-{{ state }} {{ classname }}"{% if href %} href="{{ href }}" data-target="#{{ target }}"{% else %} href="#{{ target }}"{% endif %} data-action="{{ action }}">
     {% if not labels %}
       {{ caller() }}
@@ -11,7 +11,7 @@
 {% endmacro %}
 
 {# =button #}
-{% macro button(action, target, labels=false, state='off', classname='') %}
+{% macro button(target, action, labels=false, state='off', classname='') %}
   <button class="btn is-{{ state }} js-only js-toggle {{ classname }} " data-target="#{{ target }}" data-action="{{ action }}">
     {% if not labels %}
       {{ caller() }}

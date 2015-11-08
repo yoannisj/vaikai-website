@@ -66,7 +66,7 @@ $avk-dimensions-duo: 820px 640px;
 .avk-treasure {
   position: absolute;
   z-index: 3;
-  bottom: 200px;
+  bottom: 190px;
   left: 0;
   right: 0;
 
@@ -78,31 +78,31 @@ $avk-dimensions-duo: 820px 640px;
   /* position stars somewhere in the middle */
   .star-one {
     margin-left: 40%;
-    top: -80px;
+    top: -95px;
     left: -15px;
   }
 
   .star-two {
     margin-left: 25%;
-    top: -110px;
+    top: -125px;
     left: -10px;
   }
 
   .star-three {
     margin-left: 50%;
-    top: -125px;
+    top: -140px;
     left: 45px;
   }
 
   .star-four {
     margin-left: 50%;
-    top: -100px;
+    top: -115px;
     left: 60px;
   }
 
   .star-five  {
     margin-left: 30%;
-    top: -130px;
+    top: -145px;
     left: 30px;
   }
 }

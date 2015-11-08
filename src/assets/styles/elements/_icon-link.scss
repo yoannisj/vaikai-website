@@ -16,12 +16,11 @@ $icon-link-transition-active: none;
 
 .icon-link
 {
-  @extend .icon;
   transition: $icon-link-transition-active;
+  color: inherit;
 
   &:hover, &:active {
     color: $icon-link-color-active;
     background-color: $icon-link-background-active;
-    opacity: $icon-link-opacity-active;
   }
 }

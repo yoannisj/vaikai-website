@@ -28,6 +28,8 @@ $menu-push-duration: 0.5s;
 $menu-push-timing: ease-out;
 
 // menu-grouping
+$menu-header-height-stacked: $navbar-height;
+$menu-header-height-stacked-s: $navbar-height-s;
 $menu-group-spacing-stacked: 20px;
 $menu-group-spacing-inline: $navbar-group-spacing;
 $menu-item-spacing-stacked: 0px;
@@ -143,6 +145,20 @@ body.has-menu-open {
   @include gutter($menu-gutter-stacked, 'rem');
 }
 
+.menu-header,
+.menu-link {
+  @include bleed($menu-gutter-stacked);
+  @include gutter($menu-gutter-stacked);
+}
+
+// .menu-header {
+//   @extend .cf;
+//   line-height: convert-length($menu-header-height-stacked, 'rem');
+// }
+
+// .menu-title { @extend .float-left; }
+// .menu-ctrls { @extend .float-right; }
+
 .menu-group {
   margin-bottom: convert-length($menu-group-spacing-stacked, 'rem');
 }
@@ -158,9 +174,6 @@ body.has-menu-open {
 
 .menu-link
 {
-  @include bleed($menu-gutter-stacked);
-  @include gutter($menu-gutter-stacked);
-
   // full span, single-line
   display: block;
   line-height: convert-length($menu-link-height-stacked, 'em', $menu-font-size-stacked);

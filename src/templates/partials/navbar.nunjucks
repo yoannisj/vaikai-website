@@ -1,19 +1,23 @@
 {% import 'macros/symbol.nunjucks' as symbol %}
+{% import 'macros/toggle.nunjucks' as toggle %}
+{% import 'macros/link.nunjucks' as link %}
+
+{# {{ data.mainNav|log }} #}
 
 <div class="navbar cf">
   <div class="menu-push" role="presentation">
     <!-- =NAVBAR-BRAND -->
     <div class="navbar-brand" role="presentation">
-      <h1 class="navbar-title"><a class="navbar-logo logo logo--vaikai" href="./index.html">Vai Kai</a></h1>
+      <h1 class="navbar-title">{{ link.logo('./index.html', 'vaikai', 'Vai Kai', 'navbar-logo', rel='home') }}</h1>
       <span class="navbar-tagline tagline">Intuitive connected wooden toys</span>
     </div>
 
     <!-- =NAVBAR-TOGGLE -->
     <div class="navbar-toggle" role="presentation">
-      <a class="navbar-icon js-toggle is-off" href="#menu">
+      {% call toggle.link('menu', '', classname='navbar-icon') %}
         {{ symbol.icon('menu', 'Toggle menu', 'js-toggle-on') }}
         {{ symbol.icon('close', 'Close menu', 'js-toggle-off') }}
-      </a>
+      {% endcall %}
     </div>
   </div>
 
@@ -22,39 +26,35 @@
     <div class="menu-backdrop" role="presentation" aria-hidden="true"></div>
 
     <div class="menu-inner" role="presentation">
-      <!--<div class="align-right">
-        <a class="menu-close icon-link icon--close" href="#">Close Menu</a>
-      </div>-->
+      {# <header class="menu-header menu-group">
+        <h2 class="menu-title sr-only">Menu</h2>
+        <div class="menu-ctrls">
+          {{ link.icon('#', 'close', 'Close', 'menu-link menu-close') }}
+        </div>
+      </header> #}
       <div class="menu-group menu-main">
         <ul class="uilist">
-          <li class="menu-item">
-            <a class="menu-link" href="{{ 'index.html'|url }}">Avakai</a>
-          </li>
-          <li class="menu-item">
-            <a class="menu-link" href="{{ 'faq.html'|url }}">FAQ</a>
-          </li>
-          <li class="menu-item">
-            <a class="menu-link" href="{{ 'about.html'|url }}">About Vaikai</a>
-          </li>
+          {% for name, item in data.mainNav %}
+
+            {% set cname = 'menu-link' ~ (' active' if (item.url|url == page.url) else '') %}
+            <li class="menu-item">
+              {{ link.nav(item.url, item.title, cname) }}
+            </li>
+
+          {% endfor %}
         </ul>
       </div>
 
       <div class="menu-group menu-social m-hide l-show" role="presentation">
         <ul class="hlist">
           <li class="menu-item">
-            <a class="menu-icon" href="https://twitter.com/vai_kai" target="_blank">
-              {{ symbol.icon('twitter', 'Twitter') }}
-            </a>
+            {{ link.icon(data.social.twitter.url, 'twitter', data.social.twitter.title, 'menu-icon') }}
           </li>
           <li class="menu-item">
-            <a class="menu-icon" href="https://www.facebook.com/vaikaiplay/" target="_blank">
-              {{ symbol.icon('facebook', 'Facebook') }}
-            </a>
+            {{ link.icon(data.social.facebook.url, 'facebook', data.social.facebook.title, 'menu-icon') }}
           </li>
           <li class="menu-item">
-            <a class="menu-icon" href="https://instagram.com/vai_kai/" target="_blank">
-              {{ symbol.icon('instagram', 'Instagram') }}
-            </a>
+            {{ link.icon(data.social.instagram.url, 'instagram', data.social.instagram.title, 'menu-icon') }}
           </li>
         </ul>
       </div>
@@ -62,24 +62,20 @@
       <!-- =NAVBAR-PREORDER -->
       <div class="menu-group hide m-show" role="presentation">
         <div class="menu-item" role="presentation">
-          <a class="navbar-btn btn btn--cta" href="#">Pre-order Avakai</a>
+          <a class="navbar-btn btn btn--cta" data-celery="{{ data.celery.id }}" data-celery-version="{{ data.celery.version }}" href="{{ data.celery.url }}" target="_blank">Pre-order Avakai</a>
         </div>
       </div>
 
       <div class="menu-group menu-sub m-hide">
         <ul class="navbar-links uilist">
-          <li class="menu-item">
-            <a class="menu-link" href="./company.html">Company</a>
-          </li>
-          <li class="menu-item">
-            <a class="menu-link" href="./jobs.html">Jobs</a>
-          </li>
-          <li class="menu-item">
-            <a class="menu-link" href="./data-privacy.html">Data and Privacy</a>
-          </li>
-          <li class="menu-item">
-            <a class="menu-link" href="./press.html">Press</a>
-          </li>
+          {% for name, item in data.subNav %}
+
+            <li class="menu-item">
+              {% set cname = 'menu-link' ~ (' active' if (item.url|url == page.url) else '') %}
+              {{ link.nav(item.url, item.title, cname) }}
+            </li>
+
+          {% endfor %}
         </ul>
       </div>
     </div>

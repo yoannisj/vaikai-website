@@ -40,20 +40,20 @@
             <div class="avk-treasure" role="presentation" aria-hidden="true">
               <span class="star star-one animateme"
                 data-when="span" data-to="0.2" data-from="0.54" data-easing="easeinout"
-                data-opacity="0" data-translatex="15" data-translatey="80" data-scale="0.667"
+                data-opacity="0.2" data-translatex="15" data-translatey="95" data-scale="0.667"
               ></span>
               <span class="star star-two star--sm animateme"
                 data-when="span" data-to="0.2" data-from="0.63" data-easing="easeout"
-                data-opacity="0" data-translatex="10" data-translatey="110" data-scale="0.75"></span>
+                data-opacity="0.2" data-translatex="10" data-translatey="125" data-scale="0.75"></span>
               <span class="star star-three star--sm animateme"
                 data-when="span" data-to="0.07" data-from="0.62" data-easing="easeinout"
-                data-opacity="0" data-translatex="-45" data-translatey="125" data-scale="0.75"></span>
+                data-opacity="0.2" data-translatex="-45" data-translatey="140" data-scale="0.75"></span>
               <span class="star star-four star--md star--yellow animateme"
                 data-when="span" data-to="0.15" data-from="0.73" data-easing="easeout"
-                data-opacity="0" data-translatex="-60" data-translatey="100" data-scale="0.75"></span>
+                data-opacity="0.2" data-translatex="-60" data-translatey="115" data-scale="0.75"></span>
               <span class="star star-five star--lg star--yellow  animateme"
                 data-when="span" data-to="0.05" data-from="0.61" data-easing="easeinout"
-                data-opacity="0" data-translatex="-30" data-translatey="130" data-scale="0.833"></span>
+                data-opacity="0.2" data-translatex="-30" data-translatey="145" data-scale="0.833"></span>
             </div>
           </div>
 

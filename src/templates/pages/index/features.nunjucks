@@ -42,7 +42,7 @@
 
         <div class="expand-ctrls landmark">
           <div class="expand-toggle">
-            {{ toggle.link('expand:expand', 'features-expand', false, featuresExpandLabels, 'off', 'btn') }}
+            {{ toggle.link('features-expand', 'expand:expand', false, featuresExpandLabels, 'off', 'btn') }}
           </div>
         </div>
       </div>

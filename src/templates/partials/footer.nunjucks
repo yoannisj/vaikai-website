@@ -1,33 +1,23 @@
-{% import 'macros/symbol.nunjucks' as symbol %}
+{% import 'macros/link.nunjucks' as link %}
 
 <div class="footer-nav landmark align-center">
 
   <div class="social-nav">
     <ul class="social-links hlist">
       <li>
-        <a target="_blank" class="sticker sticker--facebook" href="https://www.facebook.com/vaikaiplay/" >
-          {{ symbol.icon('facebook-fill', 'Facebook') }}
-        </a>
+        {{ link.icon(data.social.facebook.url, 'facebook-fill', data.social.facebook.title, 'sticker sticker--facebook') }}
       </li>
       <li>
-        <a target="_blank" class="sticker sticker--twitter" href="https://twitter.com/vai_kai" >
-          {{ symbol.icon('twitter-fill', 'Twitter') }}
-        </a>
+        {{ link.icon(data.social.twitter.url, 'twitter-fill', data.social.twitter.title, 'sticker sticker--twitter') }}
       </li>
       <li>
-        <a target="_blank" class="sticker sticker--pinterest" href="https://www.pinterest.com/vai_kai/" >
-          {{ symbol.icon('pinterest', 'Pinterest') }}
-        </a>
+        {{ link.icon(data.social.pinterest.url, 'pinterest', data.social.pinterest.title, 'sticker sticker--pinterest') }}
       </li>
       <li>
-        <a target="_blank" class="sticker sticker--instagram" href="https://instagram.com/vai_kai/" >
-          {{ symbol.icon('instagram-fill', 'Instagram') }}
-        </a>
+        {{ link.icon(data.social.instagram.url, 'instagram-fill', data.social.instagram.title, 'sticker sticker--instagram') }}
       </li>
       <li>
-        <a target="_blank" class="sticker sticker--youtube" href="https://www.youtube.com/channel/UCvf8cDV9Yf19zT4xTqQLcOg" >
-          {{ symbol.icon('youtube', 'Youtube') }}
-        </a>
+        {{ link.icon(data.social.youtube.url, 'youtube', data.social.youtube.title, 'sticker sticker--youtube') }}
       </li>
     </ul>
   </div>
@@ -35,19 +25,27 @@
   <nav class="landmark">
     <div class="nav epsilon">
       <ul class="nav-links hlist air">
-        <li><a href="{{ 'index.html'|url }}">Avakai</a></li>
-        <li><a href="{{ 'faq.html'|url }}">FAQ</a></li>
-        <li><a href="{{ 'about.html'|url }}">About Vaikai</a></li>
+        {% for name, item in data.mainNav %}
+
+          {% set cname = ('active' if (item.url|url == page.url) else '') %}
+          <li class="nav-item">
+            {{ link.nav(item.url, item.title, cname) }}
+          </li>
+
+        {% endfor %}
       </ul>
     </div>
 
     <div class="subnav">
       <ul class="subnav-links hlist sep-pipe">
-        <li><a class="link-quiet" href="{{ 'contact.html'|url }}">Contact</a></li>
-        <li><a class="link-quiet" href="{{ 'careers.html'|url }}">Careers</a></li>
-        <li><a class="link-quiet" href="{{ 'imprint.html'|url }}">Imprint</a></li>
-        <li><a class="link-quiet" href="{{ 'data-and-privacy.html'|url }}">Data and Privacy</a></li>
-        <li><a class="link-quiet" href="{{ 'press.html'|url }}">Press</a></li>
+        {% for name, item in data.subNav %}
+
+          <li class="subnav-item">
+            {% set cname = 'link-quiet nav-link' ~ (' active' if (item.url|url == page.url) else '') %}
+            {{ link.nav(item.url, item.title, cname) }}
+          </li>
+
+        {% endfor %}
       </ul>
     </div>
   </nav>

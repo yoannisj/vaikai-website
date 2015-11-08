@@ -6,10 +6,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- =Robots -->
+    <!-- =Robots & SEO -->
     <title>{{ page.title }} | {{ site.title }}</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="{{ page.description }}" />
+    <meta name="keywords" content="{{ (site.keywords|merge(page.keywords)) }}" />
+    <meta name="author" content="{{ site.author }}" />
+    <meta name="web-author" content="{{ site.webAuthor }}" />
+    <link rel="canonical" href="{{ page.url }}" />
 
     <!-- =Scripts-preload -->
     {% block head_scripts %}
@@ -55,6 +58,12 @@
     <!-- =Icons-->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
+
+    <!-- =Third-party-meta -->
+    {% block third_party_meta %}
+      {% include "partials/facebook/meta.nunjucks" %}
+      {% include "partials/twitter/card.nunjucks" %}
+    {% endblock %}
   </head>
 
   <body>
@@ -62,7 +71,6 @@
       <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-
 
       {% block body %}
         <!-- =Header -->
@@ -88,12 +96,10 @@
 
     <!-- =Body-end -->
     {% block body_end %}
-
+      <!-- =jQuery -->
       {% set jQueryCdnFile = 'jquery-1.11.3.js' if app.environment == 'dev' else 'jquery-1.11.3.min.js' %}
-
-      <!-- =Scripts-third-party -->
       <script src="https://code.jquery.com/{{ jQueryCdnFile }}"></script>
-      <script>window.jQuery || document.write('<script src="./js/vendor/jquery.js"><\/script>')</script>
+      <script>window.jQuery || document.write('<script defer src="./js/vendor/jquery.js"><\/script>')</script>
 
       {% if app.watch %}
         <!-- =Scripts-watch -->
@@ -103,40 +109,13 @@
 
       <!-- =Scripts-custom -->
       <script src="{{ 'js/main.js'|webpackurl }}"></script>
+    {% endblock %}
 
-      <!-- Google Analytics -->
-      <script>
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-61997920-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
-      <script async type="text/javascript" src="https://www.trycelery.com/js/celery.js"></script>
-      <!-- FB -->
-      <script>(function() {
-        var _fbq = window._fbq || (window._fbq = []);
-        if (!_fbq.loaded) {
-        var fbds = document.createElement('script');
-        fbds.async = true;
-        fbds.src = '//connect.facebook.net/en_US/fbds.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(fbds, s);
-        _fbq.loaded = true;
-        }
-        _fbq.push(['addPixelId', '6033122367801']);
-        })();
-        window._fbq = window._fbq || [];
-        window._fbq.push(['track', 'PixelInitialized', {}]);
-      </script>
-      <noscript>
-        <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=6033122367801&amp;ev=PixelInitialized" />
-      </noscript>
-
+    {% block third_party_scripts %}
+      <!-- =Third-party scripts -->
+      {% include 'partials/celery/embed.nunjucks' %}
+      {% include 'partials/google/analytics.nunjucks' %}
+      {% include 'partials/facebook/pixel.nunjucks' %}
     {% endblock %}
   </body>
 </html>
