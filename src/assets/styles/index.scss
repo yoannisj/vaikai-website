@@ -224,15 +224,15 @@ $avk-dimensions-duo: 820px 640px;
   padding-top: convert-length(55px, 'em');
 }
 
-/* =stamp-imaginedby
+/* =stamp-madewithlove
  * -------------------------------------------------------------------------- */
 
-.stamp--imaginedby {
+.stamp--madewithlove {
   top: 0;
   left: 50%;
-  margin-top: convert-length(-35px, 'em');
+  margin-top: convert-length(-5px, 'em');
   margin-left: convert-length(-140px, 'em');
-  transform: rotate(10deg);
+  transform: rotate(-5deg);
 }
 
 @include shift('>sm')
@@ -241,9 +241,9 @@ $avk-dimensions-duo: 820px 640px;
     padding-top: convert-length(30px, 'em');
   }
 
-  .stamp--imaginedby {
-    margin-top: convert-length(-10px, 'em');
-    margin-left: convert-length(-280px, 'em');
-    transform: rotate(0deg);
+  .stamp--madewithlove {
+    margin-top: convert-length(0, 'em');
+    margin-left: convert-length(-260px, 'em');
+    transform: rotate(-11deg);
   }
 }

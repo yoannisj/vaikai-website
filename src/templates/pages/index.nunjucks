@@ -23,7 +23,7 @@
       <div class="splash landmark align-center">
         <div class="splash-object">
           <p class="avk-makers">
-            <em class="stamp stamp--imaginedby">Imagined with love by</em><br />
+            <em class="stamp stamp--madewithlove">Made with love by</em><br />
             {{ symbol.logo('vaikai', 'VaiKai', 'logo--lg') }}
           </p>
         </div>

@@ -3,18 +3,18 @@
   "description": "Come to play! Imaginary and active play is essential for your kids’ physical and verbal development. With Avakai they explore their surroundings while playing catch, hide and seek or treasure hunt with their friends",
   "object": {
     "type": "illustration",
-    "src": "/images/hide-and-seek.png",
-    "fallback": ""
+    "src": "/images/hide-and-seek.svg",
+    "fallback": "/images/hide-and-seek.png"
   }
 },
 
 {
-  "title": "Message from Abroad",
+  "title": "Messages from Abroad",
   "description": "We know your favorite place is home but even if you are away you can stay in touch with your loved ones, simply using the app on your phone",
   "object": {
     "type": "illustration",
-    "src": "/images/messages.png",
-    "fallback": ""
+    "src": "/images/messages-from-abroad.svg",
+    "fallback": "/images/messages-from-abroad.svg"
   }
 },
 
@@ -23,8 +23,8 @@
   "description": "Psst! Avakai speaks many languages. Their individual heartbeat allows them to send secret codes through light and sound - it´s a great way to develop communication skills",
   "object": {
     "type": "illustration",
-    "src": "/images/friends-1.png",
-    "fallback": ""
+    "src": "/images/friends.svg",
+    "fallback": "/images/friends.png"
   }
 },
 
@@ -33,7 +33,7 @@
   "description": "Everybody loves Avakai, but kids between the age of 4 and 8 years love Avakai the most. They are friends for a lifetime and grow with the little ones as it can be updated and expanded individually",
   "object": {
     "type": "illustration",
-    "src": "/images/age.png",
+    "src": false,
     "fallback": ""
   }
 },
@@ -43,7 +43,7 @@
   "description": "Charging is really easy; simply connect your Avakai with your USB port. A grumpy sound will let you know when it needs a new energy kick.",
   "object": {
     "type": "illustration",
-    "src": "/images/batterij.png",
+    "src": false,
     "fallback": ""
   }
 },
@@ -53,7 +53,7 @@
   "description": "Kids love Avakai as we found during our unpacking parties with the little experts. Only the most critical, experienced and adventurous kids were undertaking the tests and we passed!",
   "object": {
     "type": "illustration",
-    "src": "/images/kids-approved.png",
+    "src": false,
     "fallback": ""
   }
 },

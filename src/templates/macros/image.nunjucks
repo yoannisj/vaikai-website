@@ -1,7 +1,7 @@
 
 {# =illustration #}
 {% macro illustration(src, fallback) %}
-  <img src="{{ src|url }}" />
+  <img src="{{ src|url }}" onerror="this.src='{{ fallback|url }}'" />
 {% endmacro %}
 
 

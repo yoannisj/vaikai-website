@@ -144,7 +144,7 @@
         </footer>
       </article>
       <article class="copy-section landmark">
-        <header>
+        <header class="landmark">
           <h3 class="h4">Play Wizard &amp; Community Evangelist</h3>
           <span class="byline s-zeta">Berlin, Germany | Full-Time</span>
         </header>
@@ -156,7 +156,7 @@
         </footer>
       </article>
       <article class="copy-section landmark">
-        <header>
+        <header class="landmark">
           <h3 class="h4">Graphic Designer</h3>
           <span class="byline s-zeta">Berlin, Germany | Full-Time</span>
         </header>
