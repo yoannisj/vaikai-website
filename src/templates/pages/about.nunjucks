@@ -1,0 +1,69 @@
+{% extends "layouts/page-info.nunjucks" %}
+
+{% block head_styles %}
+  {{ super() }}
+{% endblock %}
+
+{% block body_header %}
+  {{ super() }}
+
+  <div class="page-banner banner menu-push theme-green">
+    <div class="page-inner banner-inner" role="presentation">
+      <div class="banner-object overlay-left" role="presenation">
+        <div class="banner-avk-front avk-trunc" role="presentation">
+          <img src="{{ '/images/avakai-blue-trunc.png'|url }}" alt="" />
+        </div>
+        <div class="banner-avk-back avk-natural" role="presentation">
+          <img src="{{ '/images/avakai-natural.png'|url }}" alt="" />
+        </div>
+      </div>
+      <div class="banner-body">
+        <h1 class="banner-title h2">About Vai Kai</h1>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block body_main %}
+  {{ super() }}
+
+  <div class="page-inner" role="presentation">
+    <section class="copy">
+      <div class="landmark">
+        <h2 class="h3">Sensory Technology, open to Imagination</h2>
+        <p>We believe that technology can be sensitive, emotional and truly bonding while enhancing your child’s natural development.</p>
+      </div>
+      <figure id="about-quote" class="quote landmark align-left">
+        <blockquote class="quote-text">
+          <p class="delta s-epsilon m-gamma">The world can be a challenging place and parenting is not easy. We want to help children to grow as independant happy beings while helping parents to build better relationships with them.</p>
+        </blockquote>
+        <figcaption class="quote-credit credit">
+          <strong class="credit-name zeta">Matas</strong>
+          <small class="credit-desription">co-founder of Vai Kai</small>
+        </figcaption>
+      </figure>
+      <div class="landmark">
+        <h3 class="h4">Design Thinking for Intuitive, Connected Toys</h3>
+        <p>Once upon a time, back in 2004 we had a great idea. What if kids could play with mobile technology so naturally like it was their favorite wooden toy? So we started the design process with the kids in mind, not with the possibilities of what we can produce. When the first kids held our very first prototype in their hands, we held our breath.. with oxygen back in our brains we realized that it really worked! So we started Vai Kai: focusing on designing play that is intuitive and sensory, that helps to express emotions and brings people closer together.</p>
+      </div>
+      <div class="landmark">
+        <h3 class="h4">Child Development, Open-ended Play & Embracing Technology</h3>
+        <p>Play with the future – the world is full of screens, blinking and beeping, there is no way around it. Not even for your kids as they grow up in a connected world. We still want to give them the possibility to express and evolve their imagination. It´s time to offer them a fulfilling way to explore the future, using all their senses. Kids, experts, educators, development specialists and researchers are our closest companions when it comes to designing play experiences that matter.</p>
+      </div>
+      <aside class="landmark">
+        <h2 class="h4">Calling all Families – Join our Playdates</h2>
+        <p>We should stop talking about play and simply do it. Therefore, we invite you to an excited real life adventure with Avakai and Vai Kai play wizards. We know the best spots to experience some very special adventures and you will get to know the Avakai! We bring games, crafts and of course our Avakai toys. You only need to bring your kids, you camera and loads of energy.</p>
+        <p>Playdates are organized all over the world. Let us know where you want us to go next and we will make it happen.</p>
+      </aside>
+      <div class="landmark">
+        <h3 class="h4">Traditional Craftsmanship with the Standards of the 21st Century</h3>
+        <p>As soon as you hold an Avakai in your hands you will immediately recognize how much love we put into making them. We work together with local manufacturers throughout Europe that have known their craft for generations. It´s a combination of talented handcraft and super precise milling machines. And of course we want to take care of the planet and only use wood that comes from sustainably managed forest within the EU to also give future generations fresh air and innovative toys.</p>
+      </div>
+      <footer class="landmark">
+        <p><a class="link-back" href="./index.html"><span class="icon icon--arrowleft" aria-hidden="true"></span> Back to home</a></p>
+      </footer>
+    </section>
+  </div>
+
+{% endblock %}
