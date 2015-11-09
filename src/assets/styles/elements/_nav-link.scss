@@ -1,0 +1,25 @@
+// =============================================================================
+// =VaiKai - Nav-Link Elements
+// =============================================================================
+
+@import "config/colors";
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$nav-link-color-active: $blue;
+
+/* =nav-link
+ * -------------------------------------------------------------------------- */
+
+.nav-link
+{
+  // padding-bottom: 3px;
+  // border-bottom: 2px solid transparent;
+
+  &:focus, &:hover, &:active, &.active {
+    color: $nav-link-color-active;
+    // border-color: lighten($nav-link-color-active, 5%);
+
+  }
+}

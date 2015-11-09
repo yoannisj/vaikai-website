@@ -23,7 +23,7 @@
   </div>
 
   <nav class="landmark">
-    <div class="nav epsilon">
+    <div class="nav sm-zeta">
       <ul class="nav-links hlist air">
         {% for name, item in data.mainNav %}
 
@@ -36,7 +36,7 @@
       </ul>
     </div>
 
-    <div class="subnav">
+    <div class="subnav nano sm-micro">
       <ul class="subnav-links hlist sep-pipe">
         {% for name, item in data.subNav %}
 
