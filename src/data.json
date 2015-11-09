@@ -3,7 +3,7 @@
     "title": "Vai Kai",
     "domain": "'vaikai.com'",
     "homepage": "'http://vaikai.com'",
-    "description": "Static website for Vai Kai UG",
+    "description": "A magic way to connect and play in a connected world",
     "keywords": [
       "vai kai",
       "toys",
@@ -23,10 +23,6 @@
     "avakai": {
       "title": "Avakai",
       "url": "'./index.html'"
-    },
-    "faq": {
-      "title": "FAQ",
-      "url": "'./faq.html'"
     },
     "about": {
       "title": "About Vai Kai",
