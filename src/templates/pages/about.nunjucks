@@ -51,11 +51,11 @@
         <h3 class="h4">Child Development, Open-ended Play & Embracing Technology</h3>
         <p>Play with the future – the world is full of screens, blinking and beeping, there is no way around it. Not even for your kids as they grow up in a connected world. We still want to give them the possibility to express and evolve their imagination. It´s time to offer them a fulfilling way to explore the future, using all their senses. Kids, experts, educators, development specialists and researchers are our closest companions when it comes to designing play experiences that matter.</p>
       </div>
-      <aside class="landmark">
+      {# <aside class="landmark">
         <h2 class="h4">Calling all Families – Join our Playdates</h2>
         <p>We should stop talking about play and simply do it. Therefore, we invite you to an excited real life adventure with Avakai and Vai Kai play wizards. We know the best spots to experience some very special adventures and you will get to know the Avakai! We bring games, crafts and of course our Avakai toys. You only need to bring your kids, you camera and loads of energy.</p>
         <p>Playdates are organized all over the world. Let us know where you want us to go next and we will make it happen.</p>
-      </aside>
+      </aside> #}
       <div class="landmark">
         <h3 class="h4">Traditional Craftsmanship with the Standards of the 21st Century</h3>
         <p>As soon as you hold an Avakai in your hands you will immediately recognize how much love we put into making them. We work together with local manufacturers throughout Europe that have known their craft for generations. It´s a combination of talented handcraft and super precise milling machines. And of course we want to take care of the planet and only use wood that comes from sustainably managed forest within the EU to also give future generations fresh air and innovative toys.</p>
