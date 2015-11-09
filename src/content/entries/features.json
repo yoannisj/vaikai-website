@@ -3,8 +3,8 @@
   "description": "Come to play! Imaginary and active play is essential for your kids’ physical and verbal development. With Avakai they explore their surroundings while playing catch, hide and seek or treasure hunt with their friends",
   "object": {
     "type": "illustration",
-    "src": "/images/feature-illustration.png",
-    "fallback": "/images/feature-illustration.png"
+    "src": "/images/hide-and-seek.png",
+    "fallback": ""
   }
 },
 
@@ -13,8 +13,8 @@
   "description": "We know your favorite place is home but even if you are away you can stay in touch with your loved ones, simply using the app on your phone",
   "object": {
     "type": "illustration",
-    "src": "/images/feature-illustration.png",
-    "fallback": "/images/feature-illustration.png"
+    "src": "/images/messages.png",
+    "fallback": ""
   }
 },
 
@@ -23,28 +23,8 @@
   "description": "Psst! Avakai speaks many languages. Their individual heartbeat allows them to send secret codes through light and sound - it´s a great way to develop communication skills",
   "object": {
     "type": "illustration",
-    "src": "/images/feature-illustration.png",
-    "fallback": "/images/feature-illustration.png"
-  }
-},
-
-{
-  "title": "Distance",
-  "description": "No matter if you use Bluetooth that allows two dolls to be in contact with each other or if you connect via the app – Avakai love to stay in touch with both earthlings and their twin",
-  "object": {
-    "type": "illustration",
-    "src": "/images/feature-illustration.png",
-    "fallback": "/images/feature-illustration.png"
-  }
-},
-
-{
-  "title": "Stimulating Senses",
-  "description": "Kids on earth know amazing games. Avakai is designed to motivate imaginary play and inclusion through stimulation of all senses without the negative effects of a screen",
-  "object": {
-    "type": "illustration",
-    "src": "/images/feature-illustration.png",
-    "fallback": "/images/feature-illustration.png"
+    "src": "/images/friends-1.png",
+    "fallback": ""
   }
 },
 
@@ -53,16 +33,8 @@
   "description": "Everybody loves Avakai, but kids between the age of 4 and 8 years love Avakai the most. They are friends for a lifetime and grow with the little ones as it can be updated and expanded individually",
   "object": {
     "type": "illustration",
-    "src": "/images/feature-illustration.png",
-    "fallback": "/images/feature-illustration.png"
-  }
-}, {
-  "title": "FSC Label",
-  "description": "What a name! The Forest Stewardship Council. It sounds difficult but it’s very easy. When a tree becomes an Avakai a new wood is planted to keep their new home planet in balance.",
-  "object": {
-    "type": "illustration",
-    "src": "/images/feature-illustration.png",
-    "fallback": "/images/feature-illustration.png"
+    "src": "/images/age.png",
+    "fallback": ""
   }
 },
 
@@ -71,18 +43,8 @@
   "description": "Charging is really easy; simply connect your Avakai with your USB port. A grumpy sound will let you know when it needs a new energy kick.",
   "object": {
     "type": "illustration",
-    "src": "/images/feature-illustration.png",
-    "fallback": "/images/feature-illustration.png"
-  }
-},
-
-{
-  "title": "Free App",
-  "description": "Avakai can be connected to iOS & Android smartphones for free. The app allows you to upgrade and install new behaviors while being a simplified mobile Avaikai in itself.",
-  "object": {
-    "type": "illustration",
-    "src": "/images/feature-illustration.png",
-    "fallback": "/images/feature-illustration.png"
+    "src": "/images/batterij.png",
+    "fallback": ""
   }
 },
 
@@ -91,7 +53,47 @@
   "description": "Kids love Avakai as we found during our unpacking parties with the little experts. Only the most critical, experienced and adventurous kids were undertaking the tests and we passed!",
   "object": {
     "type": "illustration",
-    "src": "/images/feature-illustration.png",
-    "fallback": "/images/feature-illustration.png"
+    "src": "/images/kids-approved.png",
+    "fallback": ""
+  }
+},
+
+{
+  "title": "Distance",
+  "description": "No matter if you use Bluetooth that allows two dolls to be in contact with each other or if you connect via the app – Avakai love to stay in touch with both earthlings and their twin",
+  "object": {
+    "type": "illustration",
+    "src": false,
+    "fallback": ""
+  }
+},
+
+{
+  "title": "Stimulating Senses",
+  "description": "Kids on earth know amazing games. Avakai is designed to motivate imaginary play and inclusion through stimulation of all senses without the negative effects of a screen",
+  "object": {
+    "type": "illustration",
+    "src": false,
+    "fallback": ""
+  }
+},
+
+{
+  "title": "FSC Label",
+  "description": "What a name! The Forest Stewardship Council. It sounds difficult but it’s very easy. When a tree becomes an Avakai a new wood is planted to keep their new home planet in balance.",
+  "object": {
+    "type": "illustration",
+    "src": false,
+    "fallback": ""
+  }
+},
+
+{
+  "title": "Free App",
+  "description": "Avakai can be connected to iOS & Android smartphones for free. The app allows you to upgrade and install new behaviors while being a simplified mobile Avaikai in itself.",
+  "object": {
+    "type": "illustration",
+    "src": false,
+    "fallback": ""
   }
 }]

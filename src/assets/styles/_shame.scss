@@ -47,11 +47,24 @@
   -moz-osx-font-smoothing: auto;
 }
 
+// #features
+// {
+//   padding-bottom: 40px;
+
+//   @include shift('>s') {
+//     padding-bottom: 60px;
+//   }
+// }
+
+#features-expand .thumb-object img {
+  max-width: 220px;
+}
+
 #about-quote
 {
   &:before { display: none; }
-  .quote-text:before { content: '“'; }
-  .quote-text:after { content: '”'; }
+  .quote-text p:first-child:before { content: '“'; }
+  .quote-text p:last-child:after { content: '”'; }
 }
 
 #open-positions article .landmark
@@ -63,4 +76,9 @@
     margin-top: 40px;
     margin-bottom: 40px;
   }
+}
+
+#open-positions article .byline {
+  font-weight: 400;
+  color: $mid-gray;
 }

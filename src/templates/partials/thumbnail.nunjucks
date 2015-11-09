@@ -1,9 +1,11 @@
 {% import 'macros/object.nunjucks' as object %}
 
 <div class="thumb align-center">
-  <div class="thumb-object">
-    {{ object[thumbnail.object.type](thumbnail.object) }}
-  </div>
+  {% if thumbnail.object.src %}
+    <div class="thumb-object">
+      {{ object[thumbnail.object.type](thumbnail.object) }}
+    </div>
+  {% endif %}
 
   <div class="thumb-body">
     <h3 class="h5">{{ thumbnail.title }}</h3>

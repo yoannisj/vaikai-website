@@ -72,7 +72,7 @@ img {
   color: $base-heading-color;
 }
 
-h1, .h1 { @extend %hN; @extend .alpha; }
+h1, .h1 { @extend %hN; @extend .beta; }
 h2, .h2 { @extend %hN; @extend .gamma; }
 h3, .h3 { @extend %hN; @extend .delta; }
 h4, .h4 { @extend %hN; @extend .epsilon; }

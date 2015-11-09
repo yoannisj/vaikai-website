@@ -33,7 +33,7 @@
   "sub-nav": {
     "contact": {
       "title": "Contact",
-      "url": "'mailto:matas.petrikas@gmail.com'"
+      "url": "'mailto:info@vaikai.com'"
     },
     "careers": {
       "title": "Careers",
@@ -72,7 +72,7 @@
     },
     "youtube": {
       "title": "Title",
-      "url": "'https://www.youtube.com/channel/Cvf8cDV9Yf19zT4xTqQLcOg'"
+      "url": "'https://www.youtube.com/channel/UCvf8cDV9Yf19zT4xTqQLcOg/videos'"
     }
   },
 
@@ -89,7 +89,7 @@
 
   "celery": {
     "url": "'https://shop.trycelery.com/page/avakai'",
-    "id": "559b055db75d810300dfb1e6",
+    "id": "559acdc3b75d810300dfb0ee",
     "version": "v2"
   },
 

@@ -3,9 +3,11 @@
 {# =base #}
 {% macro __base(thumbnail) %}
   <div id="{{ thumbnail.name|default(thumbnail.title|slugify) }}" class="thumb {{ thumbnail.classname|default('') }}">
-    <div class="thumb-object">
-      {{ image[thumbnail.object.type](thumbnail.object) }}
-    </div>
+    {% if thumbnail.object.src %}
+      <div class="thumb-object">
+        {{ image[thumbnail.object.type](thumbnail.object) }}
+      </div>
+    {% endif %}
 
     <div class="thumb-body">
       <h3>{{ thumbnail.title }}</h3>
