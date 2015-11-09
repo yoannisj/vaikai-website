@@ -1,34 +1,6 @@
 {% import 'macros/popup.nunjucks' as popup %}
 {% import 'macros/image.nunjucks' as image %}
 
-{% set galleryItems = [
-  {
-    name: "playdate-media-1",
-    src: 'http://www.placehold.it/600x600',
-    size: [600, 600],
-    ratio: '1by1'
-  },
-  {
-    name: "playdate-media-2",
-    src: 'http://www.placehold.it/600x600',
-    size: [600, 600],
-    ratio: '1by1'
-  },
-  {
-    name: "playdate-media-3",
-    src: 'http://www.placehold.it/600x600',
-    size: [600, 600],
-    ratio: '1by1'
-  },
-  {
-    name: "playdate-media-4",
-    src: 'http://www.placehold.it/600x600',
-    size: [600, 600],
-    ratio: '1by1'
-  }
-] %}
-
-
 {# =Playdates #}
 <aside id="playdates" class="section theme-yellow">
   {# =Playdates-Quote #}
@@ -48,37 +20,5 @@
     </div>
   </div>
   {# /Playdates-Quote #}
-
-  {# =Playdates-Gallery #}
-  <div class="chunk chunk--fullbleed">
-    <div class="chunk-inner">
-      <div class="pack">
-        <ul class="grid pack-items uilist cf">
-          {% for galleryItem in galleryItems %}
-            <li class="pack-item float-left span-12of12 s-span-6of12 m-span-3of12">
-              <a class="pack-link block-link" href="{{ galleryItem.src }}" data-target="#{{ galleryItem.name }}">
-                {{ image.lazy(galleryItem.src, galleryItem.size, galleryItem.ratio) }}
-              </a>
-            </li>
-          {% endfor %}
-        <ul>
-      </div>
-    </div>
-  </div>
-  {# /Playdates-Gallery #}
-
-  {% call popup.base('playdates-gallery') %}
-    <div class="gallery js-slider">
-      <ul class="gallery-items js-slider-items">
-        {% for galleryItem in galleryItems %}
-
-          <li id="{{ galleryItem.name }}" class="gallery-item">
-            {{ image.lazy(galleryItem.src, galleryItem.size, galleryItem.ratio)}}
-          </li>
-
-        {% endfor %}
-      </ul>
-    </div>
-  {% endcall %}
 </aside>
 {# /Playdate #}
