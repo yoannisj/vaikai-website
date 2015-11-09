@@ -61,10 +61,14 @@ module.exports = function(env) {
 
       'externals': {
         base: {
-          src: '<%= tasks.javascripts.base.src %>/vendor',
+          src: '../',
           dest: '<%= tasks.javascripts.base.dest %>/vendor'
         },
-        files: './*.js'
+        files: [
+          './src/<%= tasks.javascripts.base.src %>/vendor/*.js',
+          '<%= paths.bower %>/scrollme/jquery.scrollme.js'
+        ]
+
       }
     }
 
