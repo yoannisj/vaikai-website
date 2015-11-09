@@ -46,3 +46,21 @@
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
 }
+
+#about-quote
+{
+  &:before { display: none; }
+  .quote-text:before { content: '“'; }
+  .quote-text:after { content: '”'; }
+}
+
+#open-positions article .landmark
+{
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  @include shift('>s') {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
