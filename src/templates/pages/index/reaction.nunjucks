@@ -13,7 +13,8 @@
         </div>
         <div class="cover-body overlay nucleon">
           <div class="landmark">
-            <h2 class="epsilon s-gamma m-alpha"><a class="link-reset js-toggle js-video-toggle" href="http://vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#vimeo-130435350">{{ symbol.icon('play', 'Watch the unpacking video', 'icon--lg') }}</a></h2>
+            {# <h2 class="epsilon s-gamma m-alpha"><a class="link-reset js-toggle js-video-toggle" href="http://vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#vimeo-130435350">{{ symbol.icon('play', 'Watch the unpacking video', 'icon--lg') }}</a></h2> #}
+            <h2>Coming Soon!</h2>
             <p class="epsilon s-gamma m-alpha">How children react on  our Avakai.<br/>Watch the unpacking party.</p>
           </div>
         </div>
