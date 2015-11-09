@@ -33,7 +33,7 @@
   "sub-nav": {
     "contact": {
       "title": "Contact",
-      "url": "'./contact.html'"
+      "url": "'mailto:matas.petrikas@gmail.com'"
     },
     "careers": {
       "title": "Careers",
