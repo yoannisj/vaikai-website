@@ -73,3 +73,30 @@
   font-weight: 400;
   // color: $mid-gray;
 }
+
+.credit--alt
+{
+  // margin-top: convert-length(20px, 'rem');
+  font-family: $helvetica-font-stack;
+
+  .credit-name,
+  .credit-description {
+    display: inline;
+    font-weight: 300;
+  }
+
+  .credit-name {
+    font-family: inherit;
+    text-transform: none;
+    letter-spacing: normal;
+
+    &:before { content: "— "; }
+    &:after { content: ", "; }
+  }
+
+  .credit-description {
+    font-size: inherit;
+  }
+}
+
+

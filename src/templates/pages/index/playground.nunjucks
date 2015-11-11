@@ -12,9 +12,9 @@
         <div class="quote-text">
           <p class="epsilon s-gamma m-beta l-alpha">Avakai stimulate all senses and activate your children’s imagination.<br />With Avakai your kids never leave the playground!.</p>
         </div>
-        <figcaption class="quote-credit credit">
-          <strong class="credit-name zeta">Justyna</strong>
-          <small class="credit-description">co-founder of Vai Kai</small>
+        <figcaption class="quote-credit credit credit--alt">
+          <strong class="credit-name s-zeta">Justyna</strong>
+          <small class="credit-description s-base">co-founder of Vai Kai</small>
         </figcaption>
       </div>
 
