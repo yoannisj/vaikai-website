@@ -2,8 +2,8 @@
 {% import 'macros/thumbnail.nunjucks' as thumbnail %}
 
 {% set featuresExpandLabels = {
-  on: 'The full list of specs is here',
-  off: 'Show most magical features only'
+  on: 'Show all Magical Features',
+  off: 'Show most Magical Features only'
 } %}
 
 {# =Features #}
@@ -14,8 +14,8 @@
       <div class="chunk-inner">
 
         <div class="assert landmark">
-          <h2 class="h3">Explore Avakai's incredible abilities</h2>
-          <p class="s-zeta m-epsilon">The Avakai family is a real piece of craftsmanship. Made of FSC labeled wood and equipped with innovative technology Avakai are specially designed to stimulate all the senses and activate your kids imagination.</p>
+          <h2 class="h3">Explore the Avakai Super Powers</h2>
+          <p class="s-zeta m-epsilon">The Avakai family is a real piece of craftsmanship. Made of wood and equipped with innovative technology the Avakai twins are specially designed to stimulate all the senses and activate your kids imagination without screens.</p>
         </div>
 
       </div>

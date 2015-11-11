@@ -21,11 +21,11 @@
 
   "main-nav": {
     "avakai": {
-      "title": "Avakai",
+      "title": "Toys",
       "url": "'./index.html'"
     },
     "about": {
-      "title": "About Vai Kai",
+      "title": "Company",
       "url": "'./about.html'"
     }
   },

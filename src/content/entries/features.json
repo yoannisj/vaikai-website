@@ -1,6 +1,6 @@
 [{
-  "title": "Avakai Games",
-  "description": "Come to play! Imaginary and active play is essential for your kids’ physical and verbal development. With Avakai they explore their surroundings while playing catch, hide and seek or treasure hunt with their friends",
+  "title": "Free Play",
+  "description": "Avakai reacts on expressive gestures with laughter, singing, whoops and roars. This way kids spontaneously create their own experiences and strengthen their emotional development. No rules, no pre-programmed levels – only your kids' imagination.",
   "object": {
     "type": "illustration",
     "src": "/images/hide-and-seek.svg",
@@ -9,18 +9,8 @@
 },
 
 {
-  "title": "Messages from Abroad",
-  "description": "We know your favorite place is home but even if you are away you can stay in touch with your loved ones, simply using the app on your phone",
-  "object": {
-    "type": "illustration",
-    "src": "/images/messages-from-abroad.svg",
-    "fallback": "/images/messages-from-abroad.svg"
-  }
-},
-
-{
-  "title": "Secret Languages",
-  "description": "Psst! Avakai speaks many languages. Their individual heartbeat allows them to send secret codes through light and sound - it´s a great way to develop communication skills",
+  "title": "Traditional Games",
+  "description": "When the twin Avakai get closer, you can feel their heartbeats going faster! They also respond to each other's calls. With those superpowers you and your kids can play hide and seek, treasure hunt, hide the thimble, princess and monster and many more – enhancing your kids' physical and cognitive development without screens.",
   "object": {
     "type": "illustration",
     "src": "/images/friends.svg",
@@ -29,38 +19,18 @@
 },
 
 {
-  "title": "Age",
-  "description": "Everybody loves Avakai, but kids between the age of 4 and 8 years love Avakai the most. They are friends for a lifetime and grow with the little ones as it can be updated and expanded individually",
+  "title": "A Kiss from Abroad",
+  "description": "We know your favorite place is home. So Avakai makes sure you can stay in touch with your loved ones with a simple kiss, sent from one twin to another, from far away. It's easy, simply touch your Avakai's mouth and the magic will happen.",
   "object": {
     "type": "illustration",
-    "src": false,
-    "fallback": ""
-  }
-},
-
-{
-  "title": "Charging",
-  "description": "Charging is really easy; simply connect your Avakai with your USB port. A grumpy sound will let you know when it needs a new energy kick.",
-  "object": {
-    "type": "illustration",
-    "src": false,
-    "fallback": ""
-  }
-},
-
-{
-  "title": "Kids Approved",
-  "description": "Kids love Avakai as we found during our unpacking parties with the little experts. Only the most critical, experienced and adventurous kids were undertaking the tests and we passed!",
-  "object": {
-    "type": "illustration",
-    "src": false,
-    "fallback": ""
+    "src": "/images/messages-from-abroad.svg",
+    "fallback": "/images/messages-from-abroad.svg"
   }
 },
 
 {
   "title": "Distance",
-  "description": "No matter if you use Bluetooth that allows two dolls to be in contact with each other or if you connect via the app – Avakai love to stay in touch with both earthlings and their twin",
+  "description": "Over Bluetooth the two Avakai talk to each other for a distance up to 50m! From the other side of the world, the Avakai love to stay in touch with their twin if you connect via the app.",
   "object": {
     "type": "illustration",
     "src": false,
@@ -70,7 +40,17 @@
 
 {
   "title": "Stimulating Senses",
-  "description": "Kids on earth know amazing games. Avakai is designed to motivate imaginary play and inclusion through stimulation of all senses without the negative effects of a screen",
+  "description": "Kids know amazing games. Avakai is designed to motivate imaginary play through stimulation of all the senses without the negative effects of a screen. So your kids feel and see Avakai's heartbeat go up and down! They even hear Avakai sneeze, snore & laugh!",
+  "object": {
+    "type": "illustration",
+    "src": false,
+    "fallback": ""
+  }
+},
+
+{
+  "title": "Age 4+",
+  "description": "Everybody loves Avakai, but kids between the age of 4 and 8 years love Avakai the most. We made sure Avakai are friends for a lifetime and grow with your little ones as their behaviours can be updated and expanded individually.",
   "object": {
     "type": "illustration",
     "src": false,
@@ -80,7 +60,17 @@
 
 {
   "title": "FSC Label",
-  "description": "What a name! The Forest Stewardship Council. It sounds difficult but it’s very easy. When a tree becomes an Avakai a new wood is planted to keep their new home planet in balance.",
+  "description": "What a name! The Forest Stewardship Council. It sounds difficult but it’s very easy. When a tree becomes an Avakai a new tree is planted to keep our planet in balance.",
+  "object": {
+    "type": "illustration",
+    "src": false,
+    "fallback": ""
+  }
+},
+
+{
+  "title": "Charging",
+  "description": "Charging is really easy; simply connect your Avakai with your USB port. A grumpy sound from Avakai's belly will let you know when they need a new energy kick.",
   "object": {
     "type": "illustration",
     "src": false,
@@ -90,7 +80,17 @@
 
 {
   "title": "Free App",
-  "description": "Avakai can be connected to iOS & Android smartphones for free. The app allows you to upgrade and install new behaviors while being a simplified mobile Avaikai in itself.",
+  "description": "Avakai can be connected to iOS & Android smartphones for free. The app allows you to upgrade and install new behaviors. Available in Spring 2016.",
+  "object": {
+    "type": "illustration",
+    "src": false,
+    "fallback": ""
+  }
+},
+
+{
+  "title": "Kids Approved",
+  "description": "Kids love Avakai as we found during our play tests with the little experts. Only the most critical, experienced and adventurous kids were undertaking the tests and we passed!",
   "object": {
     "type": "illustration",
     "src": false,

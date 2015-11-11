@@ -9,7 +9,7 @@
     <!-- =NAVBAR-BRAND -->
     <div class="navbar-brand" role="presentation">
       <h1 class="navbar-title">{{ link.logo('./index.html', 'vaikai', 'Vai Kai', 'navbar-logo', rel='home') }}</h1>
-      <span class="navbar-tagline tagline">Intuitive connected wooden toys</span>
+      <span class="navbar-tagline tagline">Intuitive connected toys</span>
     </div>
 
     <!-- =NAVBAR-TOGGLE -->
