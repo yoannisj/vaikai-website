@@ -4,6 +4,26 @@
 
 @import "shift/breakpoint";
 
-.expand-body.has-slider + .expand-ctrls {
-  display: none;
+/* =expand
+ * -------------------------------------------------------------------------- */
+
+.expand-body
+{
+  transition: height 500ms linear;
+  overflow: hidden;
+
+  &.has-slider + .expand-ctrls {
+    display: none;
+  }
+}
+
+.expand-item
+{
+  .is-collapsed & {
+    display: none;
+  }
+
+  &, .is-collapsed &.expand-summary {
+    display: inline-block;
+  }
 }

@@ -1,36 +1,93 @@
 var $ = require('jquery');
 require('modules/slider');
 
-var $window = $(window);
+var $window = $(window),
+  $expands = $('.expand');
 
-function updateExpandBody( $body ) {
-  // collapse expanded expands
-  if ($body.hasClass('is-expanded')) {
-    $body.addClass('is-collapsed').removeClass('is-expanded');
-    $body.find('.expand-item').not('.expand-summary').css('display', 'none');
+// udpate expands
+updateExpands();
+$window.on('resize', updateExpands);
+
+function updateExpands()
+{
+  $expands.each(function() {
+    updateExpand($(this));
+  });
+}
+
+function updateExpand( $expand )
+{
+  console.log('update expand', $expand[0]);
+
+  if ($expand.find('.expand-body').hasClass('has-slider')) {
+    destroyExpand( $expand );
   }
 
-  // expand collapsed expands
-  else if ($body.hasClass('is-collapsed')) {
-    $body.addClass('is-expanded').removeClass('is-collapsed');
-    $body.find('.expand-item').not('.expand-summary').css('display', '');
+  else {
+    initExpand( $expand );
   }
 }
 
-$('.expand-toggle').on('click.expand', function(ev) {
+function initExpand( $expand )
+{
+  console.log('init expand', $expand[0]);
 
-  var $toggle = $(this),
-    $body = $toggle.closest('.expand').find('.expand-body');
+  var $expBody = $expand.find('.expand-body'),
+    $items = $expand.find('.expand-item'),
+    $sumItems = $expand.find('.expand-summary'),
+    top = $expBody.offset().top,
+    colBottom = top,
+    expBottom = top;
 
-  console.log('toggle', $toggle);
-  console.log('expand-body', $body);
+  $items.map(function() {
+    var $item = $(this),
+      isSummary = $item.hasClass('expand-summary'),
+      bottom = $item.offset().top + $item.height();
 
-  // don't touch expands which are currently using a slider
-  if ($body.hasClass('has-slider')) return;
+    if ($item.hasClass('expand-summary')) {
+      colBottom = Math.max(colBottom, bottom);
+    }
 
-  updateExpandBody($body);
-});
+    expBottom = Math.max(expBottom, bottom);
+  });
 
-$('.expand-body').each(function() {
-  updateExpandBody($(this));
-});
+  var h = colBottom - top;
+  var sH = expBottom - top;
+
+  // udpate body
+  updateExpandBody($expBody, h, sH);
+  $expand.on('click.expand', '.expand-toggle', function(ev) {
+    ev.preventDefault();
+    updateExpandBody($expBody, h, sH);
+
+    // update scroll position
+    $('html,body').animate({
+      scrollTop: $expBody.offset().top - 120
+    }, 300, 'linear');
+  });
+}
+
+function destroyExpand( $expand )
+{
+  console.log('destroy expand', $expand[0]);
+
+  $expand.find('.expand-body')
+    .css('height', '')
+    .removeClass('is-collapsed is-expanded');
+  $expand.off('.expand');
+}
+
+function updateExpandBody( $expBody, h, sH )
+{
+  // collapse expand body
+  if ($expBody.hasClass('is-expanded')) {
+    $expBody.addClass('is-collapsed').removeClass('is-expanded');
+    $expBody.css('height', h);
+  }
+
+  // expand collapsed body
+  else if ($expBody.hasClass('is-collapsed')) {
+    $expBody.addClass('is-expanded').removeClass('is-collapsed');
+    $expBody.css('height', sH);
+  }
+}

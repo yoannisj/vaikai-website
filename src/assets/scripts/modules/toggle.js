@@ -8,8 +8,6 @@ $toggle.on('click.toggle', function(ev) {
   var $el = $(this),
     $target = $( $el.attr('data-target') || $el.attr('href') );
 
-  console.log('toggled target::', $target[0]);
-
   $target.trigger('toggle');
 
   if ($el.hasClass('is-on')) {
