@@ -6,7 +6,7 @@ var $window = $(window),
 
 // udpate expands
 updateExpands();
-$window.on('resize', updateExpands);
+// $window.on('resize', updateExpands);
 
 function updateExpands()
 {
@@ -17,8 +17,6 @@ function updateExpands()
 
 function updateExpand( $expand )
 {
-  console.log('update expand', $expand[0]);
-
   if ($expand.find('.expand-body').hasClass('has-slider')) {
     destroyExpand( $expand );
   }
@@ -30,35 +28,13 @@ function updateExpand( $expand )
 
 function initExpand( $expand )
 {
-  console.log('init expand', $expand[0]);
-
-  var $expBody = $expand.find('.expand-body'),
-    $items = $expand.find('.expand-item'),
-    $sumItems = $expand.find('.expand-summary'),
-    top = $expBody.offset().top,
-    colBottom = top,
-    expBottom = top;
-
-  $items.map(function() {
-    var $item = $(this),
-      isSummary = $item.hasClass('expand-summary'),
-      bottom = $item.offset().top + $item.height();
-
-    if ($item.hasClass('expand-summary')) {
-      colBottom = Math.max(colBottom, bottom);
-    }
-
-    expBottom = Math.max(expBottom, bottom);
-  });
-
-  var h = colBottom - top;
-  var sH = expBottom - top;
+  var $expBody = $expand.find('.expand-body');
 
   // udpate body
-  updateExpandBody($expBody, h, sH);
+  updateExpandBody($expBody);
   $expand.on('click.expand', '.expand-toggle', function(ev) {
     ev.preventDefault();
-    updateExpandBody($expBody, h, sH);
+    updateExpandBody($expBody);
 
     // update scroll position
     $('html,body').animate({
@@ -69,16 +45,39 @@ function initExpand( $expand )
 
 function destroyExpand( $expand )
 {
-  console.log('destroy expand', $expand[0]);
-
   $expand.find('.expand-body')
     .css('height', '')
     .removeClass('is-collapsed is-expanded');
   $expand.off('.expand');
 }
 
-function updateExpandBody( $expBody, h, sH )
+function updateExpandBody( $expBody )
 {
+  var $items = $expBody.find('.expand-item'),
+    top = $expBody.offset().top,
+    colBottom = top,
+    expBottom = top;
+
+  $items.map(function() {
+    var $item = $(this),
+      isSummary = $item.hasClass('expand-summary'),
+      bottom = $item.offset().top + $item.height();
+
+    if ($item.hasClass('expand-summary')) {
+      console.log('yay, expand-item!');
+      colBottom = Math.max(colBottom, bottom);
+    }
+
+    expBottom = Math.max(expBottom, bottom);
+  });
+
+  var h = colBottom - top;
+  var sH = expBottom - top;
+
+  console.log('top', top);
+  console.log('h', h);
+  console.log('sH', sH);
+
   // collapse expand body
   if ($expBody.hasClass('is-expanded')) {
     $expBody.addClass('is-collapsed').removeClass('is-expanded');

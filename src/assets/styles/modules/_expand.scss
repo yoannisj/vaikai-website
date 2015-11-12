@@ -23,7 +23,7 @@
     display: none;
   }
 
-  &, .is-collapsed &.expand-summary {
+  .no-js &, &.expand-summary {
     display: inline-block;
   }
 }
