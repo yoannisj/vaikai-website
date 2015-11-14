@@ -33,8 +33,8 @@
   "description": "Over Bluetooth the two Avakai talk to each other for a distance up to 50m! From the other side of the world, the Avakai love to stay in touch with their twin if you connect via the app.",
   "object": {
     "type": "illustration",
-    "src": "/images/DIstance-09.svg",
-    "fallback": "/images/DIstance-09.png"
+    "src": "/images/Distance-09.svg",
+    "fallback": "/images/Distance-09.png"
   }
 },
 
