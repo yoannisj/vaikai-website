@@ -1,33 +1,50 @@
+{# =base
+ # --------------------------------------------------------------- #}
+{% macro base(params, size=false, fallback=false) %}
 
-{# =illustration #}
-{% macro illustration(src, fallback) %}
-  <img src="{{ src|url }}" onerror="this.src='{{ fallback|url }}'" />
+  {# get full path to image src #}
+  {% set src = app.paths.images|joinpath(params.path) %}
+
+  <img src="{{ src|url }}" alt="{{ params.description }}"
+    {% if src|extname == 'svg' %}
+      data-svg-fallback="{{  src|extname('png')|url }}"
+    {% endif %}
+  />
+
 {% endmacro %}
 
+{# =lazy
+ # --------------------------------------------------------------- #}
+{% macro lazy(params, size=false, fallback=false) %}
 
-{# =lazy #}
-{% macro lazy(src, size, ratio=false) %}
-  {# {% set width = size[0] %}
-  {% set height = size[1] %}
-  {% set ratio = (height/width) * 100 %} #}
+  {# get full path to image src #}
+  {% set src = app.paths.images|joinpath(params.path) %}
 
-  {% if ratio %}
-    <div class="ratio-{{ ratio }}" role="presentation">
+  {# get default fallback #}
+  {% if params.path|extname == 'svg' %}
+    {% set fb_path = fallback|default(params.path|extname('png'), true) %}
+  {% else %}
+    {% set fb_path = fallback|default(params.path, true) %}
   {% endif %}
-    <!--[if gt IE 8]><!-->
-      <img class="lazyload" alt=""
-        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-        data-src="{{ src }}"
-      />
-    <!--<![endif]-->
-    <!--[if lte IE 8]>
-      <img src="http://www.placehold.it/600x600" alt="" />
-    <![endif]-->
-    <noscript>
-      <img src="{{ src }}" alt="" />
-    </noscript>
 
-  {% if ratio %}
-    </div>
-  {% endif %}
+  {% set fb = {
+    path: fb_path,
+    description: params.description
+  } %}
+
+  <!--[if gt IE 8]><!-->
+  <img class="lazyload" alt="{{ params.description }}"
+    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+    data-src="{{ src|url }}"
+    {% if src|extname == 'svg' %} data-svg-fallback="{{ fb_path|url }}" {% endif %}
+  />
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+    {{ base(fb, size) }}
+  <![endif]-->
+  <noscript>
+    {{ base(fb, size) }}
+  </noscript>
+
 {% endmacro %}

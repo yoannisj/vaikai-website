@@ -62,15 +62,15 @@ $logo-sizes: (
 
     @if ($type == 'svg')
     {
-      background-image: url('../images/logo-#{$brand}.svg');
+      background-image: url('../images/logos/logo-#{$brand}.svg');
 
       .no-svg & {
-        background-image: url('../images/logo-#{$brand}.png');
+        background-image: url('../images/logos/logo-#{$brand}.png');
       }
     }
 
     @else {
-      background-image: url('../images/logo-#{$brand}.#{$type}');
+      background-image: url('../images/logos/logo-#{$brand}.#{$type}');
     }
 
   }
@@ -96,12 +96,12 @@ $logo-sizes: (
       @if ($type == 'svg')
       {
         .no-svg & {
-          background-image: url('../images/logo-#{$brand}-#{$sz}.png');
+          background-image: url('../images/logos/logo-#{$brand}-#{$sz}.png');
         }
       }
 
       @else {
-        background-image: url('../images/logo-#{$brand}-#{$sz}.#{$type}');
+        background-image: url('../images/logos/logo-#{$brand}-#{$sz}.#{$type}');
       }
     }
   }

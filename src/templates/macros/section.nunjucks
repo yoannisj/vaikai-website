@@ -1,0 +1,12 @@
+{# =base
+ # --------------------------------------------------------------- #}
+{% macro base(params) %}
+  {# =allow custom semantic tagname #}
+  {% set tagname = params.semantics|default('section', true) %}
+  {% set themeclass = ('theme-' ~ params.theme) if params.theme else '' %}
+
+  <{{tagname}} id="{{ params.name }}" class="section {{ themeclass }}">
+    {{ caller() }}
+  </section>
+
+{% endmacro %}

@@ -1,0 +1,43 @@
+{% import 'macros/section.nunjucks' as sect %}
+{% import 'macros/image.nunjucks' as img %}
+{% import 'macros/control.nunjucks' as ctrl %}
+
+{% call sect.base(section) %}
+
+  <div class="chunk chunk--narrow">
+    <div class="chunk-inner">
+
+      <div class="split grid grid--middle">
+        <!-- =Shop-Object -->
+        <div class="avk-preorder split-media grid-cell m-span-5of12">
+          <div class="avk-limiteded align-right hide m-show">
+            <strong class="stamp stamp--limiteded">Limited Edition</strong>
+            {{ img.lazy(section.image) }}
+          </div>
+        </div>
+        <!-- /Shop-Object -->
+
+        <!-- =Shop-Body -->
+        <div class="split-body grid-cell m-span-7of12">
+          <div class="landmark centrum centrum--left">
+            <header>
+              <h2 class="h4">{{ section.title }}</h2>
+            </header>
+            <div>
+              {{ section.description|paragraphs }}
+            </div>
+            <footer class="landmark">
+
+              {% set control = section.control %}
+              {{ ctrl[control.type](control) }}
+
+            </footer>
+          </div>
+        </div>
+        <!-- /Shop-Body -->
+      </div>
+
+    </div>
+  </div>
+
+{% endcall %}

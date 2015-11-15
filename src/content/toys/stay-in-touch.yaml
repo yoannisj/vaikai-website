@@ -1,0 +1,12 @@
+title: We would love to stay in touch
+theme: green
+description: |
+  <p>If you sign up below, we can stay in touch! We promise to respect your inbox and won't spam you. But we do like to give you a sneak peek in our toy factory now and then and update you on the latest happenings when Avakai are ready to explore the kids' homes and the many adventures that await them.</p>
+form:
+  email:
+    label: Email address
+    placeholder: Enter your email to sign-up
+  submit:
+    ui: icon
+    icon: icon-send
+    label: Yes, sign me up!

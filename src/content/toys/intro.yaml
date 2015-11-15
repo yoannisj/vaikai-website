@@ -1,4 +1,10 @@
-title: | Less screentime<br/>more play
-description: | Meet the Avakai Family<br/>Crafted wooden toy twins that enable kids to discover free play and a connected world without screens.
-action_label: watch video
-vimeo_id: 130435350
+theme: green
+title: Less screentime<br/>more play
+description: |
+  Meet the Avakai Family<br/>Crafted wooden toy twins that enable kids to discover free play and a connected world without screens.
+control:
+  ui: link
+  icon: play
+  label: watch video
+video:
+  id: 130435350

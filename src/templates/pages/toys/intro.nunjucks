@@ -1,0 +1,59 @@
+{% import 'macros/section.nunjucks' as sect %}
+{% import 'macros/control.nunjucks' as ctrl %}
+{% import 'macros/symbol.nunjucks' as sym %}
+{% import 'macros/popup.nunjucks' as pop %}
+{% import 'macros/video.nunjucks' as vid %}
+
+<!-- =Intro -->
+{% call sect.base(section) %}
+
+  <div class="chunk chunk--narrow">
+    <div class="chunk-inner">
+
+      <div class="split grid grid--middle">
+        <!-- =Intro-Object -->
+        <div class="split-object avk-duo scrollme grid-cell span-4of12 sm-span-6of12">
+          {% include 'objects/avakai-animation.nunjucks' %}
+        </div>
+        <!-- /Intro-Object -->
+
+        <!-- =Intro-Text -->
+        <div class="split-body grid-cell span-8of12 sm-span-6of12">
+          <div class="landmark centrum centrum--left">
+            <h2 class="h1">{{ section.title }}</h2>
+            {{ section.description|paragraphs('s-zeta m-delta') }}
+            <p class="landmark">
+
+              {% set control = section.control|merge({
+                type: 'toggle',
+                target: 'intro-video',
+                action: 'popup:toggle'
+              }) %}
+
+              {% call ctrl[control.type](control, 'link-quiet shoutout') %}
+                {{ sym.preIcon(control.icon, control.label, 'icon--md') }}
+              {% endcall %}
+
+              {# <a class="link-quiet shoutout js-toggle" href="http://www.vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#intro-video">
+                {{ symbol.preIcon('play', 'watch video', 'icon--md') }}
+              </a> #}
+
+            </p>
+          </div>
+        </div>
+        <!-- /Intro-Text -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =Intro-Video -->
+  {% if section.video %}
+    {% call pop.base('intro-video', parent='intro') %}
+      {{ vid.vimeo( section.video.id, 'flex' ) }}
+    {% endcall %}
+  {% endif %}
+  <!-- /Intro-Video -->
+
+{% endcall %}
+<!-- /Intro -->

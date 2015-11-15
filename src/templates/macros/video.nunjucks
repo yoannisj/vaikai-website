@@ -1,17 +1,19 @@
-{# =Defaults #}
+{# =defaults
+ # --------------------------------------------------------------- #}
 {% set defaults = {
-  api: '0',
   size: [928, 522]
 } %}
 
-{% set vimeoDef = defaults|merge({
+{% set vimeo_settings = {
   color: '1fa0ca',
   portrait: '0',
   byline: '0',
-  title: '0'
-}) %}
+  title: '0',
+  api: '1'
+} %}
 
-{# =video #}
+{# =base
+ # --------------------------------------------------------------- #}
 {% macro base(type, url, size=defaults.size) %}
 
   {% set width = size[0] %}
@@ -26,15 +28,19 @@
   </div>
 {% endmacro %}
 
-{# =vimeo #}
-{% macro vimeo(vimeoId, size=vimeoDef.size, settings=vimeoDef) %}
+{# =vimeo
+ # --------------------------------------------------------------- #}
+{% macro vimeo(vimeoId, size=defaults.size, settings=vimeo_settings) %}
 
   {% call base('vimeo', 'https://vimeo.com/' + vimeoId, size) %}
 
+    {% set settings_query = settings|query %}
     <iframe id="vimeo-{{ vimeoId }}" class="js-video-player u-jsonly"
       frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-      src="https://player.vimeo.com/video/{{ vimeoId }}?{{ settings.api }}&amp;color={{ settings.color }}&amp;title={{ settings.title }}&amp;byline={{ settings.byline }}&amp;portrait={{ settings.portrait }}" {% if size != 'flex' %}width="{{ size[0] }}" height="{{ size[1] }}"{% endif %}
+      src="https://player.vimeo.com/video/{{ vimeoId }}{{ settings_query }}"
+        {% if size != 'flex' %} width="{{ size[0] }}" height="{{ size[1] }}"{% endif %}
     ></iframe>
 
   {% endcall %}
+
 {% endmacro %}

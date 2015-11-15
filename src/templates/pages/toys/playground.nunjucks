@@ -1,0 +1,30 @@
+{% import 'macros/section.nunjucks' as sect %}
+
+{% call sect.base(section) %}
+
+  <div class="chunk chunk--bleed">
+    <div class="chunk-inner">
+
+      <!-- Playground-Quote -->
+      <figure class="quote landmark align-center">
+        <h3 class="sr-only">{{ section.title }}</h3>
+        <blockquote class="quote-text">
+          {{ section.quote|paragraphs('epsilon s-gamma m-beta l-alpha') }}
+        </blockquote>
+
+        {% set credit = section.credit %}
+        {% if credit %}
+
+          <figcaption class="quote-credit credit credit--alt">
+            <strong class="credit-name s-zeta">{{ credit.name }}</strong>
+            <small class="credit-description s-base">{{ credit.description }}</small>
+          </figcaption>
+
+        {% endif %}
+      </figure>
+      <!-- /Playground-Quote -->
+
+    </div>
+  </div>
+
+{% endcall %}

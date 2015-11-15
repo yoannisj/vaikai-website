@@ -1,0 +1,45 @@
+{% extends "layouts/page-landing.nunjucks" %}
+{% import 'macros/symbol.nunjucks' as sym %}
+
+{% block head_styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ 'css/index.css'|url }}"></link>
+{% endblock %}
+
+{% block body_main %}
+
+  {# include page sections #}
+  {% for section in sections %}
+    {% include section.template ~ '.nunjucks' %}
+  {% endfor %}
+
+  <div class="chunk chunk--narrow">
+    <div class="chunk-inner">
+
+      <!-- =Splash -->
+      <div class="splash landmark align-center">
+        <div class="splash-object">
+          <p class="avk-makers">
+            <em class="stamp stamp--madewithlove">Made with love by</em><br />
+            {{ sym.logo('vaikai', 'VaiKai', 'logo--lg') }}
+          </p>
+        </div>
+
+        <div class="splash-body">
+          <p class="tagline zeta s-gamma">Intuitive connected wooden&nbsp;toys</p>
+        </div>
+      </div>
+      <!-- /Splash -->
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  <script src="{{ 'js/vendor/jquery.flexslider.js'|url }}"></script>
+  <script src="{{ 'js/vendor/jquery.scrollme.js'|url }}"></script>
+
+  <script src="{{ 'js/index.js'|webpackurl }}"></script>
+{% endblock %}

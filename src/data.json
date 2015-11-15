@@ -19,38 +19,12 @@
     "web-author": "Yoannis Jamar"
   },
 
-  "main-nav": {
-    "avakai": {
-      "title": "Toys",
-      "url": "'./index.html'"
-    },
-    "about": {
-      "title": "Company",
-      "url": "'./about.html'"
-    }
-  },
-
-  "sub-nav": {
-    "contact": {
-      "title": "Contact",
-      "url": "'mailto:info@vaikai.com'"
-    },
-    "careers": {
-      "title": "Careers",
-      "url": "'./careers.html'"
-    },
-    "imprint": {
-      "title": "Imprint",
-      "url": "'./imprint.html'"
-    },
-    "data-and-privacy": {
-      "title": "Data and Privacy",
-      "url": "'./data-and-privacy.html'"
-    },
-    "press": {
-      "title": "Press",
-      "url": "'http://vaikai.com/press'"
-    }
+  "breakpoints": {
+    "s": 540,
+    "sm": 700,
+    "m": 920,
+    "l": 1280,
+    "xl": 1700
   },
 
   "social": {
@@ -75,17 +49,6 @@
       "url": "'https://www.youtube.com/channel/UCvf8cDV9Yf19zT4xTqQLcOg/videos'"
     }
   },
-
-  "breakpoints": {
-    "s": 540,
-    "sm": 700,
-    "m": 920,
-    "l": 1280,
-    "xl": 1700
-  },
-
-  "logos": [],
-  "imgsizes": [],
 
   "celery": {
     "url": "'https://shop.trycelery.com/page/avakai'",

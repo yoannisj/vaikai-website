@@ -1,0 +1,24 @@
+title: Playground
+theme: yellow
+quote: |
+  Avakai stimulate all senses and activate your children’s imagination.<br/>With Avakai your kids never leave the playground!
+credit:
+  name: Justyna
+  description: co-founder of Vai Kai
+gallery:
+  -
+    image:
+      path: playground/indian-vaikai.jpg
+      description: Some cheerful avakai playing indian
+  -
+    image:
+      path: playground/sailor-avakai.jpg
+      description: A blue and a wooden avakai on a melon boat
+  -
+    image:
+      path: playground/homework.jpg
+      description: Avakai supports boy doing his homework
+  -
+    image:
+      path: payground/2000fans.jpg
+      desription: Two avakai dressed up to celebrate their 2000 fans

@@ -17,6 +17,7 @@ module.exports = function() {
     watch: !!(slurp.env.watch),
     paths: {
       public: slurp.config.paths.public,
+      images: path.join(slurp.setting('assets', 'base').dest, './images/'),
       livereload: lrPath,
       webpackDev: wdsPath
     },

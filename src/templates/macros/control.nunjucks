@@ -1,0 +1,34 @@
+{% import 'macros/toggle.nunjucks' as toggle %}
+
+{# =toggle
+ # --------------------------------------------------------------- #}
+{% macro toggle(params, classname='') %}
+
+  {% if caller %}
+    {% call toggle[params.ui](params, classname) %}
+      {{ caller() }}
+    {% endcall %}
+  {% else %}
+    {{ toggle[params.ui](params, classname) }}
+  {% endif %}
+
+{% endmacro %}
+
+{# =celery
+ # --------------------------------------------------------------- #}
+{% macro celery(params, classname='') %}
+
+  {# inject param defaults #}
+  {% set prm = {}|merge(data.celery, params) %}
+
+  <a class="btn btn--cta {{ classname }}" href="{{ prm.url|url }}" target="{{ prm.url|linktarget }}"
+    data-celery="{{ prm.id }}" data-celery-version="{{ prm.version }}"
+  >
+    {% if caller %}
+      {{ caller() }}
+    {% else %}
+      {{ prm.label }}
+    {% endif %}
+  </a>
+
+{% endmacro %}

@@ -1,7 +1,9 @@
 {% import 'macros/symbol.nunjucks' as symbol %}
 
-{# =Base #}
+{# =Base
+ # --------------------------------------------------------------- #}
 {% macro base(url, label=false, classname='', title=false, rel=false) %}
+
   <a href="{{ url|url }}" target="{{ url|linktarget }}"
     {% if classname %} class="{{ classname }}"{% endif %}
     {% if title %} title="{{ title }}"{% endif %}
@@ -13,10 +15,13 @@
       {{ caller() }}
     {% endif %}
   </a>
+
 {% endmacro %}
 
-{# =Nav-Link #}
+{# =Nav-Link
+ # --------------------------------------------------------------- #}
 {% macro nav(url, label=false, classname='', title=false, rel=false) %}
+
   {% set cname = 'nav-link ' ~ classname %}
   {% if label %}
     {{ base(url, label, cname, title, rel) }}
@@ -25,26 +30,36 @@
       {{ caller() }}
     {% endcall %}
   {% endif %}
+
 {% endmacro %}
 
-{# =Block-Link #}
+{# =Block-Link
+ # --------------------------------------------------------------- #}
 {% macro block(url, classname='', title=false, rel=false) %}
+
   {% set cname = 'block-link ' ~ classname %}
   {% call base(url, false, cname, title, rel) %}
     {{ caller() }}
   {% endcall %}
+
 {% endmacro %}
 
-{# =Logo-Link #}
+{# =Logo-Link
+ # --------------------------------------------------------------- #}
 {% macro logo(url, logo, label, classname='', title=false, rel=false) %}
+
   {% set cname = 'logo-link logo ' ~ 'logo'|modify(logo) ~ ' ' ~ classname %}
   {{ base(url, label, cname, title, rel) }}
+
 {% endmacro %}
 
-{# =Icon-Link #}
+{# =Icon-Link
+ # --------------------------------------------------------------- #}
 {% macro icon(url, icon, label, classname='', title=false, rel=false ) %}
+
   {% set cname = 'icon-link ' ~ classname %}
   {% call base(url, false, cname, title, rel) %}
     {{ symbol.icon(icon, label) }}
   {% endcall %}
+
 {% endmacro %}
