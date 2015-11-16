@@ -74,10 +74,6 @@ function updateExpandBody( $expBody )
   var h = colBottom - top;
   var sH = expBottom - top;
 
-  console.log('top', top);
-  console.log('h', h);
-  console.log('sH', sH);
-
   // collapse expand body
   if ($expBody.hasClass('is-expanded')) {
     $expBody.addClass('is-collapsed').removeClass('is-expanded');
