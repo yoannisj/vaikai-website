@@ -34,7 +34,7 @@
         {% endcall %}
 
       </h1>
-      <span class="navbar-tagline tagline">Intuitive connected wooden toys</span>
+      <span class="navbar-tagline tagline">{{ data.website.tagline }}</span>
     </div>
 
     <!-- =NAVBAR-TOGGLE -->

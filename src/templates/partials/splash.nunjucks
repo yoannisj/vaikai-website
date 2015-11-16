@@ -1,0 +1,23 @@
+{# =variables
+ # --------------------------------------------------------------- #}
+{% set vaikai_logo = {
+  name: 'vaikai',
+  title: 'Vai Kai'
+} %}
+
+{# =markup
+ # --------------------------------------------------------------- #}
+<!-- =Splash -->
+<div class="splash landmark align-center">
+  <div class="splash-object">
+    <p class="avk-makers">
+      <em class="stamp stamp--madewithlove">Made with love by</em><br />
+      {{ sym.logo(vaikai_logo, classname='logo--lg') }}
+    </p>
+  </div>
+
+  <div class="splash-body">
+    <p class="tagline zeta s-gamma">{{ data.website.tagline }}</p>
+  </div>
+</div>
+<!-- /Splash -->

@@ -1,0 +1,24 @@
+{% import 'macros/image.nunjucks' as img %}
+
+{# =VARIABLES
+ # --------------------------------------------------------------- #}
+{% set avakai_front = {
+  path: 'toys/avakai-blue-trunc.png',
+  description: ''
+} %}
+
+{% set avakai_back = {
+  path: 'toys/avakai-natural.png',
+  description: ''
+} %}
+
+{# =MARKUP
+ # --------------------------------------------------------------- #}
+<div class="banner-object overlay-left" role="presenation">
+  <div class="banner-avk-front avk-trunc" role="presentation">
+    {{ img.base(avakai_front) }}
+  </div>
+  <div class="banner-avk-back avk-natural" role="presentation">
+    {{ img.base(avakai_back) }}
+  </div>
+</div>

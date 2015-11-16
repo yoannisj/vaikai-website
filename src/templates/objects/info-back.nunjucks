@@ -1,0 +1,5 @@
+<footer class="landmark">
+  <p><a class="link-back" href="{{ data.website.homepage }}">
+    <span class="icon icon--arrowleft" aria-hidden="true"></span> Back to home</a>
+  </p>
+</footer>

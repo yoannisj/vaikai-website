@@ -4,3 +4,18 @@
   {{ super() }}
   <link rel="stylesheet" href="{{ 'css/info.css'|url }}"></link>
 {% endblock %}
+
+{% block body_header %}
+  {{ super() }}
+  <div class="page-banner banner menu-push theme-green">
+    <div class="page-inner banner-inner" role="presentation">
+      {# =banner-object #}
+      {% include 'objects/avakai-banner.nunjucks' %}
+
+      {# =banner-body #}
+      <div class="banner-body">
+        <h1 class="banner-title h2">{{ page.title }}</h1>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,1 +1,69 @@
-{{ content|dump }}
+{% extends 'layouts/page-info.nunjucks' %}
+
+
+{% block body_main %}
+
+  <div class="page-inner" role="presentation">
+    <section id="open-positions" class="copy landmark">
+
+      <!-- =Intro -->
+      <h2 class="sr-only">{{ page.intro.title }}</h2>
+      <div class="copy copy-intro">
+        {{ page.intro.text|paragraphs }}
+      </div>
+      <!-- /Intro -->
+
+      {% for offer in sections %}
+
+        <!-- =Offer -->
+        <article id="{{ offer.name }}" class="copy-section landmark">
+          <!-- =Offer-Header -->
+          <header class="landmark">
+            <h3 class="h4">{{ offer.title }}</h3>
+            <span class="byline s-zeta">
+              {{ offer.location }} | {{ offer.position }}
+            </span>
+          </header>
+          <!-- /Offer-Header -->
+
+          <!-- =Offer-Description -->
+          {{ offer.description|paragraphs }}
+          <!-- /Offer-Description -->
+
+          {% if offer.requirements %}
+            <!-- =Offer-Requirements -->
+            <div class="landmark">
+              <h4 class="h6">Requirements:</h4>
+              <ul>
+                {% for requirement in offer.requirements %}
+                  <li>{{ requirement }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <!-- /Offer-Requirements -->
+          {% endif %}
+
+          {% if offer.expectations %}
+            <!-- =Offer-Expectations -->
+            {{ offer.expectations|paragraphs }}
+            <!-- /Offer-Expectations -->
+          {% endif %}
+
+          <!-- =Offer-Link -->
+          <footer class="landmark">
+            {% set offer_url = 'mailto:careers@vaikai.com?Subject=Working at Vai Kai - ' ~ offer.title %}
+            <p><a class="s-zeta m-epsilon" href="{{ offer_url }}">Apply now!</a></p>
+          </footer>
+          <!-- /Offer-Link -->
+
+        </article>
+        <!-- /Offer -->
+
+      {% endfor %}
+
+      {% include 'objects/info-back.nunjucks' %}
+
+    </section>
+  </div>
+
+{% endblock %}

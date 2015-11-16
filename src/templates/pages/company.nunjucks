@@ -1,0 +1,51 @@
+{% extends 'layouts/page-info.nunjucks' %}
+
+
+{% block body_main %}
+
+  <div class="page-inner" role="presentation">
+    <section id="about-vai-kai" class="copy landmark">
+
+      <!-- =Intro -->
+      <div class="copy-intro landmark">
+        <h2 class="h3">{{ page.intro.title }}</h2>
+        {{ page.intro.text|paragraphs }}
+
+        {% set quote = page.intro.quote %}
+        {% if quote %}
+
+          <figure id="about-quote" class="quote landmark align-left">
+            <blockquote class="quote-text">
+              {{ quote.text|trim|paragraphs('delta s-epsilon m-gamma') }}
+            </blockquote>
+
+            {% set credit = quote.credit %}
+            {% if credit %}
+            <figcaption>
+              <strong class="credit-name zeta">{{ credit.name }}</strong><br />
+              <small class="credit-desription">{{ credit.description }}</small>
+            </figcaption>
+            {% endif %}
+          </figure>
+
+        {% endif %}
+      </div>
+      <!-- /Intro -->
+
+      <!-- =Sections -->
+      {% for section in page.sections %}
+
+        <div id="{{ section.name }}" class="copy-section landmark">
+          <h3 class="h4">{{ section.title }}</h3>
+          {{ section.text|paragraphs }}
+        </div>
+
+      {% endfor %}
+      <!-- /Sections -->
+
+      {% include 'objects/info-back.nunjucks' %}
+
+    </section>
+  </div>
+
+{% endblock %}

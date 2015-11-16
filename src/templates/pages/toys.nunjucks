@@ -13,24 +13,10 @@
     {% include section.template ~ '.nunjucks' %}
   {% endfor %}
 
+  {# splash screen #}
   <div class="chunk chunk--narrow">
     <div class="chunk-inner">
-
-      <!-- =Splash -->
-      <div class="splash landmark align-center">
-        <div class="splash-object">
-          <p class="avk-makers">
-            <em class="stamp stamp--madewithlove">Made with love by</em><br />
-            {{ sym.logo('vaikai', 'VaiKai', 'logo--lg') }}
-          </p>
-        </div>
-
-        <div class="splash-body">
-          <p class="tagline zeta s-gamma">Intuitive connected wooden&nbsp;toys</p>
-        </div>
-      </div>
-      <!-- /Splash -->
-
+      {% include 'partials/splash.nunjucks' %}
     </div>
   </div>
 

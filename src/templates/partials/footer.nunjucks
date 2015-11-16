@@ -22,7 +22,8 @@
     </ul>
   </div>
 
-  <nav class="subnav nav landmark">
+  <nav class="subnav nav">
+    <br />
     <ul class="subnav-links nav-links hlist sep-pipe">
 
       {% for item in data.main_nav %}
