@@ -1,34 +1,54 @@
-{# =Logo #}
-{% macro logo(logo, label, classname='') %}
-  {# allow creating a logo on the fly by passing a hash object #}
-  {% if logo|datatype == 'object' %}
-    <span class="logo {{ classname }}" style="background-image:url({{ logo.path|url }}); width: {{ logo.width }}px; height: {{ logo.height }}px; background-size: {{ logo.width ~ 'px ' ~ logo.height ~ 'px' }};">{{ label }}</span>
-  {# or pass the logo name if already built with css #}
+{% import 'macros/image.nunjucks' as img %}
+
+{# =logo
+ # --------------------------------------------------------------- #}
+{% macro logo(params, size=false, classname='') %}
+
+  {# allow passing an image object to build logo on the fly #}
+  {% if params.path %}
+    {# allow omitting an 'alt' value #}
+    {% set prm = { description: '' }|merge(params) %}
+    {{ img.base(params, size, classname) }}
   {% else %}
-    <span class="logo {{ 'logo'|modify(logo) ~ ' ' ~ classname }}">{{ label }}</span>
+    <span class="logo {{ 'logo'|modify(params.name) ~ ' ' ~ classname }}">{{ params.title }}</span>
   {% endif %}
+
 {% endmacro %}
 
-{# =Icon #}
+{# =icon
+ # --------------------------------------------------------------- #}
+
 {% macro icon(name, label, classname='') %}
+
   <span class="icon {{ 'icon'|modify(name) ~ ' ' ~ classname  }}" aria-hidden="true"></span>
   <span class="sr-only">{{ label }}</span>
+
 {% endmacro %}
 
-{# =preIcon #}
+{# =pre_icon
+ # --------------------------------------------------------------- #}
+
 {% macro preIcon(name, label, classname='') %}
+
   <span class="pre-icon {{ 'icon'|modify(name) ~ ' ' ~ classname }}" aria-hidden="true"></span>
   {{ label }}
+
 {% endmacro %}
 
-{# =postIcon #}
+{# =post_icon
+ # --------------------------------------------------------------- #}
 {% macro postIcon(name, label, classname='') %}
+
   {{ label }}
   <span class="post-icon {{ 'icon'|modify(name) ~ ' ' ~ classname }}" aria-hidden="true"></span>
+
 {% endmacro %}
 
-{# =epiIcon #}
+{# =epi_icon
+ # --------------------------------------------------------------- #}
 {% macro epiIcon(name, label, classname='') %}
+
   <span class="epi-icon {{ 'icon'|modify(name) ~ ' ' ~ classname  }}" aria-hidden="true"></span>
   {{ label }}
+
 {% endmacro %}

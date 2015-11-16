@@ -1,65 +1,81 @@
-{% import 'macros/symbol.nunjucks' as symbol %}
+{% import 'macros/symbol.nunjucks' as sym %}
 
-{# =Base
+{% set defaults = {
+  rel: false,
+  title: false
+} %}
+
+{# =base
  # --------------------------------------------------------------- #}
-{% macro base(url, label=false, classname='', title=false, rel=false) %}
+{% macro base(params, classname='') %}
+  {# inject param defaults #}
+  {% set prm = defaults|merge(params) %}
 
-  <a href="{{ url|url }}" target="{{ url|linktarget }}"
+  <a href="{{ prm.url|url }}" target="{{ prm.url|linktarget }}"
     {% if classname %} class="{{ classname }}"{% endif %}
-    {% if title %} title="{{ title }}"{% endif %}
-    {% if rel %} rel="{{ rel }}"{% endif %}
+    {% if prm.title %} title="{{ prm.title }}"{% endif %}
+    {% if prm.rel %} rel="{{ prm.rel }}"{% endif %}
   >
-    {% if label %}
-      {{ label }}
-    {% else %}
+    {% if caller %}
       {{ caller() }}
+    {% else %}
+      {{ prm.label }}
     {% endif %}
   </a>
 
 {% endmacro %}
 
-{# =Nav-Link
+{# =nav
  # --------------------------------------------------------------- #}
-{% macro nav(url, label=false, classname='', title=false, rel=false) %}
+{% macro nav(params, classname='') %}
 
-  {% set cname = 'nav-link ' ~ classname %}
-  {% if label %}
-    {{ base(url, label, cname, title, rel) }}
-  {% else %}
-    {% call base(url, label, cname, title, rel) %}
+  {# swap 'title' param to 'label' #}
+  {% set prm = params|merge({
+    label: params.title,
+    title: false
+  }) %}
+
+  {# add 'nav-link' classname #}
+  {% set classname = 'nav-link ' ~ classname %}
+
+  {% if caller %}
+    {% call base(prm, classname) %}
       {{ caller() }}
     {% endcall %}
+  {% else %}
+    {{ base(prm, classname) }}
   {% endif %}
 
 {% endmacro %}
 
-{# =Block-Link
+{# =block
  # --------------------------------------------------------------- #}
-{% macro block(url, classname='', title=false, rel=false) %}
+{% macro block(params, classname='') %}
 
-  {% set cname = 'block-link ' ~ classname %}
-  {% call base(url, false, cname, title, rel) %}
+  {% set classnae = 'block-link ' ~ classname %}
+  {% call base(params, classname) %}
     {{ caller() }}
   {% endcall %}
 
 {% endmacro %}
 
-{# =Logo-Link
+{# =logo
  # --------------------------------------------------------------- #}
 {% macro logo(url, logo, label, classname='', title=false, rel=false) %}
 
-  {% set cname = 'logo-link logo ' ~ 'logo'|modify(logo) ~ ' ' ~ classname %}
+  {% set classname = 'logo-link logo ' ~ 'logo'|modify(logo) ~ ' ' ~ classname %}
   {{ base(url, label, cname, title, rel) }}
 
 {% endmacro %}
 
-{# =Icon-Link
+{# =icon
  # --------------------------------------------------------------- #}
-{% macro icon(url, icon, label, classname='', title=false, rel=false ) %}
+{% macro icon(params, name, classname='' ) %}
+  {# inject param defaults #}
+  {% set classname = 'icon-link ' ~ classname %}
 
-  {% set cname = 'icon-link ' ~ classname %}
-  {% call base(url, false, cname, title, rel) %}
-    {{ symbol.icon(icon, label) }}
+  {% call base(params, classname) %}
+    {{ sym.icon(name, params.title) }}
   {% endcall %}
 
 {% endmacro %}

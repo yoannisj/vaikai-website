@@ -16,6 +16,7 @@ module.exports = function() {
     environment: slurp.env.dev ? 'dev' : 'prod',
     watch: !!(slurp.env.watch),
     paths: {
+      root: path.resolve(slurp.config.paths.dest),
       public: slurp.config.paths.public,
       images: path.join(slurp.setting('assets', 'base').dest, './images/'),
       livereload: lrPath,

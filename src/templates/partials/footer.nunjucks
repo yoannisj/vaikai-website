@@ -1,52 +1,44 @@
-{% import 'macros/link.nunjucks' as link %}
+{% import 'macros/link.nunjucks' as ln %}
 
 <div class="footer-nav landmark align-center">
 
   <div class="social-nav">
     <ul class="social-links hlist">
       <li>
-        {{ link.icon(data.social.facebook.url, 'facebook-fill', data.social.facebook.title, 'sticker sticker--facebook') }}
+        {{ ln.icon(data.social.facebook, 'facebook-fill', 'sticker sticker--facebook') }}
       </li>
       <li>
-        {{ link.icon(data.social.twitter.url, 'twitter-fill', data.social.twitter.title, 'sticker sticker--twitter') }}
+        {{ ln.icon(data.social.twitter, 'twitter-fill', 'sticker sticker--twitter') }}
       </li>
       <li>
-        {{ link.icon(data.social.pinterest.url, 'pinterest', data.social.pinterest.title, 'sticker sticker--pinterest') }}
+        {{ ln.icon(data.social.pinterest, 'pinterest', 'sticker sticker--pinterest') }}
       </li>
       <li>
-        {{ link.icon(data.social.instagram.url, 'instagram-fill', data.social.instagram.title, 'sticker sticker--instagram') }}
+        {{ ln.icon(data.social.instagram, 'instagram-fill', 'sticker sticker--instagram') }}
       </li>
       <li>
-        {{ link.icon(data.social.youtube.url, 'youtube', data.social.youtube.title, 'sticker sticker--youtube') }}
+        {{ ln.icon(data.social.youtube, 'youtube', 'sticker sticker--youtube') }}
       </li>
     </ul>
   </div>
 
-  <nav class="landmark">
-    <div class="nav sm-zeta">
-      <ul class="nav-links hlist air">
-        {% for name, item in data.mainNav %}
+  <nav class="subnav nav landmark">
+    <ul class="subnav-links nav-links hlist sep-pipe">
 
+      {% for item in data.main_nav %}
+        <li class="subnav-item nav-item">
           {% set cname = ('active' if (item.url|url == page.url) else '') %}
-          <li class="nav-item">
-            {{ link.nav(item.url, item.title, cname) }}
-          </li>
+          {{ ln.nav(item, cname) }}
+        </li>
+      {% endfor %}
 
-        {% endfor %}
-      </ul>
-    </div>
+      {% for item in data.sub_nav %}
+        <li class="subnav-item nav-item">
+          {% set cname = ('active' if (item.url|url == page.url) else '') %}
+          {{ ln.nav(item, cname) }}
+        </li>
+      {% endfor %}
 
-    <div class="subnav nano sm-micro">
-      <ul class="subnav-links hlist sep-pipe">
-        {% for name, item in data.subNav %}
-
-          <li class="subnav-item">
-            {% set cname = 'link-quiet nav-link' ~ (' active' if (item.url|url == page.url) else '') %}
-            {{ link.nav(item.url, item.title, cname) }}
-          </li>
-
-        {% endfor %}
-      </ul>
-    </div>
+    </ul>
   </nav>
 </div>

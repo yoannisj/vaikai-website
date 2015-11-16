@@ -3,14 +3,14 @@ var _ = require('lodash');
 var slurp = require('../slurp');
 var requireDir = require('require-dir');
 
-function camelKeys(obj) {
+function snakeKeys(obj) {
   var res = {};
 
   _.forOwn(obj, function(val, key) {
-    var k = _.camelCase(key);
+    var k = _.snakeCase(key);
 
     if (typeof val == 'object' && !Array.isArray(val)) {
-      res[k] = camelKeys(val);
+      res[k] = snakeKeys(val);
     }
 
     res[k] = val;
@@ -50,7 +50,7 @@ module.exports = function() {
   var data = require(dataPath);
 
   // transform all keys into camelcase, recursively
-  data = camelKeys(data);
+  data = snakeKeys(data);
 
   // cleanup string's wrapped twice into quotes for sass-json-vars
   data = rmDoubleQuotes(data);

@@ -19,13 +19,30 @@
     "web-author": "Yoannis Jamar"
   },
 
-  "breakpoints": {
-    "s": 540,
-    "sm": 700,
-    "m": 920,
-    "l": 1280,
-    "xl": 1700
-  },
+  "main-nav": [{
+    "title": "Toys",
+    "url": "'toys.html'"
+  }, {
+    "title": "Company",
+    "url": "'company.html'"
+  }],
+
+  "sub-nav": [{
+    "title": "Contact",
+    "url": "'contact.html'"
+  }, {
+    "title": "Careers",
+    "url": "'careers.html'"
+  }, {
+    "title": "Imprint",
+    "url": "'imprint.html'"
+  }, {
+    "title": "Data and Privacy",
+    "url": "'data-and-privacy.html'"
+  }, {
+    "title": "Press",
+    "url": "'press.html'"
+  }],
 
   "social": {
     "facebook": {
@@ -70,5 +87,13 @@
 
   "facebook": {
     "pixel-id": 6033122367801
+  },
+
+  "breakpoints": {
+    "s": 540,
+    "sm": 700,
+    "m": 920,
+    "l": 1280,
+    "xl": 1700
   }
 }

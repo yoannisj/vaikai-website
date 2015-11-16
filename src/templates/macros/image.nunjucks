@@ -4,11 +4,12 @@
 
   {# get full path to image src #}
   {% set src = app.paths.images|joinpath(params.path) %}
+  {# allow passing 'true' for automatic image size #}
+  {% set sz = src|imgsize if (size == true) else size %}
 
   <img src="{{ src|url }}" alt="{{ params.description }}"
-    {% if src|extname == 'svg' %}
-      data-svg-fallback="{{  src|extname('png')|url }}"
-    {% endif %}
+    {% if sz %} width="{{ sz[0] }}" height="{{ sz[1] }}"{% endif %}
+    {% if src|extname == 'svg' %} data-svg-fallback="{{  src|extname('png')|url }}"{% endif %}
   />
 
 {% endmacro %}

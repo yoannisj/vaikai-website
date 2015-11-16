@@ -8,13 +8,12 @@ module.exports = function(name, dataPath) {
   var data = YAML.load(dataPath + '.yaml') || {};
 
   // set default 'name', 'title' and 'url' keys based on filename
-  var pageUrl = path.join(slurp.config.paths.public, name + '.html');
-  var pageTitle = _.capitalize(_.kebabCase(name).replace('-', ' '));
+  var publicPath = slurp.config.paths.public;
 
   // inject default values
   _.assign(data, {
     name: data.name || name,
-    url: data.url || path.join(slurp.config.paths.public, name + '.html'),
+    url: data.url || _.trimRight(publicPath, '/') + '/' + name + '.html',
     title: data.title || _.capitalize(_.kebabCase(name).replace('-', ' '))
   });
 
