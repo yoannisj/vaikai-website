@@ -1,0 +1,152 @@
+{% import 'macros/field.nunjucks' as fld %}
+{% import 'macros/control.nunjucks' as ctrl %}
+
+{# =defaults
+ # --------------------------------------------------------------- #}
+
+{% set defaults = {
+  type: 'base',
+  validate: true,
+  method: 'post',
+  controls: [{
+    type: 'submit',
+    label: 'Submit',
+    ui: 'button'
+  }]
+} %}
+
+{% set mc_defaults = {
+  action: data.mailchimp.url,
+  user: data.mailchimp.user,
+  method: 'post'
+} %}
+
+{# =base
+ # --------------------------------------------------------------- #}
+
+{% macro base(params, classname='') %}
+
+  {# inject param defaults #}
+  {% set prm = defaults|merge(params) %}
+
+  <form id="{{ prm.name }}" class="form {{ classname }}"
+    action="{{ prm.action }}" method="{{ prm.method }}" target="{{ prm.action|linktarget }}"
+    {% if not validate %} novalidate{% endif %}
+  >
+
+    {% if caller %}
+      {{ caller() }}
+    {% else %}
+      {{ fields(prm.fields) }}
+      {{ controls(prm.controls) }}
+    {% endif %}
+
+  </form>
+
+{% endmacro %}
+
+
+{# =mailchimp
+ # --------------------------------------------------------------- #}
+
+{% macro mailchimp(params, classname='') %}
+
+  {# inject param defaults #}
+  {% set prm = mc_defaults|merge(params) %}
+
+  {# inject mailchimp classnames #}
+  {% set mc_class = 'form--mailchimp' ~ ' validate' if prm.validate else 'form--mc novalidate' %}
+  {% set classname = mc_class ~ ' ' ~ classname %}
+
+  {# build mailchimp query string #}
+  {# - name can be used to reference the corresponding mailchimp id #}
+  {% set mc_id = data.mailchimp.ids[prm.name] or prm.id %}
+  {% set mc_query = ({ u: prm.user, id: mc_id })|query %}
+
+  {# set dynamic mailchimp params #}
+  {# - the 'validate' classname delegates validation to mailchimp #}
+  {% set prm = prm|merge({
+    validate: false,
+    action: data.mailchimp.url + mc_query
+  }) %}
+
+  {# generate form markup #}
+  <form id="{{ prm.name }}" class="form {{ classname }}"
+    action="{{ prm.action }}" method="{{ prm.method }}" target="{{ prm.action|linktarget }}"
+    {% if not validate %} novalidate{% endif %}
+  >
+
+    {% if caller %}
+      {{ caller() }}
+    {% else %}
+      {{ fields(prm.fields) }}
+      {{ controls(prm.controls) }}
+    {% endif %}
+
+  </form>
+
+{% endmacro %}
+
+{# =fields
+ # --------------------------------------------------------------- #}
+
+{% macro fields(flds, classname='') %}
+
+  {# build field groups #}
+  {% if flds|datatype == 'array' %}
+
+    {% for group in flds %}
+      {{ fields(group, classname) }}
+    {% endfor %}
+
+  {% else %}
+
+    <div class="form-group">
+      {% for name, fld in flds %}
+        {{ field(name, fld, classname) }}
+      {% endfor %}
+    </div>
+
+  {% endif %}
+
+{% endmacro %}
+
+{# =field
+ # --------------------------------------------------------------- #}
+
+{% macro field(name, params, classname='') %}
+
+  {% set classname = 'form-field ' ~ classname %}
+  {{ fld[params.type](name, params, classname) }}
+
+{% endmacro %}
+
+{# =controls
+ # --------------------------------------------------------------- #}
+
+{% macro controls(ctrls, classname='') %}
+
+  <div class="form-controls">
+    {% for ctrl in ctrls %}
+      {{ control(ctrl, classname) }}
+    {% endfor %}
+  </div>
+
+{% endmacro %}
+
+{# =control
+ # --------------------------------------------------------------- #}
+
+{% macro control( params, classname='') %}
+
+  {% set classname = 'form-control ' ~ classname %}
+
+  {% if caller %}
+    {% call ctrl[params.type](params, classname) %}
+      {{ caller() }}
+    {% endcall %}
+  {% else %}
+    {{ ctrl[params.type](params, classname) }}
+  {% endif %}
+
+{% endmacro %}

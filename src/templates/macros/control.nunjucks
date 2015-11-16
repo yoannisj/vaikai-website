@@ -1,15 +1,31 @@
-{% import 'macros/toggle.nunjucks' as toggle %}
+{% import 'macros/toggle.nunjucks' as tgl %}
+{% import 'macros/submit.nunjucks' as sbm %}
 
 {# =toggle
  # --------------------------------------------------------------- #}
 {% macro toggle(params, classname='') %}
 
   {% if caller %}
-    {% call toggle[params.ui](params, classname) %}
+    {% call tgl[params.ui](params, classname) %}
       {{ caller() }}
     {% endcall %}
   {% else %}
-    {{ toggle[params.ui](params, classname) }}
+    {{ tgl[params.ui](params, classname) }}
+  {% endif %}
+
+{% endmacro %}
+
+{# =submit
+ # --------------------------------------------------------------- #}
+{% macro submit(params, classname='') %}
+
+  {# only buttons can be called #}
+  {% if params.ui == 'button' and caller %}
+    {% call sbm.button(params) %}
+      {{ caller() }}
+    {% endcall %}
+  {% else %}
+    {{ sbm[params.ui](params, classname) }}
   {% endif %}
 
 {% endmacro %}

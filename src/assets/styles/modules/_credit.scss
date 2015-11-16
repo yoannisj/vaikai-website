@@ -12,23 +12,21 @@ $credit-name-font-weight: 400;
 /* =credit
  * -------------------------------------------------------------------------- */
 
-.credit-logo,
-.credit-name,
-.credit-description {
-  display: block;
-}
 
-.credit-logo,
-.credit-name {
-  text-decoration: none;
-}
-
-.credit-logo {
+.credit-logo
+{
+  transition: opacity 0.35s ease-out;
   margin-bottom: convert-length($credit-logo-spacing, 'em');
+  opacity: 1;
+
+  a:hover & {
+    opacity: 0.65;
+  }
 }
 
 .credit-name {
   @extend .fullcaps;
   font-family: $credit-name-font-family;
   font-weight: $credit-name-font-weight;
+  text-decoration: none;
 }

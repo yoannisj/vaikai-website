@@ -1,0 +1,80 @@
+// =============================================================================
+// =VaiKai - Field Module
+// =============================================================================
+
+// =settings
+// -----------------------------------------------------------------------------
+$input-font-size: typescale-font-size('base');
+$input-font-size-s: typescale-font-size('zeta');
+$input-height: 50px;
+$input-border-width: 2px;
+$input-max-width: 440px;
+$input-placeholder-transition: opacity 0.35s ease-out;
+$input-placeholder-font-family: Georgia, serif;
+$input-background-active: $light-gray;
+
+/* =input
+ * -------------------------------------------------------------------------- */
+
+.input
+{
+  width: 100%; /* full width */
+  max-width: convert-length($input-max-width, 'em', $input-font-size);
+  height: convert-length($input-height, 'em', $input-font-size);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: $input-border-width solid;
+
+  font-size: convert-length($input-font-size, 'rem');
+  line-height: convert-length($input-height, 'em', $input-font-size);
+  text-align: center;
+  color: inherit;
+  background: transparent;
+
+  &:focus {
+    outline: 0;
+    background: $input-background-active;
+  }
+
+  @include shift('>s') {
+    font-size: convert-length($input-font-size-s, 'rem');
+  }
+}
+
+
+/* =input-placeholders
+ * -------------------------------------------------------------------------- */
+
+.input
+{
+  &::-webkit-input-placeholder {
+    font-family: $input-placeholder-font-family;
+    font-style: italic;
+    color: inherit;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    font-family: $input-placeholder-font-family;
+    font-style: italic;
+    color: inherit;
+  }
+
+  &::-moz-placeholder { /* Firefox 19+ */
+    font-family: $input-placeholder-font-family;
+    font-style: italic;
+    color: inherit;
+  }
+
+  &:-ms-input-placeholder {
+    font-family: $input-placeholder-font-family;
+    font-style: italic;
+    color: inherit;
+  }
+
+  &:focus::-webkit-input-placeholder { color: #000; opacity: 0.15; }
+  &:focus:-moz-placeholder { color: #000; opacity: 0.15; }
+  &:focus::-moz-placeholder { color: #000; opacity: 0.15; }
+  &:focus:-ms-input-placeholder { color: #000; opacity: 0.15; }
+}
+

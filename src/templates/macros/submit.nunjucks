@@ -1,0 +1,32 @@
+{# =defaults
+ # --------------------------------------------------------------- #}
+{% set defaults = {
+  label: 'Submit'
+} %}
+
+{# =button
+ # --------------------------------------------------------------- #}
+{% macro button(params, classname='') %}
+
+  {# inject param defaults #}
+  {% set prm = defaults|merge(params) %}
+
+  <button class="btn {{ classname }}" type="submit">
+    {% if caller %}
+      {{ caller() }}
+    {% else %}
+      {{ prm.label }}
+    {% endif %}
+  </button>
+
+{% endmacro %}
+
+{# =input
+ # --------------------------------------------------------------- #}
+{% macro input(params, classname='') %}
+
+  {# inject param defaults #}
+  {% set prm = defaults|merge(params) %}
+
+  <input class="btn {{ classname }}" type="submit" value="{{ prm.label }}" />
+{% endmacro %}

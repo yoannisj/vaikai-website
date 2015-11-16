@@ -1,4 +1,6 @@
 {% import 'macros/section.nunjucks' as sect %}
+{% import 'macros/form.nunjucks' as frm %}
+{% import 'macros/control.nunjucks' as ctrl %}
 {% import 'macros/symbol.nunjucks' as sym %}
 
 {% call sect.base(section) %}
@@ -17,19 +19,20 @@
 
       <!-- =Newsletter-Form -->
       <div class="landmark align-center">
-        <form class="form validate" action="https://vaikai.us9.list-manage.com/subscribe/post?u=52b4b9806f4ed740f47ecf205&amp;id=8332aef473" method="post" target="_blank" novalidate>
-          <div class="form-group">
-            <div class="form-field">
-              <label for="newsletter_email" class="sr-only">Your Email Address</label>
-              <input id="newsletter_email" class="form-input" name="EMAIL" type="email" placeholder="Please enter your e-mail here" autocomplete="off" />
-            </div>
+
+        {% call frm.mailchimp(section.form) %}
+
+          {{ frm.fields(section.form.fields) }}
+
+          <div class="form-controls">
+            {% set form_submit = section.form.controls[0] %}
+            {% call ctrl.submit( form_submit ) %}
+              {{ sym.preIcon(form_submit.icon, form_submit.label) }}
+            {% endcall %}
           </div>
-          <div class="form-group form-footer">
-            <button class="form-submit btn" type="submit">
-              {{ sym.preIcon('send', 'Yes, sign me up!') }}
-            </button>
-          </div>
-        </form>
+
+        {% endcall %}
+
       </div>
       <!-- /Newsletter-Form -->
 

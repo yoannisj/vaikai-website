@@ -56,6 +56,14 @@
     "version": "v2"
   },
 
+  "mailchimp": {
+    "url": "'https://vaikai.us9.list-manage.com/subscribe/post'",
+    "user": "52b4b9806f4ed740f47ecf205",
+    "ids": {
+      "newsletter": "8332aef473"
+    }
+  },
+
   "google-analytics": {
     "tracking-code": "UA-61997920-1"
   },

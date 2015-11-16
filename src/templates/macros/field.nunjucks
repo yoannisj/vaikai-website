@@ -1,0 +1,85 @@
+{# =defaults
+ # --------------------------------------------------------------- #}
+
+{% set defaults = {
+  type: 'text',
+  placeholder: '',
+  autofocus: false,
+  required: false,
+  readonly: false,
+  disabled: false,
+  spellcheck: false
+} %}
+
+{# =input
+ # --------------------------------------------------------------- #}
+
+{% macro input(name, params, classname='') %}
+
+  {# inject param defaults #}
+  {% set prm = defaults|merge(params) %}
+  {% set id = prm.id or name|slugify %}
+
+  <div class="field {{ 'field'|modify(prm.type) ~ ' ' ~ classname }}">
+    {# field label label #}
+    <label class="field-label sr-only" for="{{ id }}">{{ prm.label }}</label>
+
+    {# field-control #}
+    <input id="{{ id }}" name="{{ name }}" type="{{ prm.type }}"
+      class="field-control input {{ 'input'|modify(prm.type) }}"
+      {% if prm.placeholder %} placeholder="{{ prm.placeholder }}" {% endif %}
+      {% if prm.tabindex %} tabindex="{{ prm.tabindex }}"{% endif %}
+      {% if prm.value %} value="{{ prm.value }}"{% endif %}
+      {% if prm.autocomplete %} autocomplete="{{ prm.autocomplete }}"{% endif %}
+      {% if prm.minlength %} minlength="{{ prm.minlength }}"{% endif %}
+      {% if prm.maxlength %} maxlength="{{ prm.maxlength }}"{% endif %}
+      {% if prm.min %} min="{{ prm.min }}"{% endif %}
+      {% if prm.max %} max="{{ prm.max }}"{% endif %}
+      {% if prm.pattern %} pattern="{{ prm.pattern }}"{% endif %}
+      {% if prm.autofocus %} autofocus="autofocus"{% endif %}
+      {% if prm.required %} required="required"{% endif %}
+      {% if prm.readonly %} readonly="readonly"{% endif %}
+      {% if prm.disabled %} disabled="disabled"{% endif %}
+      {% if prm.spellcheck %} spellcheck="spellcheck"{% endif %}
+    />
+  </div>
+
+{% endmacro %}
+
+{# =text
+ # --------------------------------------------------------------- #}
+{% macro text(name, params, classname='') %}
+  {% set prm = params|merge({ type: 'text' }) %}
+  {{ input(name, prm, classname) }}
+{% endmacro %}
+
+{# =email
+ # --------------------------------------------------------------- #}
+{% macro email(name, params, classname='') %}
+  {% set prm = params|merge({ type: 'email' }) %}
+  {{ input(name, prm, classname) }}
+{% endmacro %}
+
+{# =password
+ # --------------------------------------------------------------- #}
+{% macro password(name, params, classname='') %}
+  {% set prm = params|merge({ type: 'password' }) %}
+  {{ input(name, prm, classname) }}
+{% endmacro %}
+
+{# =url
+ # --------------------------------------------------------------- #}
+{% macro url(name, params, classname='') %}
+  {% set prm = params|merge({ type: 'url' }) %}
+  {{ input(name, prm, classname) }}
+{% endmacro %}
+
+{# =checkbox
+ # --------------------------------------------------------------- #}
+{% macro checkbox(name, params, classname='') %}
+{% endmacro %}
+
+{# =radio
+ # --------------------------------------------------------------- #}
+{% macro radio(name, params, classname='') %}
+{% endmacro %}
