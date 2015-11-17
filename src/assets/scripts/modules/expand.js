@@ -64,7 +64,6 @@ function updateExpandBody( $expBody )
       bottom = $item.offset().top + $item.height();
 
     if ($item.hasClass('expand-summary')) {
-      console.log('yay, expand-item!');
       colBottom = Math.max(colBottom, bottom);
     }
 
