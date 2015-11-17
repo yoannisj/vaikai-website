@@ -1,6 +1,52 @@
 {% import 'macros/toggle.nunjucks' as tgl %}
 {% import 'macros/submit.nunjucks' as sbm %}
 
+{# =button
+ # --------------------------------------------------------------- #}
+
+{% macro button(prm, classname='') %}
+
+  <button type="button" class="js-ctrl {{ classname }}"
+    data-target="#{{ prm.target }}"
+    data-action="{{ prm.action }}"
+    {% if prm.params %} data-params="{{ prm.params }}"{% endif %}
+  >
+
+    {% if caller %}
+      {{ caller() }}
+    {% else %}
+      {{ prm.label }}
+    {% endif %}
+
+  </button>
+
+{% endmacro %}
+
+{# =link
+ # --------------------------------------------------------------- #}
+
+{% macro link(prm, classname='') %}
+
+  {% set url = prm.url|default('#', false) %}
+
+  <a href="{{ url }}" target="{{ url|linktarget }}"
+    class="js-ctrl {{ classname }}"
+    data-target="#{{ prm.target }}:{{ prm.widget }}"
+    data-action="{{ prm.action }}"
+    {% if prm.params %} data-params="{{ prm.params }}"{% endif %}
+  >
+
+    {% if caller %}
+      {{ caller() }}
+    {% else %}
+      {{ prm.label }}
+    {% endif %}
+
+  </a>
+
+{% endmacro %}
+
+
 {# =toggle
  # --------------------------------------------------------------- #}
 {% macro toggle(params, classname='') %}

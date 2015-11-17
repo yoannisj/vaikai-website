@@ -5,13 +5,13 @@
  # ========================================================================== #}
 
 {% macro base(name, parent='', classname='') %}
-  <div id="{{ name }}" class="popup {{ classname }}">
-    <a class="popup-backdrop" href="#{{ parent }}">Back</a>
-    <div class="popup-wrap">
-      <a class="popup-close js-ctrl" href="#{{ parent }}" data-action="popup:close" data-target="#{{ name }}">
-        {{ symbol.icon('close', 'Close') }}
-      </a>
-      <div class="popup-body">
+  <div id="{{ name }}" class="js-popup {{ classname }}">
+    <a class="js-popup-backdrop" href="#{{ parent }}">Back</a>
+    <div class="js-popup-wrap">
+      <div class="js-popup-body">
+        <a class="js-popup-close" href="#{{ parent }}">
+          {{ symbol.icon('close', 'Close') }}
+        </a>
         {{ caller() }}
       </div>
     </div>

@@ -54,14 +54,14 @@ $window.resize(function(ev) {
       $slider.removeClass('has-slider');
     }
 
-    else {
-      var flex = $slider.data('flexslider'),
-      numItems = getSliderItems($slider),
-      itemW = ($slider.width() / numItems);
+    // else {
+    //   var flex = $slider.data('flexslider'),
+    //   numItems = getSliderItems($slider),
+    //   itemW = ($slider.width() / numItems);
 
-      flex.vars.itemWidth = itemW;
-      flex.vars.minItems = numItems;
-      flex.vars.maxItems = numItems;
-    }
+    //   flex.vars.itemWidth = itemW;
+    //   flex.vars.minItems = numItems;
+    //   flex.vars.maxItems = numItems;
+    // }
   });
 });

@@ -25,9 +25,10 @@
             <p class="landmark">
 
               {% set control = section.control|merge({
-                type: 'toggle',
-                target: 'intro-video',
-                action: 'popup:toggle'
+                type: 'link',
+                url: 'http://vimeo.com/' ~ section.video.id,
+                target: 'intro-video:popup',
+                action: 'open'
               }) %}
 
               {% call ctrl[control.type](control, 'link-quiet shoutout') %}

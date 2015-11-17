@@ -1,0 +1,111 @@
+/* =============================================================================
+ * =VaiKai - Popup Widget
+ * ========================================================================== */
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$lightbox-transition: 0.5s opacity ease-out;
+
+/* =popup
+ * -------------------------------------------------------------------------- */
+
+body.has-open-popup {
+  overflow: hidden;
+}
+
+.js-popup
+{
+  @include v-align();
+  transition: $lightbox-transition;
+
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  text-align: center;
+
+  visibility: hidden;
+  opacity: 0;
+
+  .no-js &,
+  &.is-opening,
+  &.is-open {
+    visibility: visible;
+  }
+
+  .no-js &,
+  &.is-open {
+    opacity: 1;
+  }
+}
+
+.js-popup-backdrop {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $white;
+
+  /* hide text */
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.js-popup-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-height: 100%;
+  padding: 20px;
+}
+
+.js-popup-close
+{
+  position: absolute;
+  z-index: 2;
+  width: convert-length(40px, 'rem');
+  line-height: convert-length(40px, 'rem');
+  font-size: 12px;
+  top: 0;
+  left: 5px;
+
+  color: $white;
+  background-color: $blue;
+  border-radius: 500px;
+
+  &:focus, &:hover, &:active {
+    color: $white;
+    background-color: $mid-blue;
+  }
+}
+
+@include shift('>sm')
+{
+  .js-popup-backdrop {
+    background: rgba($black, 0.5);
+  }
+
+  .js-popup-wrap {
+    width: auto;
+    max-width: 80%;
+    max-height: none;
+    margin: 40px auto;
+    background: $white;
+  }
+
+  .js-popup-close {
+    top: -30px;
+    right: -30px;
+    left: auto;
+    width: convert-length(60px, 'rem');
+    line-height: convert-length(60px, 'rem');
+    font-size: typescale-font-size('base');
+  }
+}

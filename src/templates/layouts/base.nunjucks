@@ -107,6 +107,11 @@
         <script src="{{ app.servers.webpackDev.url }}"></script>
       {% endif %}
 
+      <!-- =Polyfills -->
+      <!--[if lte IE 8]>
+        <script src="{{ 'js/vendor/polyfills.js'|webpackurl }}"></script>
+      <![endif]-->
+
       <!-- =Scripts-custom -->
       <script src="{{ 'js/main.js'|webpackurl }}"></script>
     {% endblock %}

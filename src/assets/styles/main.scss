@@ -49,7 +49,6 @@
 @import "modules/mention";
 @import "modules/credit";
 @import "modules/thumbnail";
-@import "modules/popup";
 @import "modules/gallery";
 @import "modules/form";
 
@@ -64,9 +63,11 @@
 /* =Widgets
  * ========================================================================== */
 
+@import "widgets/popup";
 @import "widgets/toggle";
 @import "widgets/slider";
 @import "widgets/expand";
+@import "widgets/gallery";
 
 /* =Utils
  * ========================================================================== */
