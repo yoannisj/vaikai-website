@@ -24,7 +24,7 @@
 {# =base
  # --------------------------------------------------------------- #}
 
-{% macro base(params, classname='') %}
+{% macro base(params, classname='', attrs=false) %}
 
   {# inject param defaults #}
   {% set prm = defaults|merge(params) %}
@@ -32,6 +32,9 @@
   <form id="{{ prm.name }}" class="form {{ classname }}"
     action="{{ prm.action }}" method="{{ prm.method }}" target="{{ prm.action|linktarget }}"
     {% if not validate %} novalidate{% endif %}
+    {% if attrs %}
+      {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+    {% endif %}
   >
 
     {% if caller %}
@@ -49,13 +52,13 @@
 {# =mailchimp
  # --------------------------------------------------------------- #}
 
-{% macro mailchimp(params, classname='') %}
+{% macro mailchimp(params, classname='', attrs=false) %}
 
   {# inject param defaults #}
   {% set prm = mc_defaults|merge(params) %}
 
   {# inject mailchimp classnames #}
-  {% set mc_class = 'form--mailchimp' ~ ' validate' if prm.validate else 'form--mc novalidate' %}
+  {% set mc_class = 'form--mailchimp' ~ ' validate' if prm.validate else 'form--mailchimp novalidate' %}
   {% set classname = mc_class ~ ' ' ~ classname %}
 
   {# build mailchimp query string #}
@@ -74,6 +77,9 @@
   <form id="{{ prm.name }}" class="form {{ classname }}"
     action="{{ prm.action }}" method="{{ prm.method }}" target="{{ prm.action|linktarget }}"
     {% if not validate %} novalidate{% endif %}
+    {% if attrs %}
+      {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+    {% endif %}
   >
 
     {% if caller %}
@@ -90,20 +96,20 @@
 {# =fields
  # --------------------------------------------------------------- #}
 
-{% macro fields(flds, classname='') %}
+{% macro fields(flds, classname='', attrs=false) %}
 
   {# build field groups #}
   {% if flds|datatype == 'array' %}
 
     {% for group in flds %}
-      {{ fields(group, classname) }}
+      {{ fields(group, classname, attrs) }}
     {% endfor %}
 
   {% else %}
 
     <div class="form-group">
       {% for name, fld in flds %}
-        {{ field(name, fld, classname) }}
+        {{ field(name, fld, classname, attrs) }}
       {% endfor %}
     </div>
 
@@ -114,21 +120,21 @@
 {# =field
  # --------------------------------------------------------------- #}
 
-{% macro field(name, params, classname='') %}
+{% macro field(name, params, classname='', attrs=false) %}
 
   {% set classname = 'form-field ' ~ classname %}
-  {{ fld[params.type](name, params, classname) }}
+  {{ fld[params.type](name, params, classname, attrs) }}
 
 {% endmacro %}
 
 {# =controls
  # --------------------------------------------------------------- #}
 
-{% macro controls(ctrls, classname='') %}
+{% macro controls(ctrls, classname='', attrs=false) %}
 
   <div class="form-controls">
     {% for ctrl in ctrls %}
-      {{ control(ctrl, classname) }}
+      {{ control(ctrl, classname, attrs) }}
     {% endfor %}
   </div>
 
@@ -137,16 +143,16 @@
 {# =control
  # --------------------------------------------------------------- #}
 
-{% macro control( params, classname='') %}
+{% macro control( params, classname='', attrs=false) %}
 
   {% set classname = 'form-control ' ~ classname %}
 
   {% if caller %}
-    {% call ctrl[params.type](params, classname) %}
+    {% call ctrl[params.type](params, classname, attrs) %}
       {{ caller() }}
     {% endcall %}
   {% else %}
-    {{ ctrl[params.type](params, classname) }}
+    {{ ctrl[params.type](params, classname, attrs) }}
   {% endif %}
 
 {% endmacro %}

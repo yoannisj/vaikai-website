@@ -31,7 +31,11 @@
                 action: 'open'
               }) %}
 
-              {% call ctrl[control.type](control, 'link-quiet shoutout') %}
+              {% set popup_condition = {
+                'data-media': '(min-width: 600px)'
+              } %}
+
+              {% call ctrl[control.type](control, 'link-quiet shoutout', popup_condition) %}
                 {{ sym.preIcon(control.icon, control.label, 'icon--md') }}
               {% endcall %}
 
@@ -50,7 +54,7 @@
 
   <!-- =Intro-Video -->
   {% if section.video %}
-    {% call pop.base('intro-video', parent='intro') %}
+    {% call pop.base('intro-video', parent='intro', attrs=popup_condition) %}
       {{ vid.vimeo( section.video.id, 'flex' ) }}
     {% endcall %}
   {% endif %}

@@ -1,18 +1,24 @@
 {% import 'macros/video.nunjucks' as vid %}
 {% import 'macros/symbol.nunjucks' as symbol %}
 
-{# =Base
- # ========================================================================== #}
+{# =base
+ # --------------------------------------------------------------- #}
 
-{% macro base(name, parent='', classname='') %}
-  <div id="{{ name }}" class="js-popup {{ classname }}">
+{% macro base(name, parent='', classname='', attrs=false) %}
+  <div id="{{ name }}" class="js-popup {{ classname }}"
+  {% if attrs %}
+    {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+  {% endif %}
+  >
     <a class="js-popup-backdrop" href="#{{ parent }}">Back</a>
     <div class="js-popup-wrap">
       <div class="js-popup-body">
         <a class="js-popup-close" href="#{{ parent }}">
           {{ symbol.icon('close', 'Close') }}
         </a>
+
         {{ caller() }}
+
       </div>
     </div>
   </div>
@@ -20,8 +26,8 @@
 
 {# =Video
  # ========================================================================== #}
-{% macro video(name, id, settings, parent='') %}
-  {% call base(name, parent) %}
+{% macro video(name, id, settings, parent='', classname='', attrs=false) %}
+  {% call base(name, parent, classname, attrs) %}
 
     {{ vid.vimeo(id, settings) }}
 

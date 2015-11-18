@@ -1,51 +1,81 @@
 {# =base
  # --------------------------------------------------------------- #}
-{% macro base(params, size=false, fallback=false) %}
 
-  {# get full path to image src #}
-  {% set src = app.paths.images|joinpath(params.path) %}
-  {# allow passing 'true' for automatic image size #}
-  {% set sz = src|imgsize if (size == true) else size %}
+{% macro base(prm, classname='', attrs=false) %}
 
-  <img src="{{ src|url }}" alt="{{ params.description }}"
-    {% if sz %} width="{{ sz[0] }}" height="{{ sz[1] }}"{% endif %}
-    {% if src|extname == 'svg' %} data-svg-fallback="{{  src|extname('png')|url }}"{% endif %}
+  {# get image size #}
+  {% set orig_sz = prm.path|imgsize %}
+  {% set sz = prm.size or orig_sz %}
+
+  {# optionally resize image and get path to destination #}
+  {% if sz != orig_sz %}
+    {% set rs_path = prm.path|resize(sz, prm.resize_options) %}
+    {% set path = app.paths.images|joinpath(rs_path) %}
+  {% else %}
+    {% set path = app.paths.images|joinpath(prm.path) %}
+  {% endif %}
+
+  <img src="{{ path }}" alt="{{ prm.description }}"
+    {% if prm.size %} width="{{ sz[0] }}" {% endif %}
+    {% if classname %} class="{{ classname }}"{% endif %}
+    {% if path|extname == 'svg' %}
+      data-svg-fallback="{{ prm.fallback or path|extname('png') }}"
+    {% endif %}
+    {% if attrs %}
+      {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+    {% endif %}
   />
 
 {% endmacro %}
 
 {# =lazy
  # --------------------------------------------------------------- #}
-{% macro lazy(params, size=false, fallback=false) %}
 
-  {# get full path to image src #}
-  {% set src = app.paths.images|joinpath(params.path) %}
+{% macro lazy(prm, classname='', attrs=false) %}
 
-  {# get default fallback #}
-  {% if params.path|extname == 'svg' %}
-    {% set fb_path = fallback|default(params.path|extname('png'), true) %}
+  {# get image size #}
+  {% set orig_sz = prm.path|imgsize %}
+  {% set sz = prm.size or orig_sz %}
+
+  {# get full path to image #}
+  {% set path = app.paths.images|joinpath(prm.path) %}
+
+  {# particular treatment for 'svg' images #}
+  {% set is_svg = (path|extname == 'svg') %}
+
+  {# optionally resize image and get path to destination #}
+  {% if sz != orig_sz %}
+    {% set rs_path = prm.path|resize(sz) %}
+    {% set path = app.paths.images|joinpath(rs_path) %}
   {% else %}
-    {% set fb_path = fallback|default(params.path, true) %}
+    {% set path = app.paths.images|joinpath(prm.path) %}
   {% endif %}
 
-  {% set fb = {
-    path: fb_path,
-    description: params.description
-  } %}
-
   <!--[if gt IE 8]><!-->
-  <img class="lazyload" alt="{{ params.description }}"
+  <img class="lazyload {{ classname }}" alt="{{ prm.description }}"
     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-    data-src="{{ src|url }}"
-    {% if src|extname == 'svg' %} data-svg-fallback="{{ fb_path|url }}" {% endif %}
+    data-src="{{ path }}"
+    {% if prm.size %} width="{{ sz[0] }}" {% endif %}
+    {% if is_svg %} data-svg-fallback="{{ path|extname('png') }}"{% endif %}
+    {% if attrs %}
+      {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+    {% endif %}
   />
   <!--<![endif]-->
 
+  {# get fallback path #}
+  {% set fb_path = prm.fallback or (prm.path|extname('png') if is_svg else prm.path) %}
+
+  {# get fallback image params #}
+  {% set fallback = prm|merge({
+    path: fb_path
+  }) %}
+
   <!--[if lte IE 8]>
-    {{ base(fb, size) }}
+    {{ base(fallback, classname, attrs) }}
   <![endif]-->
   <noscript>
-    {{ base(fb, size) }}
+    {{ base(fallback, classname, attrs) }}
   </noscript>
 
 {% endmacro %}

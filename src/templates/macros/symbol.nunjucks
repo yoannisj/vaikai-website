@@ -2,13 +2,13 @@
 
 {# =logo
  # --------------------------------------------------------------- #}
-{% macro logo(params, size=false, classname='') %}
+{% macro logo(params, classname='') %}
 
   {# allow passing an image object to build logo on the fly #}
   {% if params.path %}
     {# allow omitting an 'alt' value #}
     {% set prm = { description: '' }|merge(params) %}
-    {{ img.base(params, size, classname) }}
+    {{ img.base(params, classname) }}
   {% else %}
     <span class="logo {{ 'logo'|modify(params.name) ~ ' ' ~ classname }}">{{ params.title }}</span>
   {% endif %}
