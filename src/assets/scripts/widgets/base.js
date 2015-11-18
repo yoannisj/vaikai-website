@@ -17,7 +17,6 @@ var $win = $(window);
 var $body = $('body');
 
 var initOrDestroy = function(widget, mq) {
-  console.log('check wether to init or destroy..');
   // check for current state and media-condition in order
   // to either initialize or destroy widget
   if (!widget._initialized && Modernizr.mq(mq)) {
@@ -98,16 +97,25 @@ var BaseWidget = module.exports = Base.extend({
     return setting;
   },
 
+  setting: function(name, dynamic) {
+    return this.getSetting(name, dynamic);
+  },
+
   // Classnames
   getClassname: function(name) {
     // classname =
     var classname = _cache[this.cid].classnames[name];
 
     if (!classname) {
-      // get classname from widget settings
-      classname = this.settings.classnames[name];
-      // build default class if no class was found
-      if (!classname) classname = this.classname + '-' + name.toLowerCase();
+      if (this.settings.classnames) {
+        // get classname from widget settings
+        classname = this.settings.classnames[name];
+      }
+
+      if (!classname) {
+        // build default class if no class was found
+        classname = this.classname + '-' + name.toLowerCase();
+      }
 
       // cache classname for later access
       _cache[this.cid].classnames[name] = classname;
@@ -136,12 +144,12 @@ var BaseWidget = module.exports = Base.extend({
   },
 
   // Find descendant element(s) based on their name
-  getElement: function() {
-    this.$el.find(this.getSelector.apply(this, arguments));
+  findElement: function() {
+    return this.$el.find(this.getSelector.apply(this, arguments));
   },
 
   find: function() {
-    return this.getElement.apply(this, arguments);
+    return this.findElement.apply(this, arguments);
   },
 
   // Data

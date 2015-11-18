@@ -52,6 +52,14 @@
 @import "modules/gallery";
 @import "modules/form";
 
+/* =Widgets
+ * ========================================================================== */
+
+@import "widgets/toggle";
+@import "widgets/slider";
+@import "widgets/popup";
+@import "widgets/carousel";
+
 /* =Themes
  * ========================================================================== */
 
@@ -59,15 +67,6 @@
 @import "themes/green";
 @import "themes/blue";
 @import "themes/yellow";
-
-/* =Widgets
- * ========================================================================== */
-
-@import "widgets/popup";
-@import "widgets/toggle";
-@import "widgets/slider";
-@import "widgets/expand";
-@import "widgets/gallery";
 
 /* =Utils
  * ========================================================================== */

@@ -1,0 +1,18 @@
+// =============================================================================
+// =VaiKai - Carousel Widget
+// =============================================================================
+
+@import "widgets/lightslider";
+
+// remove spacing added by the 'grid' fallback
+// - spacing is handled via lisghtslider's 'itemMargin' setting
+.has-carousel .js-carousel-items { margin: 0; }
+.has-carousel .js-carousel-item { padding: 0; }
+
+.has-carousel .js-carousel-item {
+  padding: 0;
+}
+
+.js-carousel-img {
+  line-height: 0;
+}

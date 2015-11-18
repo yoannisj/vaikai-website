@@ -20,7 +20,7 @@ $mention-separator-color: $mid-gray;
 
 .mention {
   max-width: 400px;
-  margin: 20px auto 60px;
+  margin: 20px auto 40px;
 }
 
 .mention-quote {
@@ -31,7 +31,6 @@ $mention-separator-color: $mid-gray;
 {
   &:before { content: '“'; }
   &:after { content: '”'; }
-
 }
 
 .mention-caption:before {

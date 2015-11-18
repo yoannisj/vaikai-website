@@ -21,4 +21,6 @@ $('.js-test').widget(TestWidget);
 
 // =Carousel
 // =============================================================================
-var Carousel = require('widget/carousel');
+var Carousel = require('widgets/carousel');
+
+$('.js-carousel').widget(Carousel);

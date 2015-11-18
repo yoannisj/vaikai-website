@@ -29,7 +29,9 @@ module.exports = function(config, env) {
       // add aliases to bower components here
       // - [key]: string used for aliasing
       // - [value]: absolute target path to resolve to
-      alias: {}
+      alias: {
+        'lightslider': path.resolve(config.paths.bower, 'lightslider/dist/js/lightslider.js')
+      }
     },
 
     // external libraries/modules, made available via a <script> tag in the html
@@ -37,6 +39,14 @@ module.exports = function(config, env) {
     externals: {
       jquery: "jQuery",
       modernizr: "Modernizr"
+    },
+
+    module: {
+      // loaders that preprocess files with special file format so they can be
+      // imported into modules like usual
+      loaders: [
+        { test:  /\.json$/, loader: 'json-loader' }
+      ]
     },
 
     // devServer options are passed to the 'webpack-dev-server'
