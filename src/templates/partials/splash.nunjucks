@@ -1,18 +1,18 @@
-{# =variables
+{# =VARIABLES
  # --------------------------------------------------------------- #}
 {% set vaikai_logo = {
   name: 'vaikai',
   title: 'Vai Kai'
 } %}
 
-{# =markup
+{# =MARKUP
  # --------------------------------------------------------------- #}
 <!-- =Splash -->
 <div class="splash landmark align-center">
   <div class="splash-object">
     <p class="avk-makers">
       <em class="stamp stamp--madewithlove">Made with love by</em><br />
-      {{ sym.logo(vaikai_logo, classname='logo--lg') }}
+      {{ sym.logo(vaikai_logo, 'logo--lg') }}
     </p>
   </div>
 

@@ -30,7 +30,7 @@
       <h1 class="navbar-title">
 
         {% call ln.base(home_link, 'logo-link') %}
-          {{ sym.logo(vaikai_logo, classname='navbar-logo') }}
+          {{ sym.logo(vaikai_logo, 'navbar-logo') }}
         {% endcall %}
 
       </h1>

@@ -1,7 +1,5 @@
 require('modules/menu');
 
-// console.log('hello mainjs!');
-
 // var Base = require('class-extend');
 // var Parent = Base.extend({
 

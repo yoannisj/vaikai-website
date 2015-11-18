@@ -37,6 +37,14 @@ module.exports = function(env) {
         ]
       },
 
+      'images': {
+        base: {
+          src: './assets/images',
+          dest: './images'
+        },
+        files: './**/*'
+      },
+
       'stylesheets': {
         base: {
           src: './assets/styles',

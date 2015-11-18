@@ -32,10 +32,12 @@
                       {# =credit-logo #}
                       {% if credit.logo %}
                         <strong class="credit-logo">
+
                           {% set logo = credit.logo|merge({
                             description: credit.name
                           }) %}
                           {{ img.base(logo) }}
+
                         </strong>
                       {# =credit-name #}
                       {% else %}

@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var slurp = require('./gulp/slurp');
 
 slurp.load('templates');
+slurp.load('images', ['templates']);
 slurp.load('stylesheets');
 slurp.load('externals');
 slurp.load('javascripts', ['externals']);

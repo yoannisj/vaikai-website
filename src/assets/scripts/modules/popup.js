@@ -5,9 +5,6 @@ var $popup = $('.popup');
 require('modules/video');
 
 $popup.on('toggle', function(ev) {
-
-  console.log('toggle popup', this);
-
   var $lb = $(this);
   $lb.trigger( $lb.hasClass('active') ? 'close': 'open' );
 });
