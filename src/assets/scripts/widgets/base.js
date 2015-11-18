@@ -1,19 +1,44 @@
+// third party
 var Base = require('class-extend');
+var debounce = require('debounce');
+
+// utilities
 var capitalize = require('utils/capitalize');
 var getArgs = require('utils/get-args');
 
+// modules
 require('jquery/widget');
 require('jquery/get-data');
 
+// local variables
 var cid = 0;
+var _cache = {};
+var $win = $(window);
 var $body = $('body');
 
-var _cache = {};
+var initOrDestroy = function(widget, mq) {
+  console.log('check wether to init or destroy..');
+  // check for current state and media-condition in order
+  // to either initialize or destroy widget
+  if (!widget._initialized && Modernizr.mq(mq)) {
+    widget.init();
+  }
 
+  if (widget._initialized && !Modernizr.mq(mq)) {
+    widget.destroy();
+  }
+};
+
+// Module
 var BaseWidget = module.exports = Base.extend({
 
-  defaults: {},
+  _initialized: false,
+
   name: 'widget',
+
+  defaults: {
+    debounceTime: 180
+  },
 
   constructor: function(el, options) {
     // give instance a unique id
@@ -36,12 +61,28 @@ var BaseWidget = module.exports = Base.extend({
     // set selector
     this.selector = '.' + this.classname;
 
-    // initialize widget
-    this.init();
+    // for elements with a media condition
+    var mq = this.$el.attr('data-media');
+    if (mq) {
+      // check if should initialize
+      initOrDestroy(this, mq);
+
+      var self = this;
+      // also check when window get's resized
+      $win.on('resize', debounce(function(ev) {
+        initOrDestroy(self, mq);
+      }, this.settings.debounceTime));
+    }
+
+    // other widgets simply initialize
+    else {
+      this.init();
+    }
   },
 
   // Initialization
   init: function() {
+    this._initialized = true;
     this.$el.addClass(this.initclass);
   },
 
@@ -203,8 +244,11 @@ var BaseWidget = module.exports = Base.extend({
   // Destroy
   destroy: function() {
     this.off();
-    this.$el.removeData(this.name);
+    this.$el.removeData('widget_' + this.name);
     this.$el.removeClass(this.initclass);
+
+    delete _cache[this.cid];
+    this._initialized = false;
 
     return this.$el;
   }
