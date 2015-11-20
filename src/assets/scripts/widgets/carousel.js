@@ -15,7 +15,7 @@ var Carousel = module.exports = BaseWidget.extend({
     debounceTime: 180,
     sliderSettings: {
       animation: 'slide',
-      smoothHeight: false,
+      smoothHeight: true,
       slideshow: false,
       animationLoop: false,
       animationSpeed: 400,
@@ -26,6 +26,7 @@ var Carousel = module.exports = BaseWidget.extend({
 
   init: function() {
     Carousel.__super__.init.call(this);
+
     this.initSlider();
     this.listen();
   },
@@ -44,12 +45,30 @@ var Carousel = module.exports = BaseWidget.extend({
       move: numItems,
       itemWidth: itemWidth,
       itemMargin: this._getItemMargin(),
-      directionNav: false
+      directionNav: false,
     });
+
+    // override smooth Height functionality
+    if (flexSettings.smoothHeight) {
+      this._useSmoothHeight = true;
+      // don't use flexslider's smoothHeight functionality
+      flexSettings.smoothHeight = false;
+
+      // inject functional callback on 'before' for better smoothHeight
+      var self = this;
+      flexSettings.before = flexSettings.start = function() {
+        self._smoothHeight();
+      };
+    }
 
     // create slider
     this.slider = this.$el.flexslider(flexSettings).data('flexslider');
     this.$el.addClass('has-flexslider');
+
+    // cache values for later
+    this.$items = this.find('item');
+    this.$viewport = this.$el.find('.flex-viewport');
+    this.numItems = numItems;
   },
 
   listen: function() {
@@ -72,10 +91,38 @@ var Carousel = module.exports = BaseWidget.extend({
     var numItems = this._getNumItems();
     var itemMargin = this._getItemMargin();
 
+    this.numItems = numItems;
     this.slider.vars.minItems = numItems;
     this.slider.vars.maxItems = numItems;
     this.slider.vars.move = numItems;
     this.slider.vars.itemMargin = itemMargin;
+
+    // apply overriden smoothHeight
+    if (this._useSmoothHeight) this._smoothHeight();
+  },
+
+  _smoothHeight: function() {
+    // get ALL items in current slide
+    var currStart = this.slider.animatingTo * this.numItems,
+      currEnd = currStart + this.numItems;
+
+    if (currEnd > this.$items.length) {
+      currEnd = this.$items.length;
+      currStart = this.$items.length - this.numItems;
+    }
+
+    var $currItems = this.$items.slice(currStart, currEnd),
+      currHeight = 0;
+
+    // get height of tallest item in current slide
+    $currItems.each(function() {
+      currHeight = Math.max(currHeight, $(this).outerHeight(true));
+    });
+
+    // apply to viewport
+    this.$viewport.animate({
+      'height':  currHeight
+    }, this.settings.animatinoSpeed);
   },
 
   destroy: function() {
