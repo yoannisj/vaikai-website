@@ -11,6 +11,7 @@ var Fold = module.exports = Collapse.extend({
 
   defaults: {
     debounceTime: 240,
+    foldSpeed: 600,
     scrollTime: 600,
     scrollOffset: 0
   },
@@ -40,33 +41,36 @@ var Fold = module.exports = Collapse.extend({
   },
 
   expand: function(scroll) {
+    Fold.__super__.expand.call(this);
+
     // udpate height
-    this.$el.css('height', this._expandedH);
+    this._fold(this._expandedH);
 
     // optionally update scroll position
-    if (scroll) this._expandScroll();
-
-    Fold.__super__.expand.call(this);
+    if (scroll) this._scroll();
   },
 
   collapse: function(scroll) {
+    Fold.__super__.collapse.call(this);
+
     // udpate height
-    this.$el.css('height', this._collapsedH);
+    this._fold(this._collapsedH);
 
     // optionally update scroll position
-    if (scroll) this._collapseScroll();
-
-    Fold.__super__.collapse.call(this);
+    if (scroll) this._scroll();
   },
 
-  _expandScroll: function() {
-    // get begin of expanded content
-    var sTop = this._top + this._collapsedH;
+  _fold: function(height) {
+    this.$el.animate({
+      'height': height
+    }, this.settings.foldSpeed);
+  },
+
+  _scroll: function() {
+    var sTop = this._expanded ? this._top + this._collapsedH :
+      this._top;
+
     smoothScroll($scroller, sTop, this.settings.scrollTime, this.settings.scrollOffset);
-  },
-
-  _collapseScroll: function() {
-    smoothScroll($scroller, this._top, this.settings.scrollTime, this.settings.scrollOffset);
   },
 
   destroy: function() {

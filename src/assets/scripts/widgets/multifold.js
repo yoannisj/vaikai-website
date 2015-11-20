@@ -8,6 +8,7 @@ var MultiFold = module.exports = Fold.extend({
 
   defaults: {
     debounceTime: 240,
+    foldSpeed: 600,
     scrollTime: 600,
     scrollOffset: 0
   },
