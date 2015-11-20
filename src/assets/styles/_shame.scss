@@ -104,4 +104,13 @@
   height: auto !important;
 }
 
+.js-carousel-img,
+.js-slider-img {
+  display: block;
+  width: 100%;
+}
+
+.flex-viewport .mention {
+  margin: convert-length($mention-spacing, 'rem') 0 0;
+}
 

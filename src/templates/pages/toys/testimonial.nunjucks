@@ -10,7 +10,7 @@
         <h3>{{ section.title }}</h3>
 
         <!-- =Testimonial-Carousel -->
-        <div class="js-carousel">
+        <div class="js-carousel" data-init="carousel">
           <ul class="js-carousel-items grid uilist">
             {% for entry in section.entries %}
 

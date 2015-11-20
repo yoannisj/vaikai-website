@@ -17,6 +17,8 @@ $icon-sizes: (
 
 $codepoint-icon-menu: "\e900";
 $codepoint-icon-close: "\e901";
+$codepoint-icon-previous: "\e90d";
+$codepoint-icon-next: "\e90e";
 $codepoint-icon-play: "\e90b";
 $codepoint-icon-send: "\e908";
 $codepoint-icon-twitter: "\e902";
@@ -65,6 +67,8 @@ $codepoint-icon-star: "\e90c";
 
 .icon--menu:before { content: $codepoint-icon-menu; }
 .icon--close:before { content: $codepoint-icon-close; }
+.icon--previous:before { content: $codepoint-icon-previous; }
+.icon--next:before { content: $codepoint-icon-next; }
 .icon--play:before { content: $codepoint-icon-play; }
 .icon--send:before { content: $codepoint-icon-send; }
 .icon--twitter:before { content: $codepoint-icon-twitter; }

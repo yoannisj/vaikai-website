@@ -1,5 +1,5 @@
 // =============================================================================
-// =UTILS - INLINE
+// =UTILS - NONE
 // =============================================================================
 
 @import "shift";
@@ -7,14 +7,13 @@
 
 // =settings
 // -----------------------------------------------------------------------------
-$inline-breakpoints: ('sm');
+$inline-breakpoints: ();
 
 /* =inline
  * -------------------------------------------------------------------------- */
 
-.line > *,
-.inline {
-  display: inline-block;
+.none {
+  display: none;
 }
 
 /* =<bp>-inline
@@ -24,10 +23,8 @@ $inline-breakpoints: ('sm');
 {
   @include shift('>#{$bp}')
   {
-    .#{$bp}-line > *,
-    .#{$bp}-inline {
-      display: inline-block;
+    .#{$bp}-none {
+      display: none;
     }
   }
 }
-

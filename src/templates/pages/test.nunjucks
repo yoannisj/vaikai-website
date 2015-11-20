@@ -1,12 +1,128 @@
 {% extends 'layouts/base.nunjucks' %}
+{% import 'macros/image.nunjucks' as img %}
+
+{% block head_styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="css/test.css" />
+{% endblock %}
+
+{% set gallery_items = [{
+  name: 'sailor-avakai',
+  image: {
+    path: 'playground/sailor-avakai.jpg',
+    description: ''
+  }
+}, {
+  name: 'indian-avakai',
+  image: {
+    path: 'playground/indian-avakai.jpg',
+    description: ''
+  }
+}, {
+  name: 'homework-avakai',
+  image: {
+    path: 'playground/homework-avakai.jpg',
+    description: ''
+  }
+}, {
+  name: '2000-fans',
+  image: {
+    path: 'playground/2000-fans.jpg',
+    description: ''
+  }
+}, {
+  name: 'justyna-plays-with-girl',
+  image: {
+    path: 'playground/justyna-plays-with-girl.jpg',
+    description: ''
+  }
+}] %}
 
 {% block body_main %}
-  <div class="js-test" data-media="(min-width: 800px)"></div>
-  <div class="js-test"></div>
 
+  {# =MEDIA WIDGET #}
+  {# <div class="js-test" data-media="(min-width: 800px)"></div>
+  <div class="js-test"></div> #}
 
-  <div class="js-carousel">
+  {# =CAROUSEL #}
+  {# <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
+    <div class="js-carousel align-center" data-init="carousel">
+      <ul class="js-carousel-items uilist grid">
+        {% for item in gallery_items %}
+          <li id="carousel-{{ item.name }}" class="js-carousel-item grid-cell s-span-6of12 m-span-3of12">
+            <div class="landmark">
+              {{ img.base(item.image|merge({
+                size: [550, 550]
+              }), 'js-carousel-img') }}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div> #}
 
+  {# =SLIDER #}
+  {# <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
+    <div class="js-slider align-center" data-init="slider">
+      <ul class="js-slider-items uilist">
+        {% for item in gallery_items %}
+          <li id="slider-{{ item.name }}" class="js-slider-item">
+            <div class="landmark">
+              {{ img.base(item.image|merge({
+                size: [550, 550]
+              }), 'js-slider-img') }}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div> #}
+
+  {# =CYCLER #}
+  {# <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
+    <div class="js-cycler" data-init="cycler">
+      <ul class="js-cycler-items uilist">
+        <li class="js-cycler-item">
+          <img src="http://www.placehold.it/600x400" alt="" />
+        </li>
+        <li class="js-cycler-item">
+          <img src="http://www.placehold.it/400x600" alt="" />
+        </li>
+        <li class="js-cycler-item">
+          <img src="http://www.placehold.it/500x500" alt="" />
+        </li>
+        <li class="js-cycler-item">
+          <img src="http://www.placehold.it/800x600" alt="" />
+        </li>
+        <li class="js-cycler-item">
+          <img src="http://www.placehold.it/300x250" alt="" />
+        </li>
+      </ul>
+    </div>
+  </div> #}
+
+  {# =MULTIFOLD #}
+  <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
+    <div id="multifold" class="js-multifold is-collapsed">
+      <ul class="uilist grid">
+
+        {% for index in [1, 2] %}
+          {% for item in gallery_items %}
+
+            <li id="multifold-{{ item.name }}-{{ index }}" class="js-multifold-item grid-cell s-span-6of12 m-span-3of12">
+              <div class="landmark">
+                {{ img.base(item.image|merge({
+                  size: [550, 550]
+                }), 'block') }}
+              </div>
+            </li>
+
+          {% endfor %}
+        {% endfor %}
+
+      </ul>
+    </div>
+    <button class="btn js-ctrl" data-target="#multifold:multifold" data-action="toggle" data-params="true">Toggle MultiFold</button>
   </div>
 
 {% endblock %}

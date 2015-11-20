@@ -15,9 +15,20 @@ var Collapse = module.exports = BaseWidget.extend({
     Collapse.__super__.init.call(this);
 
     // set initial state
-    var expanded = this.$el.hasClass(this.cname('expanded'));
-    this._expanded = !expanded;
-    this[expanded ? 'expand' : 'collapse']();
+    this._expanded = this.$el.hasClass(this.cname('expanded'));
+    this.update();
+  },
+
+  update: function() {
+    if (this._expanded) {
+      this._expanded = false;
+      this.expand();
+    }
+
+    else {
+      this._expanded = true;
+      this.collapse();
+    }
   },
 
   // Operations
@@ -27,6 +38,7 @@ var Collapse = module.exports = BaseWidget.extend({
     // update state
     this._expanded = true;
     this.$el.addClass(this.cname('expanded'));
+    this.$el.trigger('expand');
 
     return this;
   },
@@ -37,12 +49,17 @@ var Collapse = module.exports = BaseWidget.extend({
     // update state
     this._expanded = false;
     this.$el.removeClass(this.cname('expanded'));
+    this.$el.trigger('collapse');
 
     return this;
   },
 
   toggle: function() {
-    return this[ this._expanded ? 'collapse' : 'expand']();
+    var fn = this[this._expanded ? 'collapse' : 'expand'];
+    return fn.apply(this, arguments);
   }
 
 });
+
+// auto-init widgets
+$('[data-init~="collapse"]').widget(Collapse);

@@ -25,7 +25,7 @@
                 {{ symbol(control.icon, 'Watch the unpacking video', 'icon--lg') }}
               {% endcall %}
             </h2> #}
-            <h2>coming soon</h2>
+            <h2>Coming soon</h2>
             {{ section.caption|paragraphs('epsilon s-gamma m-alpha') }}
           </div>
         </div>
@@ -37,7 +37,10 @@
 
   <!-- =Reaction-Video -->
   {% if section.video %}
-    {% call pop.base('unpacking-video', 'reaction') %}
+    {% call pop.base({
+      name: 'unpacking-video',
+      parent: 'reaction'
+    }) %}
       {{ vid.vimeo( section.video.id , 'flex') }}
     {% endcall %}
   {% endif %}

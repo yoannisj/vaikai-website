@@ -3,6 +3,8 @@
 {% import 'macros/image.nunjucks' as img %}
 {% import 'macros/popup.nunjucks' as pop %}
 
+{% import 'macros/video.nunjucks' as vid %}
+
 {% call sect.base(section) %}
 
   <div class="chunk chunk--bleed">
@@ -34,53 +36,45 @@
   <div id="playground-gallery" class="chunk chunk--fullbleed">
     <div class="chunk-inner">
 
-      <div class="js-gallery">
+      <div class="js-gallery" data-init="gallery" data-media="(min-width: 700px)">
         <!-- =Gallery-Thumbs -->
         <div class="js-gallery-thumbs">
           <ul class="uilist cf">
             {% for item in section.gallery %}
               <li class="js-gallery-thumb s-float-left s-span-6of12 m-span-3of12">
 
-                {% set control = {
-                  type: 'link',
-                  url: (app.paths.images|joinpath(item.image.path) if item.image else '#'),
-                  target: 'playground-gallery-items:popup',
-                  action: 'open'
-                } %}
+                <a class="js-gallery-link blocklink" href="{{ app.paths.images|joinpath(item.image.path) }}" data-item-name="{{ item.name }}">
 
-                {% set popup_condition = {
-                  'data-media': '(min-width: 600px)'
-                } %}
-
-                {# TODO: Conditionally load popup or link to regular href #}
-                {% call ctrl[control.type](control, 'js-gallery-link blocklink', popup_condition) %}
                   {{ img.base(item.image|merge({
                     size: [420, 420]
-                  }), 'js-gallery-img block') }}
-                {% endcall %}
+                  }), 'js-gallery-thumb block') }}
+
+                </a>
 
               </li>
             {% endfor %}
           </ul>
         </div>
 
-        {# TODO: Implement conditionally loaded popup #}
+        <!-- =Gallery-Popup -->
+        {% call pop.base({
+          name: 'playground-gallery-popup',
+          parent: 'playground',
+          init: false
+        }, 'js-gallery-popup') %}
 
-        <!-- =Gallery-Items -->
-        {% call pop.base('playground-gallery-items', parent='playground', attrs=popup_condition) %}
-
-          <div class="js-slider">
-            <ul class="uilist js-slider-items" data-num-items="1">
+          <div class="js-gallery-cycler">
+            <ul class="js-gallery-items uilist">
               {% for item in section.gallery %}
-                <li class="js-gallery-item js-slider-item">
-                  {{ img.base(item.image, 'gallery-img') }}
+                <li class="js-gallery-item" data-name="{{ item.name }}">
+                  {{ img.base(item.image, 'js-gallery-img') }}
                 </li>
               {% endfor %}
             </ul>
           </div>
 
         {% endcall %}
-        <!-- /Gallery-Items -->
+        <!-- /Gallery-Popup -->
 
       </div>
 

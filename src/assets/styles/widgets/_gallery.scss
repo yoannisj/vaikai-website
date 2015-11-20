@@ -2,6 +2,74 @@
 // =VaiKai - Gallery Widget
 // =============================================================================
 
-.js-gallery-img {
+@import "widgets/cycler";
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$gallery-direction-nav-offset: 80px;
+$gallery-direction-nav-offset-m: 100px;
+$gallery-direction-control-color: $white;
+
+/* =js-gallery
+ * -------------------------------------------------------------------------- */
+
+.js-gallery-thumb {
   width: 100%;
+}
+
+.js-gallery-items
+{
+  // max-width: 100%;
+  // &:after {
+  //   content: "";
+  //   display: block;
+  //   clear: both;
+  // }
+}
+
+/* =js-gallery-cycler
+ * -------------------------------------------------------------------------- */
+
+.js-gallery-cycler {
+  @extend .js-cycler;
+}
+
+.js-gallery-direction-nav {
+  @extend .js-cycler-direction-nav;
+}
+
+.js-gallery-prev,
+.js-gallery-next
+{
+  color: $gallery-direction-control-color;
+
+  &:hover, &:active {
+    color: $gallery-direction-control-color;
+  }
+}
+
+.js-gallery-prev {
+  @extend .js-cycler-prev;
+  left: -1 * convert-length($gallery-direction-nav-offset, 'rem');
+}
+
+.js-gallery-next {
+  @extend .js-cycler-next;
+  right: -1 * convert-length($gallery-direction-nav-offset, 'rem');
+}
+
+.js-gallery-item {
+  @extend .js-cycler-item;
+}
+
+@include shift('>m')
+{
+  .js-gallery-prev {
+    left: -1 * convert-length($gallery-direction-nav-offset-m, 'rem');
+  }
+
+  .js-gallery-next {
+    right: -1 * convert-length($gallery-direction-nav-offset-m, 'rem');
+  }
 }

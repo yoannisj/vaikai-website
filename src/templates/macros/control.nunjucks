@@ -1,15 +1,22 @@
 {% import 'macros/toggle.nunjucks' as tgl %}
 {% import 'macros/submit.nunjucks' as sbm %}
 
+{% set defaults = {
+  init: 'control'
+} %}
+
 {# =button
  # --------------------------------------------------------------- #}
 
-{% macro button(prm, classname='', attrs=false) %}
+{% macro button(params, classname='', attrs=false) %}
+
+  {% set prm = defaults|merge(params) %}
 
   <button type="button" class="js-ctrl {{ classname }}"
     data-target="#{{ prm.target }}"
     data-action="{{ prm.action }}"
     {% if prm.params %} data-params="{{ prm.params }}"{% endif %}
+    {% if prm.init %} data-init="{{ prm.init }}"{% endif %}
     {% if attrs %}
       {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
     {% endif %}
@@ -28,15 +35,17 @@
 {# =link
  # --------------------------------------------------------------- #}
 
-{% macro link(prm, classname='', attrs=false) %}
+{% macro link(params, classname='', attrs=false) %}
 
+  {% set prm = defaults|merge(params) %}
   {% set url = prm.url|default('#', false) %}
 
   <a href="{{ url }}" target="{{ url|linktarget }}"
     class="js-ctrl {{ classname }}"
-    data-target="#{{ prm.target }}:{{ prm.widget }}"
+    data-target="#{{ prm.target }}"
     data-action="{{ prm.action }}"
     {% if prm.params %} data-params="{{ prm.params }}"{% endif %}
+    {% if prm.init %} data-init="{{ prm.init }}"{% endif %}
     {% if attrs %}
       {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
     {% endif %}

@@ -2,52 +2,43 @@
 // =VaiKai - Slider Widget
 // =============================================================================
 
-@import "config/colors";
+@import "widgets/cycler";
 
-.has-slider .js-slider-items {
-  box-sizing: content-box;
-  margin: 0;
+/* =js-slider / direction-nav
+ * --------------------------------------------------------------------------
+ * 1. position control nav links on top of slides, on sides in the middle
+ * 2. represent control nav links with icons
+ */
+
+.js-slider.has-flexslider {
+  position: relative; /* 1 */
 }
 
-.has-slider .js-slider-item {
-  box-sizing: content-box;
-  display: block;
+.js-slider .flex-viewport {
+  z-index: 1;
 }
 
-.js-slider-control-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto 40px;
-  text-align: center;
-
-  li {
-    display: inline-block;
+.js-slider
+{
+  .flex-direction-nav {
+    @extend .js-cycler-direction-nav;
   }
 
-  a {
-    display: block;
-    position: relative;
-    width: 25px;
-    height: 11px;
-    cursor: pointer;
-    text-indent: 110%;
-    white-space: nowrap;
-    overflow: hidden;
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 7px;
-      width: 11px;
-      height: 11px;
-      border-radius: 6px;
-      background: $mid-gray;
-    }
-
-    &:hover:after,
-    &.js-slider-active:after {
-      background: $blue;
+  .flex-prev,
+  .flex-next
+  {
+    &.flex-disabled {
+      opacity: 0.5; /* 2 */
+      pointer-events: none; /* 2 */
     }
   }
+
+  .flex-prev {
+    @extend .js-cycler-prev;
+  }
+
+  .flex-next {
+    @extend .js-cycler-next;
+  }
 }
+

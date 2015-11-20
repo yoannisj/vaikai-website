@@ -51,3 +51,6 @@ var Popup = module.exports = Collapse.extend({
   close: function() { this.collapse(); }
 
 });
+
+// auto-init widgets
+$('[data-init~="popup"]').widget(Popup);

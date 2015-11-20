@@ -54,11 +54,11 @@ var BaseWidget = module.exports = Base.extend({
     this.settings = $.extend(true, {}, this.defaults, options);
 
     // set classnames
-    this.classname = this.classname || 'js-' + this.name;
-    this.initclass = 'has-' + this.name;
+    this.baseClass = this.settings.baseClass || 'js-' + this.name;
+    this.initClass = this.settings.initClass || 'has-' + this.name;
 
     // set selector
-    this.selector = '.' + this.classname;
+    this.selector = '.' + this.baseClass;
 
     // for elements with a media condition
     var mq = this.$el.attr('data-media');
@@ -82,7 +82,9 @@ var BaseWidget = module.exports = Base.extend({
   // Initialization
   init: function() {
     this._initialized = true;
-    this.$el.addClass(this.initclass);
+    this.$el.addClass(this.initClass);
+
+    console.log('init widget', this.name, '/', this.el);
   },
 
   // Settings
@@ -102,7 +104,7 @@ var BaseWidget = module.exports = Base.extend({
   },
 
   // Classnames
-  getClassname: function(name) {
+  classname: function(name) {
     // classname =
     var classname = _cache[this.cid].classnames[name];
 
@@ -114,7 +116,7 @@ var BaseWidget = module.exports = Base.extend({
 
       if (!classname) {
         // build default class if no class was found
-        classname = this.classname + '-' + name.toLowerCase();
+        classname = this.baseClass + '-' + name.toLowerCase();
       }
 
       // cache classname for later access
@@ -125,14 +127,14 @@ var BaseWidget = module.exports = Base.extend({
   },
 
   // alias for 'getClassname'
-  cname: function(name) { return this.getClassname(name); },
+  cname: function(name) { return this.classname(name); },
 
   // Selectors
   getSelector: function() {
     // get classname for each selected element
     var self = this;
     var classnames = $.map(arguments, function(name) {
-      return '.' + self.getClassname(name);
+      return '.' + self.classname(name);
     });
 
     return classnames.join(', ');
@@ -173,7 +175,7 @@ var BaseWidget = module.exports = Base.extend({
   },
 
   // Events
-  on: function(ev, selector, cb, thisArg) {
+  on: function(ev, selector, cb, thisArg, /*INTERNAL*/ one) {
 
     // allow omitting the 'selector' argument
     if (typeof selector == 'function') {
@@ -184,8 +186,10 @@ var BaseWidget = module.exports = Base.extend({
 
     // add event listener to widget element and apply
     // callback on given thisArg or widget's instance
-    var self = this;
-    this.$el.on(ev + '.' + this.name, selector, function() {
+    var self = this,
+      attachMethod = one ? 'one' : 'on';
+
+    this.$el[attachMethod](ev + '.' + this.name, selector, function() {
       cb.apply(thisArg || self, arguments);
     });
 
@@ -227,6 +231,10 @@ var BaseWidget = module.exports = Base.extend({
     return this;
   },
 
+  one: function(ev, selector, cb, thisArg) {
+    this.on(ev, selector, cb, thisArg, true);
+  },
+
   // stop listening to all events at once
   // - counter-part for widget's having a 'listen' method
   //    to start listening to all relevant events
@@ -251,6 +259,9 @@ var BaseWidget = module.exports = Base.extend({
 
   // Destroy
   destroy: function() {
+
+    console.log('destroy widget', this.name, '/', this.el);
+
     this.off();
     this.$el.removeData('widget_' + this.name);
     this.$el.removeClass(this.initclass);
