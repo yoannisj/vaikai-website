@@ -1,6 +1,7 @@
 {% import 'macros/section.nunjucks' as sect %}
 {% import 'macros/image.nunjucks' as img %}
 {% import 'macros/control.nunjucks' as ctrl %}
+{% import 'macros/toggle.nunjucks' as tgl %}
 
 {% call sect.base(section) %}
 
@@ -48,12 +49,13 @@
       {% if section.entries|length > 3 %}
         <div class="landmark align-center" aria-hidden="true">
 
-          {{ ctrl.button({
+          {{ tgl.button(section.control|merge({
+            type: 'button',
             target: 'features-list:multifold',
-            action: 'toggle',
-            params: 'true',
-            label: 'Toggle magical features'
-          }, 'btn js-only sm-show') }}
+            params: 'true'
+          }), 'btn js-only sm-show', {
+            'data-media': '(min-width: 700px)'
+          }) }}
 
         </div>
       {% endif %}

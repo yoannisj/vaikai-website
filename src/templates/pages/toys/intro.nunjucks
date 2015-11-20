@@ -34,7 +34,9 @@
                 target: 'intro-video:popup',
                 action: 'open'
               }), 'link-quiet shoutout', popup_condition) %}
+
                 {{ sym.preIcon(section.control.icon, section.control.label, 'icon--md') }}
+
               {% endcall %}
 
               {# <a class="link-quiet shoutout js-toggle" href="http://www.vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#intro-video">

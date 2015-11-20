@@ -1,47 +1,29 @@
 {% set defaults = {
   state: 'off',
-  href: false,
+  url: '#',
+  action: 'toggle',
+  init: 'toggle',
   label: {
     on: 'Toggle On',
     off: 'Toggle Off'
   }
 } %}
 
-{# =link
- # --------------------------------------------------------------- #}
-{% macro link(params, classname='')  %}
-  {# inject param defaults #}
-  {% set prm = defaults|merge(params) %}
-
-  <a class="js-toggle is-{{ prm.state }} {{ classname }}"
-    data-action="{{ prm.action }}"
-    {% if prm.href %} href="{{ prm.href }}" data-target="#{{ prm.target }}"
-    {% else %} href="#{{ prm.target }}"
-    {% endif %}
-  >
-
-    {# {{ ('toggle-link caller::' ~ (caller if caller else ' none!'))|log }} #}
-
-    {% if caller %}
-      {{ caller() }}
-    {% else %}
-      <span class="js-toggle-on">{{ prm.label.on }}</span>
-      <span class="js-toggle-off">{{ prm.label.off }}</span>
-    {% endif %}
-
-  </a>
-
-{% endmacro %}
-
 {# =button
  # --------------------------------------------------------------- #}
-{% macro button(params, classname='') %}
+{% macro button(params, classname='', attrs=false) %}
   {# inject param defaults #}
   {% set prm = defaults|merge(params) %}
 
-  <button class="btn is-{{ prm.state }} js-only js-toggle {{ classname }} " data-target="#{{ prm.target }}" data-action="{{ prl.action }}">
-
-    {# {{ ('toggle-button caller::' ~ (caller if caller else ' none!'))|log }} #}
+  <button class="js-toggle is-{{ prm.state }} {{ classname }}"
+    data-target="#{{ prm.target }}"
+    data-action="{{ prm.action }}"
+    {% if prm.params %} data-params="{{ prm.params }}"{% endif %}
+    {% if prm.init %} data-init="{{ prm.init }}"{% endif %}
+    {% if attrs %}
+      {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+    {% endif %}
+  >
 
     {% if caller %}
       {{ caller() }}
@@ -51,5 +33,33 @@
     {% endif %}
 
   </button>
+
+{% endmacro %}
+
+{# =link
+ # --------------------------------------------------------------- #}
+
+{% macro link(params, classname='', attrs=false)  %}
+  {# inject param defaults #}
+  {% set prm = defaults|merge(params) %}
+
+  <a href="{{ prm.url }}" class="js-toggle is-{{ prm.state }} {{ classname }}"
+    data-target="#{{ prm.target }}"
+    data-action="{{ prm.action }}"
+    {% if prm.params %} data-params="{{ prm.params }}"{% endif %}
+    {% if prm.init %} data-init="{{ prm.init }}"{% endif %}
+    {% if attrs %}
+      {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+    {% endif %}
+  >
+
+    {% if caller %}
+      {{ caller() }}
+    {% else %}
+      <span class="js-toggle-on">{{ prm.label.on }}</span>
+      <span class="js-toggle-off">{{ prm.label.off }}</span>
+    {% endif %}
+
+  </a>
 
 {% endmacro %}

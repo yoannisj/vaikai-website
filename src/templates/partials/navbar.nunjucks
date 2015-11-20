@@ -1,7 +1,7 @@
 {% import 'macros/link.nunjucks' as ln %}
 {% import 'macros/symbol.nunjucks' as sym %}
-{% import 'macros/toggle.nunjucks' as tgl %}
 {% import 'macros/control.nunjucks' as ctrl %}
+{% import 'macros/toggle.nunjucks' as tgl %}
 
 {# =variables
  # --------------------------------------------------------------- #}
@@ -18,7 +18,8 @@
 
 {% set menu_toggle = {
   target: 'menu',
-  action: 'menu:toggle'
+  action: 'toggle',
+  init: false
 } %}
 
 {# =markup

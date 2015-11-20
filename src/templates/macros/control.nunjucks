@@ -2,6 +2,7 @@
 {% import 'macros/submit.nunjucks' as sbm %}
 
 {% set defaults = {
+  url: '#',
   init: 'control'
 } %}
 
@@ -9,7 +10,7 @@
  # --------------------------------------------------------------- #}
 
 {% macro button(params, classname='', attrs=false) %}
-
+  {# inject param defaults #}
   {% set prm = defaults|merge(params) %}
 
   <button type="button" class="js-ctrl {{ classname }}"
@@ -36,11 +37,10 @@
  # --------------------------------------------------------------- #}
 
 {% macro link(params, classname='', attrs=false) %}
-
+  {# inject param defaults #}
   {% set prm = defaults|merge(params) %}
-  {% set url = prm.url|default('#', false) %}
 
-  <a href="{{ url }}" target="{{ url|linktarget }}"
+  <a href="{{ prm.url }}" target="{{ prm.url|linktarget }}"
     class="js-ctrl {{ classname }}"
     data-target="#{{ prm.target }}"
     data-action="{{ prm.action }}"
