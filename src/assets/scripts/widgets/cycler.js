@@ -39,8 +39,6 @@ var Cycler = module.exports = BaseWidget.extend({
   },
 
   listen: function() {
-    var self = this;
-
     if (this.settings.clickThrough) {
       this.on('click', this.slct('item'), function(ev) {
         var index = this.$items.index(ev.currentTarget);

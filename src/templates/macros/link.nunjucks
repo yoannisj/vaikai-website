@@ -32,7 +32,7 @@
 {# =nav
  # --------------------------------------------------------------- #}
 
-{% macro nav(params, classname='', attrs=false) %}
+{% macro nav(params, page_url, classname='', attrs=false) %}
 
   {# swap 'title' param to 'label' #}
   {% set prm = params|merge({
@@ -40,15 +40,15 @@
     title: false
   }) %}
 
-  {# add 'nav-link' classname #}
-  {% set classname = 'nav-link ' ~ classname %}
+  {# add 'nav-link' and 'active' classnames #}
+  {% set cname = 'nav-link' ~ (' active ' if prm.url|url == page_url else ' ') ~ classname %}
 
   {% if caller %}
-    {% call base(prm, classname) %}
+    {% call base(prm, cname) %}
       {{ caller() }}
     {% endcall %}
   {% else %}
-    {{ base(prm, classname) }}
+    {{ base(prm, cname) }}
   {% endif %}
 
 {% endmacro %}

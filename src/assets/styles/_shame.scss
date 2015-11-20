@@ -17,6 +17,13 @@
   }
 }
 
+@include shift('>m')
+{
+  .menu-main .menu-link {
+    text-transform: lowercase;
+  }
+}
+
 @include shift('l')
 {
   #intro .h1 {

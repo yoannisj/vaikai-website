@@ -2,8 +2,7 @@ var BaseWidget = require('widgets/base');
 var debounce = require('debounce');
 var breakpoints = require('data.json').breakpoints;
 
-var $win = $(window),
-  $scroller = $('html, body');
+var $win = $(window);
 
 require('flexslider');
 
@@ -44,7 +43,7 @@ var Carousel = module.exports = BaseWidget.extend({
       maxItems: numItems,
       move: numItems,
       itemWidth: itemWidth,
-      itemMargin: this._getItemMargin(),
+      itemMargin: itemMargin,
       directionNav: false,
     });
 

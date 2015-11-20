@@ -1,5 +1,4 @@
 var BaseWidget = require('widgets/base');
-var breakpoints = require('data.json').breakpoints;
 
 require('flexslider');
 

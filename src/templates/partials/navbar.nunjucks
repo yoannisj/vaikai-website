@@ -64,9 +64,8 @@
         <ul class="uilist">
           {% for item in data.main_nav %}
 
-            {% set cname = 'menu-link' ~ (' active' if (item.url|url == page.url) else '') %}
             <li class="menu-item">
-              {{ ln.nav(item, cname) }}
+              {{ ln.nav(item, page.url, 'menu-link') }}
             </li>
 
           {% endfor %}
@@ -104,8 +103,7 @@
           {% for item in data.sub_nav %}
 
             <li class="menu-item">
-              {% set cname = 'menu-link' ~ (' active' if (item.url|url == page.url) else '') %}
-              {{ ln.nav(item, cname) }}
+              {{ ln.nav(item, page.url, 'menu-link') }}
             </li>
 
           {% endfor %}

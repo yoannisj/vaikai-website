@@ -14,7 +14,6 @@ require('jquery/get-data');
 var cid = 0;
 var _cache = {};
 var $win = $(window);
-var $body = $('body');
 
 var initOrDestroy = function(widget, mq) {
   // check for current state and media-condition in order

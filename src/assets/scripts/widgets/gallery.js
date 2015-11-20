@@ -1,9 +1,6 @@
 var BaseWidget = require('widgets/base');
-var Control = require('widgets/control');
 var Popup = require('widgets/popup');
 var Cycler = require('widgets/cycler');
-
-var breakpoints = require('data.json').breakpoints;
 
 var Gallery = module.exports = BaseWidget.extend({
 

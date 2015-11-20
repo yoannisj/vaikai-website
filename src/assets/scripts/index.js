@@ -1,10 +1,11 @@
 // require widgets
-var Control = require('widgets/control');
-var Popup = require('widgets/popup');
-var Gallery = require('widgets/gallery');
-var Carousel = require('widgets/carousel');
+require('widgets/control');
+require('widgets/popup');
+require('widgets/gallery');
+require('widgets/carousel');
+require('widgets/toggle');
+
 var MultiFold = require('widgets/multifold');
-var Toggle = require('widgets/toggle');
 
 $('#features-list').widget(MultiFold, {
   scrollOffset: -80

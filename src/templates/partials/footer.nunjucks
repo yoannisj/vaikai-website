@@ -28,15 +28,13 @@
 
       {% for item in data.main_nav %}
         <li class="subnav-item nav-item">
-          {% set cname = ('active' if (item.url|url == page.url) else '') %}
-          {{ ln.nav(item, cname) }}
+          {{ ln.nav(item, page.url) }}
         </li>
       {% endfor %}
 
       {% for item in data.sub_nav %}
         <li class="subnav-item nav-item">
-          {% set cname = ('active' if (item.url|url == page.url) else '') %}
-          {{ ln.nav(item, cname) }}
+          {{ ln.nav(item, page.url) }}
         </li>
       {% endfor %}
 
