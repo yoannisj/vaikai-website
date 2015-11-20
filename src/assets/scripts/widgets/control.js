@@ -1,4 +1,5 @@
 var BaseWidget = require('widgets/base');
+var arrayify = require('utils/arrayify');
 
 var Control = module.exports = BaseWidget.extend({
 
@@ -13,19 +14,20 @@ var Control = module.exports = BaseWidget.extend({
   },
 
   _parseData: function() {
-    var target = this.getData('target').split(':'),
-      action = this.getData('action'),
-      params = this.getData('params');
+    var target = this.data('target').split(':'),
+      action = this.data('action'),
+      params = this.data('params');
 
     this.$target = $( target[0] );
     this.controller = target[1];
     this.method = action;
-    this.params = params ? JSON.parse(params) : [];
+    this.params = params ? arrayify(JSON.parse(params)) : [];
   },
 
   // Events
   listen: function() {
     this.on('click', this.onclick);
+    return this;
   },
 
   onclick: function(ev) {
@@ -36,7 +38,12 @@ var Control = module.exports = BaseWidget.extend({
   // Operations
   execute: function() {
     var widget = this.$target.widget(this.controller);
-    widget[this.method].apply(widget, this.args);
+    widget[this.method].apply(widget, this.params);
+
+    return this;
   }
 
 });
+
+// auto-init Widgets
+$('[data-init~="control"]').widget(Control);

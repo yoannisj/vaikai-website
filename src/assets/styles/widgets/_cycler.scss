@@ -1,0 +1,71 @@
+// =============================================================================
+// =VaiKai - Cycler Widget
+// =============================================================================
+
+@import "aleksi/lengths/convert";
+@import "config/colors";
+
+@import "elements/icon";
+
+// =settings
+// -----------------------------------------------------------------------------
+$cycler-direction-control-spacing: 10px;
+$cycler-direction-control-color: $blue;
+$cycler-direction-control-opacity-active: 0.5;
+
+/* =js-cycler-item
+ * -------------------------------------------------------------------------- */
+
+.has-cycler .js-cycler-item
+{
+  display: none;
+
+  &.active {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/* =js-cycler-direction-nav
+ * -----------------------------------------------------------------------------
+ * 1. position control nav links on top of slides, on sides in the middle
+ * 2. disable control nav links when end-slide is reached
+ * 3. represent control nav links with icons
+ */
+
+.js-cycler {
+  position: relative;
+}
+
+.js-cycler-direction-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.js-cycler-prev,
+.js-cycler-next
+{
+  @extend .icon; /* 2 */
+  @extend .icon--md; /* 2 */
+  position: absolute; /* 1 */
+  z-index: 2; /* 1 */
+  top: 50%; /* 1 */
+  margin-top: -1 * convert-length(map-get($icon-sizes, 'md')/2, 'rem'); /* 1 */
+  color: $cycler-direction-control-color;
+
+  &:hover, &:active {
+    color: $cycler-direction-control-color;
+    opacity: $cycler-direction-control-opacity-active;
+  }
+}
+
+.js-cycler-prev {
+  @extend .icon--previous; /* 2 */
+  left: convert-length($cycler-direction-control-spacing, 'rem'); /* 1 */
+}
+
+.js-cycler-next {
+  @extend .icon--next; /* 2 */
+  right: convert-length($cycler-direction-control-spacing, 'rem'); /* 1 */
+}

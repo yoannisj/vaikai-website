@@ -168,7 +168,7 @@ body.has-menu-open {
 }
 
 .menu-sub {
-  margin-top: 80px;
+  margin-top: 50px;
   font-size: convert-length($menu-sub-font-size, 'em', $menu-font-size-stacked);
 }
 
@@ -310,9 +310,9 @@ body.has-menu-open {
   }
 }
 
-@include shift('h<m')
-{
-  .menu-sub {
-    display: none;
-  }
-}
+// @include shift('h<m')
+// {
+//   .menu-sub {
+//     display: none;
+//   }
+// }

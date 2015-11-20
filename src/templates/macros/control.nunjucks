@@ -1,44 +1,111 @@
 {% import 'macros/toggle.nunjucks' as tgl %}
 {% import 'macros/submit.nunjucks' as sbm %}
 
+{% set defaults = {
+  url: '#',
+  init: 'control'
+} %}
+
+{# =button
+ # --------------------------------------------------------------- #}
+
+{% macro button(params, classname='', attrs=false) %}
+  {# inject param defaults #}
+  {% set prm = defaults|merge(params) %}
+
+  <button type="button" class="js-ctrl {{ classname }}"
+    data-target="#{{ prm.target }}"
+    data-action="{{ prm.action }}"
+    {% if prm.params %} data-params="{{ prm.params }}"{% endif %}
+    {% if prm.init %} data-init="{{ prm.init }}"{% endif %}
+    {% if attrs %}
+      {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+    {% endif %}
+  >
+
+    {% if caller %}
+      {{ caller() }}
+    {% else %}
+      {{ prm.label or prm.action }}
+    {% endif %}
+
+  </button>
+
+{% endmacro %}
+
+{# =link
+ # --------------------------------------------------------------- #}
+
+{% macro link(params, classname='', attrs=false) %}
+  {# inject param defaults #}
+  {% set prm = defaults|merge(params) %}
+
+  <a href="{{ prm.url }}" target="{{ prm.url|linktarget }}"
+    class="js-ctrl {{ classname }}"
+    data-target="#{{ prm.target }}"
+    data-action="{{ prm.action }}"
+    {% if prm.params %} data-params="{{ prm.params }}"{% endif %}
+    {% if prm.init %} data-init="{{ prm.init }}"{% endif %}
+    {% if attrs %}
+      {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+    {% endif %}
+  >
+
+    {% if caller %}
+      {{ caller() }}
+    {% else %}
+      {{ prm.label or prm.action }}
+    {% endif %}
+
+  </a>
+
+{% endmacro %}
+
+
 {# =toggle
  # --------------------------------------------------------------- #}
-{% macro toggle(params, classname='') %}
+
+{% macro toggle(params, classname='', attrs=false) %}
 
   {% if caller %}
-    {% call tgl[params.ui](params, classname) %}
+    {% call tgl[params.ui](params, classname, attrs) %}
       {{ caller() }}
     {% endcall %}
   {% else %}
-    {{ tgl[params.ui](params, classname) }}
+    {{ tgl[params.ui](params, classname, attrs) }}
   {% endif %}
 
 {% endmacro %}
 
 {# =submit
  # --------------------------------------------------------------- #}
-{% macro submit(params, classname='') %}
+
+{% macro submit(params, classname='', attrs=false) %}
 
   {# only buttons can be called #}
   {% if params.ui == 'button' and caller %}
-    {% call sbm.button(params) %}
+    {% call sbm.button(params, classname, attrs) %}
       {{ caller() }}
     {% endcall %}
   {% else %}
-    {{ sbm[params.ui](params, classname) }}
+    {{ sbm[params.ui](params, classname, attrs) }}
   {% endif %}
 
 {% endmacro %}
 
 {# =celery
  # --------------------------------------------------------------- #}
-{% macro celery(params, classname='') %}
+
+{% macro celery(params, classname='', attrs=false) %}
 
   {# inject param defaults #}
   {% set prm = {}|merge(data.celery, params) %}
 
   <a class="btn btn--cta {{ classname }}" href="{{ prm.url|url }}" target="{{ prm.url|linktarget }}"
     data-celery="{{ prm.id }}" data-celery-version="{{ prm.version }}"
+    {% if attrs %}
+      {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+    {% endif %}
   >
     {% if caller %}
       {{ caller() }}

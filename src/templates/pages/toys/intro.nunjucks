@@ -4,6 +4,10 @@
 {% import 'macros/popup.nunjucks' as pop %}
 {% import 'macros/video.nunjucks' as vid %}
 
+{% set popup_condition = {
+  'data-media': '(min-width: 700px)'
+} %}
+
 <!-- =Intro -->
 {% call sect.base(section) %}
 
@@ -24,14 +28,15 @@
             {{ section.description|paragraphs('s-zeta m-delta') }}
             <p class="landmark">
 
-              {% set control = section.control|merge({
-                type: 'toggle',
-                target: 'intro-video',
-                action: 'popup:toggle'
-              }) %}
+              {% call ctrl.link(section.control|merge({
+                type: 'link',
+                url: 'http://vimeo.com/' ~ section.video.id,
+                target: 'intro-video:popup',
+                action: 'open'
+              }), 'link-quiet shoutout', popup_condition) %}
 
-              {% call ctrl[control.type](control, 'link-quiet shoutout') %}
-                {{ sym.preIcon(control.icon, control.label, 'icon--md') }}
+                {{ sym.preIcon(section.control.icon, section.control.label, 'icon--md') }}
+
               {% endcall %}
 
               {# <a class="link-quiet shoutout js-toggle" href="http://www.vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#intro-video">
@@ -49,7 +54,12 @@
 
   <!-- =Intro-Video -->
   {% if section.video %}
-    {% call pop.base('intro-video', parent='intro') %}
+
+    {% call pop.base({
+      name: 'intro-video',
+      parent : 'intro'
+    }, attrs=popup_condition) %}
+
       {{ vid.vimeo( section.video.id, 'flex' ) }}
     {% endcall %}
   {% endif %}

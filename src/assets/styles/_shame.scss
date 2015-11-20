@@ -5,6 +5,18 @@
 @import "aleksi/lengths/convert";
 @import "shift/breakpoint";
 
+@include shift('<m')
+{
+  .menu-social .menu-item
+  {
+    margin-right: convert-length(10px, 'rem');
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
 @include shift('l')
 {
   #intro .h1 {
@@ -104,4 +116,18 @@
   height: auto !important;
 }
 
+.js-carousel-img,
+.js-slider-img {
+  display: block;
+  width: 100%;
+}
+
+.flex-viewport .mention {
+  margin: convert-length($mention-spacing, 'rem') 0 0;
+}
+
+.avk-limiteded {
+  max-width: 420px;
+  margin: 0 auto;
+}
 

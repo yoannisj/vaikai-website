@@ -1,72 +1,133 @@
-<html>
-  <head>
-    <title>Test</title>
+{% extends 'layouts/base.nunjucks' %}
+{% import 'macros/image.nunjucks' as img %}
 
-    <style>
-      .js-popup { visibility: hidden; }
-      .js-popup.is-expanded { visibility: visible; }
+{% block head_styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="css/test.css" />
+{% endblock %}
 
-      .js-popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
+{% set gallery_items = [{
+  name: 'sailor-avakai',
+  image: {
+    path: 'playground/sailor-avakai.jpg',
+    description: ''
+  }
+}, {
+  name: 'indian-avakai',
+  image: {
+    path: 'playground/indian-avakai.jpg',
+    description: ''
+  }
+}, {
+  name: 'homework-avakai',
+  image: {
+    path: 'playground/homework-avakai.jpg',
+    description: ''
+  }
+}, {
+  name: '2000-fans',
+  image: {
+    path: 'playground/2000-fans.jpg',
+    description: ''
+  }
+}, {
+  name: 'justyna-plays-with-girl',
+  image: {
+    path: 'playground/justyna-plays-with-girl.jpg',
+    description: ''
+  }
+}] %}
 
-      .js-popup-backdrop {
-        position: absolute;
-        z-index: 0;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+{% block body_main %}
 
-        background: rgba(0,0,0,0.15);
-      }
+  {# =MEDIA WIDGET #}
+  {# <div class="js-test" data-media="(min-width: 800px)"></div>
+  <div class="js-test"></div> #}
 
-      .js-popup-inner {
-        position: relative;
-        z-index: 1;
-
-        width: 80%;
-        max-width: 680px;
-        margin: 40px auto;
-        padding: 20px 20px 40px;
-
-        background: #fff;
-      }
-
-    </style>
-  </head>
-
-  <body>
-
-    <button class="js-ctrl" data-target="#my-popup:popup" data-action="expand">Expand Popup</button>
-
-    <button class="js-ctrl" data-target="#my-popup:popup" data-action="collapse">Collapse Popup</button>
-
-    <div id="my-popup" class="js-popup">
-      <div class="js-popup-backdrop"></div>
-      <div class="js-popup-inner">
-        <h2>Popup Content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nobis saepe natus quibusdam dolore. Quasi est aperiam dignissimos molestiae earum vitae accusamus, nostrum exercitationem veniam consequatur voluptates! Amet, earum, esse?</p>
-        <a class="js-popup-close" href="#">Close popup</a>
-      </div>
+  {# =CAROUSEL #}
+  {# <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
+    <div class="js-carousel align-center" data-init="carousel">
+      <ul class="js-carousel-items uilist grid">
+        {% for item in gallery_items %}
+          <li id="carousel-{{ item.name }}" class="js-carousel-item grid-cell s-span-6of12 m-span-3of12">
+            <div class="landmark">
+              {{ img.base(item.image|merge({
+                size: [550, 550]
+              }), 'js-carousel-img') }}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
+  </div> #}
 
+  {# =SLIDER #}
+  {# <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
+    <div class="js-slider align-center" data-init="slider">
+      <ul class="js-slider-items uilist">
+        {% for item in gallery_items %}
+          <li id="slider-{{ item.name }}" class="js-slider-item">
+            <div class="landmark">
+              {{ img.base(item.image|merge({
+                size: [550, 550]
+              }), 'js-slider-img') }}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div> #}
 
-    <!-- =jQuery -->
-    {% set jQueryCdnFile = 'jquery-1.11.3.js' if app.environment == 'dev' else 'jquery-1.11.3.min.js' %}
-    <script src="https://code.jquery.com/{{ jQueryCdnFile }}"></script>
-    <script>window.jQuery || document.write('<script src="./js/vendor/jquery.js"><\/script>')</script>
+  {# =CYCLER #}
+  {# <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
+    <div class="js-cycler" data-init="cycler">
+      <ul class="js-cycler-items uilist">
+        <li class="js-cycler-item">
+          <img src="http://www.placehold.it/600x400" alt="" />
+        </li>
+        <li class="js-cycler-item">
+          <img src="http://www.placehold.it/400x600" alt="" />
+        </li>
+        <li class="js-cycler-item">
+          <img src="http://www.placehold.it/500x500" alt="" />
+        </li>
+        <li class="js-cycler-item">
+          <img src="http://www.placehold.it/800x600" alt="" />
+        </li>
+        <li class="js-cycler-item">
+          <img src="http://www.placehold.it/300x250" alt="" />
+        </li>
+      </ul>
+    </div>
+  </div> #}
 
-    {% if app.watch %}
-      <!-- =Scripts-watch -->
-      <script src="{{ app.servers.webpackDev.url }}"></script>
-    {% endif %}
+  {# =MULTIFOLD #}
+  <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
+    <div id="multifold" class="js-multifold is-collapsed">
+      <ul class="uilist grid">
 
-    <script src="{{ 'js/main.js'|webpackurl }}"></script>
-    <script src="{{ 'js/test.js'|webpackurl  }}"></script>
-  </body>
-</html>
+        {% for index in [1, 2] %}
+          {% for item in gallery_items %}
+
+            <li id="multifold-{{ item.name }}-{{ index }}" class="js-multifold-item grid-cell s-span-6of12 m-span-3of12">
+              <div class="landmark">
+                {{ img.base(item.image|merge({
+                  size: [550, 550]
+                }), 'block') }}
+              </div>
+            </li>
+
+          {% endfor %}
+        {% endfor %}
+
+      </ul>
+    </div>
+    <button class="btn js-ctrl" data-target="#multifold:multifold" data-action="toggle" data-params="true">Toggle MultiFold</button>
+  </div>
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  <script src="{{ 'js/test.js'|webpackurl }}"></script>
+{% endblock %}

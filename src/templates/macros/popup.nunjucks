@@ -1,35 +1,47 @@
 {% import 'macros/video.nunjucks' as vid %}
 {% import 'macros/symbol.nunjucks' as symbol %}
 
-{# =Base
- # ========================================================================== #}
+{% set defaults = {
+  init: 'popup'
+} %}
+{# =base
+ # --------------------------------------------------------------- #}
 
-{% macro base(name, parent='', classname='') %}
-  <div id="{{ name }}" class="popup {{ classname }}">
-    <a class="popup-backdrop" href="#{{ parent }}">Back</a>
-    <div class="popup-wrap">
-      <a class="popup-close js-ctrl" href="#{{ parent }}" data-action="popup:close" data-target="#{{ name }}">
+{% macro base(params, classname='', attrs=false) %}
+  {# inject param defaults #}
+  {% set prm = defaults|merge(params) %}
+
+  <div id="{{ prm.name }}" class="js-popup {{ classname }}"
+  {% if prm.init %} data-init="{{ prm.init }}"{% endif %}
+  {% if attrs %}
+    {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+  {% endif %}
+  >
+    <a class="js-popup-backdrop" href="#{{ prm.parent }}">Back</a>
+    <div class="js-popup-wrap">
+      <a class="js-popup-close" href="#{{ prm.parent }}">
         {{ symbol.icon('close', 'Close') }}
       </a>
-      <div class="popup-body">
-        {{ caller() }}
-      </div>
+
+      {{ caller() }}
     </div>
   </div>
 {% endmacro %}
 
-{# =Video
- # ========================================================================== #}
-{% macro video(name, id, settings, parent='') %}
-  {% call base(name, parent) %}
+{# =video
+ # --------------------------------------------------------------- #}
+
+{% macro video(name, id, settings, parent='', classname='', attrs=false) %}
+  {% call base(name, parent, classname, attrs) %}
 
     {{ vid.vimeo(id, settings) }}
 
   {% endcall %}
 {% endmacro %}
 
-{# =Gallery
- # ========================================================================== #}
+{# =gallery
+ # --------------------------------------------------------------- #}
+
 {% macro gallery(name, items, parent='') %}
   {% call base(name, parent) %}
 
@@ -38,8 +50,9 @@
   {% endcall %}
 {% endmacro %}
 
-{# =Celery
- # ========================================================================== #}
+{# =celery
+ # --------------------------------------------------------------- #}
+
 {% macro celery() %}
   {% call base(name, parent) %}
 

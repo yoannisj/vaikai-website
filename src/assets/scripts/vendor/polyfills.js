@@ -1,5 +1,3 @@
-console.log('hello polyfills!');
-
 // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 if (typeof Object.create != 'function') {
   // Production steps of ECMA-262, Edition 5, 15.2.3.5

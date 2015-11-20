@@ -30,7 +30,7 @@ module.exports = function(config, env) {
     // that you would like to make available using the @import function
     import_path: [
       // allow imports relative to the project's src folder
-      path.resolve(config.paths.src)
+      path.resolve(config.paths.src),
     ],
     // Require the given Ruby library before running commands.
     // Used to access Compass plugins without using a 'config.rb' file
@@ -38,7 +38,8 @@ module.exports = function(config, env) {
       'compass-import-once',
       'sass-json-vars',
       'sass-aleksi',
-      'shift'
+      'shift',
+      'sass-css-importer'
     ],
     // Run compass compile with bundle exec
     // - would run `bundle exec compass compile`

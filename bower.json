@@ -33,5 +33,8 @@
   "devDependencies": {
     "shift": "~0.1.2",
     "sass-aleksi": "~0.2.1"
+  },
+  "dependencies": {
+    "flexslider": "~2.6.0"
   }
 }

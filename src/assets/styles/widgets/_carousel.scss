@@ -1,0 +1,81 @@
+// =============================================================================
+// =VaiKai - Carousel Widget
+// =============================================================================
+
+@import "aleksi/lengths/convert";
+@import "config/colors";
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$carousel-paging-spacing: 30px;
+$carousel-paging-target-width: 25px;
+$carousel-paging-target-height: 11px;
+$carousel-paging-bullet-size: 11px;
+$carousel-paging-bullet-color: $mid-gray;
+$carousel-paging-bullet-color-active: $blue;
+
+/* =js-carousel
+ * --------------------------------------------------------------------------
+ * 1. Remove spacings added by fallback grid
+ * - spacing is managed by flexslider via js
+ */
+
+.js-carousel .flex-viewport .grid {
+  margin-left: 0; /* 1 */
+  margin-right: 0; /* 1 */
+}
+
+.js-carousel .flex-viewport .grid-cell {
+  padding-left: 0; /* 1 */
+  padding-right: 0; /* 1 */
+}
+
+/* =js-carousel / paging
+ * -------------------------------------------------------------------------- */
+
+.js-carousel .flex-control-paging
+{
+  margin: convert-length($carousel-paging-spacing, 'rem') 0;
+  padding: 0;
+  list-style: none;
+  text-align: center; // 1
+
+  li {
+    display: inline-block; // 1
+  }
+
+  a {
+    position: relative; // 2
+    display: block; // 3
+    width: convert-length($carousel-paging-target-width, 'rem'); // 3
+    height: convert-length($carousel-paging-target-height, 'rem'); // 3
+    text-indent: 110%; // 5
+    white-space: nowrap; // 5
+    overflow: hidden; // 5
+    cursor: pointer;
+
+    &:after {
+      content: ""; // 2
+      position: absolute; // 2, 3, 4
+      top: convert-length($carousel-paging-target-height/2 - $carousel-paging-bullet-size/2, 'rem'); // 3, 4
+      left: convert-length($carousel-paging-target-width/2 - $carousel-paging-bullet-size/2, 'rem'); // 3, 4
+      width: convert-length($carousel-paging-bullet-size, 'rem'); // 3
+      height: convert-length($carousel-paging-bullet-size, 'rem'); // 2
+      border-radius: convert-length(ceil($carousel-paging-bullet-size/2), 'rem');
+      background: $carousel-paging-bullet-color;
+    }
+
+    &:hover:after,
+    &.flex-active:after {
+      background: $carousel-paging-bullet-color-active;
+    }
+  }
+}
+
+// 1. set pager items in one line, in the middle
+// 2. represent visually by a 'bullet'
+// 3. larger pointer target then visual representation
+// 4. bullet positioned in the middle of target
+// 5. hide textual content
+// 6. avoid overlapping pager with items' content

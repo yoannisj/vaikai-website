@@ -10,7 +10,7 @@
       <div class="split grid grid--middle">
         <!-- =Shop-Object -->
         <div class="avk-preorder split-media grid-cell m-span-5of12">
-          <div class="avk-limiteded align-right hide m-show">
+          <div class="avk-limiteded align-right">
             <strong class="stamp stamp--limiteded">Limited Edition</strong>
             {{ img.lazy(section.image) }}
           </div>

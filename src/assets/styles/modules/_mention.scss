@@ -5,6 +5,7 @@
 // =settings
 // -----------------------------------------------------------------------------
 
+$mention-spacing: 40px;
 $mention-name-font-family: $avant-garde-font-stack;
 $mention-name-font-size: typescale-font-size('micro');
 $mention-name-font-weight: 500;
@@ -20,7 +21,7 @@ $mention-separator-color: $mid-gray;
 
 .mention {
   max-width: 400px;
-  margin: 20px auto 60px;
+  margin: convert-length($mention-spacing, 'rem') auto;
 }
 
 .mention-quote {
@@ -31,7 +32,6 @@ $mention-separator-color: $mid-gray;
 {
   &:before { content: '“'; }
   &:after { content: '”'; }
-
 }
 
 .mention-caption:before {

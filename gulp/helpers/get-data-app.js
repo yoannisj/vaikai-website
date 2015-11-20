@@ -1,4 +1,5 @@
 var path = require('path');
+var _ = require('lodash');
 var slurp = require('../slurp');
 
 // fetches app data to use in nunjucks templates
@@ -15,13 +16,12 @@ module.exports = function() {
   return {
     environment: slurp.env.dev ? 'dev' : 'prod',
     watch: !!(slurp.env.watch),
-    paths: {
-      root: path.resolve(slurp.config.paths.dest),
-      public: slurp.config.paths.public,
-      images: path.join(slurp.setting('assets', 'base').dest, './images/'),
+    paths: _.assign(slurp.config.paths, {
       livereload: lrPath,
-      webpackDev: wdsPath
-    },
+      webpackDev: wdsPath,
+      images_src: slurp.path('images', 'base'),
+      images:  slurp.setting('images', 'base').dest
+    }),
     servers: {
       livereload: {
         host: lr.host,

@@ -41,12 +41,14 @@
     "gulp-postcss": "^6.0.1",
     "gulp-prettify": "^0.3.0",
     "gulp-rename": "^1.2.2",
+    "gulp-responsive-images": "0.0.3",
     "gulp-sass": "^2.1.0",
     "gulp-uglify": "^1.4.2",
     "gulp-util": "^3.0.7",
     "has-glob": "^0.1.1",
     "htmlparser2": "^3.8.3",
     "image-size": "^0.3.5",
+    "json-loader": "^0.5.3",
     "lodash": "^3.10.1",
     "mime-types": "^2.1.7",
     "node-sass-import-once": "^1.2.0",
@@ -57,6 +59,7 @@
     "yamljs": "^0.2.4"
   },
   "dependencies": {
-    "class-extend": "^0.1.2"
+    "class-extend": "^0.1.2",
+    "debounce": "^1.0.0"
   }
 }

@@ -1,42 +1,45 @@
-var BaseWidget = require('widgets/base');
+var Collapse = require('widgets/collapse');
 
 var $body = $('body');
 
-var Popup = module.exports = BaseWidget.extend({
+var Popup = module.exports = Collapse.extend({
+
+  defaults: {
+    classnames: {
+      expanded: 'is-open'
+    },
+  },
 
   name: 'popup',
 
-  // Initializing
-  init: function() {
-    Popup.__super__.init.call(this);
-  },
-
   // Operations
   expand: function() {
-    if (this._expanded) return false;
+    if (this._expanded) return this;
 
     // update state
-    this._expanded = true;
-    this.$el.addClass('is-expanded');
+    Popup.__super__.expand.call(this);
     $body.addClass('has-open-popup');
 
     // listen to descendant closing elements
-    this.on('click', '.js-popup-close, .js-popup-backdrop', function(ev) {
+    this.on('click', this.slct('close', 'backdrop'), function(ev) {
       ev.preventDefault();
       this.collapse();
     });
+
+    return this;
   },
 
   collapse: function() {
-    if (!this._expanded) return true;
+    if (!this._expanded) return this;
 
     // update state
-    this._expanded = false;
-    this.$el.removeClass('is-expanded');
+    Popup.__super__.collapse.call(this);
     $body.removeClass('has-open-popup');
 
     // stop listenting to descendant closing elements
-    this.off('click', '.popup-close, .popup-backdrop');
+    this.off('click', this.slct('close', 'backdrop'));
+
+    return this;
   },
 
   toggle: function() {
@@ -48,3 +51,6 @@ var Popup = module.exports = BaseWidget.extend({
   close: function() { this.collapse(); }
 
 });
+
+// auto-init widgets
+$('[data-init~="popup"]').widget(Popup);

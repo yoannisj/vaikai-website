@@ -10,11 +10,11 @@
         <h3>{{ section.title }}</h3>
 
         <!-- =Testimonial-Carousel -->
-        <div class="carousel js-slider" data-num-items="1, 3 920px">
-          <ul class="carousel grid uilist js-slider-items">
+        <div class="js-carousel" data-init="carousel">
+          <ul class="js-carousel-items grid uilist">
             {% for entry in section.entries %}
 
-              <li id="mention-{{ entry.title|slugify }}" class="carousel-item grid-cell js-slider-item m-span-4of12">
+              <li id="mention-{{ entry.title|slugify }}" class="js-carousel-item grid-cell s-span-6of12 m-span-4of12">
 
                 <figure class="mention">
                   <blockquote class="mention-quote">{{ entry.quote|trim }}</blockquote>
@@ -32,10 +32,12 @@
                       {# =credit-logo #}
                       {% if credit.logo %}
                         <strong class="credit-logo">
+
                           {% set logo = credit.logo|merge({
                             description: credit.name
                           }) %}
                           {{ img.base(logo) }}
+
                         </strong>
                       {# =credit-name #}
                       {% else %}

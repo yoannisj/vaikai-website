@@ -1,4 +1,9 @@
 {% import 'macros/section.nunjucks' as sect %}
+{% import 'macros/control.nunjucks' as ctrl %}
+{% import 'macros/image.nunjucks' as img %}
+{% import 'macros/popup.nunjucks' as pop %}
+
+{% import 'macros/video.nunjucks' as vid %}
 
 {% call sect.base(section) %}
 
@@ -26,5 +31,55 @@
 
     </div>
   </div>
+
+  <!-- =Playground-Gallery -->
+  <div id="playground-gallery" class="chunk chunk--fullbleed">
+    <div class="chunk-inner">
+
+      <div class="js-gallery" data-init="gallery" data-media="(min-width: 700px)">
+        <!-- =Gallery-Thumbs -->
+        <div class="js-gallery-thumbs">
+          <ul class="uilist cf">
+            {% for item in section.gallery %}
+              <li class="js-gallery-thumb s-float-left s-span-6of12 m-span-3of12">
+
+                <a class="js-gallery-link blocklink" href="{{ app.paths.images|joinpath(item.image.path) }}" data-item-name="{{ item.name }}">
+
+                  {{ img.base(item.image|merge({
+                    size: [420, 420]
+                  }), 'js-gallery-thumb block') }}
+
+                </a>
+
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- =Gallery-Popup -->
+        {% call pop.base({
+          name: 'playground-gallery-popup',
+          parent: 'playground',
+          init: false
+        }, 'js-gallery-popup') %}
+
+          <div class="js-gallery-cycler">
+            <ul class="js-gallery-items uilist">
+              {% for item in section.gallery %}
+                <li class="js-gallery-item" data-name="{{ item.name }}">
+                  {{ img.base(item.image, 'js-gallery-img') }}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+        {% endcall %}
+        <!-- /Gallery-Popup -->
+
+      </div>
+
+    </div>
+  </div>
+  <!-- /Playground-Gallery -->
 
 {% endcall %}

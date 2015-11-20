@@ -1,7 +1,7 @@
 {% import 'macros/link.nunjucks' as ln %}
 {% import 'macros/symbol.nunjucks' as sym %}
-{% import 'macros/toggle.nunjucks' as tgl %}
 {% import 'macros/control.nunjucks' as ctrl %}
+{% import 'macros/toggle.nunjucks' as tgl %}
 
 {# =variables
  # --------------------------------------------------------------- #}
@@ -18,7 +18,8 @@
 
 {% set menu_toggle = {
   target: 'menu',
-  action: 'menu:toggle'
+  action: 'toggle',
+  init: false
 } %}
 
 {# =markup
@@ -30,7 +31,7 @@
       <h1 class="navbar-title">
 
         {% call ln.base(home_link, 'logo-link') %}
-          {{ sym.logo(vaikai_logo, classname='navbar-logo') }}
+          {{ sym.logo(vaikai_logo, 'navbar-logo') }}
         {% endcall %}
 
       </h1>
@@ -72,7 +73,7 @@
         </ul>
       </div>
 
-      <div class="menu-group menu-social m-hide l-show" role="presentation">
+      <div class="menu-group menu-social" role="presentation">
         <ul class="hlist">
           <li class="menu-item">
             {{ ln.icon(data.social.twitter, 'twitter', 'menu-icon') }}
@@ -87,7 +88,7 @@
       </div>
 
       <!-- =NAVBAR-PREORDER -->
-      <div class="menu-group hide m-show" role="presentation">
+      <div class="menu-group m-show" role="presentation">
         <div class="menu-item" role="presentation">
 
           {% call ctrl.celery({}, 'navbar-btn') %}
@@ -100,14 +101,14 @@
 
       <div class="menu-group menu-sub m-hide">
         <ul class="navbar-links uilist">
-          {# {% for name, item in data.sub_nav %}
+          {% for item in data.sub_nav %}
 
             <li class="menu-item">
               {% set cname = 'menu-link' ~ (' active' if (item.url|url == page.url) else '') %}
-              {{ ln.nav(item.url, item.title, cname) }}
+              {{ ln.nav(item, cname) }}
             </li>
 
-          {% endfor %} #}
+          {% endfor %}
         </ul>
       </div>
     </div>

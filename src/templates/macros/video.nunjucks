@@ -1,5 +1,6 @@
 {# =defaults
  # --------------------------------------------------------------- #}
+
 {% set defaults = {
   size: [928, 522]
 } %}
@@ -14,6 +15,7 @@
 
 {# =base
  # --------------------------------------------------------------- #}
+
 {% macro base(type, url, size=defaults.size) %}
 
   {% set width = size[0] %}
@@ -30,6 +32,7 @@
 
 {# =vimeo
  # --------------------------------------------------------------- #}
+
 {% macro vimeo(vimeoId, size=defaults.size, settings=vimeo_settings) %}
 
   {% call base('vimeo', 'https://vimeo.com/' + vimeoId, size) %}

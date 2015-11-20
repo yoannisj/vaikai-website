@@ -1,6 +1,7 @@
 {% import 'macros/section.nunjucks' as sect %}
 {% import 'macros/image.nunjucks' as img %}
 {% import 'macros/control.nunjucks' as ctrl %}
+{% import 'macros/toggle.nunjucks' as tgl %}
 
 {% call sect.base(section) %}
 
@@ -21,12 +22,12 @@
   <div class="chunk">
     <div class="chunk-inner">
 
-      <div id="features-expand" class="expand align-center">
-        <div class="expand-body is-expanded js-slider" data-num-items="1" data-destroy="700">
-          <ul class="grid expand-items uilist js-slider-items">
+      <div id="features-list" class="js-multifold align-center" data-media="(min-width: 700px)">
+        <div class="js-carousel" data-init="carousel" data-media="(max-width: 699px)">
+          <ul class="grid uilist js-carousel-items">
             {% for entry in section.entries %}
 
-              <li id="feature-{{ entry.title|slugify }}" class="grid-cell expand-item {{ 'expand-summary' if loop.index <= 3 }} js-slider-item sm-span-6of12 m-span-4of12">
+              <li id="feature-{{ entry.title|slugify }}" class="grid-cell js-multifold-item js-carousel-item sm-span-6of12 m-span-4of12">
 
                 <div class="thumb align-center">
                   <div class="thumb-object">
@@ -43,21 +44,21 @@
             {% endfor %}
           </ul>
         </div>
-
-        {% if section.entries|length > 3 %}
-          <div class="expand-ctrls landmark" aria-hidden="true">
-
-            {% set control = section.control|merge({
-              type: 'toggle',
-              target: 'features-expand',
-              action: 'expand:toggle'
-            }) %}
-
-            {{ ctrl[control.type](control, 'expand-toggle') }}
-
-          </div>
-        {% endif %}
       </div>
+
+      {% if section.entries|length > 3 %}
+        <div class="landmark align-center" aria-hidden="true">
+
+          {{ tgl.button(section.control|merge({
+            type: 'button',
+            target: 'features-list:multifold',
+            params: 'true'
+          }), 'btn js-only sm-show', {
+            'data-media': '(min-width: 700px)'
+          }) }}
+
+        </div>
+      {% endif %}
 
     </div>
   </div>

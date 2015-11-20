@@ -7,18 +7,22 @@ credit:
   description: co-founder of Vai Kai
 gallery:
   -
+    name: indian-avakai
     image:
-      path: playground/indian-vaikai.jpg
+      path: playground/indian-avakai.jpg
       description: Some cheerful avakai playing indian
   -
+    name: sailor-avakais
     image:
       path: playground/sailor-avakai.jpg
       description: A blue and a wooden avakai on a melon boat
   -
+    name: homework-avakai
     image:
-      path: playground/homework.jpg
+      path: playground/homework-avakai.jpg
       description: Avakai supports boy doing his homework
   -
+    name: 'justyna-plays-with-girl'
     image:
-      path: payground/2000fans.jpg
-      desription: Two avakai dressed up to celebrate their 2000 fans
+      path: playground/justyna-plays-with-girl.jpg
+      description: Two avakai dressed up to celebrate their 2000 fans

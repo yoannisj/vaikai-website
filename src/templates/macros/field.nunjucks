@@ -14,7 +14,7 @@
 {# =input
  # --------------------------------------------------------------- #}
 
-{% macro input(name, params, classname='') %}
+{% macro input(name, params, classname='', attrs=false) %}
 
   {# inject param defaults #}
   {% set prm = defaults|merge(params) %}
@@ -41,6 +41,9 @@
       {% if prm.readonly %} readonly="readonly"{% endif %}
       {% if prm.disabled %} disabled="disabled"{% endif %}
       {% if prm.spellcheck %} spellcheck="spellcheck"{% endif %}
+      {% if attrs %}
+        {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+      {% endif %}
     />
   </div>
 
@@ -48,38 +51,38 @@
 
 {# =text
  # --------------------------------------------------------------- #}
-{% macro text(name, params, classname='') %}
+{% macro text(name, params, classname='', attrs=false) %}
   {% set prm = params|merge({ type: 'text' }) %}
-  {{ input(name, prm, classname) }}
+  {{ input(name, prm, classname, attrs) }}
 {% endmacro %}
 
 {# =email
  # --------------------------------------------------------------- #}
-{% macro email(name, params, classname='') %}
+{% macro email(name, params, classname='', attrs=false) %}
   {% set prm = params|merge({ type: 'email' }) %}
-  {{ input(name, prm, classname) }}
+  {{ input(name, prm, classname, attrs) }}
 {% endmacro %}
 
 {# =password
  # --------------------------------------------------------------- #}
-{% macro password(name, params, classname='') %}
+{% macro password(name, params, classname='', attrs=false) %}
   {% set prm = params|merge({ type: 'password' }) %}
-  {{ input(name, prm, classname) }}
+  {{ input(name, prm, classname, attrs) }}
 {% endmacro %}
 
 {# =url
  # --------------------------------------------------------------- #}
-{% macro url(name, params, classname='') %}
+{% macro url(name, params, classname='', attrs=false) %}
   {% set prm = params|merge({ type: 'url' }) %}
-  {{ input(name, prm, classname) }}
+  {{ input(name, prm, classname, attrs) }}
 {% endmacro %}
 
 {# =checkbox
  # --------------------------------------------------------------- #}
-{% macro checkbox(name, params, classname='') %}
+{% macro checkbox(name, params, classname='', attrs=false) %}
 {% endmacro %}
 
 {# =radio
  # --------------------------------------------------------------- #}
-{% macro radio(name, params, classname='') %}
+{% macro radio(name, params, classname='', attrs=false) %}
 {% endmacro %}

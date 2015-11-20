@@ -3,7 +3,7 @@ theme: gray
 description: |
   The Avakai family is a real piece of craftsmanship. Made of wood and equipped with innovative technology the Avakai twins are specially designed to stimulate all the senses and activate your kids imagination without screens.
 control:
-  ui: button
+  type: button
   label:
     on: Show all magical features
     off: Show most magical features only

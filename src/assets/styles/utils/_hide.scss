@@ -10,22 +10,21 @@
 // -----------------------------------------------------------------------------
 $hide-breakpoints: 's' 'sm' 'm' 'l' 'xl';
 
-/* =hide/show
+/* =hide
  * -------------------------------------------------------------------------- */
 
 .hide { display: none; }
-.show { display: block; }
-.show-inline { display: inline-block; }
 
 /* =<bp>-hide/<bp>-show
  * -------------------------------------------------------------------------- */
 
 @each $bp in $hide-breakpoints
 {
-  @include shift('>#{$bp}')
-  {
+  @include shift('>#{$bp}') {
     .#{$bp}-hide { display: none; }
-    .#{$bp}-show { display: block; }
-    .#{$bp}-show-inline { display: inline-block; }
+  }
+
+  @include shift('<#{$bp}') {
+    .#{$bp}-show { display: none; }
   }
 }

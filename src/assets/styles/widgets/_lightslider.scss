@@ -1,0 +1,157 @@
+// =============================================================================
+// =VaiKai - Lightslider styles
+// =============================================================================
+
+@import "aleksi/lengths/convert";
+@import "config/colors";
+
+$slider-pager-spacing: 10px;
+$slider-pager-target-width: 25px;
+$slider-pager-target-height: 11px;
+$slider-pager-bullet-size: 11px;
+$slider-pager-bullet-color: $mid-gray;
+$slider-pager-bullet-color-active: $blue;
+
+// =Core
+// =============================================================================
+// Stripped down core functional styles of lightslider.js
+
+.lSSlideOuter {
+  -webkit-touch-callout: none; // 1
+  user-select: none; // 1
+}
+
+.lSrtl {
+  direction: rtl;
+}
+
+// 1. UX improvements for touch gestures
+
+.lSSlideWrapper {
+  position: relative; // 1
+  max-width: 100%; // 2
+  overflow: hidden; // 2
+}
+
+// 1. - slide effect: context for slider with 'position:absolute' is used
+//      as fallback for 'transform: translate..'
+//    - fade effect: context for items, stacked using 'position: absolute'
+// 2. hide overflowing slides
+
+.lightSlider {
+  overflow: hidden; // 1
+}
+
+// 1. - slide effect: contain floated items
+//    - fade effect: hide overflowing items
+
+.lSSlide, .lsFade > * {
+  transition-duration: inherit !important; // 1
+  transition-timing-function: inherit !important; // 1
+}
+
+// 1. 'speed' option sets transition settings on 'lSSlideWrapper' via js
+
+// =Slide effect
+// -----------------------------------------------------------------------------
+
+.lSSlide {
+  transition-property: transform, height; // 1
+  transform: translate(0px, 0px); // 1
+}
+
+// 1. slide items and adapt height smoothly
+
+.lSSlide > * {
+  float: left; // 1
+  display: block; // 1
+
+  .lSrtl & {
+    float: right;
+  }
+}
+
+// 1. position elements in a line
+
+// =Fade effect
+// -----------------------------------------------------------------------------
+
+.lsFade > *
+{
+  transition-property: opacity; // 2
+
+  position: absolute; // 1
+  z-index: 9; // 1
+  top: 0; // 1
+  left: 0; // 1
+  width: 100%; // 1
+  opacity: 0; // 2
+
+  &.active {
+    z-index: 10; // 1
+    opacity: 1; // 2
+  }
+}
+
+// 1. stack items - active item on top
+// 2. fade in active item
+
+// =Look & Feel
+// =============================================================================
+// Basic look and feel for lightslider.js plugin. Additional look and feel
+// styles are defined inside widgets that use it (slider, carousel, expandable)
+
+/* =controls
+ * -------------------------------------------------------------------------- */
+
+
+
+/* =pager
+ * -------------------------------------------------------------------------- */
+
+.lSPager
+{
+  margin: 0;
+  padding: convert-length($slider-pager-spacing, 'rem') 0;
+  list-style: none;
+  text-align: center; // 1
+
+  li {
+    display: inline-block; // 1
+  }
+
+  a {
+    position: relative; // 2
+    display: block; // 3
+    width: convert-length($slider-pager-target-width, 'rem'); // 3
+    height: convert-length($slider-pager-target-height, 'rem'); // 3
+    text-indent: 110%; // 5
+    white-space: nowrap; // 5
+    overflow: hidden; // 5
+    cursor: pointer;
+
+    &:after {
+      content: ""; // 2
+      position: absolute; // 2, 3, 4
+      top: convert-length($slider-pager-target-height/2 - $slider-pager-bullet-size/2, 'rem'); // 3, 4
+      left: convert-length($slider-pager-target-width/2 - $slider-pager-bullet-size/2, 'rem'); // 3, 4
+      width: convert-length($slider-pager-bullet-size, 'rem'); // 3
+      height: convert-length($slider-pager-bullet-size, 'rem'); // 2
+      border-radius: convert-length(ceil($slider-pager-bullet-size/2), 'rem');
+      background: $slider-pager-bullet-color;
+    }
+  }
+}
+
+.lSPager a:hover:after,
+.lSPager li.active a:after {
+  background: $slider-pager-bullet-color-active;
+}
+
+// 1. set pager items in one line, in the middle
+// 2. represent visually by a 'bullet'
+// 3. larger pointer target then visual representation
+// 4. bullet positioned in the middle of target
+// 5. hide textual content
+// 6. avoid overlapping pager with items' content
+

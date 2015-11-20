@@ -7,7 +7,8 @@
 
 {# =base
  # --------------------------------------------------------------- #}
-{% macro base(params, classname='') %}
+
+{% macro base(params, classname='', attrs=false) %}
   {# inject param defaults #}
   {% set prm = defaults|merge(params) %}
 
@@ -15,6 +16,9 @@
     {% if classname %} class="{{ classname }}"{% endif %}
     {% if prm.title %} title="{{ prm.title }}"{% endif %}
     {% if prm.rel %} rel="{{ prm.rel }}"{% endif %}
+    {% if attrs %}
+      {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+    {% endif %}
   >
     {% if caller %}
       {{ caller() }}
@@ -27,7 +31,8 @@
 
 {# =nav
  # --------------------------------------------------------------- #}
-{% macro nav(params, classname='') %}
+
+{% macro nav(params, classname='', attrs=false) %}
 
   {# swap 'title' param to 'label' #}
   {% set prm = params|merge({
@@ -50,7 +55,8 @@
 
 {# =block
  # --------------------------------------------------------------- #}
-{% macro block(params, classname='') %}
+
+{% macro block(params, classname='', attrs=false) %}
 
   {% set classnae = 'block-link ' ~ classname %}
   {% call base(params, classname) %}
@@ -61,20 +67,22 @@
 
 {# =logo
  # --------------------------------------------------------------- #}
-{% macro logo(url, logo, label, classname='', title=false, rel=false) %}
+
+{% macro logo(params, classname='', attrs=false) %}
 
   {% set classname = 'logo-link logo ' ~ 'logo'|modify(logo) ~ ' ' ~ classname %}
-  {{ base(url, label, cname, title, rel) }}
+  {{ base(params, classname, attrs) }}
 
 {% endmacro %}
 
 {# =icon
  # --------------------------------------------------------------- #}
-{% macro icon(params, name, classname='' ) %}
+
+{% macro icon(params, name, classname='', attrs=false) %}
   {# inject param defaults #}
   {% set classname = 'icon-link ' ~ classname %}
 
-  {% call base(params, classname) %}
+  {% call base(params, classname, attrs) %}
     {{ sym.icon(name, params.title) }}
   {% endcall %}
 
