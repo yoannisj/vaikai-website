@@ -73,7 +73,7 @@
         </ul>
       </div>
 
-      <div class="menu-group menu-social m-hide l-show" role="presentation">
+      <div class="menu-group menu-social" role="presentation">
         <ul class="hlist">
           <li class="menu-item">
             {{ ln.icon(data.social.twitter, 'twitter', 'menu-icon') }}
@@ -88,7 +88,7 @@
       </div>
 
       <!-- =NAVBAR-PREORDER -->
-      <div class="menu-group hide m-show" role="presentation">
+      <div class="menu-group m-show" role="presentation">
         <div class="menu-item" role="presentation">
 
           {% call ctrl.celery({}, 'navbar-btn') %}
@@ -101,14 +101,14 @@
 
       <div class="menu-group menu-sub m-hide">
         <ul class="navbar-links uilist">
-          {# {% for name, item in data.sub_nav %}
+          {% for item in data.sub_nav %}
 
             <li class="menu-item">
               {% set cname = 'menu-link' ~ (' active' if (item.url|url == page.url) else '') %}
-              {{ ln.nav(item.url, item.title, cname) }}
+              {{ ln.nav(item, cname) }}
             </li>
 
-          {% endfor %} #}
+          {% endfor %}
         </ul>
       </div>
     </div>

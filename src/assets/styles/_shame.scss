@@ -5,6 +5,18 @@
 @import "aleksi/lengths/convert";
 @import "shift/breakpoint";
 
+@include shift('<m')
+{
+  .menu-social .menu-item
+  {
+    margin-right: convert-length(10px, 'rem');
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
 @include shift('l')
 {
   #intro .h1 {
