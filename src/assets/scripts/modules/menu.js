@@ -19,7 +19,7 @@ $menu.on('close', function(ev) {
   $menu.off('click.menu');
 });
 
-$('.js-toggle[data-target*="#menu"').on('click', function(ev) {
+$('.js-toggle[data-target*="#menu"]').on('click', function(ev) {
   ev.preventDefault();
   $menu.trigger('toggle');
 
