@@ -41,7 +41,7 @@
         <div class="js-gallery-thumbs">
           <ul class="uilist cf">
             {% for item in section.gallery %}
-              <li class="js-gallery-thumb s-float-left s-span-6of12 m-span-3of12">
+              <li class="js-gallery-thumb float-left span-6of12 m-span-3of12">
 
                 <a class="js-gallery-link blocklink" href="{{ app.paths.images|joinpath(item.image.path) }}" data-item-name="{{ item.name }}">
 
