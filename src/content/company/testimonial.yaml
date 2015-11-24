@@ -1,0 +1,43 @@
+title: Testimonial
+entries:
+-
+  quote: |
+    In order to empower creativity and imagination in our world, we must adapt the toys to the time and the environment of nowadays kids.
+  credit:
+    name: Vi
+    description: Ux/Ui designer
+    url: https://medium.com/@cheekfille/building-a-toy-for-the-21st-century-kids-9868194267c7
+-
+  quote: |
+    For us it’s important to create experiences that connect children, not children and marketing systems.
+  credit:
+    name: Matas
+    description: co-founder of VaiKai
+-
+  quote: |
+    I don’t want my kids to live unhealthy lives, sprawled in front of the TV or iPad, rather than getting fresh air, some physical activity, and using their creativity.
+  credit:
+    name: Suzanne Jannese
+    description: Mom of two
+    url: http://www.babble.com/contributor/suzannecowie/
+-
+  quote: |
+    A growing number of parents want their children to understand creative technology more deeply.
+  credit:
+    name: The Drum
+    logo:
+      path: logos/logo-thedrum.png
+    url: http://www.thedrum.com/opinion/2015/08/07/rise-edutech-how-startups-are-filling-technology-gaps-curriculum
+-
+  quote: |
+    Both children and parents are recognising the importance of face to face communication and play away from digital devices.
+  credit:
+    name: Kids and Youth
+    description: IKEA Play Report 2015
+    url: http://www.kidsandyouth.com/has-digital-killed-play-part-2-the-place-of-digital-in-play/
+-
+  quote: |
+    Vai Kai is NOT using cameras or microphones in their toys to protect the privacy of children and families.
+  credit:
+    name: PAN-EU youth
+    url: https://twitter.com/Paneuyouth/status/659682815009755136

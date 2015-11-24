@@ -1,0 +1,42 @@
+title: Calling all Families – Join our Playdates
+theme: yellow
+description: |
+  <p>We should stop talking about play and simply do it. Therefore, we invite you to an excited real life adventure with Avakai and Vai Kai play wizards. We know the best spots to experience some very special adventures and you will get to know the Avakai! We bring games, crafts and of course our Avakai toys. You only need to bring your kids, you camera and loads of energy.</p>
+  <p>Playdates are organized all over the world. Let us know where you want us to go next and we will make it happen.</p>
+form:
+  name: Playdates
+  fields:
+    EMAIL:
+      type: email
+      label: Your email
+      placeholder: Your email
+    CITY:
+      type: text
+      label: Your City
+      placeholder: Your City
+  controls:
+  - type: submit
+    label: Yes, sign me up!
+    ui: button
+    icon: send
+gallery:
+-
+  name: avakai-kiss
+  image:
+    path: http://www.placehold.it/420x420
+    description: Two kids making their Avakai kiss
+-
+  name: avakai-walk
+  image:
+    path: http://www.placehold.it/420x420
+    description: Two Avakai going for a walk with their best friends
+-
+  name: avakai-hug
+  image:
+    path: http://www.placehold.it/420x420
+    description: Avakai reacting to a child's hug
+-
+  name: avakai-treasure
+  image:
+    path: http://www.placehold.it/420x420
+    description: Two girls discovering a treasure hidden inside their Avakai

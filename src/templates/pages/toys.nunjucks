@@ -3,7 +3,7 @@
 
 {% block head_styles %}
   {{ super() }}
-  <link rel="stylesheet" href="{{ 'css/index.css'|url }}"></link>
+  <link rel="stylesheet" href="{{ 'css/toys.css'|url }}"></link>
 {% endblock %}
 
 {% block body_main %}
@@ -24,8 +24,6 @@
 
 {% block body_end %}
   {{ super() }}
-  <script src="{{ 'js/vendor/jquery.flexslider.js'|url }}"></script>
   <script src="{{ 'js/vendor/jquery.scrollme.js'|url }}"></script>
-
-  <script src="{{ 'js/index.js'|webpackurl }}"></script>
+  <script src="{{ 'js/toys.js'|webpackurl }}"></script>
 {% endblock %}
