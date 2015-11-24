@@ -4,13 +4,13 @@
 
 {% call sect.base(section) %}
 
-  <div class="chunk chunk--narrow">
+  <div class="chunk chunk--fullbleed">
     <div class="chunk-inner">
 
-      <div class="split grid grid--middle">
+      <div class="split split--left m-split--uneven">
         <!-- =Shop-Object -->
-        <div class="avk-preorder split-media grid-cell m-span-5of12">
-          <div class="avk-limiteded align-right">
+        <div class="split-object avk-preorder">
+          <div class="avk-limiteded">
             <strong class="stamp stamp--limiteded">Limited Edition</strong>
             {{ img.lazy(section.image) }}
           </div>
@@ -18,8 +18,8 @@
         <!-- /Shop-Object -->
 
         <!-- =Shop-Body -->
-        <div class="split-body grid-cell m-span-7of12">
-          <div class="landmark centrum centrum--left">
+        <div class="split-body">
+          <div class="landmark">
             <header>
               <h2 class="h4">{{ section.title }}</h2>
             </header>

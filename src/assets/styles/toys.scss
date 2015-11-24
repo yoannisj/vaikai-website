@@ -182,12 +182,12 @@ $avk-dimensions-duo: 820px 640px;
 @include shift('>m')
 {
   .avk-duo-lead {
-    right: 45%;
+    right: 27%;
     width: 290px;
   }
 
   .avk-duo-follow {
-    right: 5%;
+    right: 3%;
     width: 210px;
   }
 }

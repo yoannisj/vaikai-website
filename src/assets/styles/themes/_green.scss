@@ -10,6 +10,7 @@ $green-theme-color: $white;
 $green-theme-background: $green;
 $green-theme-link-color-active: $dark-blue;
 $green-theme-input-background-active: $mid-green;
+$green-theme-quote-sign-color: $white;
 $green-theme-slider-bullet-color: $light-gray;
 $green-theme-slider-bullet-color-active: $yellow;
 
@@ -36,6 +37,10 @@ $green-theme-slider-bullet-color-active: $yellow;
 
   .input:focus {
     background: $green-theme-input-background-active;
+  }
+
+  .quote:before {
+    color: $green-theme-quote-sign-color;
   }
 
   .js-slider-control-nav a
