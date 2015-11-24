@@ -17,6 +17,7 @@
 } %}
 
 {% set menu_toggle = {
+  url: '#navigation',
   target: 'menu',
   action: 'toggle',
   init: false

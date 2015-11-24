@@ -22,7 +22,7 @@
     </ul>
   </div>
 
-  <nav class="subnav nav">
+  <nav id="navigation" class="subnav nav">
     <br />
     <ul class="subnav-links nav-links hlist sep-pipe">
 
