@@ -39,9 +39,13 @@ $('.js-slider').widget(Slider);
 // =Fold
 // =============================================================================
 var Fold = require('widgets/fold');
-$('.js-fold').widget(Fold);
+$('.js-fold').widget(Fold, {
+  scrollOffset: -150
+});
 
 // =MultiFolds
 // =============================================================================
 var MultiFold = require('widgets/multifold');
-$('.js-multifold').widget(MultiFold);
+$('.js-multifold').widget(MultiFold, {
+  scrollOffset: -150
+});

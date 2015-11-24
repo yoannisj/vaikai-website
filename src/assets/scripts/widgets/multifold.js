@@ -42,7 +42,7 @@ var MultiFold = module.exports = Fold.extend({
     // get bottom of lowest item in 'minItems'
     this.$items.slice(0, this._minItems()).each(function() {
       var $itm = $(this),
-        itmBottom = $itm.offset().top + $itm.height();
+        itmBottom = $itm.offset().top + $itm.outerHeight(true);
 
       lowest = Math.max(lowest, itmBottom);
     });

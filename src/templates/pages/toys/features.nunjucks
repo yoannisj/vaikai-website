@@ -30,7 +30,7 @@
               <li id="feature-{{ entry.title|slugify }}" class="grid-cell js-multifold-item js-carousel-item sm-span-6of12 m-span-4of12">
 
                 <div class="thumb align-center">
-                  <div class="thumb-object">
+                  <div class="thumb-object ratio-illu median">
                     {{ img.base(entry.image) }}
                   </div>
                   <div class="thumb-body">
