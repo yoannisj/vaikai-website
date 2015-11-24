@@ -82,8 +82,6 @@ var BaseWidget = module.exports = Base.extend({
   init: function() {
     this._initialized = true;
     this.$el.addClass(this.initClass);
-
-    console.log('init widget', this.name, '/', this.el);
   },
 
   // Settings
@@ -258,8 +256,6 @@ var BaseWidget = module.exports = Base.extend({
 
   // Destroy
   destroy: function() {
-
-    console.log('destroy widget', this.name, '/', this.el);
 
     this.off();
     this.$el.removeData('widget_' + this.name);

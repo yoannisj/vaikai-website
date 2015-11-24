@@ -20,7 +20,7 @@ body.has-open-popup {
   transition: $lightbox-transition;
 
   position: fixed;
-  z-index: 2000;
+  z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
@@ -35,6 +35,7 @@ body.has-open-popup {
   &.is-opening,
   &.is-open {
     visibility: visible;
+    z-index: 2000;
   }
 
   .no-js &,

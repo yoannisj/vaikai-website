@@ -118,11 +118,6 @@
   }
 }
 
-/* temporary fix for 'expand' module */
-.expand-body {
-  height: auto !important;
-}
-
 .js-carousel-img,
 .js-slider-img {
   display: block;
@@ -130,11 +125,10 @@
 }
 
 .flex-viewport .mention {
-  margin: convert-length($mention-spacing, 'rem') 0 0;
+  margin-bottom: 0;
 }
 
 .avk-limiteded {
   max-width: 420px;
   margin: 0 auto;
 }
-
