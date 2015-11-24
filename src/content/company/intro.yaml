@@ -1,5 +1,5 @@
 theme: green
-title: Sensory Technology, open to Imagination
+title: Sensory Technology,<br />open to Imagination
 description: |
   We believe that technology can be sensitive, emotional and truly bonding while enhancing your child’s natural development.
 control:
@@ -7,3 +7,5 @@ control:
   label: watch video
 video:
   id: 130435350
+poster:
+  path: http://www.placehold.it/1600x900

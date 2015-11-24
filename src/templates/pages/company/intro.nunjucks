@@ -1,1 +1,62 @@
-<h2>{{ section.title }}</h2>
+{% import 'macros/section.nunjucks' as sect %}
+{% import 'macros/control.nunjucks' as ctrl %}
+{% import 'macros/symbol.nunjucks' as sym %}
+{% import 'macros/popup.nunjucks' as pop %}
+{% import 'macros/video.nunjucks' as vid %}
+
+{% set popup_condition = {
+  'data-media': '(min-width: 700px)'
+} %}
+
+<!-- =Intro -->
+{% call sect.base(section) %}
+
+  <div class="chunk poster" style="background-image: url({{ section.poster.path|url }});">
+    <div class="chunk-inner">
+
+      <div class="split grid grid--middle">
+        <!-- using a poster instead of a split-object -->
+
+        <!-- =Intro-Body -->
+        <div class="split-body grid-cell push-4of12 span-8of12 m-push-6of12 m-span-6of12" style="position: relative; z-index: 1;">
+          <div class="landmark centrum centrum--left">
+
+            <h2 class="h1">{{ section.title }}</h2>
+            {{ section.description|paragraphs('s-zeta m-delta') }}
+
+            <p class="landmark">
+              {% call ctrl.link(section.control|merge({
+                type: 'link',
+                url: 'http://vimeo.com/' ~ section.video.id,
+                target: 'intro-video:popup',
+                action: 'open'
+              }), 'link-quiet shoutout', popup_condition) %}
+
+                {{ sym.preIcon(section.control.icon, section.control.label, 'icon--md') }}
+
+              {% endcall %}
+            </p>
+
+          </div>
+        </div>
+        <!-- /Intro-Body -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =Intro-Video -->
+  {% if section.video %}
+
+    {% call pop.base({
+      name: 'intro-video',
+      parent : 'intro'
+    }, attrs=popup_condition) %}
+      {{ vid.vimeo( section.video.id, 'flex' ) }}
+    {% endcall %}
+
+  {% endif %}
+  <!-- /Intro-Video -->
+
+{% endcall %}
+<!-- /Intro -->

@@ -21,13 +21,13 @@
         </div>
         <!-- /Intro-Object -->
 
-        <!-- =Intro-Text -->
+        <!-- =Intro-Body -->
         <div class="split-body grid-cell span-8of12 sm-span-6of12">
           <div class="landmark centrum centrum--left">
             <h2 class="h1">{{ section.title }}</h2>
             {{ section.description|paragraphs('s-zeta m-delta') }}
-            <p class="landmark">
 
+            <p class="landmark">
               {% call ctrl.link(section.control|merge({
                 type: 'link',
                 url: 'http://vimeo.com/' ~ section.video.id,
@@ -38,15 +38,11 @@
                 {{ sym.preIcon(section.control.icon, section.control.label, 'icon--md') }}
 
               {% endcall %}
-
-              {# <a class="link-quiet shoutout js-toggle" href="http://www.vimeo.com/130435350" target="_blank" data-action="video:play" data-target="#intro-video">
-                {{ symbol.preIcon('play', 'watch video', 'icon--md') }}
-              </a> #}
-
             </p>
+
           </div>
         </div>
-        <!-- /Intro-Text -->
+        <!-- /Intro-Body -->
       </div>
 
     </div>
@@ -59,9 +55,9 @@
       name: 'intro-video',
       parent : 'intro'
     }, attrs=popup_condition) %}
-
       {{ vid.vimeo( section.video.id, 'flex' ) }}
     {% endcall %}
+
   {% endif %}
   <!-- /Intro-Video -->
 

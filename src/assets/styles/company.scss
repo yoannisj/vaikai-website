@@ -1,0 +1,28 @@
+/* =============================================================================
+ * =VaiKai - Company Stylesheet
+ * ========================================================================== */
+
+@import "config";
+@import "shift/breakpoint";
+
+// =settings
+// -----------------------------------------------------------------------------
+$company-intro-height: 500px;
+$company-intro-height-sm: 600px;
+$company-intro-height-m: 740px;
+
+/* =Intro
+ * ========================================================================== */
+
+.section-intro .split:before
+{
+  min-height: $company-intro-height;
+
+  @include shift('>sm') {
+    min-height: $company-intro-height-sm;
+  }
+
+  @include shift('>m') {
+    min-height: $company-intro-height-m;
+  }
+}

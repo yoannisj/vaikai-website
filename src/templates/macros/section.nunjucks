@@ -1,11 +1,11 @@
 {# =base
  # --------------------------------------------------------------- #}
-{% macro base(params) %}
+{% macro base(prm) %}
   {# =allow custom semantic tagname #}
-  {% set tagname = params.semantics|default('section', true) %}
-  {% set themeclass = ('theme-' ~ params.theme) if params.theme else '' %}
+  {% set tagname = prm.semantics|default('section', true) %}
+  {% set themeclass = ('theme-' ~ prm.theme) if prm.theme else '' %}
 
-  <{{tagname}} id="{{ params.name }}" class="section {{ themeclass }}">
+  <{{tagname}} id="{{ prm.name }}" class="section section-{{ prm.name }} {{ themeclass }}">
     {{ caller() }}
   </section>
 
