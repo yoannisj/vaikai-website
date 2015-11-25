@@ -9,7 +9,7 @@ entries:
     url: http://www.theguardian.com/technology/2015/jul/16/how-smart-are-connected-toys.
     # logo: theguardian
     logo:
-      path: logos/logo-theguardian.png
+      path: images/logos/logo-theguardian.png
       # size: [ 203, 38 ]
 -
   quote: |
@@ -19,7 +19,7 @@ entries:
     url: http://www.inhabitots.com/handmade-wooden-avakai-dolls-use-smart-technology-to-communicate-with-each-other/
     # logo: inhabitots
     logo:
-      path: logos/logo-inhabitots.png
+      path: images/logos/logo-inhabitots.png
       # size: [ 58, 59 ]
 -
   quote: |
@@ -29,7 +29,7 @@ entries:
     url: http://www.fastcompany.com
     # logo: fastcompany
     logo:
-      path: logos/logo-fastcompany.jpg
+      path: images/logos/logo-fastcompany.jpg
       # size: [ 158, 38 ]
 -
   quote: |
@@ -45,7 +45,7 @@ entries:
     url: http://www.core77.com/posts/37841/Toys-of-the-Future-Vai-Kai-Laun
     # logo: core77
     logo:
-      path: logos/logo-core77.png
+      path: images/logos/logo-core77.png
       # size: [ 102, 36 ]
 -
   quote: |
@@ -55,7 +55,7 @@ entries:
     url: http://www.thedrum.com/opinion/2015/08/07/rise-edutech-how-startups-are-filling-technology-gaps-curriculum
     # logo: thedrum
     logo:
-      path: logos/logo-thedrum.png
+      path: images/logos/logo-thedrum.png
       # size: [ 145, 44 ]
 -
   quote: |
@@ -65,7 +65,7 @@ entries:
     url: http://babyology.com.au/toys/meet-avakai-a-wooden-toy-with-high-tech-capabilities-for-intelligent-screen-free-playtime.html
     # logo: babyology
     logo:
-      path: logos/logo-babyology.png
+      path: images/logos/logo-babyology.png
       # size: [ 138, 82 ]
 -
   quote: |
@@ -75,5 +75,5 @@ entries:
     url: http://www.pfsk.com
     # logo: pfsk
     logo:
-      path: logos/logo-psfk.png
+      path: images/logos/logo-psfk.png
       # size: [ 37, 37 ]

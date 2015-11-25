@@ -26,7 +26,7 @@ entries:
   credit:
     name: The Drum
     logo:
-      path: logos/logo-thedrum.png
+      path: images/logos/logo-thedrum.png
     url: http://www.thedrum.com/opinion/2015/08/07/rise-edutech-how-startups-are-filling-technology-gaps-curriculum
 -
   quote: |

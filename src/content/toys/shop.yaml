@@ -4,7 +4,7 @@ description: |
   <p>We sketched, we designed, we tested and had a lot of fun. Finally the Avakai are ready. Whoopwhoop! We are really excited about that. The first twins will land in March 2016, but it will only be 500 of them. So be quick to pre-order your Avakai now.</p>
   <p>Be one of the first families to give them a new home and your kids a creative and screen less way to spend quality time. Pre order below!</p>
 image:
-  path: toys/avakai-couple.png
+  path: images/toys/avakai-couple.png
   description: Two early and limited edition avakai
 control:
   type: celery
