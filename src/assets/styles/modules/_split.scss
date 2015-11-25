@@ -41,21 +41,13 @@ $split-breakpoints: 'm';
   overflow: hidden;
   margin-left: -1 * convert-length($split-gutter, 'rem');
   margin-right: -1 * convert-length($split-gutter, 'rem');
-  text-align: center;
 
-  &:before,
+  // center object horizontally
+  text-align: center;
   > * {
     display: inline-block;
-    vertical-align: middle;
-  }
-
-  &:before {
-    content: "";
-    height: 100%;
-  }
-
-  > * {
-    max-width: 100%;
+    // override this or use max-width to limit it
+    width: 100%;
   }
 }
 
@@ -103,6 +95,18 @@ $split-breakpoints: 'm';
     left: 0;
     margin: 0;
     text-align: right;
+
+    // center object vertically
+    &:before,
+    > * {
+      vertical-align: middle;
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+    }
   }
 
   .split--uneven

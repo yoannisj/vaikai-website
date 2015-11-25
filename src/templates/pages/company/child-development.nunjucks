@@ -8,7 +8,7 @@
     <div class="split-inner">
 
       <!-- =ConnectedToys-Object -->
-      <div class="split-object crop">
+      <div class="split-object sm-crop">
         <img src="http://www.placehold.it/700x700" alt="" />
       </div>
       <!-- =ConnectedToys-Object -->
