@@ -8,7 +8,7 @@
     <div class="split-inner">
       <!-- =Shop-Object -->
       <div class="split-object">
-        <span class="avk-limiteded">
+        <span class="avk-limiteded ratio-couple">
           <strong class="stamp stamp--limiteded">Limited Edition</strong>
           {{ img.lazy(section.image) }}
         </span>

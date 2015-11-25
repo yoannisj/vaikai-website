@@ -206,6 +206,7 @@ $avk-dimensions-duo: 820px 640px;
 }
 
 .stamp--limiteded {
+  z-index: 2;
   top: 50%;
   left: 0;
   width: convert-length(120px, 'em');
