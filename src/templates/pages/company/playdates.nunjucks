@@ -1,1 +1,91 @@
-<h2>{{ section.title }}</h2>
+{% import 'macros/section.nunjucks' as sect %}
+{% import 'macros/form.nunjucks' as frm %}
+{% import 'macros/control.nunjucks' as ctrl %}
+{% import 'macros/symbol.nunjucks' as sym %}
+
+{% import 'macros/image.nunjucks' as img %}
+{% import 'macros/popup.nunjucks' as pop %}
+
+{% call sect.base(section) %}
+
+  <div class="chunk">
+    <div class="chunk-inner">
+
+      <!-- =Playdates-Intro -->
+      <div class="landmark assert align-center">
+        <h3 class="assert-title">{{ section.title }}</h3>
+        <div class="assert-text">
+          {{ section.description|paragraphs('s-zeta m-epsilon') }}
+        </div>
+      </div>
+      <!-- /Playdates-Intro -->
+
+      <!-- =Playdates-Form -->
+      <div class="landmark align-center">
+
+        {% call frm.mailchimp(section.form) %}
+
+          {{ frm.fields(section.form.fields) }}
+
+          <div class="form-controls">
+            {% set form_submit = section.form.controls[0] %}
+            {% call ctrl.submit( form_submit ) %}
+              {{ sym.preIcon(form_submit.icon, form_submit.label) }}
+            {% endcall %}
+          </div>
+
+        {% endcall %}
+
+      </div>
+      <!-- /Playdates-Form -->
+
+    </div>
+  </div>
+
+  <!-- =Playdates-Gallery -->
+  <div id="playdates-gallery" class="chunk chunk--fullbleed">
+    <div class="chunk-inner">
+
+      <div class="js-gallery" data-init="gallery" data-media="(min-width: 700px)">
+        <!-- =Gallery-Thumbs -->
+        <div class="js-gallery-thumbs">
+          <ul class="uilist cf">
+            {% for item in section.gallery %}
+              <li class="js-gallery-thumb float-left span-6of12 m-span-3of12">
+
+                <a class="js-gallery-link blocklink" href="{{ item.image.path }}" data-item-name="{{ item.name }}">
+                  {{ img.base(item.image, 'js-gallery-thumb block') }}
+                </a>
+
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- =Gallery-Popup -->
+        {% call pop.base({
+          name: 'playdates-gallery-popup',
+          parent: 'playdates',
+          init: false
+        }, 'js-gallery-popup') %}
+
+          <div class="js-gallery-cycler">
+            <ul class="js-gallery-items uilist">
+              {% for item in section.gallery %}
+                <li class="js-gallery-item" data-name="{{ item.name }}">
+                  {{ img.base(item.image, 'js-gallery-img') }}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+        {% endcall %}
+        <!-- /Gallery-Popup -->
+
+      </div>
+
+    </div>
+  </div>
+  <!-- /Playdates-Gallery -->
+
+{% endcall %}

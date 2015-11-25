@@ -4,18 +4,17 @@
 <!-- =ConnectedToys -->
 {% call sect.base(section) %}
 
-  <div class="chunk chunk--fullbleed">
-    <div class="chunk-inner">
+  <div class="split split--reverse">
+    <div class="split-inner">
 
-      <div class="split split--right m-split--even">
         <!-- =ConnectedToys-Object -->
-        <div class="split-object">
+        <div class="split-object crop">
           <img src="http://www.placehold.it/700x700" alt="" />
         </div>
         <!-- =ConnectedToys-Object -->
 
         <!-- =ConnectedToys-Body -->
-        <div class="split-body grid-cell">
+        <div class="split-body">
           <div class="landmark centrum centrum--left">
             <h2 class="h3">{{ section.title }}</h2>
             {{ section.description|paragraphs }}

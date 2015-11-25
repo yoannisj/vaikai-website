@@ -3,6 +3,8 @@
 
 {% macro base(prm, classname='', attrs=false) %}
 
+  {# {{ prm.path|log }} #}
+
   {# get image size #}
   {% set orig_sz = prm.path|imgsize %}
   {% set sz = prm.size or orig_sz %}
@@ -12,7 +14,7 @@
     {% set rs_path = prm.path|resize(sz, prm.resize_options) %}
     {% set path = app.paths.images|joinpath(rs_path) %}
   {% else %}
-    {% set path = app.paths.images|joinpath(prm.path) %}
+    {% set path = prm.path if prm.path|contains('http') else app.paths.images|joinpath(prm.path) %}
   {% endif %}
 
   <img src="{{ path }}" alt="{{ prm.description }}"

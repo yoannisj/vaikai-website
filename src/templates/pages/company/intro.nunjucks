@@ -11,16 +11,13 @@
 <!-- =Intro -->
 {% call sect.base(section) %}
 
-  <div class="chunk chunk--fullbleed poster" style="background-image: url({{ section.poster.path|url }});">
+  <div class="chunk chunk--narrow poster" style="background-image: url({{ section.poster.path|url }});">
     <div class="chunk-inner">
 
-      <div class="split split--left split--uneven m-split--even">
-        <!-- using a poster instead of a split-object -->
-        <div class="split-object" aria-hidden="true"></div>
-
+      <div class="grid grid--middle">
         <!-- =Intro-Body -->
-        <div class="split-body" style="position: relative; z-index: 1;">
-          <div class="landmark centrum centrum--left">
+        <div class="grid-cell push-4of12 span-8of12 m-push-6of12 m-span-6of12">
+          <div class="landmark">
 
             <h2>{{ section.title }}</h2>
             {{ section.description|paragraphs('s-zeta m-epsilon') }}

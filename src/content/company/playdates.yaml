@@ -4,7 +4,7 @@ description: |
   <p>We should stop talking about play and simply do it. Therefore, we invite you to an excited real life adventure with Avakai and Vai Kai play wizards. We know the best spots to experience some very special adventures and you will get to know the Avakai! We bring games, crafts and of course our Avakai toys. You only need to bring your kids, you camera and loads of energy.</p>
   <p>Playdates are organized all over the world. Let us know where you want us to go next and we will make it happen.</p>
 form:
-  name: Playdates
+  name: playdates
   fields:
     EMAIL:
       type: email
@@ -16,7 +16,7 @@ form:
       placeholder: Your City
   controls:
   - type: submit
-    label: Yes, sign me up!
+    label: Subscribe
     ui: button
     icon: send
 gallery:

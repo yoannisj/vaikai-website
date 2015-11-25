@@ -1,1 +1,75 @@
-<h2>{{ section.title }}</h2>
+{% import 'macros/section.nunjucks' as sect %}
+{% import 'macros/image.nunjucks' as img %}
+
+{% call sect.base(section) %}
+
+  <div class="chunk">
+    <div class="chunk-inner">
+
+      <div class="quote landmark align-center">
+        <h3>{{ section.title }}</h3>
+
+        <!-- =Testimonial-Carousel -->
+        <div class="js-carousel" data-init="carousel">
+          <ul class="js-carousel-items grid uilist">
+            {% for entry in section.entries %}
+
+              <li id="mention-{{ entry.title|slugify }}" class="js-carousel-item grid-cell s-span-6of12 m-span-4of12">
+
+                <figure class="mention">
+                  <blockquote class="mention-quote">{{ entry.quote|trim }}</blockquote>
+
+                  {% set credit = entry.credit %}
+                  {% if credit %}
+                    <figcaption class="mention-caption">
+                      <p class="mention-credit credit">
+
+                      {# wrap credit in link #}
+                      {% if credit.url %}
+                        <a href="{{ credit.url }}" target="{{ credit.url|linktarget }}">
+                      {% endif %}
+
+                      {# =credit-logo #}
+                      {% if credit.logo %}
+                        <strong class="credit-logo">
+
+                          {% set logo = credit.logo|merge({
+                            description: credit.name
+                          }) %}
+                          {{ img.base(logo) }}
+
+                        </strong>
+                      {# =credit-name #}
+                      {% else %}
+                        <strong class="credit-name zeta">{{ credit.name }}</strong>
+                      {% endif %}
+
+                      {# wrap credit in link #}
+                      {% if credit.url %}
+                        </a>
+                      {% endif %}
+
+                      {# =credit-description #}
+                      {% if credit.description %}
+                        <br /><small class="credit-desc">{{ credit.description }}</small>
+                      {% endif %}
+
+                      </p>
+                    </figcaption>
+                  {% endif %}
+                </figure>
+
+
+              </li>
+
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- /Testimonial-Carousel -->
+
+      </div>
+
+    </div>
+  </div>
+
+{% endcall %}

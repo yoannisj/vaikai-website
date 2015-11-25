@@ -24,8 +24,8 @@
         <!-- =Intro-Body -->
         <div class="grid-cell span-8of12 m-span-6of12">
           <div class="landmark">
-            <h2 class="h1">{{ section.title }}</h2>
-            {{ section.description|paragraphs('s-zeta m-delta') }}
+            <h2>{{ section.title }}</h2>
+            {{ section.description|paragraphs('s-zeta m-epsilon') }}
 
             <p class="landmark">
               {% call ctrl.link(section.control|merge({

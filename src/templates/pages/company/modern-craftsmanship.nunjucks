@@ -1,1 +1,76 @@
-<h2>{{ section.title }}</h2>
+{% import 'macros/section.nunjucks' as sect %}
+{% import 'macros/image.nunjucks' as img %}
+
+{% import 'macros/image.nunjucks' as img %}
+{% import 'macros/popup.nunjucks' as pop %}
+
+<!-- =ModernCraft -->
+{% call sect.base(section) %}
+
+  <div class="split split--uneven">
+    <div class="split-inner">
+
+      <!-- =ModernCraft-Object -->
+      <div class="split-object"></div>
+      <!-- =ModernCraft-Object -->
+
+      <!-- =ModernCraft-Body -->
+      <div class="split-body">
+        <div class="landmark centrum centrum--left">
+          <h2 class="h3">{{ section.title }}</h2>
+          {{ section.description|paragraphs }}
+        </div>
+      </div>
+      <!-- /ModernCraft-Body -->
+
+    </div>
+  </div>
+
+  <!-- =ModernCraft-Gallery -->
+  <div id="modern-craftsmanship-gallery" class="chunk chunk--fullbleed">
+    <div class="chunk-inner">
+
+      <div class="js-gallery" data-init="gallery" data-media="(min-width: 700px)">
+        <!-- =Gallery-Thumbs -->
+        <div class="js-gallery-thumbs">
+          <ul class="uilist cf">
+            {% for item in section.gallery %}
+              <li class="js-gallery-thumb float-left span-6of12 m-span-4of12">
+
+                <a class="js-gallery-link blocklink" href="{{ item.image.path }}" data-item-name="{{ item.name }}">
+                  {{ img.base(item.image, 'js-gallery-thumb block') }}
+                </a>
+
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- =Gallery-Popup -->
+        {% call pop.base({
+          name: 'modern-craftsmanship-gallery-popup',
+          parent: 'playdates',
+          init: false
+        }, 'js-gallery-popup') %}
+
+          <div class="js-gallery-cycler">
+            <ul class="js-gallery-items uilist">
+              {% for item in section.gallery %}
+                <li class="js-gallery-item" data-name="{{ item.name }}">
+                  {{ img.base(item.image, 'js-gallery-img') }}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+        {% endcall %}
+        <!-- /Gallery-Popup -->
+
+      </div>
+
+    </div>
+  </div>
+  <!-- /ModernCraft-Gallery -->
+
+{% endcall %}
+<!-- /ModernCraft -->
