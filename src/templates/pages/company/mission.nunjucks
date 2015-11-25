@@ -16,8 +16,8 @@
         {% if credit %}
 
           <figcaption class="quote-credit credit credit--alt">
-            <strong class="credit-name s-zeta">{{ credit.name }}</strong>
-            <small class="credit-description s-base">{{ credit.description }}</small>
+            <strong class="credit-name s-zeta m-epsilon">{{ credit.name }}</strong>
+            <small class="credit-description s-base m-zeta">{{ credit.description }}</small>
           </figcaption>
 
         {% endif %}
