@@ -182,12 +182,14 @@ $avk-dimensions-duo: 820px 640px;
 @include shift('>m')
 {
   .avk-duo-lead {
-    right: 27%;
+    // right: 27%;
+    right: 45%;
     width: 290px;
   }
 
   .avk-duo-follow {
-    right: 3%;
+    // right: 3%;
+    right: 5%;
     width: 210px;
   }
 }
@@ -200,6 +202,7 @@ $avk-dimensions-duo: 820px 640px;
 
 .avk-limiteded {
   position: relative;
+  max-width: 420px;
 }
 
 .stamp--limiteded {
@@ -207,6 +210,13 @@ $avk-dimensions-duo: 820px 640px;
   left: 0;
   width: convert-length(120px, 'em');
   margin-left: convert-length(-40px, 'em');
+}
+
+@include shift('>m')
+{
+  .avk-limiteded {
+    max-width: 500px;
+  }
 }
 
 @include shift('>l')

@@ -11,18 +11,18 @@
 <!-- =Intro -->
 {% call sect.base(section) %}
 
-  <div class="chunk chunk--fullbleed">
+  <div class="chunk chunk--narrow">
     <div class="chunk-inner">
 
-      <div class="split split--left split--uneven m-split--even">
+      <div class="grid grid--middle">
         <!-- =Intro-Object -->
-        <div class="split-object avk-duo scrollme">
+        <div class="grid-cell span-4of12 m-span-6of12 avk-duo scrollme">
           {% include 'objects/avakai-animation.nunjucks' %}
         </div>
         <!-- /Intro-Object -->
 
         <!-- =Intro-Body -->
-        <div class="split-body">
+        <div class="grid-cell span-8of12 m-span-6of12">
           <div class="landmark">
             <h2 class="h1">{{ section.title }}</h2>
             {{ section.description|paragraphs('s-zeta m-delta') }}

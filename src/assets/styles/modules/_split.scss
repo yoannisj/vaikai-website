@@ -9,164 +9,147 @@
 
 // =settings
 // -----------------------------------------------------------------------------
+$split-min-height: 670px;
 $split-inner-max-width: 1120px;
-$split-gutter: 40px;
-$split-gutter-s: 80px;
+$split-gutter: 20px;
+$split-gutter-s: 40px;
 $split-breakpoints: 'm';
 
-/* =split
+/* =split (base)
  * -------------------------------------------------------------------------- */
 
-.split
-{
-  letter-spacing: -0.31em;
-  text-rendering: optimizeSpeed;
-  font-family: sans-serif;
+.split {
+  position: relative;
+  overflow: hidden;
+}
+
+.split-inner {
+  @extend .ws-collapse;
+  max-width: convert-length($split-inner-max-width, 'rem');
+  margin: 0 auto;
+  padding-left: convert-length($split-gutter, 'rem');
+  padding-right: convert-length($split-gutter, 'rem');
+}
+
+.split-inner:before,
+.split-body {
+  @extend .ws-reset;
+}
+
+.split-object {
+  position: relative;
+  overflow: hidden;
+  margin-left: -1 * convert-length($split-gutter, 'rem');
+  margin-right: -1 * convert-length($split-gutter, 'rem');
+  text-align: center;
+
+  &:before,
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
   &:before {
     content: "";
     height: 100%;
   }
-}
-
-.split:before,
-.split-body,
-.split-object {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.split-object,
-.split-body {
-  width: 100%;
-  letter-spacing: normal;
-  text-rendering: auto;
-  font-family: $base-font-family;
-}
-
-.split-object
-{
-  text-align: center;
-  line-height: 0;
 
   > * {
-    display: inline-block;
-    width: 100%;
-    height: auto;
+    max-width: 100%;
   }
 }
 
-.split-body
+@include shift('>s')
 {
-  padding-left: 0.5 * convert-length($split-gutter, 'rem');
-  padding-right: 0.5 * convert-length($split-gutter, 'rem');
-
-  @include shift('>s')
-  {
-    padding-left: 0.5 * convert-length($split-gutter-s, 'rem');
+  .split-inner {
     padding-right: 0.5 * convert-length($split-gutter-s, 'rem');
+    padding-left: 0.5 * convert-length($split-gutter-s, 'rem');
   }
-}
 
-/* =split--<align>
- * -------------------------------------------------------------------------- */
-
-.split--left { direction: ltr; }
-.split--right { direction: rtl; }
-
-.split--left,
-.split--right
-{
-  .split-body,
   .split-object {
-    direction: ltr;
+    margin-left: -1 * convert-length($split-gutter, 'rem');
+    margin-right: -1 * convert-length($split-gutter, 'rem');
   }
 }
 
-/* =split--<balance>
+/* =split (split point)
  * -------------------------------------------------------------------------- */
 
-.split--even,
-.split--uneven
+@include shift('>sm')
 {
-  &.split--left .split-object {
-    text-align: right;
-    padding-left: 0.5 * convert-length($split-gutter, 'rem');
-  }
-
-  &.split--right .split-object {
-    text-align: right;
-    padding-left: 0.5 * convert-length($split-gutter, 'rem');
-  }
-}
-
-.split--even
-{
-  .split-object,
+  .split-inner:before,
   .split-body {
-    width: percentage(6/12);
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .split-inner:before {
+    content: "";
+    min-height: convert-length($split-min-height, 'rem');
   }
 
   .split-body {
-    max-width: (6/12) * $split-inner-max-width;
+    position: relative;
+    left: 50%;
+    width: 50%;
+    padding-left: convert-length($split-gutter-s, 'rem');
   }
-}
 
-.split--uneven
-{
   .split-object {
-    width: percentage(4/12);
+    position: absolute !important;
+    top: 0;
+    right: 50%;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    text-align: right;
   }
 
-  .split-body {
-    width: percentage(8/12);
-    max-width: (8/12) * $split-inner-max-width;
-  }
-}
-
-/* =<bp>-split--<balance>
- * -------------------------------------------------------------------------- */
-
-@each $bp in $split-breakpoints
-{
-  @include shift('>#{$bp}')
+  .split--uneven
   {
-    .#{$bp}-split--even,
-    .#{$bp}-split--uneven
-    {
-      &.split--left .split-object {
-        text-align: right;
-        padding-left: 0.5 * convert-length($split-gutter-s, 'rem');
-      }
-
-      &.split--right .split-object {
-        text-align: right;
-        padding-left: 0.5 * convert-length($split-gutter-s, 'rem');
-      }
+    .split-body {
+      width: percentage(7/12);
+      left: percentage(5/12);
     }
 
-    .#{$bp}-split--even
-    {
-      .split-object,
-      .split-body {
-        width: percentage(6/12);
-      }
+    .split-object {
+      right: percentage(7/12);
+    }
+  }
 
-      .split-body {
-        max-width: (6/12) * $split-inner-max-width;
-      }
+  .split--reverse
+  {
+    .split-body {
+      left: 0;
+      padding-left: 0;
+      padding-right: convert-length($split-gutter-s, 'rem');
     }
 
-    .#{$bp}-split--uneven
-    {
-      .split-object {
-        width: percentage(5/12);
-      }
-
-      .split-body {
-        width: percentage(7/12);
-        max-width: (7/12) * $split-inner-max-width;
-      }
+    .split-object {
+      right: 0;
+      left: 50%;
+      text-align: left;
     }
+  }
+
+  .split--uneven.split--reverse .split-object {
+    left: percentage(7/12);
+  }
+}
+
+$split-inner-max-width-em: convert-length($split-inner-max-width, 'em', 16px);
+@media screen and (min-width: $split-inner-max-width-em)
+{
+  .split--uneven .split-object {
+    right: 50%;
+    margin-right: convert-length(1/12 * $split-inner-max-width, 'rem');
+  }
+
+
+  .split--uneven.split--reverse .split-object {
+    left: 50%;
+    right: 0;
+    margin-left: convert-length(1/12 * $split-inner-max-width, 'rem');
+    margin-right: 0;
   }
 }

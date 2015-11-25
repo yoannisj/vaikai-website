@@ -17,7 +17,7 @@
         <!-- =ConnectedToys-Body -->
         <div class="split-body grid-cell">
           <div class="landmark centrum centrum--left">
-            <h2>{{ section.title }}</h2>
+            <h2 class="h3">{{ section.title }}</h2>
             {{ section.description|paragraphs }}
           </div>
         </div>

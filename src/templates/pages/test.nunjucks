@@ -155,6 +155,73 @@
     <button class="btn js-ctrl" data-target="#multifold2:multifold" data-action="toggle" data-params="false">Toggle MultiFold</button>
   </div>
 
+
+  {# =SPLIT #}
+  <div class="split">
+    <div class="split-inner">
+
+      <div class="split-object sm-crop">
+        <img src="http://www.placehold.it/700x700" alt="" />
+      </div>
+
+      <div class="split-body landmark">
+        <h2 class="h3">Consectetur Elit Etiam Cursus</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quae a maxime veritatis, odit voluptates tempora quidem eius. Reiciendis reprehenderit facilis fuga ipsum repellendus deleniti sequi minus, doloribus consectetur beatae.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi impedit ducimus suscipit iusto, assumenda, unde facere officiis veritatis incidunt. Assumenda dignissimos sed dolorum corporis, debitis dolor adipisci laboriosam dolores iusto!</p>
+      </div>
+
+    </div>
+  </div>
+
+  {# =SPLIT-REVERSE #}
+  <div class="split split--reverse">
+    <div class="split-inner">
+
+      <div class="split-object sm-crop">
+        <img src="http://www.placehold.it/700x700" alt="" />
+      </div>
+
+      <div class="split-body landmark">
+        <h2 class="h3">Consectetur Elit Etiam Cursus</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quae a maxime veritatis, odit voluptates tempora quidem eius. Reiciendis reprehenderit facilis fuga ipsum repellendus deleniti sequi minus, doloribus consectetur beatae.</p>
+      </div>
+
+    </div>
+  </div>
+
+  {# =SPLIT-UNEVEN #}
+  <div class="split split--uneven">
+    <div class="split-inner">
+
+      <div class="split-object sm-crop">
+        <img src="http://www.placehold.it/700x700" alt="" />
+      </div>
+
+      <div class="split-body landmark">
+        <h2 class="h3">Consectetur Elit Etiam Cursus</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quae a maxime veritatis, odit voluptates tempora quidem eius. Reiciendis reprehenderit facilis fuga ipsum repellendus deleniti sequi minus, doloribus consectetur beatae.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam rem nulla impedit quisquam consectetur maxime accusantium aliquid. Delectus facilis quaerat dolorum similique quisquam accusamus ullam beatae itaque voluptate, deleniti! Nemo!</p>
+      </div>
+
+    </div>
+  </div>
+
+  {# =SPLIT-UNEVEN-REVERSE #}
+  <div class="split split--reverse split--uneven">
+    <div class="split-inner">
+
+      <div class="split-object sm-crop">
+        <img src="http://www.placehold.it/700x700" alt="" />
+      </div>
+
+      <div class="split-body landmark">
+        <h2 class="h3">Consectetur Elit Etiam Cursus</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quae a maxime veritatis, odit voluptates tempora quidem eius. Reiciendis reprehenderit facilis fuga ipsum repellendus deleniti sequi minus, doloribus consectetur beatae.</p>
+      </div>
+
+    </div>
+  </div>
+
 {% endblock %}
 
 {% block body_end %}
