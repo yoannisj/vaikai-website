@@ -84,11 +84,15 @@ var Cycler = module.exports = BaseWidget.extend({
     var $current = this.$current,
       $target = this.$items.eq(index);
 
+    this.$el.trigger('before', [this, index]);
+
     $current.removeClass('active');
     $target.addClass('active');
 
     this.current = index;
     this.$current = this.$items.eq(index);
+
+    this.$el.trigger('after', [this, index]);
   },
 
   next: function() {

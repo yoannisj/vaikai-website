@@ -38,7 +38,7 @@ var Collapse = module.exports = BaseWidget.extend({
     // update state
     this._expanded = true;
     this.$el.addClass(this.cname('expanded'));
-    this.$el.trigger('expand');
+    this.$el.trigger('expand', [this]);
 
     return this;
   },
@@ -49,7 +49,7 @@ var Collapse = module.exports = BaseWidget.extend({
     // update state
     this._expanded = false;
     this.$el.removeClass(this.cname('expanded'));
-    this.$el.trigger('collapse');
+    this.$el.trigger('collapse', [this]);
 
     return this;
   },

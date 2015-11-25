@@ -17,7 +17,6 @@ var Popup = module.exports = Collapse.extend({
     if (this._expanded) return this;
 
     // update state
-    Popup.__super__.expand.call(this);
     $body.addClass('has-open-popup');
 
     // listen to descendant closing elements
@@ -26,20 +25,19 @@ var Popup = module.exports = Collapse.extend({
       this.collapse();
     });
 
-    return this;
+    return Popup.__super__.expand.call(this);
   },
 
   collapse: function() {
     if (!this._expanded) return this;
 
     // update state
-    Popup.__super__.collapse.call(this);
     $body.removeClass('has-open-popup');
 
     // stop listenting to descendant closing elements
     this.off('click', this.slct('close', 'backdrop'));
 
-    return this;
+    return Popup.__super__.collapse.call(this);
   },
 
   toggle: function() {

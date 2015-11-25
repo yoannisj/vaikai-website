@@ -5,6 +5,7 @@ require('widgets/gallery');
 require('widgets/carousel');
 require('widgets/toggle');
 
+require('modules/svg');
 require('modules/video');
 
 var MultiFold = require('widgets/multifold');
