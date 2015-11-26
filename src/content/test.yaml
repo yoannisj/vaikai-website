@@ -1,1 +1,118 @@
-title: Title
+title: Test
+
+# resize image to a certain width
+img:
+  path: images/posters/unpacking-party.jpg
+  size: [500, 'auto']
+
+crop_img:
+  path: images/posters/unpacking-party.jpg
+  size: [500, 500]
+
+# make certain widths available
+# use srcset to pick best image width
+resize_img:
+  path: images/posters/unpacking-party.jpg
+  size:
+  - [300, 'auto']
+  - [500, 'auto']
+  - [800, 'auto']
+
+# crop images to a certain ratio and width
+# use srcet to pick width, make given widths available
+recrop_img:
+  path: images/posters/unpacking-party.jpg
+  size:
+  - [300, 300]
+  - [500, 500]
+  - [800, 800]
+
+# resize image to widths adapted to layout
+# use picture to pick best image width
+flexsize_img:
+  path: images/posters/unpacking-party.jpg
+  size:
+    s: [300, 'auto']
+    m: [500, 'auto']
+    l: [800, 'auto']
+
+# crop image to a certain ratio
+# resize image to widths adapted to layout
+# use picture to pick best image width
+flexcrop_img:
+  path: images/posters/unpacking-party.jpg
+  size:
+    s: [300, 300]
+    m: [500, 500]
+    l: [800, 800]
+
+# resize candidates to a given width
+# use picture to select candidate adapted to layout
+# -- not very useful, right?
+ad_img:
+  path:
+    s: images/posters/unpacking-party-portrait.jpg
+    m: images/posters/unpacking-party-square.jpg
+    l: images/posters/unpacking-party-landscape.jpg
+  size: [500, 'auto']
+
+# crop candidates to a certain ratio and width
+# use picture to select candidate adapted to layout
+crop_ad_img:
+  path:
+    s: images/posters/unpacking-party-portrait.jpg
+    m: images/posters/unpacking-party-square.jpg
+    l: images/posters/unpacking-party-landscape.jpg
+  size: [500, 500]
+
+# make certain widths available for all candidates
+# use srcset to pick best image width automatically
+# use picture to select candidate adapted to layout
+resize_ad_img:
+  path:
+    s: images/posters/unpacking-party-portrait.jpg
+    m: images/posters/unpacking-party-square.jpg
+    l: images/posters/unpacking-party-landscape.jpg
+  size:
+  - [300, 'auto']
+  - [500, 'auto']
+  - [800, 'auto']
+
+# crop cadidates to a certain ratio and width
+# make certain widths available for all candidates
+# use srcset to pick best image width automatically
+# use picture to select candidate adapted to layout
+recrop_ad_img:
+  path:
+    s: images/posters/unpacking-party-portrait.jpg
+    m: images/posters/unpacking-party-square.jpg
+    l: images/posters/unpacking-party-landscape.jpg
+  size:
+  - [300, 300]
+  - [500, 500]
+  - [800, 800]
+
+# resize candidates to widths adapted to layout
+# use picture to select candidate and width adapted to layout
+flexsize_ad_img:
+  path:
+    s: images/posters/unpacking-party-portrait.jpg
+    m: images/posters/unpacking-party-square.jpg
+    l: images/posters/unpacking-party-landscape.jpg
+  size:
+    s: [300, 'auto']
+    m: [500, 'auto']
+    l: [800, 'auto']
+
+# crop candidates to a certain ratio and width
+# resize candidates to widths adapted to layout
+# use picture to select candidate and width adapted to layout
+flexcrop_ad_img:
+  path:
+    s: images/posters/unpacking-party-portrait.jpg
+    m: images/posters/unpacking-party-square.jpg
+    l: images/posters/unpacking-party-landscape.jpg
+  size:
+    s: [300, 300]
+    m: [500, 500]
+    l: [800, 800]
