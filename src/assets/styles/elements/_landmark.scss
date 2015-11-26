@@ -1,24 +1,30 @@
 // =============================================================================
-// =LANDMARK
+// =VaiKai - Landmark Element
 // =============================================================================
+
+@import "aleksi/lengths/convert";
 
 // =settings
 // -----------------------------------------------------------------------------
-$landmark-spacing: 40px;
-$landmark-spacing-s: 60px;
+$landmark-spacing: 20px;
+$landmark-spacing-s: 30px;
+$landmark-spacing-sm: 40px;
 
 /* =landmark
  * -------------------------------------------------------------------------- */
 
-.landmark {
+.landmark
+{
   margin-top: convert-length($landmark-spacing, 'rem');
   margin-bottom: convert-length($landmark-spacing, 'rem');
-}
 
-@include shift('>s')
-{
-  .landmark {
+  @include shift('>s') {
     margin-top: convert-length($landmark-spacing-s, 'rem');
     margin-bottom: convert-length($landmark-spacing-s, 'rem');
+  }
+
+  @include shift('>sm') {
+    margin-top: convert-length($landmark-spacing-sm, 'rem');
+    margin-bottom: convert-length($landmark-spacing-sm, 'rem');
   }
 }

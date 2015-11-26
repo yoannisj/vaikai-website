@@ -1,0 +1,25 @@
+// =============================================================================
+// =VaiKai - Milestone Element
+// =============================================================================
+
+@import "aleksi/lengths/convert";
+@import "shift/breakpoint";
+
+// =settings
+// -----------------------------------------------------------------------------
+$milestone-spacing: 50px;
+$milestone-spacing-sm: 100px;
+
+/* =milestone
+ * -------------------------------------------------------------------------- */
+
+.milestone
+{
+  margin-top: convert-length($milestone-spacing, 'rem');
+  margin-bottom: convert-length($milestone-spacing, 'rem');
+
+  @include shift('>s') {
+    margin-top: convert-length($milestone-spacing-sm, 'rem');
+    margin-bottom: convert-length($milestone-spacing-sm, 'rem');
+  }
+}

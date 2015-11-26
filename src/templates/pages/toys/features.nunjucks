@@ -9,40 +9,34 @@
   <div class="chunk">
     <div class="chunk-inner">
 
-      <div class="assert landmark align-center">
-        <h2 class="h3">{{ section.title }}</h2>
-        {{ section.description|paragraphs('s-zeta m-epsilon') }}
-      </div>
+      <div class="milestone">
+        <div class="assert landmark align-center">
+          <h2 class="h3">{{ section.title }}</h2>
+          {{ section.description|paragraphs('s-zeta m-epsilon') }}
+        </div>
 
-    </div>
-  </div>
-  <!-- /Features-Intro -->
+        <div id="features-list" class="align-center js-multifold" data-media="(min-width: 700px)">
+          <div class="js-carousel" data-init="carousel" data-media="(max-width: 699px)">
+            <ul class="grid uilist js-carousel-items">
+              {% for entry in section.entries %}
 
-  <!-- =Features-List -->
-  <div class="chunk">
-    <div class="chunk-inner">
+                <li id="feature-{{ entry.title|slugify }}" class="grid-cell js-multifold-item js-carousel-item sm-span-6of12 m-span-4of12">
 
-      <div id="features-list" class="js-multifold align-center" data-media="(min-width: 700px)">
-        <div class="js-carousel" data-init="carousel" data-media="(max-width: 699px)">
-          <ul class="grid uilist js-carousel-items">
-            {% for entry in section.entries %}
-
-              <li id="feature-{{ entry.title|slugify }}" class="grid-cell js-multifold-item js-carousel-item sm-span-6of12 m-span-4of12">
-
-                <div class="thumb align-center">
-                  <div class="thumb-object ratio-illu median">
-                    {{ img.base(entry.image) }}
+                  <div class="thumb align-center">
+                    <div class="thumb-object ratio-illu median">
+                      {{ img.base(entry.image) }}
+                    </div>
+                    <div class="thumb-body">
+                      <h5>{{ entry.title }}</h5>
+                      {{ entry.description|paragraphs('s-micro') }}
+                    </div>
                   </div>
-                  <div class="thumb-body">
-                    <h5>{{ entry.title }}</h5>
-                    {{ entry.description|paragraphs('s-micro') }}
-                  </div>
-                </div>
 
-              </li>
+                </li>
 
-            {% endfor %}
-          </ul>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </div>
 

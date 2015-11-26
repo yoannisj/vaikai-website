@@ -96,12 +96,17 @@ h6, .h6 { @extend %hN; @extend .base; }
 
 @include shift('>m')
 {
-  h1, .h1 { @extend .m-giga; }
+  h1, .h1 { @extend .m-mega; }
   h2, .h2 { @extend .m-mega; }
   h3, .h3 { @extend .m-kilo; }
   h4, .h4 { @extend .m-beta; }
   h5, .h5 { @extend .m-delta; }
   h6, .h6 { @extend .m-epsilon; }
+}
+
+@include shift('>l')
+{
+  h1, .h1 { @extend .l-giga; }
 }
 
 /* =smallprint

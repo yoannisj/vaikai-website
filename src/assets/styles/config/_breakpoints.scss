@@ -8,6 +8,7 @@
 // feed shift with breakpoints from 'data'
 @each $bp, $width in $breakpoints
 {
+  @debug "bp width:: #{$width}";
   @include shift-set('width', $bp, $width);
 }
 
