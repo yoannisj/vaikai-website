@@ -6,12 +6,13 @@
 // -----------------------------------------------------------------------------
 
 $credit-logo-spacing: 10px;
-$credit-name-font-family: $avant-garde-font-stack;
 $credit-name-font-weight: 400;
+
+$credit-font-family-mention: $avant-garde-font-stack;
+$credit-font-family-quote: $georgia-font-stack;
 
 /* =credit
  * -------------------------------------------------------------------------- */
-
 
 .credit-logo
 {
@@ -25,8 +26,28 @@ $credit-name-font-weight: 400;
 }
 
 .credit-name {
-  @extend .fullcaps;
-  font-family: $credit-name-font-family;
-  font-weight: $credit-name-font-weight;
   text-decoration: none;
+  font-weight: $credit-name-font-weight;
+}
+
+.mention-credit .credit-name {
+  @extend .fullcaps;
+  font-family: $credit-font-family-mention;
+}
+
+.quote-credit {
+  font-family: $credit-font-family-quote;
+}
+.quote-credit .credit-name,
+.quote-credit .credit-description {
+  font-style: italic;
+  // font-family: inherit;
+}
+
+.quote-credit:before {
+  content: "— ";
+}
+
+.quote-credit .credit-name:after {
+  content: ", ";
 }

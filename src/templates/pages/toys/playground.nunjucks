@@ -20,9 +20,9 @@
         {% set credit = section.credit %}
         {% if credit %}
 
-          <figcaption class="quote-credit credit credit--alt">
-            <strong class="credit-name s-zeta m-epsilon">{{ credit.name }}</strong>
-            <small class="credit-description s-base m-zeta">{{ credit.description }}</small>
+          <figcaption class="quote-credit credit">
+            <strong class="credit-name zeta s-epsilon m-delta">{{ credit.name }}</strong>
+            <small class="credit-description base s-zeta m-epsilon">{{ credit.description }}</small>
           </figcaption>
 
         {% endif %}
