@@ -9,7 +9,13 @@
 $green-theme-color: $white;
 $green-theme-background: $green;
 $green-theme-link-color-active: $dark-blue;
+
+$green-theme-input-placeholder-color-active: darken($dark-green, 3%);
+$green-theme-input-border: 2px solid darken($mid-green, 5%);
+$green-theme-input-border-active: 2px solid $dark-green;
+$green-theme-input-background: $mid-green;
 $green-theme-input-background-active: $mid-green;
+
 $green-theme-quote-sign-color: $white;
 $green-theme-slider-bullet-color: $light-gray;
 $green-theme-slider-bullet-color-active: $yellow;
@@ -35,9 +41,20 @@ $green-theme-slider-bullet-color-active: $yellow;
     color: inherit;
   }
 
+  .input {
+    border: $green-theme-input-border;
+    background: $green-theme-input-background;
+  }
+
   .input:focus {
+    border: $green-theme-input-border-active;
     background: $green-theme-input-background-active;
   }
+
+  .input:focus::-webkit-input-placeholder { color: $green-theme-input-placeholder-color-active; opacity: 1; }
+  .input:focus:-moz-placeholder { color: $green-theme-input-placeholder-color-active; opacity: 1; }
+  .input:focus::-moz-placeholder { color: $green-theme-input-placeholder-color-active; opacity: 1; }
+  .input:focus:-ms-input-placeholder { color: $green-theme-input-placeholder-color-active; opacity: 1; }
 
   .quote:before {
     color: $green-theme-quote-sign-color;

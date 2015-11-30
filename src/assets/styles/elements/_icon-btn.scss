@@ -7,13 +7,16 @@
 
 // =settings
 // -----------------------------------------------------------------------------
-$icon-btn-width: $btn-height;
+$icon-btn-width: $btn-height + 20px;
 
 /* =icon-btn
  * -------------------------------------------------------------------------- */
 
-.icon-btn {
+.icon-btn
+{
   @extend %btn-core;
-  @extend %icon-core;
+  @extend .icon;
   width: convert-length($icon-btn-width, 'rem'); /* square icon-btn */
+  padding-left: 0;
+  padding-right: 0;
 }

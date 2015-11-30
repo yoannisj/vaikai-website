@@ -29,9 +29,9 @@
             <ul class="grid uilist js-carousel-items">
               {% for entry in section.entries %}
 
-                <li id="feature-{{ entry.title|slugify }}" class="grid-cell js-multifold-item js-carousel-item sm-span-6of12 m-span-4of12">
+                <li id="feature-{{ entry.title|slugify }}" class="grid-cell landmark js-multifold-item js-carousel-item sm-span-6of12 m-span-4of12">
 
-                  <div class="thumb landmark align-center">
+                  <div class="thumb align-center">
                     <div class="thumb-object ratio-illu median">
                       {{ img.base(entry.image) }}
                     </div>

@@ -32,7 +32,8 @@ $grid-gutter-m: 40px;
 /* =grid-cell
  * -------------------------------------------------------------------------- */
 
-.grid-cell {
+.grid-cell
+{
   @extend .ws-reset;
 
   display: inline-block;
@@ -40,4 +41,7 @@ $grid-gutter-m: 40px;
   width: 100%;
   @include gutter($grid-gutter);
 
+  &.landmark {
+    margin-bottom: 0;
+  }
 }

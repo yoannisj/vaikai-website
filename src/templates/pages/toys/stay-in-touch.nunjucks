@@ -23,14 +23,28 @@
 
           {% call frm.mailchimp(section.form) %}
 
-            {{ frm.fields(section.form.fields) }}
+            {# TODO: Create input-groups with nunjucks macros #}
+            {% set form_email = section.form.fields.EMAIL %}
+            {% set form_submit = section.form.controls[0] %}
 
-            <div class="form-controls">
-              {% set form_submit = section.form.controls[0] %}
+            <div class="form-group">
+              <div class="form-field field field--email">
+                <div class="input-group">
+                  <label for="input-email" class="sr-only">{{ form_email.label }}</label>
+                  <input id="input-email" name="EMAIL" class="field-control input input--email" type="email" placeholder="{{ form_email.placeholder }}" />
+                  <button class="input-btn icon-btn" type="submit">
+                    {{ sym.icon(form_submit.icon, form_submit.label) }}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {# {{ frm.fields(section.form.fields) }} #}
+            {# <div class="form-controls">
               {% call ctrl.submit( form_submit ) %}
                 {{ sym.preIcon(form_submit.icon, form_submit.label) }}
               {% endcall %}
-            </div>
+            </div> #}
 
           {% endcall %}
 

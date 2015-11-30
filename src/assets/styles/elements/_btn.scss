@@ -8,15 +8,10 @@
 // =settings
 // -----------------------------------------------------------------------------
 $btn-font-family: $avant-garde-font-stack;
-$btn-font-size: typescale-font-size('base');
-$btn-min-width: 120px;
-$btn-height: 45px;
-$btn-gutter: 10px;
-
-$btn-font-size-m: typescale-font-size('zeta');
-$btn-min-width-m: 200px;
-$btn-height-m: 55px;
-$btn-gutter-m: 20px;
+$btn-font-size: typescale-font-size('zeta');
+$btn-min-width: 140px;
+$btn-height: 55px;
+$btn-gutter: 30px;
 
 $btn-color: $white;
 $btn-color-active: $btn-color;
@@ -38,6 +33,7 @@ $btn-adjust-valign: 3px;
   height: convert-length($btn-height, 'em', $btn-font-size);
   padding: 0; // reset <button> elements
   border: none;
+  border-radius: convert-length(ceil($btn-height/2), 'em', $btn-font-size);
 
   font-family: $btn-font-family;
   font-size: convert-length($btn-font-size, 'rem');
@@ -58,12 +54,6 @@ $btn-adjust-valign: 3px;
     color: $btn-color-active;
     background: $btn-background-active;
   }
-
-  @include shift('>m') {
-    font-size: convert-length($btn-font-size-m, 'rem');
-    line-height: convert-length($btn-height-m + $btn-adjust-valign, 'em', $btn-font-size-m);
-    height: convert-length($btn-height-m, 'em', $btn-font-size-m);
-  }
 }
 
 /* =btn
@@ -73,11 +63,6 @@ $btn-adjust-valign: 3px;
   @extend %btn-core;
   min-width: convert-length($btn-min-width, 'em', $btn-font-size);
   @include gutter($btn-gutter, 'em', $btn-font-size);
-
-  @include shift('>s') {
-    min-width: convert-length($btn-min-width-m, 'em', $btn-font-size-m);
-    @include gutter($btn-gutter-m, 'em', $btn-font-size-m);
-  }
 }
 
 /* =btn--<theme>

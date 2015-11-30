@@ -125,6 +125,7 @@ body,
 .navbar-btn {
   @include bleed($navbar-item-spacing/2);
   font-size: convert-length($navbar-btn-font-size, 'rem');
+  border-radius: 0;
 }
 
 

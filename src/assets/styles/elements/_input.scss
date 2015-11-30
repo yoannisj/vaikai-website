@@ -4,14 +4,18 @@
 
 // =settings
 // -----------------------------------------------------------------------------
-$input-font-size: typescale-font-size('base');
-$input-font-size-s: typescale-font-size('zeta');
-$input-height: 50px;
-$input-border-width: 2px;
+$input-font-size: typescale-font-size('zeta');
+$input-height: 55px;
+$input-border: 2px solid rgba($base-text-color, 0.2);
 $input-max-width: 440px;
+$input-gutter: 20px;
+
 $input-placeholder-transition: opacity 0.35s ease-out;
 $input-placeholder-font-family: Georgia, serif;
 $input-background-active: $light-gray;
+
+$input-btn-width: 70px;
+$input-btn-offset: 5px;
 
 /* =input
  * -------------------------------------------------------------------------- */
@@ -21,10 +25,9 @@ $input-background-active: $light-gray;
   width: 100%; /* full width */
   max-width: convert-length($input-max-width, 'em', $input-font-size);
   height: convert-length($input-height, 'em', $input-font-size);
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: $input-border-width solid;
+  padding: 0 convert-length($input-gutter, 'em', $input-font-size);
+  border: $input-border;
+  border-radius: convert-length(ceil($input-height/2), 'em', $input-font-size);
 
   font-size: convert-length($input-font-size, 'rem');
   line-height: convert-length($input-height, 'em', $input-font-size);
@@ -32,16 +35,14 @@ $input-background-active: $light-gray;
   color: inherit;
   background: transparent;
 
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   &:focus {
     outline: 0;
     background: $input-background-active;
   }
-
-  @include shift('>s') {
-    font-size: convert-length($input-font-size-s, 'rem');
-  }
 }
-
 
 /* =input-placeholders
  * -------------------------------------------------------------------------- */
@@ -78,3 +79,28 @@ $input-background-active: $light-gray;
   &:focus:-ms-input-placeholder { color: #000; opacity: 0.15; }
 }
 
+/* =input-buttons
+ * -------------------------------------------------------------------------- */
+
+.input-group
+{
+  position: relative;
+  display: inline-block;
+  width: 100%; /* full width */
+  max-width: convert-length($input-max-width, 'rem');
+
+  .input {
+    padding-right: convert-length($input-gutter/2 + $input-btn-width, 'em', $input-font-size);
+  }
+}
+
+.input-btn
+{
+  position: absolute;
+  top: convert-length($input-btn-offset, 'em', $input-font-size);
+  right: convert-length($input-btn-offset, 'em', $input-font-size);
+
+  width: convert-length($input-btn-width, 'em', $input-font-size);
+  height: convert-length($input-height - (2*$input-btn-offset), 'em', $input-font-size);
+  line-height: convert-length($input-height - (2*$input-btn-offset), 'em', $input-font-size);
+}
