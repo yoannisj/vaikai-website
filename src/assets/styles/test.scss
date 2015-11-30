@@ -2,4 +2,63 @@
 // =VaiKai - Test Stylesheet
 // =============================================================================
 
-@import "widgets/carousel";
+@import "aleksi/lengths/convert";
+@import "shift/breakpoint";
+@import "config/breakpoints";
+
+// =settings
+// -----------------------------------------------------------------------------$root-font-size: 16px;
+$root-font-size: 16px;
+$base-font-size: 20px;
+
+/* =convert-font-sizes
+ * -------------------------------------------------------------------------- */
+
+html {
+  font-size: percentage($root-font-size/16px);
+  padding: convert-length(0, 'rem');
+  width: convert-length(0px, 'em', 20px);
+  height: convert-length(0px, 'em', 20px);
+  margin: convert-lengths(10px auto, 'em');
+}
+
+body {
+  font-size: convert-length($base-font-size, 'em', $root-font-size);
+}
+
+.em-fs {
+  font-size: convert-length(25px, 'em');
+}
+
+.rem-fs {
+  font-size: convert-length(25px, 'rem');
+}
+
+// html font-size: 16px
+// body font-size: 20px
+// em-fs font-size: 25px
+// rem-fs font-size: 25px
+
+@include shift('>sm')
+{
+  body {
+    font-size: convert-length(22px, 'em', $root-font-size);
+  }
+
+  // html font-size: 16px
+  // body font-size: 22px
+  // em-fs font-size: 27.5px
+  // rem-fs font-size: 25px
+}
+
+@include shift('>l')
+{
+  html {
+    font-size: percentage(18px/16px);
+  }
+
+  // html font-size: 18px
+  // body font-size: 24.75px
+  // em-fs font-size: 30.9375px
+  // rem-fs font-size: 28.125px
+}

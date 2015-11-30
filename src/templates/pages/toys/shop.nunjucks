@@ -17,9 +17,9 @@
 
       <!-- =Shop-Body -->
       <div class="split-body">
-        <div class="landmark">
+        <div class="milestone">
           <header>
-            <h2 class="h4">{{ section.title }}</h2>
+            <h2 class="h3">{{ section.title }}</h2>
           </header>
           <div>
             {{ section.description|paragraphs }}

@@ -8,9 +8,9 @@
 // =settings
 // -----------------------------------------------------------------------------
 
-$form-group-spacing: 50px;
-$form-group-spacing-m: 30px;
-$form-field-spacing: 10px;
+$form-group-spacing: 30px;
+$form-group-spacing-m: 50px;
+$form-field-spacing: 15px;
 
 /* =form
  * -------------------------------------------------------------------------- */
@@ -21,4 +21,11 @@ $form-field-spacing: 10px;
 
 .form-field {
   margin: 0 0 convert-length($form-field-spacing, 'rem') 0;
+}
+
+@include shift('>m')
+{
+  .form-group {
+    margin-bottom: convert-length($form-group-spacing-m, 'rem');
+  }
 }

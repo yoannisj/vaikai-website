@@ -8,7 +8,7 @@
 // =settings
 // -----------------------------------------------------------------------------
 $shout-out-font-family: $avant-garde-font-stack;
-$shout-out-font-size: typescale-font-size('zeta');
+$shout-out-font-size: typescale-font-size('base');
 $shout-out-font-size-s: typescale-font-size('epsilon');
 $shout-out-font-size-sm: typescale-font-size('delta');
 
@@ -20,11 +20,11 @@ $shout-out-font-size-sm: typescale-font-size('delta');
   font-family: $shout-out-font-family;
   font-size: convert-length($shout-out-font-size, 'em');
 
-  @include shift('>s') {
-    font-size: convert-length($shout-out-font-size-s, 'em');
-  }
+  // @include shift('>s') {
+  //   font-size: convert-length($shout-out-font-size-s, 'em');
+  // }
 
-  @include shift('>sm') {
-    font-size: convert-length($shout-out-font-size-sm, 'em');
-  }
+  // @include shift('>sm') {
+  //   font-size: convert-length($shout-out-font-size-sm, 'em');
+  // }
 }

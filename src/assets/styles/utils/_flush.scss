@@ -1,0 +1,56 @@
+// =============================================================================
+// =UTILS - FLUSH
+// =============================================================================
+
+// =settings
+// -----------------------------------------------------------------------------
+$flush-breakpoints: ();
+
+/* =flush
+ * -------------------------------------------------------------------------- */
+
+.flush,
+.flush-top {
+  margin-top: 0;
+}
+
+.flush,
+.flush-right {
+  margin-right: 0;
+}
+
+.flush,
+.flush-bottom {
+  margin-bottom: 0;
+}
+
+.flush,
+.flush-left {
+  margin-left: 0;
+}
+
+/* =<bp>-flush
+ * -------------------------------------------------------------------------- */
+
+@each $bp in $flush-breakpoints
+{
+  .#{$bp}-flush,
+  .#{$bp}-flush-top {
+    margin-top: 0;
+  }
+
+  .#{$bp}-flush,
+  .#{$bp}-flush-right {
+    margin-right: 0;
+  }
+
+  .#{$bp}-flush,
+  .#{$bp}-flush-bototm {
+    margin-bototm: 0;
+  }
+
+  .#{$bp}-flush,
+  .#{$bp}-flush-left {
+    margin-left: 0;
+  }
+}

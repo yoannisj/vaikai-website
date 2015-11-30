@@ -13,20 +13,9 @@
         <div class="cover-object ratio-flex" style="background-image: url({{ ('images/' ~ section.poster)|url }});" aria-hidden="true">
         </div>
         <div class="cover-body overlay nucleon">
-          <div class="landmark" role="presentation">
-            {# <h2 class="epsilon s-gamma m-alpha">
-              {% set control = section.control|merge({
-                type: 'toggle',
-                target: 'unpacking-video',
-                action: 'popup:toggle',
-              }) %}
-
-              {% call ctrl[control.type](control) %}
-                {{ symbol(control.icon, 'Watch the unpacking video', 'icon--lg') }}
-              {% endcall %}
-            </h2> #}
-            <h2>Coming soon</h2>
-            {{ section.caption|paragraphs('epsilon s-gamma m-alpha') }}
+          <div class="milestone" role="presentation">
+            <h2 class="h1">Coming soon</h2>
+            {{ section.caption|paragraphs('epsilon s-gamma m-beta l-alpha') }}
           </div>
         </div>
       </div>

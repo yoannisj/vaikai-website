@@ -5,10 +5,17 @@
 @import "shift/set";
 @import "../../data.json";
 
+$breakpoints: (
+  "s": 520,
+  "sm": 700,
+  "m": 920,
+  "l": 1280,
+  "xl": 1700
+) !default;
+
 // feed shift with breakpoints from 'data'
 @each $bp, $width in $breakpoints
 {
-  @debug "bp width:: #{$width}";
   @include shift-set('width', $bp, $width);
 }
 

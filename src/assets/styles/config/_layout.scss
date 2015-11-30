@@ -13,7 +13,8 @@ $layout-gutter-m: 40px;
 
 // =vertical spacing
 // -----------------------------------------------------------------------------
-$base-spacing-vertical: convert-length($base-font-size, 'px');
+$base-spacing-vertical: typescale-line-height('base', 'px');
+// $base-spacing-vertical: typescale-font-size('base', 'px');
 
 // =ratios
 // -----------------------------------------------------------------------------

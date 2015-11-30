@@ -20,7 +20,7 @@ $quote-sign-color: $blue;
 
 .quote
 {
-  margin-top: convert-length($quote-sign-font-size * $quote-sign-font-line-height, 'em');
+  // margin-top: convert-length($quote-sign-font-size * $quote-sign-font-line-height, 'em');
 
   &:before {
     content: "”";

@@ -6,8 +6,8 @@
 
 // =settings
 // -----------------------------------------------------------------------------
-$chunk-max-width: 1240px;
-$chunk-max-width-narrow: 1120px;
+$chunk-max-width: 1300px;
+$chunk-max-width-narrow: 1080px;
 $chunk-gutter: 20px;
 $chunk-gutter-s: 40px;
 
@@ -16,13 +16,13 @@ $chunk-gutter-s: 40px;
 
 .chunk {
   position: relative;
-  overflow: hidden;
 }
 
 .chunk-inner {
   width: 100%;
   max-width: $chunk-max-width;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: convert-length($chunk-gutter, 'em');
   padding-right: convert-length($chunk-gutter, 'em');
 

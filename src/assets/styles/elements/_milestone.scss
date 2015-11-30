@@ -8,7 +8,7 @@
 // =settings
 // -----------------------------------------------------------------------------
 $milestone-spacing: 50px;
-$milestone-spacing-sm: 100px;
+$milestone-spacing-sm: 70px;
 
 /* =milestone
  * -------------------------------------------------------------------------- */
@@ -18,7 +18,7 @@ $milestone-spacing-sm: 100px;
   margin-top: convert-length($milestone-spacing, 'rem');
   margin-bottom: convert-length($milestone-spacing, 'rem');
 
-  @include shift('>s') {
+  @include shift('>sm') {
     margin-top: convert-length($milestone-spacing-sm, 'rem');
     margin-bottom: convert-length($milestone-spacing-sm, 'rem');
   }

@@ -7,11 +7,11 @@
 
 {% call sect.base(section) %}
 
-  <div class="chunk chunk--bleed">
+  <div class="chunk">
     <div class="chunk-inner">
 
       <!-- Playground-Quote -->
-      <figure class="quote landmark align-center">
+      <figure class="quote milestone align-center">
         <h3 class="sr-only">{{ section.title }}</h3>
         <blockquote class="quote-text">
           {{ section.quote|paragraphs('epsilon s-gamma m-beta l-alpha') }}

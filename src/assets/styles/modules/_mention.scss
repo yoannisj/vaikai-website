@@ -21,7 +21,8 @@ $mention-separator-color: $mid-gray;
 
 .mention {
   max-width: 400px;
-  margin: convert-length($mention-spacing, 'rem') auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mention-quote {

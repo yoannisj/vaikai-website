@@ -14,18 +14,18 @@
   <div class="chunk chunk--narrow">
     <div class="chunk-inner">
 
-      <div class="grid grid--middle">
+      <div class="intro grid grid--middle">
         <!-- =Intro-Object -->
-        <div class="grid-cell span-4of12 sm-span-5of12 m-span-6of12 avk-duo scrollme">
+        <div class="intro-object grid-cell span-4of12 sm-span-5of12 m-span-6of12 avk-duo scrollme">
           {% include 'objects/avakai-animation.nunjucks' %}
         </div>
         <!-- /Intro-Object -->
 
         <!-- =Intro-Body -->
-        <div class="grid-cell span-8of12 sm-span-7of12 m-span-6of12">
+        <div class="intro-body grid-cell span-8of12 sm-span-7of12 m-span-6of12">
           <div class="milestone">
             <h2 class="h1">{{ section.title }}</h2>
-            {{ section.description|paragraphs('s-zeta m-epsilon l-delta') }}
+            {{ section.description|paragraphs('s-zeta m-epsilon m-delta') }}
 
             <p class="landmark">
               {% call ctrl.link(section.control|merge({
@@ -33,7 +33,7 @@
                 url: 'http://vimeo.com/' ~ section.video.id,
                 target: 'intro-video:popup',
                 action: 'open'
-              }), 'link-quiet shoutout', popup_condition) %}
+              }), 'link-quiet shoutout zeta s-epsilon sm-delta m-gamma', popup_condition) %}
 
                 {{ sym.preIcon(section.control.icon, section.control.label, 'icon--md') }}
 

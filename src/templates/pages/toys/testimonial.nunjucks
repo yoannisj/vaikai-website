@@ -6,7 +6,7 @@
   <div class="chunk">
     <div class="chunk-inner">
 
-      <div class="quote landmark align-center">
+      <div class="quote milestone align-center">
         <h3>{{ section.title }}</h3>
 
         <!-- =Testimonial-Carousel -->
@@ -16,7 +16,7 @@
 
               <li id="mention-{{ entry.title|slugify }}" class="js-carousel-item grid-cell s-span-6of12 m-span-4of12">
 
-                <figure class="mention">
+                <figure class="mention landmark">
                   <blockquote class="mention-quote">{{ entry.quote|trim }}</blockquote>
 
                   {% set credit = entry.credit %}

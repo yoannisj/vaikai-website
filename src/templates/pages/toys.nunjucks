@@ -16,7 +16,7 @@
   {# splash screen #}
   <div class="chunk chunk--narrow">
     <div class="chunk-inner">
-      {% include 'partials/splash.nunjucks' %}
+      {% include 'objects/splash.nunjucks' %}
     </div>
   </div>
 

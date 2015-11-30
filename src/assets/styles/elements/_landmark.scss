@@ -6,9 +6,8 @@
 
 // =settings
 // -----------------------------------------------------------------------------
-$landmark-spacing: 20px;
-$landmark-spacing-s: 30px;
-$landmark-spacing-sm: 40px;
+$landmark-spacing: 25px;
+$landmark-spacing-sm: 35px;
 
 /* =landmark
  * -------------------------------------------------------------------------- */
@@ -18,13 +17,11 @@ $landmark-spacing-sm: 40px;
   margin-top: convert-length($landmark-spacing, 'rem');
   margin-bottom: convert-length($landmark-spacing, 'rem');
 
-  @include shift('>s') {
-    margin-top: convert-length($landmark-spacing-s, 'rem');
-    margin-bottom: convert-length($landmark-spacing-s, 'rem');
-  }
-
   @include shift('>sm') {
     margin-top: convert-length($landmark-spacing-sm, 'rem');
     margin-bottom: convert-length($landmark-spacing-sm, 'rem');
   }
+
+  // &:first-child, > :first-child { margin-top: 0; }
+  // &:last-child, > :last-child { margin-bottom: 0; }
 }

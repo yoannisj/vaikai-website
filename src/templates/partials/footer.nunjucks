@@ -1,43 +1,44 @@
 {% import 'macros/link.nunjucks' as ln %}
 
-<div class="footer-nav landmark align-center">
+<div class="page-inner">
+  <div class="footer-nav milestone align-center">
 
-  <div class="social-nav">
-    <ul class="social-links hlist">
-      <li>
-        {{ ln.icon(data.social.facebook, 'facebook-fill', 'sticker sticker--facebook') }}
-      </li>
-      <li>
-        {{ ln.icon(data.social.twitter, 'twitter-fill', 'sticker sticker--twitter') }}
-      </li>
-      <li>
-        {{ ln.icon(data.social.pinterest, 'pinterest', 'sticker sticker--pinterest') }}
-      </li>
-      <li>
-        {{ ln.icon(data.social.instagram, 'instagram-fill', 'sticker sticker--instagram') }}
-      </li>
-      <li>
-        {{ ln.icon(data.social.youtube, 'youtube', 'sticker sticker--youtube') }}
-      </li>
-    </ul>
+    <div class="social-nav">
+      <ul class="social-links hlist">
+        <li>
+          {{ ln.icon(data.social.facebook, 'facebook-fill', 'sticker sticker--facebook') }}
+        </li>
+        <li>
+          {{ ln.icon(data.social.twitter, 'twitter-fill', 'sticker sticker--twitter') }}
+        </li>
+        <li>
+          {{ ln.icon(data.social.pinterest, 'pinterest', 'sticker sticker--pinterest') }}
+        </li>
+        <li>
+          {{ ln.icon(data.social.instagram, 'instagram-fill', 'sticker sticker--instagram') }}
+        </li>
+        <li>
+          {{ ln.icon(data.social.youtube, 'youtube', 'sticker sticker--youtube') }}
+        </li>
+      </ul>
+    </div>
+
+    <nav id="navigation" class="subnav nav">
+      <ul class="subnav-links nav-links hlist sep-pipe">
+
+        {% for item in data.main_nav %}
+          <li class="subnav-item nav-item">
+            {{ ln.nav(item, page.url) }}
+          </li>
+        {% endfor %}
+
+        {% for item in data.sub_nav %}
+          <li class="subnav-item nav-item">
+            {{ ln.nav(item, page.url) }}
+          </li>
+        {% endfor %}
+
+      </ul>
+    </nav>
   </div>
-
-  <nav id="navigation" class="subnav nav">
-    <br />
-    <ul class="subnav-links nav-links hlist sep-pipe">
-
-      {% for item in data.main_nav %}
-        <li class="subnav-item nav-item">
-          {{ ln.nav(item, page.url) }}
-        </li>
-      {% endfor %}
-
-      {% for item in data.sub_nav %}
-        <li class="subnav-item nav-item">
-          {{ ln.nav(item, page.url) }}
-        </li>
-      {% endfor %}
-
-    </ul>
-  </nav>
 </div>

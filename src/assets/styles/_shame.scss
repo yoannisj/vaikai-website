@@ -24,12 +24,23 @@
   }
 }
 
+.section {
+  overflow: hidden;
+}
+
+#intro .intro-body {
+  position: relative;
+  z-index: 50; /* on top of 'intro-object' */
+}
+
+
 @include shift('l')
 {
   #intro h2 {
     white-space: nowrap;
   }
 }
+
 
 #reaction .ratio-16by9 {
   max-width: none;

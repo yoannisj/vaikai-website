@@ -5,36 +5,38 @@
 
 {% call sect.base(section) %}
 
-  <div class="chunk">
+  <div class="chunk chunk--narrow">
     <div class="chunk-inner">
 
-      <!-- =Newsletter-Intro -->
-      <div class="landmark assert align-center">
-        <h3 class="assert-title">{{ section.title }}</h3>
-        <div class="assert-text">
-          {{ section.description|paragraphs('s-zeta m-epsilon') }}
-        </div>
-      </div>
-      <!-- /Newsletter-Intro -->
-
-      <!-- =Newsletter-Form -->
-      <div class="landmark align-center">
-
-        {% call frm.mailchimp(section.form) %}
-
-          {{ frm.fields(section.form.fields) }}
-
-          <div class="form-controls">
-            {% set form_submit = section.form.controls[0] %}
-            {% call ctrl.submit( form_submit ) %}
-              {{ sym.preIcon(form_submit.icon, form_submit.label) }}
-            {% endcall %}
+      <div class="milestone">
+        <!-- =Newsletter-Intro -->
+        <div class="landmark assert align-center">
+          <h3 class="assert-title">{{ section.title }}</h3>
+          <div class="assert-text">
+            {{ section.description|paragraphs('s-zeta m-epsilon') }}
           </div>
+        </div>
+        <!-- /Newsletter-Intro -->
 
-        {% endcall %}
+        <!-- =Newsletter-Form -->
+        <div class="landmark align-center">
 
+          {% call frm.mailchimp(section.form) %}
+
+            {{ frm.fields(section.form.fields) }}
+
+            <div class="form-controls">
+              {% set form_submit = section.form.controls[0] %}
+              {% call ctrl.submit( form_submit ) %}
+                {{ sym.preIcon(form_submit.icon, form_submit.label) }}
+              {% endcall %}
+            </div>
+
+          {% endcall %}
+
+        </div>
+        <!-- /Newsletter-Form -->
       </div>
-      <!-- /Newsletter-Form -->
 
     </div>
   </div>

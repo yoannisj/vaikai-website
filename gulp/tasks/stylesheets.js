@@ -5,8 +5,8 @@ function compileStylesheets() {
 
   return slurp.src('stylesheets')
     .pipe(slurp.plumber())
-    // .pipe(slurp.plugin('sass'))
     .pipe(slurp.plugin('compass'))
+    // .pipe(slurp.plugin('sass'))
     .pipe(slurp.plugin('postcss'))
     .pipe(slurp.env.dev ? slurp.noop() : slurp.plugin('minifyCss'))
     .pipe(slurp.dest('stylesheets'))

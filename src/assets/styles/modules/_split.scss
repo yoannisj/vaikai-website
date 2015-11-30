@@ -9,7 +9,9 @@
 
 // =settings
 // -----------------------------------------------------------------------------
-$split-min-height: 670px;
+$split-min-height: 580px;
+$split-min-height-m: 630px;
+$split-min-height-l: 670px;
 $split-inner-max-width: 1120px;
 $split-gutter: 20px;
 $split-gutter-s: 40px;
@@ -155,5 +157,19 @@ $split-inner-max-width-em: convert-length($split-inner-max-width, 'em', 16px);
     right: 0;
     margin-left: convert-length(1/12 * $split-inner-max-width, 'rem');
     margin-right: 0;
+  }
+}
+
+@include shift('>m')
+{
+  .split-inner:before {
+    min-height: $split-min-height-m;
+  }
+}
+
+@include shift('>l')
+{
+  .split-inner:before {
+    min-height: $split-min-height-l;
   }
 }

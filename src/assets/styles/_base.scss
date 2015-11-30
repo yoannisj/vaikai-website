@@ -16,22 +16,24 @@
 }
 
 html {
-  font-size: percentage($root-font-size/16px);
-  line-height: $base-line-height;
-  color: $base-text-color;
-  background: $base-background-color;
-}
-
-body
-{
-  margin: 0;
   font-family: $base-font-family;
   font-weight: $base-font-weight;
-  @include typescale('micro');
+  font-size: percentage($root-font-size/16px);
 
-  @include shift('>s') {
-    @include typescale('base');
+  color: $base-text-color;
+  background: $base-background-color;
+
+  font-size: percentage(16px/16px);
+
+  // reduce font-size and spacing on small screens
+  @media (max-width: 27.5em) {
+    font-size: percentage(16/18); // we want 'base' font-size to equal 16px
   }
+}
+
+body {
+  margin: 0;
+  @include typescale('base', 16px);
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -72,7 +74,7 @@ img {
   color: $base-heading-color;
 }
 
-h1, .h1 { @extend %hN; @extend .beta; }
+h1, .h1 { @extend %hN; @extend .alpha; }
 h2, .h2 { @extend %hN; @extend .gamma; }
 h3, .h3 { @extend %hN; @extend .delta; }
 h4, .h4 { @extend %hN; @extend .epsilon; }
@@ -82,8 +84,8 @@ h6, .h6 { @extend %hN; @extend .base; }
 @include shift('>s')
 {
   h1, .h1 { @extend .s-kilo; }
-  h2, .h2 { @extend .s-alpha; }
-  h3, .h3 { @extend .s-beta; }
+  h2, .h2 { @extend .s-beta; }
+  h3, .h3 { @extend .s-gamma; }
   h4, .h4 { @extend .s-delta; }
   h5, .h5 { @extend .s-epsilon; }
   h6, .h6 { @extend .s-zeta; }
@@ -97,9 +99,9 @@ h6, .h6 { @extend %hN; @extend .base; }
 @include shift('>m')
 {
   h1, .h1 { @extend .m-mega; }
-  h2, .h2 { @extend .m-mega; }
-  h3, .h3 { @extend .m-kilo; }
-  h4, .h4 { @extend .m-beta; }
+  h2, .h2 { @extend .m-kilo; }
+  h3, .h3 { @extend .m-beta; }
+  h4, .h4 { @extend .m-gamma; }
   h5, .h5 { @extend .m-delta; }
   h6, .h6 { @extend .m-epsilon; }
 }
@@ -107,6 +109,7 @@ h6, .h6 { @extend %hN; @extend .base; }
 @include shift('>l')
 {
   h1, .h1 { @extend .l-giga; }
+  h3, .h3 { @extend .l-alpha; }
 }
 
 /* =smallprint

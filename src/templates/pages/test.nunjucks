@@ -102,7 +102,7 @@
   </div> #}
 
   {# =FOLD #}
-  <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
+  {# <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
     <div id="fold" class="js-fold is-collapsed" style="background: aqua;">
       <h4 class="js-fold-summary" style="background: yellow;">
         <a class="blocklink quietlink js-ctrl" href="#fold-boy" data-target="#fold:fold" data-action="toggle" data-params="true">Fold Title</a>
@@ -111,10 +111,10 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus dolor, ipsam quam sequi numquam, atque recusandae alias dicta ad consectetur sed qui porro eveniet ab fugit quibusdam similique impedit iusto.</p>
       </div>
     </div>
-  </div>
+  </div> #}
 
   {# =MULTIFOLD #}
-  <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
+  {# <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
     <div id="multifold" class="js-multifold is-collapsed">
       <ul class="uilist grid">
 
@@ -135,10 +135,10 @@
       </ul>
     </div>
     <button class="btn js-ctrl" data-target="#multifold:multifold" data-action="toggle" data-params="true">Toggle MultiFold</button>
-  </div>
+  </div> #}
 
   {# =MULTIFOLD #}
-  <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
+  {# <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
     <div id="multifold2" class="js-multifold is-collapsed">
       <ul class="uilist grid">
 
@@ -153,11 +153,11 @@
       </ul>
     </div>
     <button class="btn js-ctrl" data-target="#multifold2:multifold" data-action="toggle" data-params="false">Toggle MultiFold</button>
-  </div>
+  </div> #}
 
 
   {# =SPLIT #}
-  <div class="split">
+  {# <div class="split">
     <div class="split-inner">
 
       <div class="split-object sm-crop">
@@ -171,10 +171,10 @@
       </div>
 
     </div>
-  </div>
+  </div> #}
 
   {# =SPLIT-REVERSE #}
-  <div class="split split--reverse">
+  {# <div class="split split--reverse">
     <div class="split-inner">
 
       <div class="split-object sm-crop">
@@ -187,10 +187,10 @@
       </div>
 
     </div>
-  </div>
+  </div> #}
 
   {# =SPLIT-UNEVEN #}
-  <div class="split split--uneven">
+  {# <div class="split split--uneven">
     <div class="split-inner">
 
       <div class="split-object sm-crop">
@@ -204,10 +204,10 @@
       </div>
 
     </div>
-  </div>
+  </div> #}
 
   {# =SPLIT-UNEVEN-REVERSE #}
-  <div class="split split--reverse split--uneven">
+  {# <div class="split split--reverse split--uneven">
     <div class="split-inner">
 
       <div class="split-object sm-crop">
@@ -220,6 +220,21 @@
       </div>
 
     </div>
+  </div> #}
+
+  <div style="margin: 100px auto; max-width: 760px; padding: 0 1.25rem;">
+    <h4>Base font-size</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, culpa eius in quam hic cupiditate ad quaerat officia corrupti, qui dicta omnis velit quo optio fuga, dolor cumque molestias maiores?</p>
+  </div>
+
+  <div style="margin: 100px auto; max-width: 760px; padding: 0 1.25rem;">
+    <h4>Em font-size</h4>
+    <p class="em-fs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, culpa eius in quam hic cupiditate ad quaerat officia corrupti, qui dicta omnis velit quo optio fuga, dolor cumque molestias maiores?</p>
+  </div>
+
+  <div style="margin: 100px auto; max-width: 760px; padding: 0 1.25rem;">
+    <h4>Rem font-size</h4>
+    <p class="rem-fs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, culpa eius in quam hic cupiditate ad quaerat officia corrupti, qui dicta omnis velit quo optio fuga, dolor cumque molestias maiores?</p>
   </div>
 
 {% endblock %}
