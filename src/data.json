@@ -22,7 +22,7 @@
 
   "main-nav": [{
     "title": "Toys",
-    "url": "'toys.html'"
+    "url": "'index.html'"
   }, {
     "title": "Company",
     "url": "'company.html'"
