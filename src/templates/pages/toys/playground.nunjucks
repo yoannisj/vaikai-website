@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <!-- =Playground-Gallery -->
+  {# <!-- =Playground-Gallery -->
   <div id="playground-gallery" class="chunk chunk--fullbleed">
     <div class="chunk-inner">
 
@@ -80,6 +80,6 @@
 
     </div>
   </div>
-  <!-- /Playground-Gallery -->
+  <!-- /Playground-Gallery --> #}
 
 {% endcall %}
