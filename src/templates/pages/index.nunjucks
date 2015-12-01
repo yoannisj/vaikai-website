@@ -24,6 +24,5 @@
 
 {% block body_end %}
   {{ super() }}
-  <script src="{{ 'js/vendor/jquery.scrollme.js'|url }}"></script>
   <script src="{{ 'js/toys.js'|webpackurl }}"></script>
 {% endblock %}

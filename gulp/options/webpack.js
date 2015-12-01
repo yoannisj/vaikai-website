@@ -30,7 +30,8 @@ module.exports = function(config, env) {
       // - [key]: string used for aliasing
       // - [value]: absolute target path to resolve to
       alias: {
-        'flexslider': path.resolve(config.paths.bower, 'flexslider/jquery.flexslider.js')
+        'flexslider': path.resolve(config.paths.bower, 'flexslider/jquery.flexslider.js'),
+        'scrollme': path.resolve(config.paths.bower, 'scrollme/jquery.scrollme.js')
       }
     },
 

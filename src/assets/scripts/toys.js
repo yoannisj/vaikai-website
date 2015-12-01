@@ -1,3 +1,6 @@
+// third-party
+// require('scrollme');
+
 // require widgets
 require('widgets/control');
 require('widgets/popup');

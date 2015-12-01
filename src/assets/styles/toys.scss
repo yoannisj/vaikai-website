@@ -2,10 +2,48 @@
  * =VaiKai - Index stylesheet
  * ========================================================================== */
 
+@import "shift/breakpoint";
+@import "config/breakpoints";
+
 /* =Intro
  * ========================================================================== */
 
-@import "objects/avakai-duo";
+// @import "objects/avakai-duo";
+
+#intro
+{
+  background: url(../images/more-play/superman-small.jpg) no-repeat center center;
+  background-size: cover;
+  // text-shadow: 1px 1px 0 rgba(0,0,0,0.12); // fart + pirates
+
+  .intro:before {
+    min-height: 440px;
+  }
+
+  @include shift('>s')
+  {
+    background-image: url(../images/more-play/superman-medium.jpg);
+    background-position: 80% center; // superman + fart
+    // background-position: left center; // pirates
+
+    .intro:before {
+      min-height: 600px;
+    }
+  }
+
+  @include shift('>m')
+  {
+    background-position: center center;
+
+    .intro:before {
+      min-height: 740px;
+    }
+  }
+
+  @include shift('>l') {
+    background-image: url(../images/more-play/superman-large.jpg);
+  }
+}
 
 /* =Pre-order
  * ========================================================================== */

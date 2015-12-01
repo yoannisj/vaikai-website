@@ -17,7 +17,7 @@
       <div class="intro grid grid--middle">
         <!-- =Intro-Object -->
         <div class="intro-object grid-cell span-4of12 sm-span-5of12 m-span-6of12">
-          {% include 'objects/avakai-duo.nunjucks' %}
+          {# {% include 'objects/avakai-duo.nunjucks' %} #}
         </div>
         <!-- /Intro-Object -->
 
@@ -28,7 +28,7 @@
             {{ section.description|paragraphs('s-zeta m-epsilon m-delta') }}
 
             <p class="landmark">
-              {% call ctrl.link(section.control|merge({
+              {# {% call ctrl.link(section.control|merge({
                 type: 'link',
                 url: 'http://vimeo.com/' ~ section.video.id,
                 target: 'intro-video:popup',
@@ -37,7 +37,9 @@
 
                 {{ sym.pre_icon(section.control.icon, section.control.label, 'icon--md') }}
 
-              {% endcall %}
+              {% endcall %} #}
+
+              <span class="shoutout">new video soon!</span>
             </p>
 
           </div>
