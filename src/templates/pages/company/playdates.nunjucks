@@ -31,7 +31,7 @@
             <div class="form-controls">
               {% set form_submit = section.form.controls[0] %}
               {% call ctrl.submit( form_submit ) %}
-                {{ sym.preIcon(form_submit.icon, form_submit.label) }}
+                {{ sym.pre_icon(form_submit.icon, form_submit.label) }}
               {% endcall %}
             </div>
 

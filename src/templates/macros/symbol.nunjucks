@@ -28,7 +28,7 @@
 {# =pre_icon
  # --------------------------------------------------------------- #}
 
-{% macro preIcon(name, label, classname='') %}
+{% macro pre_icon(name, label, classname='') %}
 
   <span class="pre-icon {{ 'icon'|modify(name) ~ ' ' ~ classname }}" aria-hidden="true"></span>
   {{ label }}
@@ -37,7 +37,7 @@
 
 {# =post_icon
  # --------------------------------------------------------------- #}
-{% macro postIcon(name, label, classname='') %}
+{% macro post_icon(name, label, classname='') %}
 
   {{ label }}
   <span class="post-icon {{ 'icon'|modify(name) ~ ' ' ~ classname }}" aria-hidden="true"></span>
@@ -46,7 +46,7 @@
 
 {# =epi_icon
  # --------------------------------------------------------------- #}
-{% macro epiIcon(name, label, classname='') %}
+{% macro epi_icon(name, label, classname='') %}
 
   <span class="epi-icon {{ 'icon'|modify(name) ~ ' ' ~ classname  }}" aria-hidden="true"></span>
   {{ label }}

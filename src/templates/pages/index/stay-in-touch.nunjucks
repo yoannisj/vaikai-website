@@ -42,7 +42,7 @@
             {# {{ frm.fields(section.form.fields) }} #}
             {# <div class="form-controls">
               {% call ctrl.submit( form_submit ) %}
-                {{ sym.preIcon(form_submit.icon, form_submit.label) }}
+                {{ sym.pre_icon(form_submit.icon, form_submit.label) }}
               {% endcall %}
             </div> #}
 
