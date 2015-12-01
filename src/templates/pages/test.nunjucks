@@ -222,19 +222,23 @@
     </div>
   </div> #}
 
-  <div style="margin: 100px auto; max-width: 760px; padding: 0 1.25rem;">
-    <h4>Base font-size</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, culpa eius in quam hic cupiditate ad quaerat officia corrupti, qui dicta omnis velit quo optio fuga, dolor cumque molestias maiores?</p>
-  </div>
+  {# =OBJECT-FIT - CONTAIN #}
+  {# <div id="test-objfit-contain" style="margin: 100px auto; width: 90%; max-width: 700px;">
+    <div class="ratio-1by1">
+      <img class="js-objfit" width="1600" height="900" src="http://placehold.it/1600x900" alt="" />
+    </div>
+  </div> #}
 
-  <div style="margin: 100px auto; max-width: 760px; padding: 0 1.25rem;">
-    <h4>Em font-size</h4>
-    <p class="em-fs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, culpa eius in quam hic cupiditate ad quaerat officia corrupti, qui dicta omnis velit quo optio fuga, dolor cumque molestias maiores?</p>
-  </div>
+  {# =OBJECT-FIT - COVER #}
+  {# <div id="test-objfit-cover" style="margin: 100px auto; width: 90%; max-width: 700px;">
+    <div class="ratio-1by1">
+      <img class="js-objfit" width="1600" height="900" src="http://placehold.it/1600x900" alt="" />
+    </div>
+  </div> #}
 
-  <div style="margin: 100px auto; max-width: 760px; padding: 0 1.25rem;">
-    <h4>Rem font-size</h4>
-    <p class="rem-fs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, culpa eius in quam hic cupiditate ad quaerat officia corrupti, qui dicta omnis velit quo optio fuga, dolor cumque molestias maiores?</p>
+  {# =WINDOW-FIT - CONTAIN #}
+  <div id="test-winfit-contain" style="margin: 100px auto; width: 90%; max-width: 700px;">
+    <img class="js-objfit" width="2400" height="1350" src="http://placehold.it/2400x1350" alt="" />
   </div>
 
 {% endblock %}

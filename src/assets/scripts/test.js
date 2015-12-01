@@ -49,3 +49,22 @@ var MultiFold = require('widgets/multifold');
 $('.js-multifold').widget(MultiFold, {
   scrollOffset: -150
 });
+
+// =ObjectFit
+// =============================================================================
+var ObjectFit = require('widgets/object-fit');
+
+$('#test-objfit-contain .js-objfit').widget(ObjectFit, {
+  mode: 'contain'
+});
+
+$('#test-objfit-cover .js-objfit').widget(ObjectFit, {
+  mode: 'cover'
+});
+
+$('#test-winfit-contain .js-objfit').widget(ObjectFit, {
+  container: $(window),
+  mode: 'contain',
+  scale: 0.8
+});
+
