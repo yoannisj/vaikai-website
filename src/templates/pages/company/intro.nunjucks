@@ -19,21 +19,8 @@
         <div class="intro-body grid-cell push-4of12 span-8of12 m-push-6of12 m-span-6of12">
           <div class="landmark">
 
-            <h2>{{ section.title }}</h2>
+            <h1>{{ section.title }}</h1>
             {{ section.description|paragraphs('zeta m-epsilon') }}
-
-            <p class="landmark">
-              {% call ctrl.link(section.control|merge({
-                type: 'link',
-                url: 'http://vimeo.com/' ~ section.video.id,
-                target: 'intro-video:popup',
-                action: 'open'
-              }), 'link-quiet shoutout', popup_condition) %}
-
-                {{ sym.preIcon(section.control.icon, section.control.label, 'icon--md') }}
-
-              {% endcall %}
-            </p>
 
           </div>
         </div>

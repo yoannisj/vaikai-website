@@ -7,6 +7,6 @@
 
   <{{tagname}} id="{{ prm.name }}" class="section section-{{ prm.name }} {{ themeclass }}">
     {{ caller() }}
-  </section>
+  </{{tagname}}>
 
 {% endmacro %}

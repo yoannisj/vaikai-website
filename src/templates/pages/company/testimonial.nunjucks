@@ -6,8 +6,8 @@
   <div class="chunk">
     <div class="chunk-inner">
 
-      <div class="quote landmark align-center">
-        <h3>{{ section.title }}</h3>
+      <div class="quote milestone align-center">
+        <h2>{{ section.title }}</h2>
 
         <!-- =Testimonial-Carousel -->
         <div class="js-carousel" data-init="carousel">

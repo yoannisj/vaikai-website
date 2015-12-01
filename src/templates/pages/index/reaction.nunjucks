@@ -14,7 +14,7 @@
         </div>
         <div class="cover-body overlay nucleon">
           <div class="milestone" role="presentation">
-            <h2 class="h1">Coming soon</h2>
+            <h2 class="h1 l-mega">Coming soon</h2>
             {{ section.caption|paragraphs('epsilon s-gamma m-beta l-alpha') }}
           </div>
         </div>

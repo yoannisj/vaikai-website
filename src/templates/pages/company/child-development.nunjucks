@@ -15,7 +15,7 @@
 
       <!-- =ConnectedToys-Body -->
       <div class="split-body">
-        <div class="landmark centrum centrum--left">
+        <div class="milestone centrum centrum--left">
           <h2 class="h3">{{ section.title }}</h2>
           {{ section.description|paragraphs }}
         </div>

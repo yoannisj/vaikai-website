@@ -2,7 +2,6 @@
 {% import 'macros/control.nunjucks' as ctrl %}
 {% import 'macros/image.nunjucks' as img %}
 {% import 'macros/popup.nunjucks' as pop %}
-
 {% import 'macros/video.nunjucks' as vid %}
 
 {% call sect.base(section) %}
@@ -12,7 +11,7 @@
 
       <!-- Playground-Quote -->
       <figure class="quote milestone align-center">
-        <h3 class="sr-only">{{ section.title }}</h3>
+        <h2 class="sr-only">{{ section.title }}</h2>
         <blockquote class="quote-text">
           {{ section.quote|paragraphs('epsilon s-delta m-gamma l-beta') }}
         </blockquote>

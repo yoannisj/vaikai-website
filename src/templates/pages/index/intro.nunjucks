@@ -24,7 +24,7 @@
         <!-- =Intro-Body -->
         <div class="intro-body grid-cell span-8of12 sm-span-7of12 m-span-6of12">
           <div class="milestone">
-            <h2 class="h1">{{ section.title }}</h2>
+            <h1>{{ section.title }}</h1>
             {{ section.description|paragraphs('s-zeta m-epsilon m-delta') }}
 
             <p class="landmark">

@@ -11,33 +11,35 @@
   <div class="chunk">
     <div class="chunk-inner">
 
-      <!-- =Playdates-Intro -->
-      <div class="landmark assert align-center">
-        <h3 class="assert-title">{{ section.title }}</h3>
-        <div class="assert-text">
-          {{ section.description|paragraphs('s-zeta m-epsilon') }}
-        </div>
-      </div>
-      <!-- /Playdates-Intro -->
-
-      <!-- =Playdates-Form -->
-      <div class="landmark align-center">
-
-        {% call frm.mailchimp(section.form) %}
-
-          {{ frm.fields(section.form.fields) }}
-
-          <div class="form-controls">
-            {% set form_submit = section.form.controls[0] %}
-            {% call ctrl.submit( form_submit ) %}
-              {{ sym.preIcon(form_submit.icon, form_submit.label) }}
-            {% endcall %}
+      <div class="milestone">
+        <!-- =Playdates-Intro -->
+        <div class="assert landmark align-center">
+          <h3 class="assert-title">{{ section.title }}</h3>
+          <div class="assert-text">
+            {{ section.description|paragraphs('s-zeta m-epsilon') }}
           </div>
+        </div>
+        <!-- /Playdates-Intro -->
 
-        {% endcall %}
+        <!-- =Playdates-Form -->
+        <div class="landmark align-center">
 
+          {% call frm.mailchimp(section.form) %}
+
+            {{ frm.fields(section.form.fields) }}
+
+            <div class="form-controls">
+              {% set form_submit = section.form.controls[0] %}
+              {% call ctrl.submit( form_submit ) %}
+                {{ sym.preIcon(form_submit.icon, form_submit.label) }}
+              {% endcall %}
+            </div>
+
+          {% endcall %}
+
+        </div>
+        <!-- /Playdates-Form -->
       </div>
-      <!-- /Playdates-Form -->
 
     </div>
   </div>

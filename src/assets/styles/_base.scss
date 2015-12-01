@@ -94,11 +94,12 @@ h6, .h6 { @extend %hN; @extend .base; }
 @include shift('>sm')
 {
   h1, .h1 { @extend .sm-mega; }
+  h2, .h2 { @extend .sm-alpha; }
 }
 
 @include shift('>m')
 {
-  h1, .h1 { @extend .m-mega; }
+  h1, .h1 { @extend .m-giga; }
   h2, .h2 { @extend .m-kilo; }
   h3, .h3 { @extend .m-beta; }
   h4, .h4 { @extend .m-gamma; }
@@ -108,7 +109,7 @@ h6, .h6 { @extend %hN; @extend .base; }
 
 @include shift('>l')
 {
-  h1, .h1 { @extend .l-giga; }
+  // h2, .h2 { @extend .l-mega; }
   h3, .h3 { @extend .l-alpha; }
 }
 

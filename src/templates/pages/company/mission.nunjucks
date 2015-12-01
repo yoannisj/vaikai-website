@@ -2,12 +2,12 @@
 
 {% call sect.base(section) %}
 
-  <div class="chunk chunk--bleed">
+  <div class="chunk">
     <div class="chunk-inner">
 
       <!-- Mission-Quote -->
-      <figure class="quote landmark align-center">
-        <h3 class="sr-only">{{ section.title }}</h3>
+      <figure class="quote milestone align-center">
+        <h2 class="sr-only">{{ section.title }}</h2>
         <blockquote class="quote-text">
           {{ section.quote|paragraphs('epsilon s-gamma m-beta l-alpha') }}
         </blockquote>
@@ -15,7 +15,7 @@
         {% set credit = section.credit %}
         {% if credit %}
 
-          <figcaption class="quote-credit credit credit--alt">
+          <figcaption class="quote-credit credit">
             <strong class="credit-name s-zeta m-epsilon">{{ credit.name }}</strong>
             <small class="credit-description s-base m-zeta">{{ credit.description }}</small>
           </figcaption>

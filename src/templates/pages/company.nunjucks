@@ -1,4 +1,4 @@
-{% extends "layouts/page-info.nunjucks" %}
+{% extends "layouts/page-landing.nunjucks" %}
 
 {% block head_styles %}
   {{ super() }}
