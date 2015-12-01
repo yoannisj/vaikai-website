@@ -40,6 +40,7 @@ var Cycler = module.exports = BaseWidget.extend({
 
   listen: function() {
     if (this.settings.clickThrough) {
+      this.$el.addClass('has-' + this.name + '-clickthrough');
       this.on('click', this.slct('item'), function(ev) {
         var index = this.$items.index(ev.currentTarget);
         this.go(this._getNextIndex(index));

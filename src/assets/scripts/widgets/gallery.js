@@ -25,7 +25,8 @@ var Gallery = module.exports = BaseWidget.extend({
   _initCycler: function() {
     this.$cycler = this.find('cycler');
     this.cycler = this.$cycler.widget(Cycler, {
-      baseClass: this.baseClass
+      baseClass: this.baseClass,
+      clickThrough: true
     });
   },
 

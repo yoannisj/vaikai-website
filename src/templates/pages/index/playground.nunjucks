@@ -67,7 +67,7 @@
             <ul class="js-gallery-items uilist">
               {% for item in section.gallery %}
                 <li class="js-gallery-item" data-name="{{ item.name }}">
-                  {{ img.base(item.image, 'js-gallery-img') }}
+                  {{ img.base(item.image, 'js-gallery-img js-objfit') }}
                 </li>
               {% endfor %}
             </ul>

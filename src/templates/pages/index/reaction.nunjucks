@@ -25,14 +25,14 @@
   </div>
 
   <!-- =Reaction-Video -->
-  {% if section.video %}
-    {% call pop.base({
-      name: 'unpacking-video',
-      parent: 'reaction'
-    }) %}
-      {{ vid.vimeo( section.video.id , 'flex') }}
-    {% endcall %}
-  {% endif %}
+  {# {% call pop.base({
+    name: 'unpacking-video',
+    parent: 'reaction'
+  }) %}
+
+    {{ vid[section.video.type]( section.video , 'flex') }}
+
+  {% endcall %} #}
   <!-- /Reaction-Video -->
 
 {% endcall %}

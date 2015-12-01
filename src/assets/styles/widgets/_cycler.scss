@@ -22,8 +22,12 @@ $cycler-direction-control-opacity-active: 0.5;
 
   &.active {
     display: block;
-    cursor: pointer;
   }
+}
+
+.has-cycler-clickthrough .js-cycler-item {
+  cursor: pointer;
+  user-select: none;
 }
 
 /* =js-cycler-direction-nav

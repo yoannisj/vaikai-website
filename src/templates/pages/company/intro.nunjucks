@@ -50,7 +50,7 @@
       name: 'intro-video',
       parent : 'intro'
     }, attrs=popup_condition) %}
-      {{ vid.vimeo( section.video.id, 'flex' ) }}
+      {{ vid[section.video.type]( section.video, 'js-objfit' ) }}
     {% endcall %}
 
   {% endif %}

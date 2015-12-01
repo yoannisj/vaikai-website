@@ -2,7 +2,7 @@
  # --------------------------------------------------------------- #}
 
 {% set defaults = {
-  size: [928, 522]
+  size: [1280, 720]
 } %}
 
 {% set vimeo_settings = {
@@ -16,32 +16,36 @@
 {# =base
  # --------------------------------------------------------------- #}
 
-{% macro base(type, url, size=defaults.size) %}
+{% macro base(params, classname='', attrs=false) %}
 
-  {% set width = size[0] %}
-  {% set height = size[1] %}
-  {% set ratio = (height/width) * 100 %}
+  {# inject param defaults #}
+  {% set prm = defaults|merge(params) %}
 
-  <div class="ratio-16by9 js-video {{ 'js-video'|modify(type) }}"
-    {# style="padding-top:{{ ratio }}%;" #}
-  >
+  {# TODO: calculate ratio #}
+  <div class="js-video">
     {# TODO: fallback thumbnail link #}
     {{ caller() }}
   </div>
+
 {% endmacro %}
 
 {# =vimeo
  # --------------------------------------------------------------- #}
 
-{% macro vimeo(vimeoId, size=defaults.size, settings=vimeo_settings) %}
+{% macro vimeo(params, classname='', attrs=false) %}
 
-  {% call base('vimeo', 'https://vimeo.com/' + vimeoId, size) %}
+  {% set prm = defaults|merge(params) %}
+  {% set settings_query = vimeo_settings|merge(prm.settings)|query %}
 
-    {% set settings_query = settings|query %}
-    <iframe id="vimeo-{{ vimeoId }}" class="js-video-player u-jsonly"
+  {% call base(prm, classname, attrs) %}
+
+    <iframe id="vimeo-{{ prm.id }}" class="js-video-player u-jsonly {{ classname }}"
       frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-      src="https://player.vimeo.com/video/{{ vimeoId }}{{ settings_query }}"
-        {% if size != 'flex' %} width="{{ size[0] }}" height="{{ size[1] }}"{% endif %}
+      src="https://player.vimeo.com/video/{{ prm.id }}{{ settings_query }}"
+        {% if prm.size %} width="{{ prm.size[0] }}" height="{{ prm.size[1] }}"{% endif %}
+        {% if attrs %}
+          {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+        {% endif %}
     ></iframe>
 
   {% endcall %}

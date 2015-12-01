@@ -18,7 +18,8 @@
   {% endif %}
 
   <img src="{{ path }}" alt="{{ prm.description }}"
-    {% if prm.size %} width="{{ sz[0] }}" {% endif %}
+    data-width="{{ sz[0] }}" data-height="{{ sz[1] }}"
+    {% if prm.size %} width="{{ sz[0] }}"{% endif %}
     {% if classname %} class="{{ classname }}"{% endif %}
     {% if path|extname == 'svg' %}
       data-svg-fallback="{{ prm.fallback or path|extname('png') }}"

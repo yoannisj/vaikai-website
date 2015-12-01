@@ -31,32 +31,17 @@
 {# =video
  # --------------------------------------------------------------- #}
 
-{% macro video(name, id, settings, parent='', classname='', attrs=false) %}
-  {% call base(name, parent, classname, attrs) %}
-
-    {{ vid.vimeo(id, settings) }}
-
-  {% endcall %}
+{% macro video() %}
 {% endmacro %}
 
 {# =gallery
  # --------------------------------------------------------------- #}
 
-{% macro gallery(name, items, parent='') %}
-  {% call base(name, parent) %}
-
-    <div class="gallery gallery--popup"></div>
-
-  {% endcall %}
+{% macro gallery() %}
 {% endmacro %}
 
 {# =celery
  # --------------------------------------------------------------- #}
 
 {% macro celery() %}
-  {% call base(name, parent) %}
-
-    <div class="celery celery--popup"></div>
-
-  {% endcall %}
 {% endmacro %}

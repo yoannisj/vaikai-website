@@ -6,4 +6,5 @@ control:
   icon: play
   label: watch video
 video:
+  type: vimeo
   id: 130435350
