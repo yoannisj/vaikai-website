@@ -18,5 +18,5 @@
 }
 
 .thumb-title {
-  margin-bottom: convert-length($base-font-size, 'rem');
+  margin-bottom: convert-length(typescale-font-size('nano'), 'rem');
 }

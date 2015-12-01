@@ -50,7 +50,11 @@ $btn-adjust-valign: 3px;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
 
-  &:hover, &:active &.focus {
+  &:focus, &.focus {
+    outline: 0;
+  }
+
+  &:focus, &.focus, &:hover, &:active {
     color: $btn-color-active;
     background: $btn-background-active;
   }

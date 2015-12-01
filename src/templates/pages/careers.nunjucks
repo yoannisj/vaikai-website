@@ -19,7 +19,7 @@
         <article id="{{ offer.name }}" class="copy-section landmark">
           <!-- =Offer-Header -->
           <header class="landmark">
-            <h3 class="h4">{{ offer.title }}</h3>
+            <h3 class="h4 flush-bottom">{{ offer.title }}</h3>
             <span class="byline s-zeta">
               {{ offer.location }} | {{ offer.position }}
             </span>

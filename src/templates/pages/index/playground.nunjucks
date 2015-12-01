@@ -14,7 +14,7 @@
       <figure class="quote milestone align-center">
         <h3 class="sr-only">{{ section.title }}</h3>
         <blockquote class="quote-text">
-          {{ section.quote|paragraphs('epsilon s-gamma m-beta l-alpha') }}
+          {{ section.quote|paragraphs('epsilon s-delta m-gamma l-beta') }}
         </blockquote>
 
         {% set credit = section.credit %}
@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  {# <!-- =Playground-Gallery -->
+  <!-- =Playground-Gallery -->
   <div id="playground-gallery" class="chunk chunk--fullbleed">
     <div class="chunk-inner">
 
@@ -80,6 +80,6 @@
 
     </div>
   </div>
-  <!-- /Playground-Gallery --> #}
+  <!-- /Playground-Gallery -->
 
 {% endcall %}
