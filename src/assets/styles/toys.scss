@@ -4,6 +4,7 @@
 
 @import "shift/breakpoint";
 @import "config/breakpoints";
+@import "config/colors";
 
 /* =Intro
  * ========================================================================== */
@@ -57,6 +58,17 @@
     .no-bgsizecover & {
       background-position: center center;
     }
+  }
+
+  .teaser {
+    display: inline-block;
+    padding: 15px 20px;
+    // color: #A4BED7;
+    // background: rgba(white, 0.8);
+    // border: 2px solid white;
+    background: rgba(white, 0.15); // superman
+    // background: rgba(black, 0.065); // fart + pirates
+    transform: rotate(-3deg);
   }
 }
 

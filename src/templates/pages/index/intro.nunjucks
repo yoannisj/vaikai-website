@@ -39,7 +39,7 @@
 
               {% endcall %} #}
 
-              <span class="shoutout">new video soon!</span>
+              <span class="shoutout teaser">new video soon!</span>
             </p>
 
           </div>
