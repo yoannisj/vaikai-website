@@ -24,7 +24,7 @@ module.exports = function(file) {
       var index = order.indexOf(section.name);
 
       // send not found sections to bottom
-      return index >= 0 ? index : total;
+      return index >= 0 ? index : sectionsData.length;
     });
   }
 
