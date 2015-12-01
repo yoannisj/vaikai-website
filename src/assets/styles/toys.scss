@@ -16,6 +16,11 @@
   background-size: cover;
   // text-shadow: 1px 1px 0 rgba(0,0,0,0.12); // fart + pirates
 
+  .no-bgsizecover & {
+    background-repeat: repeat-x;
+    background-size: auto auto;
+  }
+
   .intro:before {
     min-height: 440px;
   }
@@ -35,13 +40,23 @@
   {
     background-position: center center;
 
+    .no-bgsizecover & {
+      background-position: left center;
+      background-image: url(../images/more-play/superman-large.jpg);
+    }
+
     .intro:before {
       min-height: 740px;
     }
   }
 
-  @include shift('>l') {
+  @include shift('>l')
+  {
     background-image: url(../images/more-play/superman-large.jpg);
+
+    .no-bgsizecover & {
+      background-position: center center;
+    }
   }
 }
 
