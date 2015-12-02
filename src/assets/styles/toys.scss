@@ -111,7 +111,7 @@
 
 .avk-makers {
   position: relative;
-  padding-top: convert-length(55px, 'em');
+  padding-top: convert-length(50px, 'em');
 }
 
 /* =stamp-madewithlove
@@ -120,9 +120,7 @@
 .stamp--madewithlove {
   top: 0;
   left: 50%;
-  margin-top: convert-length(-5px, 'em');
   margin-left: convert-length(-140px, 'em');
-  transform: rotate(-5deg);
 }
 
 @include shift('>sm')
@@ -132,8 +130,6 @@
   }
 
   .stamp--madewithlove {
-    margin-top: convert-length(0, 'em');
-    margin-left: convert-length(-260px, 'em');
-    transform: rotate(-11deg);
+    margin-left: convert-length(-180px, 'em');
   }
 }
