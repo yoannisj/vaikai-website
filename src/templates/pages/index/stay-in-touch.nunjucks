@@ -10,7 +10,7 @@
 
       <div class="milestone">
         <!-- =Newsletter-Intro -->
-        <div class="landmark assert align-center">
+        <div class="assert landmark align-center">
           <h2 class="assert-title">{{ section.title }}</h2>
           <div class="assert-text">
             {{ section.description|paragraphs('s-zeta m-epsilon') }}

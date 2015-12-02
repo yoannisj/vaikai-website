@@ -11,13 +11,20 @@ var ObjectFit = module.exports = BaseWidget.extend({
     container: null,
     mode: 'contain',
     scale: 1,
-    upscale: false,
+    upscale: undefined,
     center: true
   },
 
   // initialize widget
   init: function() {
     ObjectFit.__super__.init.call(this);
+
+    this._mode = this.data('fit-mode') || this.settings.mode;
+    this._upscale = (this.settings.upscale === undefined) ?
+      (this._mode == 'cover') : this.settings.upscale;
+
+    console.log('objfit mode::', this._mode);
+    console.log('objfit upscale::', this._upscale);
 
     // get element's original dimensions
     this._getElementDimensions();
@@ -64,6 +71,10 @@ var ObjectFit = module.exports = BaseWidget.extend({
     this._width = this.data('width') || this.$el.attr('width');
     this._height = this.data('height') || this.$el.attr('height');
     this._ratio = this._height / this._width;
+
+    console.log('element w', this._width);
+    console.log('element h', this._height);
+    console.log('element r', this._ratio);
   },
 
   // get element dimensions so it fits inside its container
@@ -73,22 +84,17 @@ var ObjectFit = module.exports = BaseWidget.extend({
       cRatio = cHeight / cWidth,
       w, h;
 
-    if ((this.settings.mode == 'contain' && this._ratio >= cRatio) ||
-      (this.settings.mode == 'cover' && this._ratio < cRatio)) {
+    if ((this._mode == 'contain' && this._ratio >= cRatio) ||
+      (this._mode == 'cover' && this._ratio < cRatio)) {
       // use container height and calculate element width
-      h = this.settings.upscale ? cHeight : Math.min(this._height, cHeight);
+      h = this._upscale ? cHeight : Math.min(this._height, cHeight);
       w = h / this._ratio;
-
-
-      // r = h / w
-      // h = w * r
-      // w = h / r
     }
 
-    else if ((this.settings.mode == 'contain' && this._ratio < cRatio) ||
-      (this.settings.mode == 'cover' && this._ratio >= cRatio)) {
+    else if ((this._mode == 'contain' && this._ratio < cRatio) ||
+      (this._mode == 'cover' && this._ratio >= cRatio)) {
       // use container width and calculate element height
-      w = this.settings.upscale ? cWidth : Math.min(this._width, cWidth);
+      w = this._upscale ? cWidth : Math.min(this._width, cWidth);
       h = w * this._ratio;
     }
 
@@ -105,6 +111,8 @@ var ObjectFit = module.exports = BaseWidget.extend({
         'width': dimen.width,
         'height': dimen.height
       };
+
+    console.log('fit dimensions', dimen);
 
     // reposition in the center if needed
     if (this.settings.center) {

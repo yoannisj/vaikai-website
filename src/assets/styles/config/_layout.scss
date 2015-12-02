@@ -20,9 +20,10 @@ $base-spacing-vertical: typescale-line-height('base', 'px');
 // -----------------------------------------------------------------------------
 
 $ratios: (
-  '16by9': 960px 540px,
-  '3by2': 600px 400px,
-  '1by1': 960px 960px,
+  '16by9': 1200px 675px,
+  '3by2': 1200px 800px,
+  '1by1': 1400px 1400px,
   'illu': 220px 160px,
-  'couple': 640px 820px
+  'duo': 640px 820px,
+  'couple': 275px 260px
 );

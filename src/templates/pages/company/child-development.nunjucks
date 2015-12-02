@@ -9,7 +9,9 @@
 
       <!-- =ConnectedToys-Object -->
       <div class="split-object sm-crop">
-        <img src="http://www.placehold.it/700x700" alt="" />
+        {{ img.base(section.image|merge({
+            size: [680, 680]
+          })) }}
       </div>
       <!-- =ConnectedToys-Object -->
 

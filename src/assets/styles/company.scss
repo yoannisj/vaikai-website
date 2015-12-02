@@ -7,22 +7,52 @@
 
 // =settings
 // -----------------------------------------------------------------------------
-$company-intro-height: 500px;
+$company-intro-height: 440px;
 $company-intro-height-sm: 600px;
 $company-intro-height-m: 740px;
 
 /* =Intro
  * ========================================================================== */
 
-.section-intro .grid:before
+#intro
 {
-  min-height: $company-intro-height;
+  background-image: url(../images/posters/founders-small.jpg);
 
-  @include shift('>sm') {
-    min-height: $company-intro-height-sm;
+  .intro:before {
+    min-height: $company-intro-height;
   }
 
-  @include shift('>m') {
-    min-height: $company-intro-height-m;
+  @include shift('>s')
+  {
+    background-image: url(../images/posters/founders-medium.jpg);
+  }
+
+  @include shift('>sm')
+  {
+    .intro:before {
+      min-height: $company-intro-height-sm;
+    }
+  }
+
+  @include shift('>m')
+  {
+    background-image: url(../images/posters/founders-large.jpg);
+
+    .intro:before {
+      min-height: $company-intro-height-m;
+    }
+  }
+}
+
+/* =Outro
+ * ========================================================================== */
+
+#outro
+{
+  padding-top: convert-length(30px, 'rem');
+
+  @include shift('>sm')
+  {
+    padding-top: convert-length(70px, 'rem');
   }
 }

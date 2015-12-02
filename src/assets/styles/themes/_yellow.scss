@@ -10,6 +10,12 @@ $yellow-theme-color: $white;
 $yellow-theme-background: $yellow;
 $yellow-theme-input-background-active: $mid-yellow;
 
+$yellow-theme-input-border: 1px solid transparent;
+$yellow-theme-input-border-active: 1px solid $dark-yellow;
+$yellow-theme-input-background: $mid-yellow;
+$yellow-theme-input-background-active: lighten($mid-yellow, 1%);
+$yellow-theme-input-placeholder-color-active: darken($dark-yellow, 3%);
+
 $yellow-theme-quote-sign-color: inherit;
 $yellow-theme-slider-bullet-color: $light-gray;
 $yellow-theme-slider-bullet-color-active: $blue;
@@ -22,15 +28,27 @@ $yellow-theme-slider-bullet-color-active: $blue;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $yellow-theme-color;
-  background: $yellow-theme-background;
+  background-color: $yellow-theme-background;
 
   %hN {
     color: inherit;
   }
 
+  .input {
+    border: $yellow-theme-input-border;
+    background: $yellow-theme-input-background;
+  }
+
   .input:focus {
+    border: $yellow-theme-input-border-active;
     background: $yellow-theme-input-background-active;
   }
+
+  .input:focus::-webkit-input-placeholder { color: $yellow-theme-input-placeholder-color-active; opacity: 1; }
+  .input:focus:-moz-placeholder { color: $yellow-theme-input-placeholder-color-active; opacity: 1; }
+  .input:focus::-moz-placeholder { color: $yellow-theme-input-placeholder-color-active; opacity: 1; }
+  .input:focus:-ms-input-placeholder { color: $yellow-theme-input-placeholder-color-active; opacity: 1; }
+
 
   .quote:before {
     color: $yellow-theme-quote-sign-color;

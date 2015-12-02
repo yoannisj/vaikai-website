@@ -13,8 +13,7 @@
 
 #intro
 {
-  background: url(../images/more-play/superman-small.jpg) no-repeat center center;
-  background-size: cover;
+  background-image: url(../images/posters/superman-small.jpg);
   // text-shadow: 1px 1px 0 rgba(0,0,0,0.12); // fart + pirates
 
   .no-bgsizecover & {
@@ -28,7 +27,7 @@
 
   @include shift('>s')
   {
-    background-image: url(../images/more-play/superman-medium.jpg);
+    background-image: url(../images/posters/superman-medium.jpg);
     background-position: 80% center; // superman + fart
     // background-position: left center; // pirates
 
@@ -43,7 +42,7 @@
 
     .no-bgsizecover & {
       background-position: left center;
-      background-image: url(../images/more-play/superman-large.jpg);
+      background-image: url(../images/posters/superman-large.jpg);
     }
 
     .intro:before {
@@ -53,7 +52,7 @@
 
   @include shift('>l')
   {
-    background-image: url(../images/more-play/superman-large.jpg);
+    background-image: url(../images/posters/superman-large.jpg);
 
     .no-bgsizecover & {
       background-position: center center;

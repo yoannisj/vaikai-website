@@ -9,9 +9,9 @@
 } %}
 
 <!-- =Intro -->
-{% call sect.base(section) %}
+{% call sect.base(section, 'poster') %}
 
-  <div class="chunk chunk--narrow poster" style="background-image: url({{ section.poster.path|url }});">
+  <div class="chunk chunk--narrow">
     <div class="chunk-inner">
 
       <div class="intro grid grid--middle">

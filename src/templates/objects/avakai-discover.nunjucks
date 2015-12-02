@@ -1,0 +1,31 @@
+{% import 'macros/image.nunjucks' as img %}
+
+{# =VARIABLES #}
+{% set avakai_couple = {
+  path: 'toys/avakai-couple.gif',
+  description: ''
+} %}
+
+{# =MARKUP #}
+<div id="outro" class="chunk chunk--narrow">
+  <div class="chunk-inner">
+
+    <div class="flush-bottom grid grid--bottom">
+      <div class="grid-cell s-span-6of12 s-push-6of12">
+        <div class="milestone align-center s-align-left">
+          <h2>Less screentime,<br />more play.</h2>
+          <p>
+            <a class="btn btn--cta" href="./index.html" rel="home">Discover Avakai!</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-cell s-span-6of12 s-pull-6of12 m-span-4of12 m-pull-4of12">
+        <div class="ratio-couple median" role="presentation">
+          {{ img.base(avakai_couple) }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

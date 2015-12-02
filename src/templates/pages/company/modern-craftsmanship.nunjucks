@@ -41,7 +41,11 @@
               <li class="js-gallery-thumb float-left {{ item_span }}">
 
                 <a class="js-gallery-link blocklink" href="{{ item.image.path }}" data-item-name="{{ item.name }}">
-                  {{ img.base(item.image, 'js-gallery-thumb block') }}
+
+                  {{ img.base(item.image|merge({
+                    size: [420, 280]
+                  }), 'js-gallery-thumb block') }}
+
                 </a>
 
               </li>

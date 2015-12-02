@@ -12,6 +12,9 @@
     {% include section.template ~ '.nunjucks' %}
   {% endfor %}
 
+  {# avakai-discover #}
+  {% include "objects/avakai-discover.nunjucks" %}
+
 {% endblock %}
 
 {% block body_end %}

@@ -16,7 +16,7 @@ $gray-theme-input-background-active: $white;
 .theme-gray
 {
   color: $gray-theme-color;
-  background: $gray-theme-background;
+  background-color: $gray-theme-background;
 
   .input:focus {
     background: $gray-theme-input-background-active;

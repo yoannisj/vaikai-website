@@ -10,7 +10,7 @@ $green-theme-color: $white;
 $green-theme-background: $green;
 $green-theme-link-color-active: $dark-blue;
 
-$green-theme-input-border: 2px solid transparent;
+$green-theme-input-border: 1px solid transparent;
 $green-theme-input-border-active: 1px solid $dark-green;
 $green-theme-input-background: darken($mid-green, 2%);
 $green-theme-input-background-active: $mid-green;
@@ -29,7 +29,7 @@ $green-theme-slider-bullet-color-active: $yellow;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   color: $green-theme-color;
-  background: $green-theme-background;
+  background-color: $green-theme-background;
 
   // a {
   //   &:hover, &:active, &.focus {

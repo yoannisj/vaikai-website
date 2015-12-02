@@ -18,16 +18,29 @@ $grid-gutter-m: 40px;
   @include bleed($grid-gutter);
 }
 
-.grid--middle:before {
+.grid--middle:before,
+.grid--bottom:before {
   content: " ";
   display: inline-block;
-  vertical-align: middle;
   height: 100%;
 }
 
-.grid--middle .grid-cell {
-  vertical-align: middle;
+.grid--middle
+{
+  &:before,
+  .grid-cell {
+    vertical-align: middle;
+  }
 }
+
+.grid--bottom
+{
+  &:before,
+  .grid-cell {
+    vertical-align: bottom;
+  }
+}
+
 
 /* =grid-cell
  * -------------------------------------------------------------------------- */
