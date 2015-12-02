@@ -7,7 +7,6 @@ control:
   label:
     on: Show all magical features
     off: Show most magical features only
-# entries: 'features'
 entries:
 -
   title: Free Play

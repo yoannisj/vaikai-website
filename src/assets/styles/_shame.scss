@@ -121,15 +121,10 @@
   width: 100%;
 }
 
-// .flex-viewport
-// {
-//   padding-top: convert-length($landmark-spacing/2, 'rem');
-
-//   @include shift('>sm') {
-//     padding-top: convert-length($landmark-spacing-sm/2, 'rem');
-//   }
-// }
-
 #features-list .thumb-title {
   // color: darken($mid-gray, 15%);
+}
+
+.circle {
+  border-radius: convert-length(500px, 'rem');
 }

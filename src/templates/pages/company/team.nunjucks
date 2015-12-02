@@ -1,0 +1,40 @@
+{% import 'macros/section.nunjucks' as sect %}
+{% import 'macros/image.nunjucks' as img %}
+
+{% call sect.base(section) %}
+
+  <div class="chunk">
+    <div class="chunk-inner">
+
+      <div class="milestone align-center">
+        <h2>{{ section.title }}</h2>
+
+        <!-- =Team-Carousel -->
+        <div class="js-carousel" data-init="carousel">
+          <ul class="js-carousel-items grid uilist">
+            {% for entry in section.entries %}
+
+              <li id="team-{{ entry.name|slugify }}" class="landmark js-carousel-item grid-cell s-span-6of12 m-span-4of12">
+                <figure class="thumb">
+                  <div class="thumb-object">
+                    {# {{ img.base(entry.image) }} #}
+                    <img class="circle" src="http://placehold.it/300x300" alt="portrait picture of {{ entry.name }}" />
+                  </div>
+                  <div class="thumb-body">
+                    <h3 class="h4 flush-bottom">{{ entry.name }}</h3>
+                    <p class="zeta s-epsilon">{{ entry.description }}</p>
+                  </div>
+                </figure>
+              </li>
+
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- /Team-Carousel -->
+      </div>
+
+    </div>
+  </div>
+
+
+{% endcall %}

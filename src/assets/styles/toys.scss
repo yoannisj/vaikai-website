@@ -13,62 +13,36 @@
 
 #intro
 {
-  background-image: url(../images/posters/superman-small.jpg);
   // text-shadow: 1px 1px 0 rgba(0,0,0,0.12); // fart + pirates
 
-  .no-bgsizecover & {
-    background-repeat: repeat-x;
-    background-size: auto auto;
-  }
-
-  .intro:before {
-    min-height: 440px;
-  }
-
-  @include shift('>s')
-  {
-    background-image: url(../images/posters/superman-medium.jpg);
+  // responsive background
+  @include shift('<s') { background-image: url(../images/more-play/superman-small.jpg); }
+  @include shift('>s <l') {
+    background-image: url(../images/more-play/superman-medium.jpg);
     background-position: 80% center; // superman + fart
     // background-position: left center; // pirates
-
-    .intro:before {
-      min-height: 600px;
-    }
   }
-
-  @include shift('>m')
-  {
-    background-position: center center;
-
-    .no-bgsizecover & {
-      background-position: left center;
-      background-image: url(../images/posters/superman-large.jpg);
-    }
-
-    .intro:before {
-      min-height: 740px;
-    }
-  }
-
-  @include shift('>l')
-  {
-    background-image: url(../images/posters/superman-large.jpg);
-
-    .no-bgsizecover & {
-      background-position: center center;
-    }
-  }
+  @include shift('>l') { background-image: url(../images/more-play/superman-large.jpg); }
 
   .teaser {
     display: inline-block;
     padding: 15px 20px;
-    // color: #A4BED7;
-    // background: rgba(white, 0.8);
-    // border: 2px solid white;
     background: rgba(white, 0.15); // superman
     // background: rgba(black, 0.065); // fart + pirates
     transform: rotate(-3deg);
   }
+
+  // responsive height
+  .intro:before { min-height: 440px; }
+
+  @include shift('>s') {
+    .intro:before { min-height: 600px; }
+  }
+
+  @include shift('>m') {
+    .intro:before { min-height: 740px; }
+  }
+
 }
 
 /* =Pre-order

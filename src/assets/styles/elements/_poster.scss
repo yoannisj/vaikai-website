@@ -5,8 +5,14 @@
 /* =poster
  * -------------------------------------------------------------------------- */
 
-.poster {
+.poster
+{
   z-index: 0 !important; /* place in the back if applied on positioned element */
   background: none no-repeat center center transparent;
   background-size: cover;
+
+  .no-bgsizecover & {
+    background-repeat: repeat-x;
+    background-size: auto auto;
+  }
 }

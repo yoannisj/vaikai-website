@@ -3,6 +3,7 @@
  * ========================================================================== */
 
 @import "config";
+@import "aleksi/lengths/convert";
 @import "shift/breakpoint";
 
 // =settings
@@ -16,15 +17,14 @@ $company-intro-height-m: 740px;
 
 #intro
 {
-  background-image: url(../images/posters/founders-small.jpg);
+  // repsonsive background
+  @include shift('<m') { background-image: url(../images/company/founders-medium.jpg); }
+  @include shift('<s') { background-image: url(../images/company/founders-small.jpg); }
+  background-image: url(../images/company/founders-large.jpg);
 
+  // responsive height
   .intro:before {
     min-height: $company-intro-height;
-  }
-
-  @include shift('>s')
-  {
-    background-image: url(../images/posters/founders-medium.jpg);
   }
 
   @include shift('>sm')
@@ -36,11 +36,61 @@ $company-intro-height-m: 740px;
 
   @include shift('>m')
   {
-    background-image: url(../images/posters/founders-large.jpg);
-
     .intro:before {
       min-height: $company-intro-height-m;
     }
+  }
+}
+
+/* =Craftsmanship
+ * ========================================================================== */
+
+.avk-float {
+  position: relative;
+  margin-top: -25%;
+  width: 80%;
+  max-width: 450px;
+}
+
+.avk-float-img {
+  margin-top: 40%;
+}
+
+@include shift('>sm')
+{
+  .avk-float {
+    position: absolute;
+    right: -15%;
+    top: 10%;
+    width: 110%;
+    max-width: 450px;
+    // margin-top: 0;
+  }
+}
+
+@include shift('>m')
+{
+  .avk-float {
+    right: -10%;
+    top: 15%;
+    width: 100%;
+  }
+}
+
+@include shift('>l')
+{
+  .avk-float {
+    width: 70%;
+    top: 20%;
+    right: 0;
+  }
+}
+
+@include shift('>xl')
+{
+  .avk-float {
+    top: convert-length(140px, 'rem');
+    margin-top: convert-length(-180px, 'rem');
   }
 }
 

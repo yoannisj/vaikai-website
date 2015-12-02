@@ -60,14 +60,14 @@ $green-theme-slider-bullet-color-active: $yellow;
     color: $green-theme-quote-sign-color;
   }
 
-  .js-slider-control-nav a
+  .js-carousel .flex-control-paging a
   {
     &:after {
       background: $green-theme-slider-bullet-color;
     }
 
     &:hover:after,
-    &.js-slider-active:after {
+    &.flex-active:after {
       background: $green-theme-slider-bullet-color-active;
     }
   }
