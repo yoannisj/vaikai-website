@@ -7,16 +7,18 @@
   <div class="split split--uneven">
     <div class="split-inner">
       <!-- =Shop-Object -->
-      <div class="split-object">
-        <span class="avk-limiteded ratio-couple">
-          <strong class="stamp stamp--limiteded">Limited Edition</strong>
-          {{ img.lazy(section.image) }}
-        </span>
+      <div class="split-object" role="presentation">
+        <div class="avk-limiteded">
+          <div class="ratio-couple" role="presentation">
+            <strong class="stamp-limiteded ir">Limited Edition</strong>
+            {{ img.lazy(section.image) }}
+          </div>
+        </div>
       </div>
       <!-- /Shop-Object -->
 
       <!-- =Shop-Body -->
-      <div class="split-body">
+      <div class="split-body" role="presentation">
         <div class="milestone">
           <header>
             <h2 class="h3">{{ section.title }}</h2>

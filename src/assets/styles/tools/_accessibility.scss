@@ -33,6 +33,7 @@
     width: auto;
   }
 }
+
 // =ir
 // -----------------------------------------------------------------------------
 
@@ -41,6 +42,7 @@
   text-indent: 105%;
   white-space: nowrap;
   overflow: hidden;
+  background-repeat: no-repeat;
 }
 
 @mixin ir() { @include img-replace; }

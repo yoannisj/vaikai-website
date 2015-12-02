@@ -8,7 +8,8 @@
 // =settings
 // -----------------------------------------------------------------------------
 
-$carousel-paging-spacing: 30px;
+$carousel-paging-spacing: 20px;
+$carousel-paging-spacing-sm: 30px;
 $carousel-paging-target-width: 25px;
 $carousel-paging-target-height: 11px;
 $carousel-paging-bullet-size: 11px;
@@ -79,3 +80,10 @@ $carousel-paging-bullet-color-active: $blue;
 // 4. bullet positioned in the middle of target
 // 5. hide textual content
 // 6. avoid overlapping pager with items' content
+
+@include shift('>s')
+{
+  .js-carousel .flex-control-paging {
+    margin: convert-length($carousel-paging-spacing-sm, 'rem') 0;
+  }
+}

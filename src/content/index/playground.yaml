@@ -14,7 +14,7 @@ gallery:
 -
   name: fifty
   image:
-    path: playground/dev-4514.jpg
+    path: playground/fifty.jpg
     description: Some cheerful avakai playing indian
 -
   name: autumn-colors

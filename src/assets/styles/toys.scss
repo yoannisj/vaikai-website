@@ -78,31 +78,73 @@
 /* =avk-limiteded
  * -------------------------------------------------------------------------- */
 
-.avk-limiteded {
-  position: relative;
-  max-width: 420px;
+@keyframes bg_blink {
+  from { background-position: 0 center; }
+  to { background-position: 200% center; }
 }
 
-.stamp--limiteded {
+.avk-limiteded {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 420px;
+  padding: 0 convert-length(40px, 'rem') 0 convert-length(80px, 'rem');
+}
+
+.stamp-limiteded {
+  position: absolute;
   z-index: 2;
   top: 50%;
-  left: 0;
-  width: convert-length(120px, 'em');
-  margin-left: convert-length(-40px, 'em');
+  left: -13%;
+
+  width: convert-length(100px, 'rem');
+  height: convert-length(100px, 'rem');
+
+  background-image: url(../images/limited-edition.svg);
+  background-size: 200% auto;
+  animation: 1.8s steps(2) 0s infinite bg_blink;
+  transform: rotate(-12deg);
+}
+
+@include shift('>sm')
+{
+  .avk-limiteded {
+    padding: 0;
+  }
+
+  .stamp-limiteded {
+    top: -3%;
+    left: 70%;
+    transform: rotate(12deg);
+  }
 }
 
 @include shift('>m')
 {
-  .avk-limiteded {
-    max-width: 500px;
+  .stamp-limiteded {
+    width: convert-length(132px, 'rem');
+    height: convert-length(132px, 'rem');
   }
 }
 
 @include shift('>l')
 {
-  .stamp--limiteded {
-    width: convert-length(178px, 'em');
-    margin-left: convert-length(-110px, 'em');
+  .avk-limiteded {
+    max-width: 500px;
+  }
+
+  .stamp-limiteded {
+    top: 50%;
+    left: -13%;
+    width: convert-length(158px, 'rem');
+    height: convert-length(158px, 'rem');
+    transform: rotate(-12deg);
+  }
+}
+
+@include shift('>l')
+{
+  .stamp-limiteded {
   }
 }
 
@@ -117,19 +159,25 @@
 /* =stamp-madewithlove
  * -------------------------------------------------------------------------- */
 
-.stamp--madewithlove {
+.stamp-madewithlove {
+  position: absolute;
   top: 0;
   left: 50%;
-  margin-left: convert-length(-140px, 'em');
+  width: convert-length(178px, 'rem');
+  height: convert-length(78px, 'rem');
+  margin-left: convert-length(-150px, 'rem');
+
+  background-image: url(../images/madewithlove.svg);
+  background-size: 100% auto;
 }
 
 @include shift('>sm')
 {
   .avk-markers {
-    padding-top: convert-length(30px, 'em');
+    padding-top: convert-length(30px, 'rem');
   }
 
-  .stamp--madewithlove {
-    margin-left: convert-length(-180px, 'em');
+  .stamp-madewithlove {
+    margin-left: convert-length(-190px, 'rem');
   }
 }

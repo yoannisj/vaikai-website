@@ -40,7 +40,6 @@ $split-breakpoints: 'm';
 
 .split-object {
   position: relative;
-  overflow: hidden;
   margin-left: -1 * convert-length($split-gutter, 'rem');
   margin-right: -1 * convert-length($split-gutter, 'rem');
 

@@ -34,9 +34,7 @@
                 target: 'intro-video:popup',
                 action: 'open'
               }), 'link-quiet shoutout zeta s-epsilon sm-delta m-gamma', popup_condition) %}
-
                 {{ sym.pre_icon(section.control.icon, section.control.label, 'icon--md') }}
-
               {% endcall %} #}
 
               <span class="shoutout teaser">new video soon!</span>
