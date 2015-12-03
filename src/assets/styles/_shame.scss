@@ -128,3 +128,28 @@
 .circle {
   border-radius: convert-length(500px, 'rem');
 }
+
+
+.video-thumb
+{
+  position: relative;
+
+  &:after {
+    content: $codepoint-icon-play;
+    font-family: $icon-font-family;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $white;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+
+    font-size: convert-length(map-get($icon-sizes, 'lg'), 'rem');
+    line-height: 1;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+  }
+}

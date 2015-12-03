@@ -28,13 +28,13 @@ body.has-open-popup {
   overflow: auto;
   text-align: center;
 
-  visibility: hidden;
+  display: none;
   opacity: 0;
 
   .no-js &,
   &.is-opening,
   &.is-open {
-    visibility: visible;
+    display: block;
     z-index: 2000;
   }
 

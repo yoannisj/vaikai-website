@@ -8,7 +8,7 @@
 
 // =settings
 // -----------------------------------------------------------------------------
-$company-intro-height: 440px;
+$company-intro-height: 500px;
 $company-intro-height-sm: 600px;
 $company-intro-height-m: 740px;
 
@@ -18,9 +18,23 @@ $company-intro-height-m: 740px;
 #intro
 {
   // repsonsive background
-  @include shift('<m') { background-image: url(../images/company/founders-medium.jpg); }
-  @include shift('<s') { background-image: url(../images/company/founders-small.jpg); }
-  background-image: url(../images/company/founders-large.jpg);
+  @include shift('<s')
+  {
+    background-image: url(../images/company/founders-small.jpg);
+
+    .intro-body {
+     vertical-align: top;
+    }
+  }
+
+  @include shift('>s <sm') {
+    background-image: url(../images/company/founders-medium.jpg);
+    background-position: center center;
+  }
+  @include shift('>sm') {
+    background-image: url(../images/company/founders-large.jpg);
+    background-position: center center;
+  }
 
   // responsive height
   .intro:before {

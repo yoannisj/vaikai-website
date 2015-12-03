@@ -18,3 +18,6 @@ gallery:
   image:
     path: workshop/workshop-view.jpg
     description: View inside our wood workshop in Poland where Avakai are built
+  video:
+    type: vimeo
+    id: 131822997

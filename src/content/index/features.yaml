@@ -30,19 +30,12 @@ entries:
   description: |
     We know your favorite place is home. So Avakai makes sure you can stay in touch with your loved ones with a simple kiss, sent from one twin to another, from far away. It's easy, simply touch your Avakai's mouth and the magic will happen.
 -
-  title: Distance
+  title: Upgrade
   image:
-    path: illustrations/blue/distance.svg
-    description: Illustration of two far-away avakai marked on a map
+    path: illustrations/blue/upgrade.svg
+    description: Illustration of the FSC label
   description: |
-    Over Bluetooth the two Avakai talk to each other for a distance up to 50m! From the other side of the world, the Avakai love to stay in touch with their twin if you connect via the app"
--
-  title: Stimulating Senses
-  image:
-    path: illustrations/blue/senses.svg
-    description: Illustration of haptic, audio and and visual feedback
-  description: |
-    Kids know amazing games. Avakai is designed to motivate imaginary play through stimulation of all the senses without the negative effects of a screen. So your kids feel and see Avakai's heartbeat go up and down! They even hear Avakai sneeze, snore & laugh!
+    We made sure Avakai are friends for a lifetime and grow with your little ones as their behaviors can be updated and expanded individually, through the free app on your phone.
 -
   title: Age 4+
   image:
@@ -51,12 +44,19 @@ entries:
   description: |
     Everybody loves Avakai, but kids between the age of 4 and 8 years love Avakai the most.
 -
-  title: Upgrade
+  title: Distance
   image:
-    path: illustrations/blue/fsc-label.svg
-    description: Illustration of the FSC label
+    path: illustrations/blue/distance.svg
+    description: Illustration of two far-away avakai marked on a map
   description: |
-    We made sure Avakai are friends for a lifetime and grow with your little ones as their behaviors can be updated and expanded individually, through the free app on your phone.
+    Over Bluetooth the two Avakai talk to each other for a distance up to 50m! From the other side of the world, the Avakai love to stay in touch with their twin if you connect via the app.
+-
+  title: Stimulating Senses
+  image:
+    path: illustrations/blue/senses.svg
+    description: Illustration of haptic, audio and and visual feedback
+  description: |
+    Kids know amazing games. Avakai is designed to motivate imaginary play through stimulation of all the senses without the negative effects of a screen. So your kids feel and see Avakai's heartbeat go up and down! They even hear Avakai sneeze, snore & laugh!
 -
   title: Charging
   image:

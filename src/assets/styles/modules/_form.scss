@@ -23,6 +23,11 @@ $form-field-spacing: 15px;
   margin: 0 0 convert-length($form-field-spacing, 'rem') 0;
 }
 
+.form-controls .btn {
+  width: 100%;
+  max-width: convert-length($input-max-width, 'rem');
+}
+
 @include shift('>m')
 {
   .form-group {

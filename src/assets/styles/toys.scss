@@ -13,36 +13,78 @@
 
 #intro
 {
-  // text-shadow: 1px 1px 0 rgba(0,0,0,0.12); // fart + pirates
+  color: $white;
+  background-color: $blue;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
 
-  // responsive background
-  @include shift('<s') { background-image: url(../images/more-play/superman-small.jpg); }
-  @include shift('>s <l') {
-    background-image: url(../images/more-play/superman-medium.jpg);
-    background-position: 80% center; // superman + fart
-    // background-position: left center; // pirates
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {
+    color: inherit;
   }
-  @include shift('>l') { background-image: url(../images/more-play/superman-large.jpg); }
 
   .teaser {
     display: inline-block;
     padding: 15px 20px;
-    background: rgba(white, 0.15); // superman
-    // background: rgba(black, 0.065); // fart + pirates
+    // background: rgba(white, 0.15); // superman
+    background: rgba(black, 0.065); // fart + pirates
     transform: rotate(-3deg);
+    white-space: nowrap; // single line on smaller screens
   }
 
   // responsive height
-  .intro:before { min-height: 440px; }
-
-  @include shift('>s') {
-    .intro:before { min-height: 600px; }
+  .intro:before {
+    min-height: 500px;
   }
 
-  @include shift('>m') {
-    .intro:before { min-height: 740px; }
+  @include shift('>s')
+  {
+    .intro:before {
+      min-height: 600px;
+    }
   }
 
+  @include shift('>m')
+  {
+    .intro:before {
+      min-height: 780px;
+    }
+  }
+
+}
+
+#intro.theme-superman
+{
+  background-color: #9FBAD5;
+
+  @include shift('<s') { background-image: url(../images/more-play/superman-small.jpg); }
+  @include shift('>s <m') { background-image: url(../images/more-play/superman-medium.jpg); }
+  @include shift('>m') { background-image: url(../images/more-play/superman-large.jpg); }
+}
+
+#intro.theme-fart
+{
+  background-color: #E8E6DA;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.12); // fart + pirates
+
+  @include shift('<s') { background-image: url(../images/more-play/fart-small.jpg); }
+  @include shift('>s <l') { background-image: url(../images/more-play/fart-medium.jpg); }
+  @include shift('>l') { background-image: url(../images/more-play/fart-large.jpg); }
+}
+
+#intro.theme-pirates
+{
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.12); // fart + pirates
+  background-color: #E0D1BE;
+
+  @include shift('<s') { background-image: url(../images/more-play/pirates-small.jpg); }
+  @include shift('>s <m') { background-image: url(../images/more-play/pirates-medium.jpg); }
+  @include shift('>m') { background-image: url(../images/more-play/pirates-large.jpg); }
 }
 
 /* =Pre-order

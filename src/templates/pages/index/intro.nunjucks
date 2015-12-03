@@ -51,14 +51,16 @@
   <!-- =Intro-Video -->
   {% if section.video %}
 
+
     {% call pop.base({
       name: 'intro-video',
       parent : 'intro'
     }, attrs=popup_condition) %}
 
-      {{ vid[section.video.type](section.video, 'js-objfit') }}
+      {{ vid[section.video.type](section.video, 'js-video-player js-objfit') }}
 
     {% endcall %}
+
 
   {% endif %}
   <!-- /Intro-Video -->

@@ -1,8 +1,7 @@
 {% import 'macros/section.nunjucks' as sect %}
-{% import 'macros/image.nunjucks' as img %}
-
-{% import 'macros/image.nunjucks' as img %}
 {% import 'macros/popup.nunjucks' as pop %}
+{% import 'macros/image.nunjucks' as img %}
+{% import 'macros/video.nunjucks' as vid %}
 
 <!-- =ModernCraft -->
 {% call sect.base(section) %}
@@ -48,7 +47,11 @@
               {% endif %}
 
               <li class="js-gallery-thumb float-left {{ item_span }}">
-                <a class="js-gallery-link blocklink" href="{{ app.paths.images|joinpath(item.image.path) }}" data-item-name="{{ item.name }}">
+
+                {% set link_class = 'video-thumb' if item.video else '' %}
+                {% set link_url = 'http://vimeo.com/' ~ item.video.id if item.video else app.paths.images|joinpath(item.image.path) %}
+
+                <a class="js-gallery-link block-link {{ link_class }}" href="{{ link_url }}" data-item-name="{{ item.name }}" target="{{ link_url|linktarget }}">
 
                   {{ img.base(item.image|merge({
                     size: image_size
@@ -67,11 +70,16 @@
           init: false
         }, 'js-gallery-popup') %}
 
-          <div class="js-gallery-cycler">
+          <div class="js-gallery-cycler js-cycler">
             <ul class="js-gallery-items uilist">
               {% for item in section.gallery %}
                 <li class="js-gallery-item" data-name="{{ item.name }}">
-                  {{ img.base(item.image, 'js-gallery-img') }}
+
+                  {% if item.video %}
+                    {{ vid[item.video.type](item.video, 'js-gallery-video js-objfit') }}
+                  {% else %}
+                    {{ img.base(item.image, 'js-gallery-img js-objfit') }}
+                  {% endif %}
                 </li>
               {% endfor %}
             </ul>

@@ -22,7 +22,7 @@
   {% set prm = defaults|merge(params) %}
 
   {# TODO: calculate ratio #}
-  <div class="js-video">
+  <div class="js-video" data-init="video" data-media="(min-width: 700px)">
     {# TODO: fallback thumbnail link #}
     {{ caller() }}
   </div>
@@ -39,9 +39,9 @@
 
   {% call base(prm, classname, attrs) %}
 
-    <iframe id="vimeo-{{ prm.id }}" class="js-video-player u-jsonly {{ classname }}"
+    <iframe id="vimeo-{{ prm.id }}" class="lazyload js-video-player u-jsonly {{ classname }}"
       frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-      src="https://player.vimeo.com/video/{{ prm.id }}{{ settings_query }}"
+      data-src="https://player.vimeo.com/video/{{ prm.id }}{{ settings_query }}"
         {% if prm.size %} width="{{ prm.size[0] }}" height="{{ prm.size[1] }}"{% endif %}
         {% if attrs %}
           {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}

@@ -29,15 +29,11 @@ $video.on('stop', function(ev) {
 // start playing video's inside popup widgets on 'expand'
 $body.on('expand.video', '.has-popup', function(ev) {
 
-  console.log('expand popup')
-
   var $popup = $(ev.currentTarget),
     $vid = $popup.find('.js-video');
 
   // if popup has a video AND video is not inside cycler/carousel/slider
   if ($vid.length && $vid.closest('.js-cycler, .js-gallery-cycler, .js-carousel, .js-slider').length == 0) {
-
-    console.log('popup with video!');
 
     $vid.trigger('play');
 

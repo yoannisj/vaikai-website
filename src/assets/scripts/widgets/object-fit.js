@@ -23,9 +23,6 @@ var ObjectFit = module.exports = BaseWidget.extend({
     this._upscale = (this.settings.upscale === undefined) ?
       (this._mode == 'cover') : this.settings.upscale;
 
-    console.log('objfit mode::', this._mode);
-    console.log('objfit upscale::', this._upscale);
-
     // get element's original dimensions
     this._getElementDimensions();
 
@@ -52,7 +49,7 @@ var ObjectFit = module.exports = BaseWidget.extend({
   // listen to events
   listen: function() {
     // update element dimensions when it gets (re-)loaded
-    this.$el.on('load', this._getElementDimensions);
+    this.on('load', this._getElementDimensions);
 
     // resize/position element when window gets resized
     var self = this;
@@ -65,16 +62,10 @@ var ObjectFit = module.exports = BaseWidget.extend({
   // - (natural dimensions should be given in html attributes)
   _getElementDimensions: function() {
 
-    console.log('getting object fit original dimensions!');
-
     // get element dimensions
     this._width = this.data('width') || this.$el.attr('width');
     this._height = this.data('height') || this.$el.attr('height');
     this._ratio = this._height / this._width;
-
-    console.log('element w', this._width);
-    console.log('element h', this._height);
-    console.log('element r', this._ratio);
   },
 
   // get element dimensions so it fits inside its container
@@ -103,16 +94,11 @@ var ObjectFit = module.exports = BaseWidget.extend({
 
   // resize and reposition the element inside its container
   update: function() {
-
-    console.log('updating object fit!');
-
     var dimen = this._getFitDimensions(),
       styles = {
         'width': dimen.width,
         'height': dimen.height
       };
-
-    console.log('fit dimensions', dimen);
 
     // reposition in the center if needed
     if (this.settings.center) {

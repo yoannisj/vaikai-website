@@ -20,7 +20,7 @@ form:
       placeholder: The age of your kids
   controls:
   - type: submit
-    label: Subscribe
+    label: Ready to play!
     ui: button
     icon: send
 gallery:

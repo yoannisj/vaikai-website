@@ -17,7 +17,7 @@
   </div>
 
   <div class="splash-body">
-    <p class="tagline zeta s-gamma">{{ data.website.tagline }}</p>
+    <p class="tagline zeta s-delta">{{ data.website.tagline }}</p>
   </div>
 </div>
 <!-- /Splash -->

@@ -7,10 +7,10 @@ require('widgets/popup');
 require('widgets/gallery');
 require('widgets/carousel');
 require('widgets/toggle');
+require('widgets/video');
 
 // reuqire modules
 require('modules/svg');
-require('modules/video');
 
 // multifold on features-list
 var MultiFold = require('widgets/multifold');
