@@ -4,3 +4,14 @@ intro:
   text: |
     <p>We believe that amazing things happen when you have the right people in one room.</p>
     <p>We want to work with people who care about what they do, people who have most diverse professional and personal backgrounds, and most importantly, people who want to change the way children grow up in this connected world</p>
+sections_order:
+- coo
+- cto
+- head-of-marketing
+- embedded-engineer
+- hardware-engineer
+- supply-chain-manager
+- play-wizard
+- graphic-designer
+- ux-designer
+- mobile-developer

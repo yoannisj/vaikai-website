@@ -1,15 +1,13 @@
-template: 'entry/career'
 title: Embedded Engineer
 location: Berlin, Germany
 position: Full-Time
 description: |
-  <p>You will be responsible for the hardware of Vai Kai toys. You understand the long-term implications of electronic design. You're excited about the oportunity to build technology that can grow together with a child.</p>
+  <p>You bring Vai Kai toys to life. You worked on the connected products, you are fascinated by the possibilities of modern hardware and not scared by the current limitations. You specialize in firmware but have a wide range of interests beyond that. You're excited about the future of Internet of Things and you're ready to build it. You are always improving your debugging tools.</p>
 requirements:
-  - Experience in developing market-ready consumer electronics
-  - Extensive experience in PCB design
-  - You know CadSoft Eagle in and out
-  - Familiarity with safety and radio certification requirements
-  - Familiar with hardware testing methodologies and have a hands on approach when testing
+  - At least 3 years experience in embedded programming
+  - First-hand familiarity with different Bluetooth SOCs and SDKs
+  - Experience in maintaining the OTA firmware update cycle
+  - Solid knowledge of serial interface programming / BUS systems
   - You like to play!
 expectations: |
   <p>What should you expect — working on meaningful products, a friendly team, a generous options package and unlimited ice cream.</p>
