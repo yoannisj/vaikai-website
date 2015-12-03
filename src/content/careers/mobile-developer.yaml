@@ -1,15 +1,14 @@
-template: 'entry/career'
 title: Mobile Developer
-location: | Berlin, Germany
+location: Berlin, Germany
 position: Full-Time
 description: |
-  <p>You will be responsible for the hardware of Vai Kai toys. You understand the long-term implications of electronic design. You're excited about the oportunity to build technology that can grow together with a child.</p>
+  <p>The Vai Kai play experience merges digital and physical play, your responsibility will be to make sure that our apps effortlelessly connect the Vai Kai toys across the globe. You will be working closely with the Embedded Engineer to define and develop our APIs.</p>
+  <p>You've been building apps for years, you love digging through the documentation for new yet undiscovered APIs. You've built at least one app that communicates with connected devices using Bluetooth Low Energy protocols. You like to test ideas quickly. You're fascinated by Internet of Things perspectives. You like to play!</p>
 requirements:
-  - Experience in developing market-ready consumer electronics
-  - Extensive experience in PCB design
-  - You know CadSoft Eagle in and out
-  - Familiarity with safety and radio certification requirements
-  - Familiar with hardware testing methodologies and have a hands on approach when testing
-  - You like to play!
+  - At least 3 years of iOS development experience
+  - Familiarity with Core Bluetooth and Core Location APIs
+  - Understanding of the OTA firmware update setup and deployment
+  - Familiarity with 3rd party Bluetooth SDKs
+  - Android development experience is a plus
 expectations: |
-  <p>What should you expect — working on meaningful products, a friendly team, a generous options package and unlimited ice cream.</p>
+  <p>What should you expect — working on meaningful products, a friendly team, a lot of play and unlimited ice cream.</p>

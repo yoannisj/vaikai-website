@@ -1,14 +1,14 @@
+template: 'entry/career'
 title: CTO
-location: | Berlin, Germany
+location: Berlin, Germany
 position: Full-Time
 description: |
-  <p>You will be responsible for the hardware of Vai Kai toys. You understand the long-term implications of electronic design. You're excited about the oportunity to build technology that can grow together with a child.</p>
+  <p>You’ll be responsible for hiring and leading the engineers of Vai Kai, building the toys that will accompany kids around the world. You’ll be working closely with our designers, supply chain manager and customer support.</p>
+  <p>You’ve built teams that shipped digital and connected products over the past few years. You like to work on solving interesting, meaningful challenges. You like to understand the problem starting with the people you’re a building it for. You like to learn new tech, be it a framework, a programming language or a new micro controller. You know that every engineer has strong and weak sides. You are comfortable jumping from discussing the number of EC2 instances to analysing the electrical signals between two components on the board.</p>
 requirements:
-  - Experience in developing market-ready consumer electronics
-  - Extensive experience in PCB design
-  - You know CadSoft Eagle in and out
-  - Familiarity with safety and radio certification requirements
-  - Familiar with hardware testing methodologies and have a hands on approach when testing
-  - You like to play!
+  - At least 5 years work experience in technology startups
+  - A degree in computer science
+  - An extensive tool belt for hardware and software problems
+  - You like to play. We are building toys after all :)
 expectations: |
   <p>What should you expect — working on meaningful products, a friendly team, a generous options package and unlimited ice cream.</p>

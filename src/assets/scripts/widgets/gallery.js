@@ -66,6 +66,13 @@ var Gallery = module.exports = BaseWidget.extend({
     if (this.popup) this.popup.destroy();
     if (this.cycler) this.cycler.destroy();
     Gallery.__super__.destroy.call(this);
+  },
+
+  _containItem: function( $item ) {
+
+    var itmW = $item.width(),
+      itmH = $item.height(),
+      itmR = itmHeight / itmW;
   }
 
 });

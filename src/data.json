@@ -3,7 +3,7 @@
     "title": "Vai Kai",
     "domain": "'vaikai.com'",
     "homepage": "'http://vaikai.com'",
-    "tagline": "connected wooden toys",
+    "tagline": "intuitive connected wooden toys",
     "description": "A magic way to connect and play in a connected world",
     "keywords": [
       "vai kai",
@@ -22,7 +22,7 @@
 
   "main-nav": [{
     "title": "Toys",
-    "url": "'toys.html'"
+    "url": "'index.html'"
   }, {
     "title": "Company",
     "url": "'company.html'"
