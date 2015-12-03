@@ -1,7 +1,7 @@
 <!-- Google Analytics -->
 <script>
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', {{ data.googleAnalytics.trackingCode }}]);
+  _gaq.push(['_setAccount', '{{ data.google_analytics.tracking_code }}']);
   _gaq.push(['_trackPageview']);
 
   (function() {

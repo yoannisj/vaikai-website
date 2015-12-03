@@ -1,4 +1,3 @@
-{# {% extends "layouts/page-landing.nunjucks" %} #}
 {% extends "layouts/page-info.nunjucks" %}
 
 {% block head_styles %}

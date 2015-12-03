@@ -13,7 +13,10 @@ function snakeKeys(obj) {
       res[k] = snakeKeys(val);
     }
 
-    res[k] = val;
+    else {
+      res[k] = val;
+    }
+
   });
 
   return res;

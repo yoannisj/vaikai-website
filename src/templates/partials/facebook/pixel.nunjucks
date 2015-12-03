@@ -9,11 +9,11 @@
   s.parentNode.insertBefore(fbds, s);
   _fbq.loaded = true;
   }
-  _fbq.push(['addPixelId', {{ data.facebook.pixelId }}]);
+  _fbq.push(['addPixelId', '{{ data.facebook.pixel_id }}']);
   })();
   window._fbq = window._fbq || [];
   window._fbq.push(['track', 'PixelInitialized', {}]);
 </script>
 <noscript>
-  <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id={{ data.facebook.pixelId }}&amp;ev=PixelInitialized" />
+  <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id={{ data.facebook.pixel_id }}&amp;ev=PixelInitialized" />
 </noscript>
