@@ -12,7 +12,7 @@
     {% include section.template ~ '.nunjucks' %}
   {% endfor %}
 
-  {# avakai-discover #}
+  {# outro #}
   {% include "objects/avakai-discover.nunjucks" %}
 
 {% endblock %}

@@ -1,5 +1,4 @@
 {% extends "layouts/page-landing.nunjucks" %}
-{% import 'macros/symbol.nunjucks' as sym %}
 
 {% block head_styles %}
   {{ super() }}
@@ -12,13 +11,6 @@
   {% for section in sections %}
     {% include section.template ~ '.nunjucks' %}
   {% endfor %}
-
-  {# splash screen #}
-  <div class="chunk chunk--narrow">
-    <div class="chunk-inner">
-      {% include 'objects/splash.nunjucks' %}
-    </div>
-  </div>
 
 {% endblock %}
 

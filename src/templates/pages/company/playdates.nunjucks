@@ -23,20 +23,25 @@
 
         <!-- =Playdates-Form -->
         <div class="landmark align-center">
+          <div id="playdates-form"  class="js-fold">
+            {% call frm.mailchimp(section.form) %}
 
-          {% call frm.mailchimp(section.form) %}
+              {{ frm.fields(section.form.fields) }}
 
-            {{ frm.fields(section.form.fields) }}
+              <div class="form-controls">
+                {% set form_submit = section.form.controls[0] %}
+                {% call ctrl.submit( form_submit ) %}
+                  {{ sym.pre_icon(form_submit.icon, form_submit.label) }}
+                {% endcall %}
+              </div>
 
-            <div class="form-controls">
-              {% set form_submit = section.form.controls[0] %}
-              {% call ctrl.submit( form_submit ) %}
-                {{ sym.pre_icon(form_submit.icon, form_submit.label) }}
-              {% endcall %}
-            </div>
+            {% endcall %}
+          </div>
 
-          {% endcall %}
-
+          {{ ctrl[section.control.type](section.control|merge({
+            action: 'expand',
+            target: 'playdates-form:fold'
+          }), 'btn js-only') }}
         </div>
         <!-- /Playdates-Form -->
       </div>

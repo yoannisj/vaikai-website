@@ -68,11 +68,11 @@
 {% macro toggle(params, classname='', attrs=false) %}
 
   {% if caller %}
-    {% call tgl[params.ui](params, classname, attrs) %}
+    {% call tgl[params.type](params, classname, attrs) %}
       {{ caller() }}
     {% endcall %}
   {% else %}
-    {{ tgl[params.ui](params, classname, attrs) }}
+    {{ tgl[params.type](params, classname, attrs) }}
   {% endif %}
 
 {% endmacro %}

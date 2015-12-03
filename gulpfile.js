@@ -6,7 +6,7 @@ slurp.load('images', ['templates']);
 slurp.load('stylesheets');
 slurp.load('externals');
 slurp.load('javascripts', ['externals']);
-slurp.load('assets', ['stylesheets', 'javascripts']);
+slurp.load('assets', ['images', 'stylesheets', 'javascripts']);
 
 gulp.task('build', ['templates', 'assets']);
 gulp.task('default', ['build']);

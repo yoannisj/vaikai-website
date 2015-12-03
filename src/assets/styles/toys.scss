@@ -2,6 +2,7 @@
  * =VaiKai - Index stylesheet
  * ========================================================================== */
 
+@import "aleksi/lengths/convert";
 @import "shift/breakpoint";
 @import "config/breakpoints";
 @import "config/colors";
@@ -60,11 +61,11 @@
 
 #intro.theme-superman
 {
-  background-color: #9FBAD5;
+  background-color: #b7cbdf;
 
   @include shift('<s') { background-image: url(../images/more-play/superman-small.jpg); }
-  @include shift('>s <m') { background-image: url(../images/more-play/superman-medium.jpg); }
-  @include shift('>m') { background-image: url(../images/more-play/superman-large.jpg); }
+  @include shift('>s <l') { background-image: url(../images/more-play/superman-medium.jpg); }
+  @include shift('>l') { background-image: url(../images/more-play/superman-large.jpg); }
 }
 
 #intro.theme-fart
@@ -85,6 +86,34 @@
   @include shift('<s') { background-image: url(../images/more-play/pirates-small.jpg); }
   @include shift('>s <m') { background-image: url(../images/more-play/pirates-medium.jpg); }
   @include shift('>m') { background-image: url(../images/more-play/pirates-large.jpg); }
+}
+
+.stamp-age4plus {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  left: auto;
+
+  width: convert-length(80px, 'rem');
+  height: convert-length(80px, 'rem');
+  background-image: url(../images/age4plus.svg);
+  background-size: 100% auto;
+}
+
+@include shift('>s')
+{
+  .stamp-age4plus {
+    left: 5%;
+    right: auto;
+  }
+}
+
+@include shift('>sm')
+{
+  .stamp-age4plus {
+    width: convert-length(120px, 'rem');
+    height: convert-length(120px, 'rem');
+  }
 }
 
 /* =Pre-order
@@ -160,39 +189,5 @@
 @include shift('>l')
 {
   .stamp-limiteded {
-  }
-}
-
-/* =Makers
- * ========================================================================== */
-
-.avk-makers {
-  position: relative;
-  padding-top: convert-length(50px, 'em');
-}
-
-/* =stamp-madewithlove
- * -------------------------------------------------------------------------- */
-
-.stamp-madewithlove {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: convert-length(178px, 'rem');
-  height: convert-length(78px, 'rem');
-  margin-left: convert-length(-150px, 'rem');
-
-  background-image: url(../images/madewithlove.svg);
-  background-size: 100% auto;
-}
-
-@include shift('>sm')
-{
-  .avk-markers {
-    padding-top: convert-length(30px, 'rem');
-  }
-
-  .stamp-madewithlove {
-    margin-left: convert-length(-190px, 'rem');
   }
 }

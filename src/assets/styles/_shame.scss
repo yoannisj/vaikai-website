@@ -42,7 +42,7 @@
   max-width: none !important;
 }
 
-.page-footer {
+.footer-nav {
   overflow: hidden;
   position: relative;
 }
@@ -152,4 +152,10 @@
     margin-top: -0.5em;
     margin-left: -0.5em;
   }
+}
+
+#shop h2 strong {
+  font-family: $helvetica-font-stack;
+  font-weight: 700;
+  text-decoration: none;
 }

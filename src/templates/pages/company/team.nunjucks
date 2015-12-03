@@ -1,7 +1,7 @@
 {% import 'macros/section.nunjucks' as sect %}
 {% import 'macros/image.nunjucks' as img %}
 
-{% call sect.base(section) %}
+{# {% call sect.base(section) %}
 
   <div class="chunk">
     <div class="chunk-inner">
@@ -17,8 +17,7 @@
               <li id="team-{{ entry.name|slugify }}" class="landmark js-carousel-item grid-cell s-span-6of12 m-span-4of12">
                 <figure class="thumb">
                   <div class="thumb-object">
-                    <div class="ratio-1by1" role="presentation">
-                      {# {{ img.base(entry.image) }} #}
+                    <div class="ratio-1by1" style="max-width: 300px; margin: 0 auto;" role="presentation">
                       <img class="circle" src="http://placehold.it/300x300" alt="portrait picture of {{ entry.name }}" />
                     </div>
                   </div>
@@ -38,5 +37,4 @@
     </div>
   </div>
 
-
-{% endcall %}
+{% endcall %} #}

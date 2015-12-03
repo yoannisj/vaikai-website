@@ -1,8 +1,11 @@
-title: Calling all Families – Join our Playdates
+title: Calling all families – join our playdates
 theme: yellow
 description: |
   <p>We should stop talking about play and simply do it.<br />Therefore, we invite you to an exciting real life adventure with Avakai twins and Vai Kai play wizards. We bring games, crafts and of course our Avakai twins. You only need to bring your kids, your camera and loads of energy!</p>
   <p>Playdates are organized all over the world.<br/>Let us know where you want us to go next and we will make it happen.</p>
+control:
+  type: button
+  label: Subscribe here for a playdate near you
 form:
   name: playdates
   fields:

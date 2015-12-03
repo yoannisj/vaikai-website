@@ -6,7 +6,7 @@ control:
   type: button
   label:
     on: Show all magical features
-    off: Show most magical features only
+    off: Show less magical features
 entries:
 -
   title: Free Play
@@ -49,7 +49,7 @@ entries:
     path: illustrations/blue/distance.svg
     description: Illustration of two far-away avakai marked on a map
   description: |
-    Over Bluetooth the two Avakai talk to each other for a distance up to 50m! From the other side of the world, the Avakai love to stay in touch with their twin if you connect via the app.
+    Bluetooth enables the two Avakai talk to each other for a distance up to 50m! From the other side of the world, the Avakai love to stay in touch with their twin if you connect via the app.
 -
   title: Stimulating Senses
   image:

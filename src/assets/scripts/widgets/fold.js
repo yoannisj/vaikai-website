@@ -67,6 +67,9 @@ var Fold = module.exports = Collapse.extend({
   },
 
   _scroll: function() {
+
+    console.log('scroll offset', this.settings.scrollOffset);
+
     var sTop = this._expanded ? this._top + this._collapsedH :
       this._top;
 
@@ -81,3 +84,5 @@ var Fold = module.exports = Collapse.extend({
   }
 
 });
+
+$('[data-init~="fold"]').widget(Fold);

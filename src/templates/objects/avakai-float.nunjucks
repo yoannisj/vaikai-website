@@ -1,12 +1,23 @@
 {% import 'macros/image.nunjucks' as img %}
 
 {# =VARIABLES #}
-{% set avakai_float = {
+{% set avakai_float_front = {
   path: 'toys/avakai-tilted-left.png',
   description: ''
 } %}
 
+{% set avakai_float_back = {
+  path: 'toys/avakai-tilted-right-blurred.png',
+  description: ''
+} %}
+
 {# =MARKUP #}
-<div class="avk-float ratio-tiltleft">
-  {{ img.lazy(avakai_float, 'avk-float-img') }}
+<div class="avk-float" role="presentation">
+  <div class="avk-float-back" role="presentation">
+    {{ img.lazy(avakai_float_back) }}
+  </div>
+
+  <div class="avk-float-front" role="presentation">
+    {{ img.lazy(avakai_float_front) }}
+  </div>
 </div>

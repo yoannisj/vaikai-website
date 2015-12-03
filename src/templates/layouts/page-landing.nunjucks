@@ -1,4 +1,4 @@
-{% extends "layouts/page.nunjucks" %}
+{% extends "layouts/base.nunjucks" %}
 
 {% block body %}
   <div class="page page--landing">
@@ -6,5 +6,16 @@
       {{ super() }}
     </div>
   </div>
+{% endblock %}
+
+{% block body_footer %}
+  {# splash screen #}
+  <div class="chunk chunk--narrow">
+    <div class="chunk-inner">
+      {% include 'objects/splash.nunjucks' %}
+    </div>
+  </div>
+
+  {{ super() }}
 {% endblock %}
 

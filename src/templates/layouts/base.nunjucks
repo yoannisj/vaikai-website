@@ -86,7 +86,7 @@
         </main>
 
         <!-- =Footer -->
-        <footer class="page-footer menu-push theme-gray" role="footer">
+        <footer class="page-footer menu-push" role="contentinfo">
           {% block body_footer %}
             {% include "partials/footer.nunjucks" %}
           {% endblock %}

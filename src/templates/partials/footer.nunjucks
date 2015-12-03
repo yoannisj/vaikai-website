@@ -1,8 +1,7 @@
 {% import 'macros/link.nunjucks' as ln %}
 
-<div class="page-inner">
-  <div class="footer-nav milestone align-center">
-
+<div class="footer-nav theme-gray">
+  <div class="page-inner milestone align-center">
     <div class="social-nav">
       <ul class="social-links hlist">
         <li>

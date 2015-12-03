@@ -61,51 +61,73 @@ $company-intro-height-m: 740px;
 
 .avk-float {
   position: relative;
-  margin-top: -25%;
-  width: 80%;
-  max-width: 450px;
+  padding-bottom: 100%;
+
+  img {
+    width: 100%;
+  }
 }
 
-.avk-float-img {
-  margin-top: 40%;
+.avk-float-front {
+  position: absolute;
+  left: 5%;
+  bottom: -30%;
+  width: 70%;
+  max-width: none;
+}
+
+.avk-float-back {
+  position: absolute;
+  right: -40%;
+  top: -25%;
+  width: 70%;
 }
 
 @include shift('>sm')
 {
   .avk-float {
-    position: absolute;
-    right: -15%;
+    position: static;
+    padding: 0;
+  }
+
+  .avk-float-front
+  {
+    top: 20%;
+    right: -20%;
+    left: auto;
+    width: 100%;
+    max-width: 400px;
+
+    img {
+      margin-top: 30%;
+    }
+  }
+
+  .avk-float-back {
     top: 10%;
-    width: 110%;
-    max-width: 450px;
-    // margin-top: 0;
+    right: 55%;
+    max-width: 320px;
   }
 }
 
 @include shift('>m')
 {
-  .avk-float {
-    right: -10%;
-    top: 15%;
-    width: 100%;
-  }
 }
 
 @include shift('>l')
 {
-  .avk-float {
-    width: 70%;
-    top: 20%;
-    right: 0;
+  .avk-float-front {
+    right: -10%;
+  }
+
+  .avk-float-back {
+    top: 5%;
+    right: 40%;
   }
 }
 
 @include shift('>xl')
 {
-  .avk-float {
-    top: convert-length(140px, 'rem');
-    margin-top: convert-length(-180px, 'rem');
-  }
 }
 
 /* =Outro

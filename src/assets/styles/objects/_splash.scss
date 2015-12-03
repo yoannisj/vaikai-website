@@ -1,0 +1,34 @@
+// =============================================================================
+// =VaiKai - Splash object
+// =============================================================================
+
+.avk-makers {
+  position: relative;
+  padding-top: convert-length(50px, 'em');
+}
+
+/* =stamp-madewithlove
+ * -------------------------------------------------------------------------- */
+
+.stamp-madewithlove {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: convert-length(178px, 'rem');
+  height: convert-length(78px, 'rem');
+  margin-left: convert-length(-150px, 'rem');
+
+  background-image: url(../images/madewithlove.svg);
+  background-size: 100% auto;
+}
+
+@include shift('>sm')
+{
+  .avk-markers {
+    padding-top: convert-length(30px, 'rem');
+  }
+
+  .stamp-madewithlove {
+    margin-left: convert-length(-190px, 'rem');
+  }
+}

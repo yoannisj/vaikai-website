@@ -1,3 +1,5 @@
+{% import 'macros/symbol.nunjucks' as sym %}
+
 {# =VARIABLES
  # --------------------------------------------------------------- #}
 {% set vaikai_logo = {

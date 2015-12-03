@@ -31,7 +31,7 @@ $blue-theme-slider-bullet-color-active: $yellow;
     background: $blue-theme-input-background-active;
   }
 
-  .btn {
+  .btn:not(.btn--cta) {
     @extend .btn--invert;
   }
 
