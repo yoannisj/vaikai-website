@@ -6,7 +6,7 @@
 <!-- =ModernCraft -->
 {% call sect.base(section) %}
 
-  <div class="split split--uneven">
+  <div class="split split--uneven split--reverse">
     <div class="split-inner">
 
       <!-- =ModernCraft-Body -->

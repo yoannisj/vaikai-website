@@ -101,7 +101,7 @@
   {# inject param defaults #}
   {% set prm = {}|merge(data.celery, params) %}
 
-  <a class="btn btn--cta {{ classname }}" href="{{ prm.url|url }}" target="{{ prm.url|linktarget }}"
+  <a class="{{ classname }}" href="{{ prm.url|url }}" target="{{ prm.url|linktarget }}"
     data-celery="{{ prm.id }}" data-celery-version="{{ prm.version }}"
     {% if attrs %}
       {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}

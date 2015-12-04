@@ -10,7 +10,9 @@
       <div class="split-object" role="presentation">
         <div class="avk-limiteded">
           <div class="ratio-duo" role="presentation">
-            <strong class="stamp-limiteded ir">Limited Edition</strong>
+            {{ ctrl.celery({
+              label: 'Limited Edition'
+            }, 'reset-link stamp-limiteded ir') }}
             {{ img.lazy(section.image) }}
           </div>
         </div>
@@ -29,7 +31,7 @@
           <footer class="landmark">
 
             {% set control = section.control %}
-            {{ ctrl[control.type](control) }}
+            {{ ctrl[control.type](control, 'btn btn--cta') }}
 
           </footer>
         </div>

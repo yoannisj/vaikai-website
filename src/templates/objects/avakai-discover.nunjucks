@@ -2,12 +2,12 @@
 
 {# =VARIABLES #}
 {% set avakai_couple = {
-  path: 'toys/avakai-couple-lavandel-bg.gif',
+  path: 'toys/avakai-couple-blue-bg.gif',
   description: ''
 } %}
 
 {# =MARKUP #}
-<div id="outro" class="chunk chunk--narrow theme-blue" style="background-color: #b7cbdf;">
+<div id="outro" class="chunk chunk--narrow theme-blue">
   <div class="chunk-inner">
     <div class="flush-bottom grid grid--bottom">
       <div class="grid-cell s-span-6of12 s-push-6of12">

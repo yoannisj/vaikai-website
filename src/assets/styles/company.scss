@@ -71,16 +71,24 @@ $company-intro-height-m: 740px;
 .avk-float-front {
   position: absolute;
   left: 5%;
-  bottom: -30%;
+  bottom: 0;
   width: 70%;
   max-width: none;
+
+  img {
+    margin-bottom: -40%;
+  }
 }
 
 .avk-float-back {
   position: absolute;
-  right: -40%;
+  right: 0;
   top: -25%;
   width: 70%;
+
+  img {
+    margin-left: 55%;
+  }
 }
 
 @include shift('>sm')
@@ -92,42 +100,50 @@ $company-intro-height-m: 740px;
 
   .avk-float-front
   {
-    top: 20%;
-    right: -20%;
-    left: auto;
+    left: 0;
     width: 100%;
     max-width: 400px;
-
-    img {
-      margin-top: 30%;
-    }
   }
 
   .avk-float-back {
-    top: 10%;
-    right: 55%;
+    top: -10%;
+    width: 80%;
     max-width: 320px;
   }
 }
 
 @include shift('>m')
 {
+  .avk-float-front img {
+    margin-bottom: -50%;
+  }
 }
 
 @include shift('>l')
 {
   .avk-float-front {
-    right: -10%;
+    left: 15%;
   }
-
   .avk-float-back {
     top: 5%;
-    right: 40%;
   }
 }
 
 @include shift('>xl')
 {
+
+  .avk-float-front
+  {
+    left: convert-length(90px, 'rem');
+  }
+
+  .avk-float-back
+  {
+    left: convert-length(400px, 'rem');
+    right: auto;
+
+    img { margin-left: 0; }
+  }
 }
 
 /* =Outro

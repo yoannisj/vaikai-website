@@ -91,7 +91,7 @@
       <div class="menu-group m-show" role="presentation">
         <div class="menu-item" role="presentation">
 
-          {% call ctrl.celery({}, 'navbar-btn') %}
+          {% call ctrl.celery({}, 'navbar-btn btn btn--cta') %}
             Pre-order Avakai
           {% endcall %}
 

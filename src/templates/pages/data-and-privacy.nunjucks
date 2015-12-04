@@ -4,10 +4,10 @@
 {% block body_main %}
 
   <div class="page-inner" role="presentation">
-    <section id="open-positions" class="copy landmark">
+    <section class="copy landmark">
 
       <div class="landmark">
-        <p>We are working hard on creating a simple, transparent and accesible data &amp; privacy policy. You can read about our efforts on our blog.</p>
+        <p>We are working hard on creating a simple, transparent and accesible data &amp; privacy policy. You can read about our efforts on <a href="https://medium.com/@vai_kai/privacy-of-toys-ed61bac940cd#.gtg2pfos9" target="_blank">our blog</a>.</p>
         <p>In the meantime, as we are a German company, we are obliged to provide the following standard text describing the privacy policy of the website.</p>
       </div>
       <div class="landmark">
