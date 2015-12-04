@@ -99,9 +99,9 @@ $company-intro-height-m: 740px;
   }
 
   .avk-float-front {
-    left: 0;
-    width: 100%;
-    max-width: 400px;
+    left: 5%;
+    width: 80%;
+    max-width: 360px;
   }
 
   .avk-float-back {
@@ -113,32 +113,63 @@ $company-intro-height-m: 740px;
 
 @include shift('>m')
 {
-  .avk-float-front img {
-    margin-bottom: -50%;
+  .avk-float-front
+  {
+    left: 5%;
+
+    img {
+      margin-bottom: -50%;
+    }
+  }
+
+  .avk-float-back
+  {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
 @include shift('>l')
 {
   .avk-float-front {
-    left: 15%;
-  }
-
-  .avk-float-back {
-    top: 5%;
+    left: 10%;
+    width: 100%;
+    max-width: 400px;
   }
 }
 
 @include shift('>xl')
 {
-
   .avk-float-front {
-    left: convert-length(50px, 'rem');
+    left: 17.5%;
+    width: 120%;
+    max-width: 450px;
+  }
+
+  .avk-float-back
+  {
+    top: -10%;
+    width: 120%;
+    max-width: 450px;
+
+    img {
+      margin-left: 50%;
+    }
+  }
+}
+
+@include shift('>xxl')
+{
+  .avk-float-front {
+    left: convert-length(30px, 'rem');
   }
 
   .avk-float-back {
-    left: convert-length(300px, 'rem');
+    top: 5%;
+    left: convert-length(290px, 'rem');
     right: auto;
+    width: 100%;
+    max-width: 400px;
 
     img { margin-left: 0; }
   }

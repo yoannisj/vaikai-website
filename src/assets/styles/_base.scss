@@ -29,6 +29,10 @@ html {
   @media (max-width: 27.5em) {
     font-size: percentage(16/18); // we want 'base' font-size to equal 16px
   }
+
+  @include shift('>xxl') {
+    font-size: percentage(20/18); // we want 'base' font-size to equal 22px
+  }
 }
 
 body {

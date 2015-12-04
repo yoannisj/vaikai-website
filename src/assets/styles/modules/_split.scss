@@ -162,13 +162,13 @@ $split-inner-max-width-em: convert-length($split-inner-max-width, 'em', 16px);
 @include shift('>m')
 {
   .split-inner:before {
-    min-height: $split-min-height-m;
+    min-height: convert-length($split-min-height-m, 'rem');
   }
 }
 
 @include shift('>l')
 {
   .split-inner:before {
-    min-height: $split-min-height-l;
+    min-height: convert-length($split-min-height-l, 'rem');
   }
 }
