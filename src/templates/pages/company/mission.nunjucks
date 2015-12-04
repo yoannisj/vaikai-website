@@ -9,7 +9,7 @@
       <figure class="quote milestone align-center">
         <h2 class="sr-only">{{ section.title }}</h2>
         <blockquote class="quote-text">
-          {{ section.quote|paragraphs('epsilon s-gamma m-beta l-alpha') }}
+          {{ section.quote|paragraphs('epsilon s-delta m-gamma l-beta') }}
         </blockquote>
 
         {% set credit = section.credit %}

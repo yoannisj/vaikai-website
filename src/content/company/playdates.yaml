@@ -5,7 +5,7 @@ description: |
   <p>Playdates are organized all over the world.<br/>Let us know where you want us to go next and we will make it happen.</p>
 control:
   type: button
-  label: Subscribe here for a playdate near you
+  label: Subscribe for a playdate <span class="s-show">near you</span>
 form:
   name: playdates
   fields:

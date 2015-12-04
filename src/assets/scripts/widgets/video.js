@@ -96,4 +96,4 @@ var Video = module.exports = BaseWidget.extend({
 
 });
 
-$('[data-init~="video"').widget(Video);
+$('[data-init~="video"]').widget(Video);
