@@ -7,7 +7,7 @@
 } %}
 
 {% set avakai_float_back = {
-  path: 'toys/avakai-tilted-right-blurred.png',
+  path: 'toys/avakai-tilted-right-blurred-2.png',
   description: ''
 } %}
 
