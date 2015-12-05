@@ -8,7 +8,7 @@ module.exports = function(env) {
       content:'<%= paths.src %>/content',
       data: '<%= paths.src %>/data',
       bower: './bower_components',
-      public: (env.dev ? 'http://vaikai.local' : 'http://95.85.26.22/avakai/7')
+      public: (env.dev ? 'http://vaikai.local' : 'http://vaikai.com')
     },
 
     tasks: {
