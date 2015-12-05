@@ -1,1 +1,22 @@
 {% extends "layouts/page-landing.nunjucks" %}
+
+{% block head_styles %}
+  {{ super() }}
+
+  {# Write custom css in 'src/assets/styles/preorder.scss' - gets loaded in following line #}
+  <link rel="stylesheet" href="{{ 'css/preorder.css'|url }}"></link>
+{% endblock %}
+
+{% block body_main %}
+
+  {# Write html here #}
+
+{% endblock %}
+
+
+{% block body_end %}
+  {{ super() }}
+
+  {# Write custom js in 'src/assets/scripts/preorder.js' - gets loaded in following line #}
+  <script src="{{ 'js/preorder.js'|webpackurl }}" />
+{% endblock %}
