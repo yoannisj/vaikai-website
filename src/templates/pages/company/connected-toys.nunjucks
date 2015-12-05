@@ -7,23 +7,22 @@
   <div class="split split--reverse">
     <div class="split-inner">
 
-        <!-- =ConnectedToys-Object -->
-        <div class="split-object sm-crop">
-          {{ img.base(section.image|merge({
-            size: [680, 680]
-          })) }}
-        </div>
-        <!-- =ConnectedToys-Object -->
-
-        <!-- =ConnectedToys-Body -->
-        <div class="split-body">
-          <div class="milestone centrum centrum--left">
-            <h2 class="h3">{{ section.title }}</h2>
-            {{ section.description|paragraphs }}
-          </div>
-        </div>
-        <!-- /ConnectedToys-Body -->
+      <!-- =ConnectedToys-Object -->
+      <div class="split-object sm-crop">
+        {{ img.base(section.image|merge({
+          size: [680, 680]
+        })) }}
       </div>
+      <!-- =ConnectedToys-Object -->
+
+      <!-- =ConnectedToys-Body -->
+      <div class="split-body">
+        <div class="milestone centrum centrum--left">
+          <h2 class="h3">{{ section.title }}</h2>
+          {{ section.description|paragraphs }}
+        </div>
+      </div>
+      <!-- /ConnectedToys-Body -->
 
     </div>
   </div>
