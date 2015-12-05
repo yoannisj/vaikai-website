@@ -1,0 +1,14 @@
+# OS & Hidden Files
+.DS_STORE
+**/.DS_STORE
+!.gitignore
+
+# Cache Files
+.sass-cache
+
+# Dependencies
+node_modules
+bower_components
+
+# Build Files
+www
