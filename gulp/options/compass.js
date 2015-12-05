@@ -38,8 +38,7 @@ module.exports = function(config, env) {
       'compass-import-once',
       'sass-json-vars',
       'sass-aleksi',
-      'shift',
-      'sass-css-importer'
+      'shift'
     ],
     // Run compass compile with bundle exec
     // - would run `bundle exec compass compile`

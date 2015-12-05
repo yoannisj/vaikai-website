@@ -10,37 +10,47 @@ First, pull the git repository locally, then open a terminal and cd to the repos
 
 1. Make sure nodeJS > 4 is installed
 
-First, verify the current node version installed with `node --v`. If the version is below 4.0, update node using one of the following methods:
+    First, verify the current node version installed with `node -v`. If the version is below 4.0, update node using one of the following methods:
 
-- Via the installer provided on [nodejs.org](https://nodejs.org/en/download/)
+    + Via the installer provided on [nodejs.org](https://nodejs.org/en/download/)
 
-- Via npm directly:
+    + Via npm directly:
 
-[more info](http://theholmesoffice.com/node-js-fundamentals-how-to-upgrade-the-node-js-version/)
+        [more info](http://theholmesoffice.com/node-js-fundamentals-how-to-upgrade-the-node-js-version/)
 
-    sudo npm cache clean -f
-    sudo npm install -g n
-    sudo n stable 
+            sudo npm cache clean -f
+            sudo npm install -g n
+            sudo n stable 
 
-- Via Node Version Manager:
+    + Via Node Version Manager:
 
-Find instructions [here](https://davidwalsh.name/nvm)
+        Find instructions [here](https://davidwalsh.name/nvm)
 
 2. Install build/frontend dependencies
 
-Global dependencies
+    Global dependencies
 
-    sudo npm install -g gulp
-    sudo npm install -g bower
+        sudo npm install -g gulp
+        sudo npm install -g bower
 
-Project dependencies (reads the `package.json` and `bower.json` files to install all needed packages)
+    Rubygems (temporary, untill we switch back to node-sass)
 
-    npm install
-    bower install
+        sudo gem install -n /usr/local/bin compass
+        sudo gem install -n /usr/local/bin compass-import-once
+        sudo gem install -n /usr/local/bin sass-json-vars
+        sudo gem install -n /usr/local/bin sass-aleksi
+        sudo gem install -n /usr/local/bin shift
+
+    **Note**: If you are using OSX El Capitan, you migth have to [fix Ruby and Compass](http://andyy.me/fixing-compass-after-update-to-el-capitan-osx-10-11/) first.
+
+    Project dependencies (reads the `package.json` and `bower.json` files to install all needed packages)
+
+        npm install
+        bower install
 
 3. Setup local url
 
-open the file 'gulp/config.js' and, in the value for `paths.public` (line 11), replace 'http://vaikai.local' with a local url that points to the project's 'www' folder (e.g. `http://localhost/vaikai/www`).
+    open the file 'gulp/config.js' and, in the value for `paths.public` (line 11), replace 'http://vaikai.local' with a local url that points to the project's 'www' folder (e.g. `http://localhost/vaikai/www`).
 
 ### Build project
 
@@ -56,9 +66,9 @@ If you use the `--dev` argument, it will build the static website inside the 'ww
 
 Additionally, you can use the `--watch` flag when developing. This will update js and css assets whenever you edit the source files in the `src` folder.
 
-**Note**: for now `--watch` doesn't look for changes in the `src/content`. This will be fixed soon but in the mean time you need to re-run `gulp build --dev --watch` whenever you change the content files.
+**Note**: for now `--watch` doesn't look for changes in the `src/content` folder. This will be fixed soon but in the mean time you need to re-run `gulp build --dev --watch` whenever you change the content files.
 
-**Note**: for now there is a bug with `--watch` that prevents images resized inside of the templates to be copied inside the 'www' folder. This means these images won't load inside the browser. This will be fixed soon but in the meantime you can run `gulp assets --dev` and then re-run `gulp build --dev --watch` to work around the issue.
+**Note**: for now there is a bug with `--watch` that prevents images resized  in the templates to be copied to the 'www' folder. This means they won't load in the browser correctly. This will be fixed soon but in the meantime you can run `gulp assets --dev` and then re-run `gulp build --dev --watch` to work around the issue.
 
 ### Update production website
 
