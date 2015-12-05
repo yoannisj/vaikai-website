@@ -17,6 +17,8 @@ $company-intro-height-m: 740px;
 
 #intro
 {
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.05); // fart + pirates
+
   // repsonsive background
   @include shift('<s')
   {

@@ -19,6 +19,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.05); // fart + pirates
 
   h1, .h1,
   h2, .h2,
@@ -59,62 +60,62 @@
 
 }
 
-#intro.theme-superman
-{
-  background-color: #b7cbdf;
+#intro.theme-superman { background-color: #b7cbdf; }
+#intro.theme-fart { background-color: #E8E6DA; }
+#intro.theme-pirates { background-color: #E0D1BE; }
 
-  @include shift('<s') { background-image: url(../images/more-play/superman-small.jpg); }
-  @include shift('>s <m') { background-image: url(../images/more-play/superman-medium.jpg); }
-  @include shift('>m') { background-image: url(../images/more-play/superman-large.jpg); }
+@include shift('<s')
+{
+  #intro.theme-superman { background-image: url(../images/more-play/superman-small.jpg); }
+  #intro.theme-fart { background-image: url(../images/more-play/fart-small.jpg); }
+  #intro.theme-pirates { background-image: url(../images/more-play/pirates-small.jpg); }
 }
 
-#intro.theme-fart
+@include shift('>s <m')
 {
-  background-color: #E8E6DA;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.12); // fart + pirates
-
-  @include shift('<s') { background-image: url(../images/more-play/fart-small.jpg); }
-  @include shift('>s <l') { background-image: url(../images/more-play/fart-medium.jpg); }
-  @include shift('>l') { background-image: url(../images/more-play/fart-large.jpg); }
+  #intro.theme-superman { background-image: url(../images/more-play/superman-medium.jpg); }
+  #intro.theme-fart { background-image: url(../images/more-play/fart-medium.jpg); }
+  #intro.theme-pirates { background-image: url(../images/more-play/pirates-medium.jpg); }
 }
 
-#intro.theme-pirates
+@include shift('>m')
 {
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.12); // fart + pirates
-  background-color: #E0D1BE;
-
-  @include shift('<s') { background-image: url(../images/more-play/pirates-small.jpg); }
-  @include shift('>s <m') { background-image: url(../images/more-play/pirates-medium.jpg); }
-  @include shift('>m') { background-image: url(../images/more-play/pirates-large.jpg); }
-}
-
-.stamp-age4plus {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  left: auto;
-
-  width: convert-length(80px, 'rem');
-  height: convert-length(80px, 'rem');
-  background-image: url(../images/age4plus.svg);
-  background-size: 100% auto;
-}
-
-@include shift('>s')
-{
-  .stamp-age4plus {
-    left: 5%;
-    right: auto;
+  #intro.theme-superman {
+    background-image: url(../images/more-play/superman-large.jpg);
+    background-position: 20% center;
   }
+
+  #intro.theme-fart { background-image: url(../images/more-play/fart-large.jpg); }
+  #intro.theme-pirates { background-image: url(../images/more-play/pirates-large.jpg); }
 }
 
-@include shift('>sm')
-{
-  .stamp-age4plus {
-    width: convert-length(120px, 'rem');
-    height: convert-length(120px, 'rem');
-  }
-}
+// .stamp-age4plus {
+//   position: absolute;
+//   top: 5%;
+//   right: 5%;
+//   left: auto;
+
+//   width: convert-length(80px, 'rem');
+//   height: convert-length(80px, 'rem');
+//   background-image: url(../images/age4plus.svg);
+//   background-size: 100% auto;
+// }
+
+// @include shift('>s')
+// {
+//   .stamp-age4plus {
+//     left: 5%;
+//     right: auto;
+//   }
+// }
+
+// @include shift('>sm')
+// {
+//   .stamp-age4plus {
+//     width: convert-length(120px, 'rem');
+//     height: convert-length(120px, 'rem');
+//   }
+// }
 
 /* =Pre-order
  * ========================================================================== */
