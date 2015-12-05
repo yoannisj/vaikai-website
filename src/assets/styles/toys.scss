@@ -64,8 +64,8 @@
   background-color: #b7cbdf;
 
   @include shift('<s') { background-image: url(../images/more-play/superman-small.jpg); }
-  @include shift('>s <l') { background-image: url(../images/more-play/superman-medium.jpg); }
-  @include shift('>l') { background-image: url(../images/more-play/superman-large.jpg); }
+  @include shift('>s <m') { background-image: url(../images/more-play/superman-medium.jpg); }
+  @include shift('>m') { background-image: url(../images/more-play/superman-large.jpg); }
 }
 
 #intro.theme-fart
