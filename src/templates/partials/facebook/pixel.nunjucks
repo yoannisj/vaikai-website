@@ -11,8 +11,14 @@
   }
   _fbq.push(['addPixelId', '{{ data.facebook.pixel_id }}']);
   })();
+  
   window._fbq = window._fbq || [];
   window._fbq.push(['track', 'PixelInitialized', {}]);
+
+  {% if page.tracking.facebook %}
+    window._fbq.push(['track', '{{ page.tracking.facebook }}', {'value':'0.00','currency':'USD'}]);
+  {% endif %}
+
 </script>
 <noscript>
   <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id={{ data.facebook.pixel_id }}&amp;ev=PixelInitialized" />
