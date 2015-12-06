@@ -1,4 +1,5 @@
 {% extends "layouts/page-landing.nunjucks" %}
+{% import 'macros/image.nunjucks' as img %}
 
 {% block head_styles %}
   {{ super() }}
@@ -15,23 +16,23 @@
       <div class="split-inner">
         <div class="split-body">
           <div class="milestone centrum centrum--left">
-            <h2>Avakai twins:<br>
+            <h3>Avakai twins:<br>
             Less screentime, more play<br>
-            <span class="strikethrough">139€</span> <span class="strikethrough">129€</span></h2>
+            <span class="strikethrough">139€</span> <span class="bluetext">129€</span></h3>
             <p>Avakai are crafted wooden toy twins that enable kids to discover free play and a connected world without screens. Be part of our first production and get a 10 EUR discount.</p>
             <p>
               <select class="js-select">
-                <option>Avakai twins - Painted</option>
-                <option>Avakai twins - Natural wood</option>
+                {% for item in page.units %}
+                  <option value="{{ item.name }}">{{ item.title }}</option>
+                {% endfor %}
               </select>
             </p>
 
             <p>
 
-              <button type="button" class="btn" data-celery="559af860b75d810300dfb1ad" data-celery-type="embed" data-celery-version="v2" data-celery-sku="avakai-twins-col" data-celery-autoadd>Add to cart Color</button>
-
-              <button type="button" class="btn" data-celery="559af860b75d810300dfb1ad" data-celery-type="embed" data-celery-version="v2" data-celery-sku="avakai-twins-col" data-celery-autoadd>Add to cart Natural</button>
-
+              {% for item in page.units %}
+                <button type="button" class="btn {{ 'hide' if loop.index0 != 0 }}" data-celery="{{ item.celery_id }}" data-celery-version="v2" data-celery-sku="{{ item.sku }}" data-celery-prefill-coupon="" data-celery-autoadd data-vaikai-option="{{ item.name }}">Add to cart</button>
+              {% endfor %}
 
             </p>
 
@@ -40,9 +41,17 @@
             <p class="smaller-text">The price doesn't include taxes, customs or shipping costs.</p>
           </div>
         </div>
-        <div class="split-object sm-crop">
-        <img src="images/playdates/dev-4454-680x680.jpg" alt="Avakai twins - Painted" data-width="680" data-height="680" width="680">
-        </div>
+        
+        {% for item in page.units %}
+          <div class="split-object sm-crop {{ 'hide' if loop.index0 != 0 }}" data-vaikai-option="{{ item.name }}">
+         
+            {{ img.base(item.image|merge({
+              size: [680, 680]
+            }), '') }}
+          </div>
+        {% endfor %}
+
+        
       </div>
     </div>
 
@@ -53,85 +62,88 @@
     <div class="split split--reverse">
       <div class="split-inner">
         <div class="split-body">
-          <h4>What's included</h4>
-          <ul>
-            <li>Two Avakai dolls who respond to each other wirelessly</li>
-            <li>USB charging cable</li>
-            <li>Play ideas and handling manual</li>
-          </ul>
+          <div class="milestone centrum centrum--left">
+            <h4>What's included</h4>
+            <ul>
+              <li>Two Avakai dolls who respond to each other wirelessly</li>
+              <li>USB charging cable</li>
+              <li>Play ideas and handling manual</li>
+            </ul>
 
-    <h4>Interactions and expressions</h4>
-    <ul>
-      <li>Rolling: Laughing - Giggling</li>
-      <li>Tilting: Singing - Humming</li>
-      <li>Shaking: Angry - Scared</li>
-      <li>Waving: Excited</li>
-      <li>Tapping the mouth: Kiss</li>
-      <li>Own behaviours:
-        <ul>
-          <li>Sneezing</li>
-          <li>Hunger growls</li>
-          <li>Grumpy noises</li>
-          <li>Heartbeats</li>
-          <li>And more...</li>
-        </ul>
-      </li>
-    </ul>
-
-
-    <h4>Games to play</h4>
-    <ul>
-      <li>Treasure Hunt</li>
-      <li>Catch</li>
-      <li>Princess and Monster</li>
-      <li>Sardines</li>
-      <li>Blind man’s buff</li>
-      <li>Hot cold</li>
-      <li>Hide-and-Seek</li>
-      <li>Hunt the thimble</li>
-      <li>Ghost in the graveyard</li>
-      <li>… and as many as your kid's imagination!</li>
-    </ul>
-
-    <h4>Material</h4>
-    <p>All our wood is from responsibly managed forests in Poland:</p>
-    <ul>
-      <li>Bodies: birch wood</li>
-      <li>Faces: dark walnut and light hornbeam</li>
-    </ul>
-
-    <h4>Available Finishings</h4>
-    <p>We are using only eco-friendly, toy-certified coatings by established German manufacturers. You can choose between:</p>
-    <ul>
-      <li>Brightly colored: sky blue and golden yellow</li>
-      <li>Natural: just finished wood</li>
-    </ul>
-
-    <h4>Dimensions</h4>
-    <p>Each Avakai is 150 mm tall and 65 mm wide and weighs less than 200 grams on a diet.</p>
-
-    <h4>Power and Battery</h4>
-    <p>Full charge (2,5 hours) will last up to one week with light usage and 3 hours during active play.</p>
-    <ul>
-      <li>Rechargeable lithium-polymer battery.</li>
-      <li>Charge from any USB port.</li>
-    </ul>
-    <p>When the battery needs to be charged, Avakai gives rumble sound signals and refuses to interact normally, providing only grumpy sounds. When the battery is charging, the Avakai is passive and only the light is pulsating slowly.</p>
+            <h4>Interactions and expressions</h4>
+            <ul>
+              <li>Rolling: Laughing - Giggling</li>
+              <li>Tilting: Singing - Humming</li>
+              <li>Shaking: Angry - Scared</li>
+              <li>Waving: Excited</li>
+              <li>Tapping the mouth: Kiss</li>
+              <li>Own behaviours:
+                <ul>
+                  <li>Sneezing</li>
+                  <li>Hunger growls</li>
+                  <li>Grumpy noises</li>
+                  <li>Heartbeats</li>
+                  <li>And more...</li>
+                </ul>
+              </li>
+            </ul>
 
 
-    
-    
-    
-    <h4>System Requirements</h4>
-    <p>Two dolls communicate to each other directly via Bluetooth Low Energy or via internet, routing through Bluetooth Smart-enabled smartphones with a free Avakai App installed (Android & iOS).</p>
+            <h4>Games to play</h4>
+            <ul>
+              <li>Treasure Hunt</li>
+              <li>Catch</li>
+              <li>Princess and Monster</li>
+              <li>Sardines</li>
+              <li>Blind man’s buff</li>
+              <li>Hot cold</li>
+              <li>Hide-and-Seek</li>
+              <li>Hunt the thimble</li>
+              <li>Ghost in the graveyard</li>
+              <li>… and as many as your kid's imagination!</li>
+            </ul>
 
-    <h4>Supported Devices</h4>
-    <p>Apple iPad 3, 4, Air (all), mini (all), iPad Pro, and iPhone 4S and above.<br>
-    Android version 4.4 and above on phones and tablets with Bluetooth LE/Smart.</p>
+            <h4>Material</h4>
+            <p>All our wood is from responsibly managed forests in Poland:</p>
+            <ul>
+              <li>Bodies: birch wood</li>
+              <li>Faces: dark walnut and light hornbeam</li>
+            </ul>
 
-    <h4>Free Mobile App</h4>
-    <p>A free Mobile App will allow to upgrade and install new behaviours. Also the app connects two Avakai over large distances. It communicates with Avakai via Bluetooth LE/Smart. The app will be released and available to download in Spring 2016, before the first batch of orders will be shipped.</p>
+            <h4>Available Finishings</h4>
+            <p>We are using only eco-friendly, toy-certified coatings by established German manufacturers. You can choose between:</p>
+            <ul>
+              <li>Brightly colored: sky blue and golden yellow</li>
+              <li>Natural: just finished wood</li>
+            </ul>
 
+            <h4>Dimensions</h4>
+            <p>Each Avakai is 150 mm tall and 65 mm wide and weighs less than 200 grams on a diet.</p>
+
+            <h4>Power and Battery</h4>
+            <p>Full charge (2,5 hours) will last up to one week with light usage and 3 hours during active play.</p>
+            <ul>
+              <li>Rechargeable lithium-polymer battery.</li>
+              <li>Charge from any USB port.</li>
+            </ul>
+            <p>When the battery needs to be charged, Avakai gives rumble sound signals and refuses to interact normally, providing only grumpy sounds. When the battery is charging, the Avakai is passive and only the light is pulsating slowly.</p>
+
+
+            
+            
+            
+            <h4>System Requirements</h4>
+            <p>Two dolls communicate to each other directly via Bluetooth Low Energy or via internet, routing through Bluetooth Smart-enabled smartphones with a free Avakai App installed (Android & iOS).</p>
+
+            <h4>Supported Devices</h4>
+            <p>Apple iPad 3, 4, Air (all), mini (all), iPad Pro, and iPhone 4S and above.<br>
+            Android version 4.4 and above on phones and tablets with Bluetooth LE/Smart.</p>
+
+            <h4>Free Mobile App</h4>
+            <p>A free Mobile App will allow to upgrade and install new behaviours. Also the app connects two Avakai over large distances. It communicates with Avakai via Bluetooth LE/Smart. The app will be released and available to download in Spring 2016, before the first batch of orders will be shipped.</p>
+
+
+          </div>
         </div>
       </div>
     </div>
@@ -145,5 +157,5 @@
   {{ super() }}
 
   {# Write custom js in 'src/assets/scripts/preorder.js' - gets loaded in following line #}
-  <script src="{{ 'js/preorder.js'|webpackurl }}" />
+  <script src="{{ 'js/preorder.js'|webpackurl }}"></script>
 {% endblock %}

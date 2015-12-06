@@ -1,3 +1,17 @@
+@import "config/colors";
+
 .smaller-text {
   font-size: 86%;
+}
+
+.hidden-element {
+  display: none;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.bluetext {
+ color: $blue;
 }
