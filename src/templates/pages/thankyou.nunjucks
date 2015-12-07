@@ -1,0 +1,24 @@
+{% extends 'layouts/page-info.nunjucks' %}
+
+
+{% block body_main %}
+
+  <div class="page-inner" role="presentation">
+    <section id="imprint-contents" class="landmark">
+
+
+
+      <div class="copy landmark">
+        <h3>Thank you for subscribing!</h3>
+        <h4>Have a beautiful day.</h4>  
+      </div>
+
+      {% include 'objects/info-back.nunjucks' %}
+
+    </section>
+  </div>
+
+  <script>
+    window._fbq = window._fbq || []; window._fbq.push(['track', '6033122367801', {'value':'0.00','currency':'USD'}]);
+  </script>
+{% endblock %}
