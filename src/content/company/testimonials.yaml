@@ -3,6 +3,12 @@ theme: gray
 entries:
 -
   quote: |
+    My favorite thing about Avakai is that they can talk to each other.
+  credit:
+    name: Stella
+    description: 8 years
+-
+  quote: |
     Vai Kai is NOT using cameras or microphones in their toys to protect the privacy of children and families.
   credit:
     name: PAN-EU youth
@@ -15,9 +21,3 @@ entries:
     logo:
       path: logos/logo-thedrum.png
     url: http://www.thedrum.com/opinion/2015/08/07/rise-edutech-how-startups-are-filling-technology-gaps-curriculum
--
-  quote: |
-    Tablets and iPhones are built for adults and someone needs to think of the children.
-  credit:
-    name: Matas
-    description: co-founder of Vai Kai
