@@ -9,7 +9,7 @@ require('widgets/carousel');
 require('widgets/toggle');
 require('widgets/video');
 
-// reuqire modules
+// require modules
 require('modules/svg');
 
 // multifold on features-list

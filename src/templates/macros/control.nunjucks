@@ -101,7 +101,7 @@
   {# inject param defaults #}
   {% set prm = {}|merge(settings.integrations.celery, params) %}
 
-  {# <a class="{{ classname }}" href="{{ prm.url|url }}" target="{{ prm.url|linktarget }}"
+  {# <a class="{{ classname }}" href="{{ prm.url }}" target="{{ prm.url|linktarget }}"
     data-celery="{{ prm.id }}" data-celery-version="{{ prm.version }}"
     {% if attrs %}
       {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
@@ -114,7 +114,7 @@
     {% endif %}
   </a> #}
 
-  <a class="{{ classname }}" href="{{ './preorder.html'|url }}">
+  <a class="{{ classname }}" href="{{ 'preorder.html' }}">
     {% if caller %}
       {{ caller() }}
     {% else %}

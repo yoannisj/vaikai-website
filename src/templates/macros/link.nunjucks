@@ -12,7 +12,7 @@
   {# inject param defaults #}
   {% set prm = defaults|merge(params) %}
 
-  <a href="{{ prm.url|url }}" target="{{ prm.url|linktarget }}"
+  <a href="{{ prm.url }}" target="{{ prm.url|linktarget }}"
     {% if classname %} class="{{ classname }}"{% endif %}
     {% if prm.title %} title="{{ prm.title }}"{% endif %}
     {% if prm.rel %} rel="{{ prm.rel }}"{% endif %}

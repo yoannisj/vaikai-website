@@ -5,11 +5,11 @@
   {{ super() }}
 
   {# Write custom css in 'src/assets/styles/preorder.scss' - gets loaded in following line #}
-  <link rel="stylesheet" href="{{ 'css/preorder.css'|url }}"></link>
+  <link rel="stylesheet" href="{{ 'css/preorder.css' }}"></link>
 {% endblock %}
 
 {% block body_main %}
-  
+
   <!-- selecting what to order -->
   <section id="select" class="section theme-yellow">
     <div class="split split--reverse">
@@ -41,17 +41,17 @@
             <p class="smaller-text">The price doesn't include taxes, customs or shipping costs.</p>
           </div>
         </div>
-        
+
         {% for item in page.units %}
           <div class="split-object sm-crop {{ 'hide' if loop.index0 != 0 }}" data-vaikai-option="{{ item.name }}">
-         
+
             {{ img.base(item.image|merge({
               size: [680, 680]
             }), '') }}
           </div>
         {% endfor %}
 
-        
+
       </div>
     </div>
 
@@ -129,9 +129,9 @@
             <p>When the battery needs to be charged, Avakai gives rumble sound signals and refuses to interact normally, providing only grumpy sounds. When the battery is charging, the Avakai is passive and only the light is pulsating slowly.</p>
 
 
-            
-            
-            
+
+
+
             <h4>System Requirements</h4>
             <p>Two dolls communicate to each other directly via Bluetooth Low Energy or via internet, routing through Bluetooth Smart-enabled smartphones with a free Avakai App installed (Android & iOS).</p>
 
@@ -157,5 +157,5 @@
   {{ super() }}
 
   {# Write custom js in 'src/assets/scripts/preorder.js' - gets loaded in following line #}
-  <script src="{{ 'js/preorder.js'|webpackurl }}"></script>
+  <script src="{{ 'js/preorder.js' }}"></script>
 {% endblock %}

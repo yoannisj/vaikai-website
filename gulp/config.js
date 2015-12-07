@@ -1,6 +1,7 @@
 module.exports = function(env) {
 
   return {
+
     paths: {
       src: './src',
       dest: './www',
@@ -8,7 +9,7 @@ module.exports = function(env) {
       content:'<%= paths.src %>/content',
       settings: '<%= paths.src %>/settings',
       bower: './bower_components',
-      public: (env.dev ? 'http://vaikai.local' : 'http://vaikai.com')
+      public: (env.dev ? 'http://localhost' : 'http://vaikai.com')
     },
 
     tasks: {

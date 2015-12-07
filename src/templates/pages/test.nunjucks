@@ -245,5 +245,5 @@
 
 {% block body_end %}
   {{ super() }}
-  <script src="{{ 'js/test.js'|webpackurl }}"></script>
+  <script src="{{ 'js/test.js' }}"></script>
 {% endblock %}
