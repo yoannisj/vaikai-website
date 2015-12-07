@@ -10,7 +10,7 @@
 
       <!-- =Reaction-Cover -->
       <div class="cover">
-        <div class="cover-object ratio-flex" style="background-image: url({{ ('images/' ~ section.poster)|url }});" aria-hidden="true">
+        <div class="cover-object ratio-flex" style="background-image: url({{ ('images/' ~ section.poster) }});" aria-hidden="true">
         </div>
         <div class="cover-body overlay nucleon">
           <div class="milestone" role="presentation">

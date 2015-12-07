@@ -16,8 +16,8 @@
 } %}
 
 {% set mc_defaults = {
-  action: settings.integration.mailchimp.url,
-  user: settings.integration.mailchimp.user,
+  action: settings.integrations.mailchimp.url,
+  user: settings.integrations.mailchimp.user,
   method: 'post'
 } %}
 
