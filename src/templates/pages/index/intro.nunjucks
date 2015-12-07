@@ -29,16 +29,16 @@
             {{ section.description|paragraphs('s-zeta m-epsilon m-delta') }}
 
             <p class="landmark">
-              {# {% call ctrl.link(section.control|merge({
+              {% call ctrl.link(section.control|merge({
                 type: 'link',
                 url: 'http://vimeo.com/' ~ section.video.id,
                 target: 'intro-video:popup',
                 action: 'open'
               }), 'link-quiet shoutout zeta s-epsilon sm-delta m-gamma', popup_condition) %}
                 {{ sym.pre_icon(section.control.icon, section.control.label, 'icon--md') }}
-              {% endcall %} #}
+              {% endcall %}
 
-              <span class="shoutout teaser">new video soon!</span>
+             
             </p>
 
           </div>
