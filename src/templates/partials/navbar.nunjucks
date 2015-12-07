@@ -6,7 +6,7 @@
 {# =variables
  # --------------------------------------------------------------- #}
 {% set home_link = {
-  url: site.homepage,
+  url: settings.site.homepage,
   rel: 'home',
   title: 'Vai Kai'
 } %}
@@ -36,7 +36,7 @@
         {% endcall %}
 
       </h1>
-      <span class="navbar-tagline tagline">{{ data.website.tagline }}</span>
+      <span class="navbar-tagline tagline">{{ settings.site.tagline }}</span>
     </div>
 
     <!-- =NAVBAR-TOGGLE -->
@@ -63,7 +63,7 @@
       </header> #}
       <div class="menu-group menu-main">
         <ul class="uilist">
-          {% for item in data.main_nav %}
+          {% for item in settings.navigation.main %}
 
             <li class="menu-item">
               {{ ln.nav(item, page.url, 'menu-link') }}
@@ -76,13 +76,13 @@
       <div class="menu-group menu-social" role="presentation">
         <ul class="hlist">
           <li class="menu-item">
-            {{ ln.icon(data.social.twitter, 'twitter', 'menu-icon') }}
+            {{ ln.icon(settings.network.twitter, 'twitter', 'menu-icon') }}
           </li>
           <li class="menu-item">
-            {{ ln.icon(data.social.facebook, 'facebook', 'menu-icon') }}
+            {{ ln.icon(settings.network.facebook, 'facebook', 'menu-icon') }}
           </li>
           <li class="menu-item">
-            {{ ln.icon(data.social.instagram, 'instagram', 'menu-icon') }}
+            {{ ln.icon(settings.network.instagram, 'instagram', 'menu-icon') }}
           </li>
         </ul>
       </div>
@@ -95,13 +95,12 @@
             Pre-order Avakai
           {% endcall %}
 
-          {# <a class="navbar-btn btn btn--cta" data-celery="{{ data.celery.id }}" data-celery-version="{{ data.celery.version }}" href="{{ data.celery.url }}" target="_blank">Pre-order Avakai</a> #}
         </div>
       </div>
 
       <div class="menu-group menu-sub m-hide">
         <ul class="navbar-links uilist">
-          {% for item in data.sub_nav %}
+          {% for item in settings.navigation.sub %}
 
             <li class="menu-item">
               {{ ln.nav(item, page.url, 'menu-link') }}

@@ -7,26 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- =Robots & SEO -->
-    <title>{{ page.title }} | {{ site.title }}</title>
+    <title>{{ page.title }} | {{ settings.site.title }}</title>
     <meta name="description" content="{{ page.description }}" />
-    <meta name="keywords" content="{{ (site.keywords|merge(page.keywords)) }}" />
-    <meta name="author" content="{{ site.author }}" />
-    <meta name="web-author" content="{{ site.webAuthor }}" />
+    <meta name="keywords" content="{{ (settings.site.keywords|merge(page.keywords)) }}" />
+    <meta name="author" content="{{ settings.site.author }}" />
+    <meta name="web-author" content="{{ settings.site.webAuthor }}" />
     <link rel="canonical" href="{{ page.url }}" />
 
     <!-- =Scripts-preload -->
     {% block head_scripts %}
-      <script src="{{ 'js/vendor/modernizr.js'|url }}"></script>
+      <script src="{{ 'js/vendor/modernizr.js' }}"></script>
       <script>
       function loadJS(u){var r=document.getElementsByTagName("script")[0],s=document.createElement("script");s.src=u;r.parentNode.insertBefore(s,r);}
 
       if(!window.HTMLPictureElement || !('sizes' in document.createElement('img'))){
-        loadJS("{{ 'js/vendor/ls.respimg.js'|url }}");
+        loadJS("{{ 'js/vendor/ls.respimg.js' }}");
       }
     </script>
-    <script src="{{ 'js/vendor/ls.parent-fit.js'|url }}"></script>
-    <script src="{{ 'js/vendor/ls.bgset.js'|url }}"></script>
-    <script src="{{ 'js/vendor/lazysizes.js'|url }}"></script>
+    <script src="{{ 'js/vendor/ls.parent-fit.js' }}"></script>
+    <script src="{{ 'js/vendor/ls.bgset.js' }}"></script>
+    <script src="{{ 'js/vendor/lazysizes.js' }}"></script>
     <script>
       window.lazySizesConfig = window.lazySizesConfig || {};
       window.lazySizesConfig.customMedia = {
@@ -101,19 +101,13 @@
       <script src="https://code.jquery.com/{{ jQueryCdnFile }}"></script>
       <script>window.jQuery || document.write('<script src="./js/vendor/jquery.js"><\/script>');</script>
 
-      {% if app.watch %}
-        <!-- =Scripts-watch -->
-        <script src="{{ app.servers.livereload.url }}"></script>
-        <script src="{{ app.servers.webpackDev.url }}"></script>
-      {% endif %}
-
       <!-- =Polyfills -->
       <!--[if lte IE 8]>
-        <script src="{{ 'js/vendor/polyfills.js'|webpackurl }}"></script>
+        <script src="{{ 'js/vendor/polyfills.js' }}"></script>
       <![endif]-->
 
       <!-- =Scripts-custom -->
-      <script src="{{ 'js/main.js'|webpackurl }}"></script>
+      <script src="{{ 'js/main.js' }}"></script>
     {% endblock %}
 
     {% block third_party_scripts %}

@@ -16,8 +16,8 @@
 } %}
 
 {% set mc_defaults = {
-  action: data.mailchimp.url,
-  user: data.mailchimp.user,
+  action: settings.integrations.mailchimp.url,
+  user: settings.integrations.mailchimp.user,
   method: 'post'
 } %}
 
@@ -63,14 +63,14 @@
 
   {# build mailchimp query string #}
   {# - name can be used to reference the corresponding mailchimp id #}
-  {% set mc_id = data.mailchimp.ids[prm.name] or prm.id %}
+  {% set mc_id = settings.integrations.mailchimp.ids[prm.name] or prm.id %}
   {% set mc_query = ({ u: prm.user, id: mc_id })|query %}
 
   {# set dynamic mailchimp params #}
   {# - the 'validate' classname delegates validation to mailchimp #}
   {% set prm = prm|merge({
     validate: false,
-    action: data.mailchimp.url + mc_query
+    action: settings.integrations.mailchimp.url + mc_query
   }) %}
 
   {# generate form markup #}

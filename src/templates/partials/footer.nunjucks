@@ -5,19 +5,19 @@
     <div class="social-nav">
       <ul class="social-links hlist">
         <li>
-          {{ ln.icon(data.social.facebook, 'facebook-fill', 'sticker sticker--facebook') }}
+          {{ ln.icon(settings.network.facebook, 'facebook-fill', 'sticker sticker--facebook') }}
         </li>
         <li>
-          {{ ln.icon(data.social.twitter, 'twitter-fill', 'sticker sticker--twitter') }}
+          {{ ln.icon(settings.network.twitter, 'twitter-fill', 'sticker sticker--twitter') }}
         </li>
         <li>
-          {{ ln.icon(data.social.pinterest, 'pinterest', 'sticker sticker--pinterest') }}
+          {{ ln.icon(settings.network.pinterest, 'pinterest', 'sticker sticker--pinterest') }}
         </li>
         <li>
-          {{ ln.icon(data.social.instagram, 'instagram-fill', 'sticker sticker--instagram') }}
+          {{ ln.icon(settings.network.instagram, 'instagram-fill', 'sticker sticker--instagram') }}
         </li>
         <li>
-          {{ ln.icon(data.social.youtube, 'youtube', 'sticker sticker--youtube') }}
+          {{ ln.icon(settings.network.youtube, 'youtube', 'sticker sticker--youtube') }}
         </li>
       </ul>
     </div>
@@ -25,13 +25,13 @@
     <nav id="navigation" class="subnav nav">
       <ul class="subnav-links nav-links hlist sep-pipe">
 
-        {% for item in data.main_nav %}
+        {% for item in settings.navigation.main %}
           <li class="subnav-item nav-item">
             {{ ln.nav(item, page.url) }}
           </li>
         {% endfor %}
 
-        {% for item in data.sub_nav %}
+        {% for item in settings.navigation.sub %}
           <li class="subnav-item nav-item">
             {{ ln.nav(item, page.url) }}
           </li>

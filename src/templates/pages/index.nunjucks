@@ -2,7 +2,7 @@
 
 {% block head_styles %}
   {{ super() }}
-  <link rel="stylesheet" href="{{ 'css/toys.css'|url }}"></link>
+  <link rel="stylesheet" href="{{ 'css/toys.css' }}"></link>
 {% endblock %}
 
 {% block body_main %}
@@ -16,5 +16,5 @@
 
 {% block body_end %}
   {{ super() }}
-  <script src="{{ 'js/toys.js'|webpackurl }}"></script>
+  <script src="{{ 'js/toys.js' }}"></script>
 {% endblock %}

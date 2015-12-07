@@ -2,8 +2,8 @@
 // =VaiKai - Sass Config
 // =============================================================================
 
-// import shared data from the 'data.json' file
-@import "../../data.json";
+// import shared settings from the 'settings' folder
+@import "settings/breakpoints.json";
 
 // import all config settings
 @import "config/colors";
