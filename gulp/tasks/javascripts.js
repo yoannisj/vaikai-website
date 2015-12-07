@@ -26,11 +26,16 @@ module.exports = function(done) {
       }
     });
 
+    var compiler = webpack(wpDevConfig);
+
     // run webpack-dev-server re-bundling entry files (in memory)
     // and re-loading web page automatically
-    new webpackDevServer(webpack(wpDevConfig), wpDevConfig.devServer)
+    new webpackDevServer(compiler, wpDevConfig.devServer)
       .listen(8080, 'localhost', function(err) {
         if(err) throw new slurp.PluginError("webpack-dev-server", err);
+
+        // finish task
+        done();
       });
   }
 
