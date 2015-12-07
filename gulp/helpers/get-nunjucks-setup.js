@@ -4,15 +4,13 @@ var requireDir = require('require-dir');
 var slurp = require('../slurp');
 
 var getAppData = require('../helpers/get-data-app');
-var getContentData = require('../helpers/get-data-content');
-var getWebsiteData = require('../helpers/get-data-website');
+var getSettingsData = require('../helpers/get-data-settings');
 
 module.exports = function() {
 
   // fetch global data
   var appData = getAppData();
-  var websiteData = getWebsiteData();
-  var contentData = getContentData();
+  var settingsData = getSettingsData();
 
   // fetch nunjucks filters fron the 'lib' folder
   var libPath = path.join('../../', slurp.config.paths.lib),
@@ -21,18 +19,13 @@ module.exports = function() {
 
   return function(env) {
 
+    console.log('settings::', settingsData);
+
     // add 'app' global with environment infos
     env.addGlobal('app', appData);
 
-    // expose website infos under the 'site' global
-    env.addGlobal('site', websiteData.website);
-
-    // add website global with website infos
-    env.addGlobal('data', websiteData);
-
-    // add 'content' global with website's full content
-    // TODO: add a query function instead ?
-    env.addGlobal('content', contentData);
+    // add a 'settings' global with all settings inside the 'settings' folder
+    env.addGlobal('settings', settingsData);
 
     // add custom filters to the nunjucks 'env'
     _.forOwn(filters, function(getFilter, filename) {

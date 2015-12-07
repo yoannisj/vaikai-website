@@ -99,7 +99,7 @@
 {% macro celery(params, classname='', attrs=false) %}
 
   {# inject param defaults #}
-  {% set prm = {}|merge(data.celery, params) %}
+  {% set prm = {}|merge(settings.integrations.celery, params) %}
 
   {# <a class="{{ classname }}" href="{{ prm.url|url }}" target="{{ prm.url|linktarget }}"
     data-celery="{{ prm.id }}" data-celery-version="{{ prm.version }}"

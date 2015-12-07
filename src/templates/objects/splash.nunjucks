@@ -19,7 +19,7 @@
   </div>
 
   <div class="splash-body">
-    <p class="tagline zeta s-delta">{{ data.website.tagline }}</p>
+    <p class="tagline zeta s-delta">{{ settings.site.tagline }}</p>
   </div>
 </div>
 <!-- /Splash -->

@@ -6,7 +6,7 @@ module.exports = function(env) {
       dest: './www',
       lib: './lib',
       content:'<%= paths.src %>/content',
-      data: '<%= paths.src %>/data',
+      settings: '<%= paths.src %>/settings',
       bower: './bower_components',
       public: (env.dev ? 'http://vaikai.local' : 'http://vaikai.com')
     },

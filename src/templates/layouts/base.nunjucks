@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- =Robots & SEO -->
-    <title>{{ page.title }} | {{ site.title }}</title>
+    <title>{{ page.title }} | {{ settings.site.title }}</title>
     <meta name="description" content="{{ page.description }}" />
-    <meta name="keywords" content="{{ (site.keywords|merge(page.keywords)) }}" />
-    <meta name="author" content="{{ site.author }}" />
-    <meta name="web-author" content="{{ site.webAuthor }}" />
+    <meta name="keywords" content="{{ (settings.site.keywords|merge(page.keywords)) }}" />
+    <meta name="author" content="{{ settings.site.author }}" />
+    <meta name="web-author" content="{{ settings.site.webAuthor }}" />
     <link rel="canonical" href="{{ page.url }}" />
 
     <!-- =Scripts-preload -->
