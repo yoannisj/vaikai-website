@@ -19,8 +19,6 @@ module.exports = function() {
 
   return function(env) {
 
-    console.log('settings::', settingsData);
-
     // add 'app' global with environment infos
     env.addGlobal('app', appData);
 

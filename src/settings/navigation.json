@@ -1,26 +1,26 @@
 {
   "main": [{
     "title": "Toys",
-    "url": "'index.html'"
+    "url": "index.html"
   }, {
     "title": "Company",
-    "url": "'company.html'"
+    "url": "company.html"
   }],
 
   "sub": [{
     "title": "Contact",
-    "url": "'mailto:info@vaikai.com'"
+    "url": "mailto:info@vaikai.com"
   }, {
     "title": "Careers",
-    "url": "'careers.html'"
+    "url": "careers.html"
   }, {
     "title": "Imprint",
-    "url": "'imprint.html'"
+    "url": "imprint.html"
   }, {
     "title": "Data and Privacy",
-    "url": "'data-and-privacy.html'"
+    "url": "data-and-privacy.html"
   }, {
     "title": "Press",
-    "url": "'http://vaikai.com/press'"
+    "url": "http://vaikai.com/press"
   }]
 }

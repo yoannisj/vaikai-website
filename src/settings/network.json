@@ -1,22 +1,22 @@
 {
   "facebook": {
     "title": "Facebook",
-    "url": "'https://www.facebook.com/vaikaiplay/'"
+    "url": "https://www.facebook.com/vaikaiplay/"
   },
   "twitter": {
     "title": "Twitter",
-    "url": "'https://twitter.com/vai_kai'"
+    "url": "https://twitter.com/vai_kai"
   },
   "instagram": {
     "title": "Instagram",
-    "url": "'https://instagram.com/vai_kai/'"
+    "url": "https://instagram.com/vai_kai/"
   },
   "pinterest": {
     "title": "Pinterest",
-    "url": "'https://www.pinterest.com/vai_kai/'"
+    "url": "https://www.pinterest.com/vai_kai/"
   },
   "youtube": {
     "title": "Title",
-    "url": "'https://www.youtube.com/channel/UCvf8cDV9Yf19zT4xTqQLcOg/videos'"
+    "url": "https://www.youtube.com/channel/UCvf8cDV9Yf19zT4xTqQLcOg/videos"
   }
 }
