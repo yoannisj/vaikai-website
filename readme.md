@@ -24,33 +24,31 @@ First, pull the git repository locally, then open a terminal and cd to the repos
 
     + Via Node Version Manager:
 
-        Find instructions [here](https://davidwalsh.name/nvm)
+        Find instructions it the following [article](https://davidwalsh.name/nvm) about using nvm.
 
-2. Install build/frontend dependencies
+2. Make sure xcode and the command-line tools are installed
+
+    If you are running on Mac OSX 10.10 or higher (Yosemite or El Capitan), install xcode from the [app store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12).
+
+    If you are running on an older version of Mac OSX, download the xcode installer for your version on the apple [developer's website](https://developer.apple.com/downloads/)
+
+    Run xcode at least once and accept the User Agreement.
+
+    Install the Command Line Tools by running the following command in your terminal:
+
+        xcode-select --install
+
+3. Install build/frontend dependencies
 
     Global dependencies
 
         sudo npm install -g gulp
         sudo npm install -g bower
 
-    Rubygems (temporary, untill we switch back to node-sass)
-
-        sudo gem install -n /usr/local/bin compass
-        sudo gem install -n /usr/local/bin compass-import-once
-        sudo gem install -n /usr/local/bin sass-json-vars
-        sudo gem install -n /usr/local/bin sass-aleksi
-        sudo gem install -n /usr/local/bin shift
-
-    **Note**: If you are using OSX El Capitan, you migth have to [fix Ruby and Compass](http://andyy.me/fixing-compass-after-update-to-el-capitan-osx-10-11/) first.
-
-    Project dependencies (reads the `package.json` and `bower.json` files to install all needed packages)
+    Project dependencies (reads the `package.json` and `bower.json` files to install all needed modules/components)
 
         npm install
         bower install
-
-3. Setup local url
-
-    open the file 'gulp/config.js' and, in the value for `paths.public` (line 11), replace 'http://vaikai.local' with a local url that points to the project's 'www' folder (e.g. `http://localhost/vaikai/www`).
 
 ### Build project
 
@@ -62,13 +60,24 @@ Open a terminal and cd to the project's folder to run one of the following comma
 
 Running gulp build without any arguments will build the static website inside the 'www' folder, after bundling and minifying all assets. Caution: this will use `http://vaikai.com` for urls so it should only be used for pushing the website online – the built website won't work locally.
 
-If you use the `--dev` argument, it will build the static website inside the 'www' folder without minifying assets and using your local url (e.g. `http://localhost/vaikai/www`). Open a browser and go to that url to see the result.
+If you use the `--dev` argument, it will build the static website inside the 'www' folder without minifying assets. Use the *serve* task instead if you want to see the built static website in a browser.
 
-Additionally, you can use the `--watch` flag when developing. This will update js and css assets whenever you edit the source files in the `src` folder.
+Additionally, you can use the `--watch` flag when developing. This will re-compile js and css assets whenever you edit the source files in the `src` folder.
 
 **Note**: for now `--watch` doesn't look for changes in the `src/content` folder. This will be fixed soon but in the mean time you need to re-run `gulp build --dev --watch` whenever you change the content files.
 
-**Note**: for now there is a bug with `--watch` that prevents images resized  in the templates to be copied to the 'www' folder. This means they won't load in the browser correctly. This will be fixed soon but in the meantime you can run `gulp assets --dev` and then re-run `gulp build --dev --watch` to work around the issue.
+### Serve project
+
+To see the build website in a browser, run the `gulp serve` command which will start a local http server and open it in google chrome using [browsersync](http://www.browsersync.io/). The serve task accepts the same arguments as the build task.
+
+    gulp serve
+    gulp serve --dev
+    gulp serve --dev --watch
+
+* passing the `--dev` flag will build and serve assets without minifying them
+* passing the `--watch` flag will re-compile assets and re-load the browser whenever you make a change in the source files.
+
+**Note**: To stop the server, type `ctrl + C` in the terminal. Also, don't forget to close the tab that was opened in google chrome when running `gulp serve`, otherwise you will have two tabs re-loading next time you run `gulp serve --watch` and that is quite unnecessary.
 
 ### Update production website
 
