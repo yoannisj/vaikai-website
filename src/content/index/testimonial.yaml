@@ -23,6 +23,18 @@ entries:
       # size: [ 58, 59 ]
 -
   quote: |
+    If i had to describe it, i'd just say it is the best toy I have seen in a while.
+  credit:
+    name: Dad
+    description: Office worker, Germany
+-
+  quote: |
+    Perfect for adults to connect to their children when they are apart.
+  credit:
+    name: Mom
+    description: Test and requirement consultant, Sweden
+-
+  quote: |
     Built using traditional craftsmanship, Avakai's wooden dolls let children explore interconnectivity.
   credit:
     name: Fast Company
@@ -31,12 +43,6 @@ entries:
     logo:
       path: logos/logo-fastcompany.jpg
       # size: [ 158, 38 ]
--
-  quote: |
-    Tablets and iPhones are built for adults and someone needs to think of the children.
-  credit:
-    name: Matas
-    description: co-founder of Vai Kai
 -
   quote: |
     Avakai doesn’t rely on wiz-bang technology—it joins centuries of toys that allow room for traditional play and imagination.
@@ -59,6 +65,12 @@ entries:
       # size: [ 145, 44 ]
 -
   quote: |
+    Avakai are a way to get children outside and use their imagination in fresh ways.
+  credit:
+    name: Mom
+    description: Administration worker, Australia
+-
+  quote: |
     I’m a tech-head mum with a love of vintage. Needless to say, it’s a rare find when these two loves meet and Avakai is just such a find.
   credit:
     name: Babyology
@@ -77,3 +89,9 @@ entries:
     logo:
       path: logos/logo-psfk.png
       # size: [ 37, 37 ]
+-
+  quote: |
+    Avakai are  a fun way for children, and parents & children, to interact.
+  credit:
+    name: Mom
+    description: Administration worker, Australia
