@@ -9,7 +9,7 @@ module.exports = function(env) {
       content:'<%= paths.src %>/content',
       settings: '<%= paths.src %>/settings',
       bower: './bower_components',
-      public: (env.dev ? 'http://localhost:8080' : 'http://vaikai.com')
+      public: (env.dev ? 'http://localhost:8080' : (env.stage ? 'http://vaikai.com/_stage': 'http://vaikai.com'))
     },
 
     tasks: {
