@@ -8,6 +8,7 @@ var njOptions = slurp.options('nunjucksHtml', {
 });
 
 function compileTemplates() {
+
   return slurp.src('templates')
     .pipe(slurp.plumber())
     .pipe(slurp.plugin('data', getTemplateData))

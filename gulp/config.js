@@ -15,13 +15,12 @@ module.exports = function(env) {
     tasks: {
 
       'templates': {
-        base: {
-          src: './templates',
-          dest: './'
-        },
         files: {
-          main: './pages/*.nunjucks',
-          watch: './**/*.nunjucks'
+          main: './templates/pages/*.nunjucks',
+          watch: [
+            './content/**/*.yaml',
+            './templates/**/*.nunjucks'
+          ]
         }
       },
 

@@ -15,6 +15,12 @@ module.exports = function(config, env) {
       path.join(config.paths.dest, 'js/**/*.js'),
       path.join(config.paths.dest, 'images/**/*')
     ] : false),
+    watchOptions: {
+      awaitWriteFinish: true
+    },
+    // if delay is set to 0, browser-sync will sometimes serve
+    // previous version of html templates
+    reloadDelay: 500,
     online: false,
     open: 'local',
     browser: 'google chrome',
