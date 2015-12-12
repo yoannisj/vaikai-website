@@ -52,6 +52,7 @@
     "htmlparser2": "^3.8.3",
     "image-size": "^0.3.5",
     "json-loader": "^0.5.3",
+    "jsonfile": "^2.2.3",
     "lodash": "^3.10.1",
     "mime-types": "^2.1.7",
     "node-sass": "^3.4.2",
