@@ -30,20 +30,20 @@ gallery:
 -
   name: avakai-treasure
   image:
-    path: playdates/dev-4514.jpg
+    path: images/playdates/dev-4514.jpg
     description: A young dad playing with his son and Avakai
 -
   name: avakai-kiss
   image:
-    path: playdates/dev-4454.jpg
+    path: images/playdates/dev-4454.jpg
     description: Two girls discovering a treasure hidden inside their Avakai
 -
   name: avakai-hug
   image:
-    path: playdates/dev-4470.jpg
+    path: images/playdates/dev-4470.jpg
     description: Avakai reacting to a child's hug
 -
   name: avakai-walk
   image:
-    path: playdates/dev-4585.jpg
+    path: images/playdates/dev-4585.jpg
     description: Our co-founder Justyna and a little girl amazed by her new toy

@@ -8,6 +8,7 @@ module.exports = function(env) {
       lib: './lib',
       content:'<%= paths.src %>/content',
       settings: '<%= paths.src %>/settings',
+      assets: '<%= paths.src %>/assets',
       bower: './bower_components',
       public: (env.dev ? 'http://localhost:8080' : (env.stage ? 'http://vaikai.com/_stage': 'http://vaikai.com'))
     },

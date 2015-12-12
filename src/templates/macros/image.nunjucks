@@ -3,19 +3,12 @@
 
 {% macro base(prm, classname='', attrs=false) %}
 
-  {# {{ prm.path|log }} #}
-
   {# get image size #}
   {% set orig_sz = prm.path|imgsize %}
   {% set sz = prm.size or orig_sz %}
 
-  {# optionally resize image and get path to destination #}
-  {% if sz != orig_sz %}
-    {% set rs_path = prm.path|resize(sz, prm.resize_options) %}
-    {% set path = app.paths.images|joinpath(rs_path) %}
-  {% else %}
-    {% set path = prm.path if prm.path|contains('http') else app.paths.images|joinpath(prm.path) %}
-  {% endif %}
+  {# optionally resize image and use path to resized image #}
+  {% set pth = prm.path|resize(sz, prm.resize_options) if sz != orig_sz else prm.path %}
 
   <img src="{{ path }}" alt="{{ prm.description }}"
     data-width="{{ sz[0] }}" data-height="{{ sz[1] }}"
@@ -41,7 +34,7 @@
   {% set sz = prm.size or orig_sz %}
 
   {# get full path to image #}
-  {% set path = app.paths.images|joinpath(prm.path) %}
+  {% set path = prm.path %}
 
   {# particular treatment for 'svg' images #}
   {% set is_svg = (path|extname == 'svg') %}
@@ -49,9 +42,9 @@
   {# optionally resize image and get path to destination #}
   {% if sz != orig_sz %}
     {% set rs_path = prm.path|resize(sz) %}
-    {% set path = app.paths.images|joinpath(rs_path) %}
+    {% set path = rs_path %}
   {% else %}
-    {% set path = app.paths.images|joinpath(prm.path) %}
+    {% set path = prm.path %}
   {% endif %}
 
   <!--[if gt IE 8]><!-->

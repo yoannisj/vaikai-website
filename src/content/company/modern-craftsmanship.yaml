@@ -7,17 +7,17 @@ gallery:
 -
   name: the-avakai-workshop
   image:
-    path: workshop/assembling-face.jpg
+    path: images/workshop/assembling-face.jpg
     description: Assembling the Avakai face
 -
   name: the-avakai-body
   image:
-    path: workshop/sculpting-body.jpg
+    path: images/workshop/sculpting-body.jpg
     description: Our woodworker using his own-made tools to sculpt the Avakai body
 -
   name: wooden-avakai
   image:
-    path: workshop/workshop-view.jpg
+    path: images/workshop/workshop-view.jpg
     description: View inside our wood workshop in Poland where Avakai are built
   video:
     type: vimeo

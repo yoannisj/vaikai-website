@@ -1,18 +1,18 @@
 title: Preorder
 units:
-- 
+-
   name: painted
   title: Avakai twins - Painted
   sku: avakai-twins-col
   celery_id: 559af860b75d810300dfb1ad
   image:
-    path: preorder/avakai_twins_painted.jpg
+    path: images/preorder/avakai_twins_painted.jpg
     description: Avakai Twins in painted color finishing
-- 
+-
   name: natural
   title: Avakai twins - Natural wood
   sku: avakai-twins-nat
   celery_id: 559af860b75d810300dfb1ad
   image:
-    path: preorder/avakai_twins_natural.jpg
-    description: Avakai Twins in natural wood finishing    
+    path: images/preorder/avakai_twins_natural.jpg
+    description: Avakai Twins in natural wood finishing

@@ -3,12 +3,12 @@
 {# =VARIABLES
  # --------------------------------------------------------------- #}
 {% set avakai_front = {
-  path: 'toys/avakai-blue-trunc.png',
+  path: 'images/toys/avakai-blue-trunc.png',
   description: ''
 } %}
 
 {% set avakai_back = {
-  path: 'toys/avakai-natural.png',
+  path: 'images/toys/avakai-natural.png',
   description: ''
 } %}
 

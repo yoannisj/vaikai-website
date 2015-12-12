@@ -1,6 +1,6 @@
 theme: blue
-poster:
-  path: http://www.placehold.it/1600x900
+# poster:
+  # path: http://www.placehold.it/1600x900
 title: |
   Sensory technology,<br />open to imagination
 description: |
