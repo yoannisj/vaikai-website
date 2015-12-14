@@ -8,7 +8,7 @@
   {% set sz = prm.size or orig_sz %}
 
   {# optionally resize image and use path to resized image #}
-  {% set pth = prm.path|resize(sz, prm.resize_options) if sz != orig_sz else prm.path %}
+  {% set path = prm.path|imgresize(sz, prm.resize_options) if sz != orig_sz else prm.path %}
 
   <img src="{{ path }}" alt="{{ prm.description }}"
     data-width="{{ sz[0] }}" data-height="{{ sz[1] }}"
@@ -41,7 +41,7 @@
 
   {# optionally resize image and get path to destination #}
   {% if sz != orig_sz %}
-    {% set rs_path = prm.path|resize(sz) %}
+    {% set rs_path = prm.path|imgresize(sz) %}
     {% set path = rs_path %}
   {% else %}
     {% set path = prm.path %}

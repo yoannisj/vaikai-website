@@ -65,13 +65,15 @@
 
 // =aspect-ratio
 // -----------------------------------------------------------------------------
-@mixin aspect-ratio( $dimen )
+@mixin aspect-ratio( $dimen, $max-width: true )
 {
-  $w: nth($dimen, 1);
-  $h: nth($dimen, 2);
+  $w: nth($dimen, 1) * 1px;
+  $h: nth($dimen, 2) * 1px;
 
   position: relative;
-  max-width: $w; // dont let ratio 'out-grow' with padding
+  @if $max-width {
+    max-width: $w;
+  }
 
   &:before {
     content: "";
@@ -90,8 +92,8 @@
  * -------------------------------------------------------------------------- */
 @mixin min-aspect-ratio( $dimen )
 {
-  $w: nth($dimen, 1);
-  $h: nth($dimen, 2);
+  $w: nth($dimen, 1) * 1px;
+  $h: nth($dimen, 2) * 1px;
 
   & > *,
   &:before {
@@ -117,16 +119,19 @@
 
 // =flex-aspect-ratio( $dimensions )
 // -----------------------------------------------------------------------------
-@mixin flex-aspect-ratio( $dimensions )
+@mixin flex-aspect-ratio( $dimensions, $max-width: true )
 {
   // default aspect-ratio
   $df-dimen: map-get($dimensions, 'df');
-  $w: nth($df-dimen, 1);
-  $h: nth($df-dimen, 2);
+  $w: nth($df-dimen, 1) * 1px;
+  $h: nth($df-dimen, 2) * 1px;
 
   position: relative;
-  // set default aspect-ratio limit
-  max-width: $w;
+
+  @if $max-width {
+    // set default aspect-ratio limit
+    max-width: $w;
+  }
 
   > * {
     @include cover;
@@ -146,8 +151,8 @@
   // breakpoint specific aspect-ratios
   @each $bp, $bp-dimen in map-remove($dimensions, 'df')
   {
-    $w: nth($bp-dimen, 1);
-    $h: nth($bp-dimen, 2);
+    $w: nth($bp-dimen, 1) * 1px;
+    $h: nth($bp-dimen, 2) * 1px;
 
     @include shift('>#{$bp}')
     {

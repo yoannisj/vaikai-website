@@ -7,6 +7,7 @@ module.exports = function(env) {
       dest: './www',
       lib: './lib',
       content:'<%= paths.src %>/content',
+      data: '<%= paths.src %>/data',
       settings: '<%= paths.src %>/settings',
       assets: '<%= paths.src %>/assets',
       bower: './bower_components',
@@ -41,7 +42,8 @@ module.exports = function(env) {
       'images': {
         base: {
           src: './assets/images',
-          dest: './images'
+          // content files already use full destination paths
+          dest: './'
         },
         files: './**/*'
       },

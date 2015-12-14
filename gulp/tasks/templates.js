@@ -15,6 +15,7 @@ function compileTemplates() {
     .pipe(slurp.plugin('nunjucksHtml', njOptions))
     .pipe(slurp.plugin('prettify'))
     .pipe(slurp.dest('templates'));
+
 }
 
 // exports

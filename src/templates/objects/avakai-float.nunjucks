@@ -2,12 +2,12 @@
 
 {# =VARIABLES #}
 {% set avakai_float_front = {
-  path: 'toys/avakai-tilted-left.png',
+  path: 'images/toys/avakai-tilted-left.png',
   description: ''
 } %}
 
 {% set avakai_float_back = {
-  path: 'toys/avakai-tilted-right-blurred-2.png',
+  path: 'images/toys/avakai-tilted-right-blurred-2.png',
   description: ''
 } %}
 

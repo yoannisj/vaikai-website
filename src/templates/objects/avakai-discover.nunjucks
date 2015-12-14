@@ -2,7 +2,7 @@
 
 {# =VARIABLES #}
 {% set avakai_couple = {
-  path: 'toys/avakai-couple-blue-bg.gif',
+  path: 'images/toys/avakai-couple-blue-bg.gif',
   description: ''
 } %}
 
@@ -20,7 +20,7 @@
       </div>
 
       <div class="grid-cell s-span-6of12 s-pull-6of12 m-span-4of12 m-pull-4of12">
-        <div class="ratio-couple median" role="presentation">
+        <div class="ratio-{{ avakai_couple.path|imgratio }} median" role="presentation">
           {{ img.base(avakai_couple) }}
         </div>
       </div>

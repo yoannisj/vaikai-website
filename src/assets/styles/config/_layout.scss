@@ -3,6 +3,8 @@
 // =============================================================================
 
 @import "aleksi/lengths/convert";
+@import "aleksi/lists/set-list-separator";
+@import "aleksi/maps/debug-map";
 @import "config/typography";
 
 // =Grid
@@ -19,11 +21,14 @@ $base-spacing-vertical: typescale-line-height('base', 'px');
 // =ratios
 // -----------------------------------------------------------------------------
 
-$ratios: (
-  '16by9': 1200px 675px,
-  '3by2': 1200px 800px,
-  '1by1': 1400px 1400px,
-  'illu': 220px 160px,
-  'duo': 640px 820px,
-  'couple': 275px 260px
-);
+// import image ratios
+@import "data/image-ratios.json";
+
+$ratios: map-merge($image-ratios, (
+  '16by9': 1200 675,
+  '3by2': 1200 800,
+  '1by1': 1400 1400,
+  'illu': 220 160,
+  'duo': 640 820,
+  'couple': 275 260
+));

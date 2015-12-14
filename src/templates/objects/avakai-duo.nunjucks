@@ -4,22 +4,22 @@
  # --------------------------------------------------------------- #}
 
 {% set avakai_trunc = {
-  path: 'toys/avakai-blue-trunc.png',
+  path: 'images/toys/avakai-blue-trunc.png',
   description: ''
 } %}
 
 {% set avakai_base_back = {
-  path: 'toys/avakai-blue-base-back.png',
+  path: 'images/toys/avakai-blue-base-back.png',
   description: ''
 } %}
 
 {% set avakai_base_front = {
-  path: 'toys/avakai-blue-base-front.png',
+  path: 'images/toys/avakai-blue-base-front.png',
   description: ''
 } %}
 
 {% set avakai_natural = {
-  path: 'toys/avakai-natural.png',
+  path: 'images/toys/avakai-natural.png',
   description: ''
 } %}
 

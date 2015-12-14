@@ -9,7 +9,7 @@
       <!-- =Shop-Object -->
       <div class="split-object" role="presentation">
         <div class="avk-limiteded">
-          <div class="ratio-duo" role="presentation">
+          <div class="ratio-{{ section.image.path|imgratio }}" role="presentation">
             {{ ctrl.celery({
               label: 'Limited Edition'
             }, 'reset-link stamp-limiteded ir') }}
