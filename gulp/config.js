@@ -42,8 +42,7 @@ module.exports = function(env) {
       'images': {
         base: {
           src: './assets/images',
-          // content files already use full destination paths
-          dest: './'
+          dest: './images'
         },
         files: './**/*'
       },

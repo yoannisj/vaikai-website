@@ -77,7 +77,7 @@ entries:
     url: http://babyology.com.au/toys/meet-avakai-a-wooden-toy-with-high-tech-capabilities-for-intelligent-screen-free-playtime.html
     # logo: babyology
     logo:
-      path: images/logos/logo-babyology.png
+      path: images/logos/logo-babyology.svg
       # size: [ 138, 82 ]
 -
   quote: |
