@@ -1,20 +1,11 @@
 {% import 'macros/symbol.nunjucks' as sym %}
 
-{# =VARIABLES
- # --------------------------------------------------------------- #}
-{% set vaikai_logo = {
-  name: 'vaikai',
-  title: 'Vai Kai'
-} %}
-
-{# =MARKUP
- # --------------------------------------------------------------- #}
 <!-- =Splash -->
 <div class="splash milestone align-center">
   <div class="splash-object">
     <p class="avk-makers">
       <em class="stamp-madewithlove ir">Made with love by</em><br />
-      {{ sym.logo(vaikai_logo, 'logo--lg') }}
+      {{ sym.logo('vaikai', 'Vai Kai', 'logo--lg') }}
     </p>
   </div>
 

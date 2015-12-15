@@ -17,14 +17,6 @@
 @import "utils/typescale";
 @import "utils/fullcaps";
 
-/* =Display
- * ========================================================================== */
-
-@import "utils/none";
-@import "utils/block";
-@import "utils/inline";
-@import "utils/hide";
-
 /* =Layout
  * ========================================================================== */
 
@@ -51,6 +43,14 @@
 @import "utils/push";
 @import "utils/pull";
 @import "utils/offset";
+
+/* =Display
+ * ========================================================================== */
+
+@import "utils/none";
+@import "utils/block";
+@import "utils/inline";
+@import "utils/hide";
 
 /* =Effects
  * ========================================================================== */

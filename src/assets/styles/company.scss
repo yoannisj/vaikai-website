@@ -61,12 +61,14 @@ $company-intro-height-m: 740px;
 /* =Craftsmanship
  * ========================================================================== */
 
-.avk-float {
+.avk-float
+{
   position: relative;
   padding-bottom: 100%;
 
+  .ratio,
   img {
-    width: 100%;
+    width: 100% !important;
   }
 }
 
@@ -78,7 +80,7 @@ $company-intro-height-m: 740px;
   max-width: none;
 
   img {
-    margin-bottom: -40%;
+    margin-top: 40%;
   }
 }
 
@@ -120,7 +122,7 @@ $company-intro-height-m: 740px;
     left: 5%;
 
     img {
-      margin-bottom: -50%;
+      margin-top: 50%;
     }
   }
 

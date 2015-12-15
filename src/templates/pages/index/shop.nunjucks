@@ -9,13 +9,19 @@
       <!-- =Shop-Object -->
       <div class="split-object" role="presentation">
         <div class="avk-limiteded">
+          {{ img.lazy(section.image) }}
+          {{ ctrl.celery({
+            label: 'Limited Edition'
+          }, 'reset-link stamp-limiteded ir') }}
+        </div>
+        {# <div class="avk-limiteded">
           <div class="ratio-{{ section.image.path|imgratio }}" role="presentation">
             {{ ctrl.celery({
               label: 'Limited Edition'
             }, 'reset-link stamp-limiteded ir') }}
             {{ img.lazy(section.image) }}
           </div>
-        </div>
+        </div> #}
       </div>
       <!-- /Shop-Object -->
 

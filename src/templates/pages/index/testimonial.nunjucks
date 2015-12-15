@@ -36,7 +36,8 @@
                           {% set logo = credit.logo|merge({
                             description: credit.name
                           }) %}
-                          {{ img.base(logo) }}
+
+                          {{ img.lazy(logo, 'median') }}
 
                         </strong>
                       {# =credit-name #}

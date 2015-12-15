@@ -20,9 +20,7 @@
       </div>
 
       <div class="grid-cell s-span-6of12 s-pull-6of12 m-span-4of12 m-pull-4of12">
-        <div class="ratio-{{ avakai_couple.path|imgratio }} median" role="presentation">
-          {{ img.base(avakai_couple) }}
-        </div>
+        {{ img.lazy(avakai_couple, 'block median') }}
       </div>
     </div>
   </div>

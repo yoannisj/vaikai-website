@@ -105,7 +105,7 @@
   {# <div style="margin: 100px auto; width: 90%; max-width: 1200px;">
     <div id="fold" class="js-fold is-collapsed" style="background: aqua;">
       <h4 class="js-fold-summary" style="background: yellow;">
-        <a class="blocklink quietlink js-ctrl" href="#fold-boy" data-target="#fold:fold" data-action="toggle" data-params="true">Fold Title</a>
+        <a class="block-link quietlink js-ctrl" href="#fold-boy" data-target="#fold:fold" data-action="toggle" data-params="true">Fold Title</a>
       </h4>
       <div id="fold-body" class="landmark">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus dolor, ipsam quam sequi numquam, atque recusandae alias dicta ad consectetur sed qui porro eveniet ab fugit quibusdam similique impedit iusto.</p>

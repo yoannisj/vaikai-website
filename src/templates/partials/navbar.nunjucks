@@ -11,11 +11,6 @@
   title: 'Vai Kai'
 } %}
 
-{% set vaikai_logo = {
-  name: 'vaikai',
-  title: 'Vai Kai'
-} %}
-
 {% set menu_toggle = {
   url: '#navigation',
   target: 'menu',
@@ -32,7 +27,7 @@
       <h1 class="navbar-title">
 
         {% call ln.base(home_link, 'logo-link') %}
-          {{ sym.logo(vaikai_logo, 'navbar-logo') }}
+          {{ sym.logo('vaikai', 'Vai Kai', 'navbar-logo') }}
         {% endcall %}
 
       </h1>

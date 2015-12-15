@@ -65,26 +65,14 @@
 
 // =aspect-ratio
 // -----------------------------------------------------------------------------
-@mixin aspect-ratio( $dimen, $max-width: true )
+@mixin aspect-ratio( $dimen, $max-width: false )
 {
   $w: nth($dimen, 1) * 1px;
   $h: nth($dimen, 2) * 1px;
-
-  position: relative;
-  @if $max-width {
-    max-width: $w;
-  }
+  max-width: if($max-width, $w, 100%);
 
   &:before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 0; // aspect-ratio
     padding-top: percentage($h/$w); // aspect-ratio
-  }
-
-  > * {
-    @include cover;
   }
 }
 
@@ -94,6 +82,9 @@
 {
   $w: nth($dimen, 1) * 1px;
   $h: nth($dimen, 2) * 1px;
+
+  position: relative; // more consistent behaviour with other ratio elements
+  display: block;
 
   & > *,
   &:before {
@@ -127,6 +118,7 @@
   $h: nth($df-dimen, 2) * 1px;
 
   position: relative;
+  max-width: if($max-width, $w, 100%);
 
   @if $max-width {
     // set default aspect-ratio limit

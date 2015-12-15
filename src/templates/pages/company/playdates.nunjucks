@@ -60,9 +60,9 @@
             {% for item in section.gallery %}
               <li class="js-gallery-thumb float-left span-6of12 m-span-3of12">
 
-                <a class="js-gallery-link blocklink" href="{{ app.paths.images|joinpath(item.image.path) }}" data-item-name="{{ item.name }}">
-                  {{ img.base(item.image|merge({
-                    size: [420, 420]
+                <a class="js-gallery-link block-link" href="{{ app.paths.images|joinpath(item.image.path) }}" data-item-name="{{ item.name }}">
+                  {{ img.lazy(item.image|merge({
+                    size: [680, 680]
                   }), 'js-gallery-thumb block') }}
                 </a>
 
@@ -82,7 +82,7 @@
             <ul class="js-gallery-items uilist">
               {% for item in section.gallery %}
                 <li class="js-gallery-item" data-name="{{ item.name }}">
-                  {{ img.base(item.image, 'js-gallery-img js-objfit') }}
+                  {{ img.lazy(item.image, 'js-gallery-img js-objfit') }}
                 </li>
               {% endfor %}
             </ul>

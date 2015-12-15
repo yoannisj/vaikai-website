@@ -48,6 +48,7 @@
             {{ img.base(item.image|merge({
               size: [680, 680]
             }), '') }}
+
           </div>
         {% endfor %}
 

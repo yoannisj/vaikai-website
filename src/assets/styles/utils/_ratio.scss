@@ -21,22 +21,68 @@ $ratios: (
 /* =ratio
  * -------------------------------------------------------------------------- */
 
+.ratio
+{
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+  }
+
+  > * {
+    @include cover;
+    line-height: $base-line-height;
+  }
+}
+
+// span.ratio {
+//   display: inline-block;
+//   width: 100%;
+// }
+
 @each $ratio, $dimen in $ratios
 {
-  .ratio-#{$ratio} {
+  .ratio--#{$ratio} {
     @include aspect-ratio($dimen);
   }
 }
 
 /* =<bp>-ratio
  * -------------------------------------------------------------------------- */
+
 @each $bp in $ratio-breakpoints
 {
   @include shift('>#{$bp}')
   {
+    .#{$bp}-ratio
+    {
+      position: relative;
+      line-height: 0;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 0;
+      }
+
+      > * {
+        @include cover;
+        line-height: $base-line-height;
+      }
+    }
+
+    // span.#{$bp}-ratio {
+    //   display: inline-block;
+    // }
+
     @each $ratio, $dimen in $ratios
     {
-      .#{$bp}-ratio-#{$ratio} {
+      .#{$bp}-ratio--#{$ratio} {
         @include aspect-ratio($dimen);
       }
     }

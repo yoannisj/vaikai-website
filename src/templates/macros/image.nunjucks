@@ -8,12 +8,11 @@
   {% set sz = prm.size or orig_sz %}
 
   {# optionally resize image and use path to resized image #}
-  {% set path = prm.path|imgresize(sz, prm.resize_options) if sz != orig_sz else prm.path %}
+  {% set path = (prm.path|imgresize(sz, prm.resize_options)) if (sz != orig_sz) else prm.path %}
 
   <img src="{{ path }}" alt="{{ prm.description }}"
-    data-width="{{ sz[0] }}" data-height="{{ sz[1] }}"
-    {% if prm.size %} width="{{ sz[0] }}"{% endif %}
     {% if classname %} class="{{ classname }}"{% endif %}
+    {% if sz %} width="{{ sz[0] }}" data-width="{{ sz[0] }}" data-height="{{ sz[1] }}"{% endif %}
     {% if path|extname == 'svg' %}
       data-svg-fallback="{{ prm.fallback or path|extname('png') }}"
     {% endif %}
@@ -33,45 +32,41 @@
   {% set orig_sz = prm.path|imgsize %}
   {% set sz = prm.size or orig_sz %}
 
-  {# get full path to image #}
-  {% set path = prm.path %}
+  {# optionally resize image and use path to resized image #}
+  {% set path = (prm.path|imgresize(sz, prm.resize_options)) if (sz != orig_sz) else prm.path %}
 
   {# particular treatment for 'svg' images #}
   {% set is_svg = (path|extname == 'svg') %}
 
-  {# optionally resize image and get path to destination #}
-  {% if sz != orig_sz %}
-    {% set rs_path = prm.path|imgresize(sz) %}
-    {% set path = rs_path %}
-  {% else %}
-    {% set path = prm.path %}
+  {% if sz %}
+    <span class="ratio ratio--{{ sz|imgratio }} {{ classname }}" style="width: {{ sz[0] }}px;" data-width="{{ sz[0] }}" data-height="{{ sz[1] }}" role="presentation">
   {% endif %}
 
-  <!--[if gt IE 8]><!-->
-  <img class="lazyload {{ classname }}" alt="{{ prm.description }}"
-    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-    data-src="{{ path }}"
-    {% if prm.size %} width="{{ sz[0] }}" {% endif %}
-    {% if is_svg %} data-svg-fallback="{{ path|extname('png') }}"{% endif %}
-    {% if attrs %}
-      {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
-    {% endif %}
-  />
-  <!--<![endif]-->
+    <!--[if gt IE 8]><!-->
+    <img class="lazyload" alt="{{ prm.description }}"
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+      data-src="{{ path }}"
+      {% if is_svg %} data-svg-fallback="{{ path|extname('png') }}"{% endif %}
+      {% if attrs %}
+        {% for attr, val in attrs %} {{attr}}="{{ val }}"{% endfor %}
+      {% endif %}
+    />
+    <!--<![endif]-->
 
-  {# get fallback path #}
-  {% set fb_path = prm.fallback or (prm.path|extname('png') if is_svg else prm.path) %}
+  {% if sz %}
+    </span>
+  {% endif %}
 
   {# get fallback image params #}
   {% set fallback = prm|merge({
-    path: fb_path
+    path: prm.fallback or (prm.path|extname('png') if is_svg else prm.path)
   }) %}
 
-  <!--[if lte IE 8]>
+  {# <!--[if lte IE 8]>
     {{ base(fallback, classname, attrs) }}
   <![endif]-->
   <noscript>
     {{ base(fallback, classname, attrs) }}
-  </noscript>
+  </noscript> #}
 
 {% endmacro %}

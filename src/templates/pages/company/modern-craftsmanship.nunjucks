@@ -38,27 +38,22 @@
             {% for item in section.gallery %}
 
               {# last, uneven item #}
-              {% if loop.length == loop.index and loop.length % 2 != 0 %}
-                {% set item_span = 'span-12of12 m-span-4of12' %}
-                {% set image_size = [630, 420] %}
-              {% else %}
-                {% set item_span = 'span-6of12 m-span-4of12' %}
-                {% set image_size = [420, 280] %}
-              {% endif %}
+              {% set item_span = 'span-12of12' if (loop.last and loop.length % 2 != 0) else 'span-6of12' %}
 
-              <li class="js-gallery-thumb float-left {{ item_span }}">
+              <li class="js-gallery-thumb float-left {{ item_span }} m-span-4of12">
 
                 {% set link_class = 'video-thumb' if item.video else '' %}
-                {% set link_url = 'http://vimeo.com/' ~ item.video.id if item.video else app.paths.images|joinpath(item.image.path) %}
+                {% set link_url = 'http://vimeo.com/' ~ item.video.id if item.video else app.paths.assets|joinpath(item.image.path) %}
 
                 <a class="js-gallery-link block-link {{ link_class }}" href="{{ link_url }}" data-item-name="{{ item.name }}" target="{{ link_url|linktarget }}">
 
-                  {{ img.base(item.image|merge({
-                    size: image_size
+                  {{ img.lazy(item.image|merge({
+                    size: [630, 420]
                   }), 'js-gallery-thumb block') }}
 
                 </a>
               </li>
+
             {% endfor %}
           </ul>
         </div>
@@ -78,7 +73,7 @@
                   {% if item.video %}
                     {{ vid[item.video.type](item.video, 'js-gallery-video js-objfit') }}
                   {% else %}
-                    {{ img.base(item.image, 'js-gallery-img js-objfit') }}
+                    {{ img.lazy(item.image, 'js-gallery-img js-objfit') }}
                   {% endif %}
                 </li>
               {% endfor %}
