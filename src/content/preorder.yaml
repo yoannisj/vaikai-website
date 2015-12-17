@@ -15,4 +15,7 @@ units:
   celery_id: 559af860b75d810300dfb1ad
   image:
     path: preorder/avakai_twins_natural.jpg
-    description: Avakai Twins in natural wood finishing    
+    description: Avakai Twins in natural wood finishing
+tracking:
+  facebook: Lead
+
