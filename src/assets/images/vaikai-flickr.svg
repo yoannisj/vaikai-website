@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width='32px' height='32px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid" class="uil-flickr">
+  <rect x="0" y="0" width="40" height="40" fill="none" class="bk"></rect>
+  <circle cx="10" cy="20" r="10" fill="#0f99c6">
+    <animate attributeName="cx" values="10;30;10" keyTimes="0;0.5;1" dur="1.15s" repeatCount="indefinite"></animate>
+  </circle>
+  <circle cx="30" cy="20" r="10" fill="#fcca74">
+    <animate attributeName="cx" values="30;10;30" keyTimes="0;0.5;1" dur="1.15s" repeatCount="indefinite"></animate>
+  </circle>
+  <circle cx="10" cy="20" r="10" fill="#0f99c6">
+    <animate attributeName="cx" values="10;30;10" keyTimes="0;0.5;1" dur="1.15s" repeatCount="indefinite"></animate>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.499;0.5;1" dur="1.15s" repeatCount="indefinite"></animate>
+</circle>
+</svg>

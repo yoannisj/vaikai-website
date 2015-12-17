@@ -1,0 +1,26 @@
+// =============================================================================
+// =VaiKai - LazyObject Widget
+// =============================================================================
+
+// =settings
+// -----------------------------------------------------------------------------
+
+$lazy-object-loader: 'vaikai-flickr';
+
+/* =js-lazyobj
+ * -------------------------------------------------------------------------- */
+
+.js-lazyobj
+{
+  @extend .ratio;
+  display: inline-block;
+  background: url('../images/#{$lazy-object-loader}.svg') center no-repeat transparent;
+
+  .no-svg & {
+    background-image: url('../images/#{$lazy-object-loader}.gif');
+  }
+
+  &.is-loaded {
+    background-image: none;
+  }
+}

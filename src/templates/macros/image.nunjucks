@@ -39,7 +39,7 @@
   {% set is_svg = (path|extname == 'svg') %}
 
   {% if sz %}
-    <span class="ratio ratio--{{ sz|imgratio }} {{ classname }}" style="width: {{ sz[0] }}px;" data-width="{{ sz[0] }}" data-height="{{ sz[1] }}" role="presentation">
+    <span class="js-lazyobj ratio--{{ sz|imgratio }} {{ classname }}" style="width: {{ sz[0] }}px;" data-width="{{ sz[0] }}" data-height="{{ sz[1] }}" role="presentation">
   {% endif %}
 
     <!--[if gt IE 8]><!-->

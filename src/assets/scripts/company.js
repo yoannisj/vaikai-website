@@ -1,4 +1,5 @@
 // require widgets
+require('modules/lazy-object');
 require('widgets/control');
 require('widgets/popup');
 require('widgets/gallery');

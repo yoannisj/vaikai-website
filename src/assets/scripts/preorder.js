@@ -1,3 +1,4 @@
+require('modules/lazy-object');
 
 function getUrlArguments() {
   var search = location.search.substring(1);
@@ -6,7 +7,7 @@ function getUrlArguments() {
   } else {
     return {};
   }
-  
+
 }
 
 // pre-fill coupon information if there's one
@@ -19,7 +20,7 @@ if (search.coupon) {
 $('select.js-select').on('change', function(event){
   var $select = $(this),
       selection = $select.val();
-      
+
 
       // hide all
       $('[data-vaikai-option]').hide();

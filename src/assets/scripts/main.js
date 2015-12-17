@@ -1,3 +1,4 @@
+require('modules/lazy-object');
 require('modules/menu');
 require('jquery/widget');
 
