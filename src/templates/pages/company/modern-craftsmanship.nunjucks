@@ -38,7 +38,13 @@
             {% for item in section.gallery %}
 
               {# last, uneven item #}
-              {% set item_span = 'span-12of12' if (loop.last and loop.length % 2 != 0) else 'span-6of12' %}
+              {% if (loop.last and loop.length % 2 != 0) %}
+                {% set item_span = 'span-12of12' %}
+                {% set image_size = [920, 518] %}
+              {% else %}
+                {% set item_span = 'span-6of12' %}
+                {% set image_size = [630, 355] %}
+              {% endif %}
 
               <li class="js-gallery-thumb float-left {{ item_span }} m-span-4of12">
 
@@ -48,7 +54,7 @@
                 <a class="js-gallery-link block-link {{ link_class }}" href="{{ link_url }}" data-item-name="{{ item.name }}" target="{{ link_url|linktarget }}">
 
                   {{ img.lazy(item.image|merge({
-                    size: [630, 420]
+                    size: image_size
                   }), 'js-gallery-thumb block') }}
 
                 </a>
