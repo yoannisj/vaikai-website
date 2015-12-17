@@ -18,7 +18,4 @@
     </section>
   </div>
 
-  <script>
-    window._fbq = window._fbq || []; window._fbq.push(['track', '6033122367801', {'value':'0.00','currency':'USD'}]);
-  </script>
 {% endblock %}

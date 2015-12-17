@@ -40,6 +40,7 @@
         "l--": "(min-width: 1200px)"
       };
     </script>
+      {% include "partials/facebook/pixel.nunjucks" %}
     {% endblock %}
 
     <!-- =Stylesheets -->
@@ -114,7 +115,6 @@
       <!-- =Third-party scripts -->
       {% include 'partials/celery/embed.nunjucks' %}
       {% include 'partials/google/analytics.nunjucks' %}
-      {% include 'partials/facebook/pixel.nunjucks' %}
     {% endblock %}
   </body>
 </html>

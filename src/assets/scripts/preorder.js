@@ -28,3 +28,10 @@ $('select.js-select').on('change', function(event){
       $('[data-vaikai-option='+selection+']').show();
 
 });
+
+// log the add to cart events
+$('button[data-celery]').on('click', function(event) {
+  if (window.fbq) {
+    fbq('track', 'AddToCart');
+  }
+});
