@@ -5,10 +5,9 @@ console.log('helloo');
 $body.on('lazybeforeunveil', '.js-lazyobj', function(ev) {
   var $lazyObj = $(ev.currentTarget);
 
-  console.log('loading..');
+  $lazyObj.addClass('is-loading');
 
   $(ev.target).one('load', function(ev) {
-    console.log('loaded!');
-    $lazyObj.addClass('is-loaded');
+    $lazyObj.removeClass('is-loading').addClass('is-loaded');
   });
 });

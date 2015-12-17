@@ -14,13 +14,14 @@ $lazy-object-loader: 'vaikai-flickr';
 {
   @extend .ratio;
   display: inline-block;
-  background: url('../images/#{$lazy-object-loader}.svg') center no-repeat transparent;
+  background: none center no-repeat transparent;
 
-  .no-svg & {
-    background-image: url('../images/#{$lazy-object-loader}.gif');
-  }
+  &.is-loading
+  {
+    background-image: url('../images/#{$lazy-object-loader}.svg');
 
-  &.is-loaded {
-    background-image: none;
+    .no-svg & {
+      background-image: url('../images/#{$lazy-object-loader}.gif');
+    }
   }
 }

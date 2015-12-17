@@ -1,9 +1,5 @@
 {% extends "layouts/page-landing.nunjucks" %}
 
-{{ 'content::'|log }}
-{{ content|log }}
-{{ '---------'|log }}
-
 {% block head_styles %}
   {{ super() }}
   <link rel="stylesheet" href="{{ 'css/company.css' }}"></link>
