@@ -8,6 +8,7 @@ function fallbackImages() {
   var svgSrc = path.join(slurp.path('images', 'base'), './**/*.svg');
 
   return gulp.src(svgSrc)
+    .pipe(slurp.plumber())
     .pipe(slurp.plugin('raster'))
     .pipe(slurp.plugin('rename', {
       extname: '.png'
@@ -24,6 +25,7 @@ function resizeImages() {
   return slurp.src('images', {
       base: slurp.config.paths.assets
     })
+    .pipe(slurp.plumber())
     .pipe(slurp.plugin('responsiveImages'))
     .pipe(slurp.env.dev ? slurp.noop() : slurp.plugin('imagemin'))
     .pipe(gulp.dest(slurp.config.paths.dest));
@@ -31,6 +33,7 @@ function resizeImages() {
 
 function copyImages() {
   return slurp.src('images')
+    .pipe(slurp.plumber())
     .pipe(slurp.env.dev ? slurp.noop() : slurp.plugin('imagemin'))
     .pipe(slurp.dest('images'));
 }
@@ -43,5 +46,6 @@ module.exports = function(done) {
     copyImages()
   ];
 
-  es.merge(tasks).on('end', done);
+  es.merge(tasks)
+    .on('end', done);
 };

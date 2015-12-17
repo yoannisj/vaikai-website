@@ -44,7 +44,7 @@ module.exports = function(env) {
           src: './assets/images',
           dest: './images'
         },
-        files: './**/*'
+        files: './**/*.{jpg,jpeg,png,gif,svg}'
       },
 
       'stylesheets': {

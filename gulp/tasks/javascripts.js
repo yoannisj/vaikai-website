@@ -17,7 +17,7 @@ function compileJavascripts(done) {
     if(err) throw new slurp.PluginError("javascripts:webpack", err);
 
     // show webpack feedback in shell output
-    slurp.log("[webpack:build-dev]", stats.toString({
+    slurp.log("[webpack:]", stats.toString({
       colors: true
     }));
 
