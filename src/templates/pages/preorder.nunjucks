@@ -19,7 +19,7 @@
             <h3>Avakai twins:<br>
             Less screentime, more play<br>
             <span class="strikethrough" title="it's approximately 140€">$150</span> <span class="bluetext" title="it's approximately 129€">$139</span></h3>
-            <p>Avakai are crafted wooden toy twins that enable kids to discover free play and a connected world without screens. Be part of our first production and get a 10 EUR discount.</p>
+            <p>Avakai are crafted wooden toy twins that enable kids to discover free play and a connected world without screens. Be part of our first production and get a $11 discount.</p>
             <p>
               <select class="js-select">
                 {% for item in page.units %}
@@ -36,7 +36,7 @@
 
             </p>
 
-            <p class="smaller-text">*<b>Pay later</b>. Credit cards are only charged when we reach an amount of 300 pre-orders. <b>Limited quantities</b> in the first production! Price is €EUR <a href="https://www.google.de/search?q=google+currency+129+Euro&oq=google+currency+129" target="_blank">click here</a> to check the price in your currency.</p>
+            <p class="smaller-text">*<b>Pay later</b>. Credit cards are only charged when we reach an amount of 300 pre-orders. <b>Limited quantities</b> in the first production! Price is $USD <a href="https://www.google.de/search?q=google+currency+139+USD&oq=google+currency+129" target="_blank">click here</a> to check the price in your currency.</p>
 
             <p class="smaller-text">The price doesn't include taxes, customs or shipping costs.</p>
           </div>
