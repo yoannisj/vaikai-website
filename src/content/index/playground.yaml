@@ -7,22 +7,22 @@ credit:
   description: chief designer and co-founder of Vai Kai
 gallery:
 -
-  name: back-to-school
-  image:
-    path: images/playground/back-to-school.jpg
-    description: A blue and a wooden avakai on a melon boat
--
   name: fifty
   image:
-    path: images/playground/fifty.jpg
-    description: Some cheerful avakai playing indian
+    path: images/playground/Avaikai_twins_fun.jpg
+    description: Two coloured Avakai having fun on a seesaw
 -
-  name: autumn-colors
+  name: back-to-school
   image:
-    path: images/playground/autumn-colors.jpg
-    description: Two avakai dressed up to celebrate their 2000 fans
+    path: images/playground/Avaikai_twins_wood.jpg
+    description: Wooden Avakai twins in a sunrise scenery made out of paper
 -
-  name: happy-birthday
+  name: avakai-twins-colors
   image:
-    path: images/playground/happy-birthday.jpg
-    description: Avakai supports boy doing his homework
+    path: images/playground/Avaikai_twins_color.jpg
+    description: Two coloured Avakai in a sunset scenery made out of paper
+-
+  name: avakai-twins-wood-houses
+  image:
+    path: images/playground/Avaikai_twins_wood_houses.jpg
+    description: Avakai twins playing hide and seek behind paper houses

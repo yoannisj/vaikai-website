@@ -18,3 +18,12 @@ var MultiFold = require('widgets/multifold');
 $('#features-list').widget(MultiFold, {
   scrollOffset: -80
 });
+
+// autoplay avakai video
+// - video plays when popup gets opened
+var isMobile = require('utils/is-mobile')();
+var $window = $(window);
+
+if (!isMobile && $window.width() >= 700) {
+  $('#intro-video').widget('popup').expand();
+}
