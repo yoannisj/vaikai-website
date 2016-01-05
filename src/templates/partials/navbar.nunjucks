@@ -87,7 +87,7 @@
         <div class="menu-item" role="presentation">
 
           {% call ctrl.celery({}, 'navbar-btn btn btn--cta') %}
-            Pre-order Avakai
+            Pre-order now
           {% endcall %}
 
         </div>
