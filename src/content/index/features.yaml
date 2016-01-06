@@ -1,7 +1,7 @@
 title: Explore the Avakai super&nbsp;powers
 theme: gray
 description: |
-  The Avakai family is a real piece of craftsmanship. Made of wood and equipped with innovative technology the Avakai twins are specially designed to stimulate all the senses and activate your kids imagination without screens.
+  The Avakai family is a real piece of craftsmanship. Made of wood and equipped with Bluetooth and sensor technology, the Avakai twins are specially designed to stimulate all the senses and activate your kids’ imagination without screens.
 control:
   type: button
   label:
@@ -14,21 +14,21 @@ entries:
     path: images/illustrations/friends.svg
     description: Illustration of two kids playing together with their avakai
   description: |
-    Avakai reacts on expressive gestures with laughter, singing, whoops and roars. This way kids spontaneously create their own experiences and strengthen their emotional development. No rules, no pre-programmed levels – only your kids' imagination.
+    Avakai reacts on expressive gestures with laughter, singing, whoops and roars. This way, kids spontaneously create their own experiences and strengthen their emotional development. No rules, no pre-programmed levels – only your kids' imagination.
 -
   title: Indoor & outdoor games
   image:
     path: images/illustrations/hide-and-seek.svg
     description: Illustration of a boy hiding with his avakai
   description: |
-    When the twin Avakai get closer, you can feel their heartbeats going faster! They also respond to each other's calls. With those superpowers you and your kids can play hide and seek, treasure hunt, hide the thimble, princess and monster and many more – enhancing your kids' physical and cognitive development without screens.
+    When the twin Avakai dolls get closer, you can feel their heartbeats going faster! They also respond to each other's calls. With these superpowers, you and your kids can play hide and seek, treasure hunt, hide the thimble, princess and monster and many more – enhancing your kids' physical and cognitive development without screens.
 -
-  title: A Kiss from abroad
+  title: A kiss from abroad
   image:
     path: images/illustrations/messages-from-abroad.svg
     description: Illustration of an avakai producing sound on boy's night-table
   description: |
-    We know your favorite place is home. So Avakai makes sure you can stay in touch with your loved ones with a simple kiss, sent from one twin to another, from far away. It's easy, simply touch your Avakai's mouth and the magic will happen.
+    We know your favorite place is home. Avakai makes sure you can stay in touch with your loved ones with a simple kiss, sent from one twin to another. It's easy, simply touch your Avakai's mouth and the magic will happen.
 -
   title: Upgrade
   image:
