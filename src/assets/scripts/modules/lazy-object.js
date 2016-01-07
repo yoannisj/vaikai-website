@@ -1,7 +1,5 @@
 var $body = $('body');
 
-console.log('helloo');
-
 $body.on('lazybeforeunveil', '.js-lazyobj', function(ev) {
   var $lazyObj = $(ev.currentTarget);
 
