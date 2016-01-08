@@ -21,9 +21,10 @@ $('#features-list').widget(MultiFold, {
 
 // autoplay avakai video
 // - video plays when popup gets opened
+var isAutoplay = /autoplay/.test(window.location.search);
 var isMobile = require('utils/is-mobile')();
 var $window = $(window);
 
-// if (!isMobile && $window.width() >= 700) {
-//   $('#intro-video').widget('popup').expand();
-// }
+if (isAutoplay && !isMobile && $window.width() >= 700) {
+  $('#intro-video').widget('popup').expand();
+}
