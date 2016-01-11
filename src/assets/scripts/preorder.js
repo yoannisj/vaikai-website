@@ -10,7 +10,6 @@ require('widgets/carousel');
 require('widgets/toggle');
 require('widgets/video');
 
-
 function getUrlArguments() {
   var search = location.search.substring(1);
   if (search) {
@@ -31,7 +30,6 @@ if (search.coupon) {
 $('select.js-select').on('change', function(event){
   var $select = $(this),
       selection = $select.val();
-
 
       // hide all
       $('[data-vaikai-option]').hide();

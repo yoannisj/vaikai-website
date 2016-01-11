@@ -4,8 +4,9 @@
 {% import 'macros/popup.nunjucks' as pop %}
 {% import 'macros/video.nunjucks' as vid %}
 
-
-
+{% set popup_condition = {
+  'data-media': '(min-width: 700px)'
+} %}
 
 {% block head_styles %}
   {{ super() }}
@@ -15,7 +16,6 @@
 {% endblock %}
 
 {% block body_main %}
-
 
   <!-- selecting what to order -->
   <section id="select" class="section theme-yellow">
@@ -83,14 +83,14 @@
               <li>Rolling: Laughing - Giggling</li>
               <li><a href="https://www.facebook.com/vaikaiplay/videos/942533292482589/?theater" title="see the tilting interaction" target="_blank">Tilting: Singing - Humming</a></li>
               <li>
-                
+
                 {{ ctrl.link({
                     type: 'link',
                     url: 'http://vimeo.com/148027959',
                     target: 'features-video-1:popup',
                     action: 'open',
                     label: 'Test this link!!!! '
-                  }, '') }}
+                  }, '', popup_condition) }}
               Shaking: Angry - Scared</li>
 
               <li><a href="https://www.facebook.com/vaikaiplay/videos/945601982175720/?theater" title="See waving interaction"  target="_blank">Waving: Excited</a></li>
@@ -146,10 +146,6 @@
             </ul>
             <p>When the battery needs to be charged, Avakai gives rumble sound signals and refuses to interact normally, providing only grumpy sounds. When the battery is charging, the Avakai is passive and only the light is pulsating slowly.</p>
 
-
-
-
-
             <h4>System Requirements</h4>
             <p>Two dolls communicate to each other directly via Bluetooth Low Energy or via internet, routing through Bluetooth Smart-enabled smartphones with a free Avakai App installed (Android & iOS).</p>
 
@@ -160,13 +156,11 @@
             <h4>Free Mobile App</h4>
             <p>A free Mobile App will allow to upgrade and install new behaviours. Also the app connects two Avakai over large distances. It communicates with Avakai via Bluetooth LE/Smart. The app will be released and available to download in Spring 2016, before the first batch of orders will be shipped.</p>
 
-
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
 {% endblock %}
 
@@ -179,7 +173,7 @@
 
       {{ vid.vimeo({
         id: 148027959
-      }) }}
+      }, 'js-objfit', popup_condition) }}
 
   {% endcall %}
 
