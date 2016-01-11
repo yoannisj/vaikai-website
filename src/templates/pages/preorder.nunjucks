@@ -1,5 +1,12 @@
 {% extends "layouts/page-landing.nunjucks" %}
 {% import 'macros/image.nunjucks' as img %}
+{% import 'macros/control.nunjucks' as ctrl %}
+{% import 'macros/popup.nunjucks' as pop %}
+{% import 'macros/video.nunjucks' as vid %}
+
+{% set popup_condition = {
+  'data-media': '(min-width: 700px)'
+} %}
 
 {% block head_styles %}
   {{ super() }}
@@ -74,18 +81,53 @@
             <h4>Interactions and expressions</h4>
             <ul>
               <li>Rolling: Laughing - Giggling</li>
-              <li><a href="https://www.facebook.com/vaikaiplay/videos/942533292482589/?theater" title="see the tilting interaction" target="_blank">Tilting: Singing - Humming</a></li>
-              <li><a href="https://vimeo.com/151007294" target="_blank" class="js-ctrl link-quiet has-ctrl" data-action="open" data-init="control">Shaking: Angry - Scared</a></li>
+              <li>
+                  {{ ctrl.link({
+                    type: 'link',
+                    url: 'https://vimeo.com/151007297',
+                    target: 'features-video-2:popup',
+                    action: 'open',
+                    label: 'Tilting: Singing - Humming'
+                  }, '', popup_condition) }}
+              </li>
+              <li>
+                  {{ ctrl.link({
+                    type: 'link',
+                    url: 'https://vimeo.com/151007294',
+                    target: 'features-video-1:popup',
+                    action: 'open',
+                    label: 'Shaking: Angry - Scared'
+                  }, '', popup_condition) }}
+              </li>
+
 
               <li><a href="https://www.facebook.com/vaikaiplay/videos/945601982175720/?theater" title="See waving interaction"  target="_blank">Waving: Excited</a></li>
-              <li><a href="https://www.facebook.com/vaikaiplay/videos/945602968842288/?theater" target="_blank">Tapping the mouth: Kiss</a></li>
+
+              <li>
+                  {{ ctrl.link({
+                    type: 'link',
+                    url: 'https://vimeo.com/151007296',
+                    target: 'features-video-3:popup',
+                    action: 'open',
+                    label: 'Tapping the mouth: Kiss'
+                  }, '', popup_condition) }}
+              </li>
+
               <li>Own behaviours:
                 <ul>
                   <li>Sneezing</li>
                   <li>Hunger growls</li>
                   <li>Grumpy noises</li>
-                  <li><a href="https://www.facebook.com/vaikaiplay/videos/942541485815103/?theater" target="_blank">Heartbeats</a></li>
-                  <li>And more...</li>
+                  <li>
+                      {{ ctrl.link({
+                        type: 'link',
+                        url: 'https://vimeo.com/151007295',
+                        target: 'features-video-4:popup',
+                        action: 'open',
+                        label: 'Heartbeats'
+                      }, '', popup_condition) }}
+                  </li>
+                  <li>And more cute surprises!</li>
                 </ul>
               </li>
             </ul>
@@ -130,10 +172,6 @@
             </ul>
             <p>When the battery needs to be charged, Avakai gives rumble sound signals and refuses to interact normally, providing only grumpy sounds. When the battery is charging, the Avakai is passive and only the light is pulsating slowly.</p>
 
-
-
-
-
             <h4>System Requirements</h4>
             <p>Two dolls communicate to each other directly via Bluetooth Low Energy or via internet, routing through Bluetooth Smart-enabled smartphones with a free Avakai App installed (Android & iOS).</p>
 
@@ -144,18 +182,57 @@
             <h4>Free Mobile App</h4>
             <p>A free Mobile App will allow to upgrade and install new behaviours. Also the app connects two Avakai over large distances. It communicates with Avakai via Bluetooth LE/Smart. The app will be released and available to download in Spring 2016, before the first batch of orders will be shipped.</p>
 
-
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
 {% endblock %}
 
 
 {% block body_end %}
+
+  {% call pop.base({
+      name: 'features-video-1'
+    }, '') %}
+
+      {{ vid.vimeo({
+        id: 151007294
+      }, 'js-objfit', popup_condition) }}
+
+  {% endcall %}
+
+  {% call pop.base({
+      name: 'features-video-2'
+    }, '') %}
+
+      {{ vid.vimeo({
+        id: 151007297
+      }, 'js-objfit', popup_condition) }}
+
+  {% endcall %}
+
+  {% call pop.base({
+      name: 'features-video-3'
+    }, '') %}
+
+      {{ vid.vimeo({
+        id: 151007296
+      }, 'js-objfit', popup_condition) }}
+
+  {% endcall %}
+
+    {% call pop.base({
+      name: 'features-video-4'
+    }, '') %}
+
+      {{ vid.vimeo({
+        id: 151007295
+      }, 'js-objfit', popup_condition) }}
+
+  {% endcall %}
+
   {{ super() }}
 
   {# Write custom js in 'src/assets/scripts/preorder.js' - gets loaded in following line #}
