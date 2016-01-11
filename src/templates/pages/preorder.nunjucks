@@ -81,27 +81,53 @@
             <h4>Interactions and expressions</h4>
             <ul>
               <li>Rolling: Laughing - Giggling</li>
-              <li><a href="https://www.facebook.com/vaikaiplay/videos/942533292482589/?theater" title="see the tilting interaction" target="_blank">Tilting: Singing - Humming</a></li>
               <li>
-
-                {{ ctrl.link({
+                  {{ ctrl.link({
                     type: 'link',
-                    url: 'http://vimeo.com/148027959',
+                    url: 'https://vimeo.com/151007297',
+                    target: 'features-video-2:popup',
+                    action: 'open',
+                    label: 'Tilting: Singing - Humming'
+                  }, '', popup_condition) }}
+              </li>
+              <li>
+                  {{ ctrl.link({
+                    type: 'link',
+                    url: 'https://vimeo.com/151007294',
                     target: 'features-video-1:popup',
                     action: 'open',
-                    label: 'Test this link!!!! '
+                    label: 'Shaking: Angry - Scared'
                   }, '', popup_condition) }}
-              Shaking: Angry - Scared</li>
+              </li>
+
 
               <li><a href="https://www.facebook.com/vaikaiplay/videos/945601982175720/?theater" title="See waving interaction"  target="_blank">Waving: Excited</a></li>
-              <li><a href="https://www.facebook.com/vaikaiplay/videos/945602968842288/?theater" target="_blank">Tapping the mouth: Kiss</a></li>
+
+              <li>
+                  {{ ctrl.link({
+                    type: 'link',
+                    url: 'https://vimeo.com/151007296',
+                    target: 'features-video-3:popup',
+                    action: 'open',
+                    label: 'Tapping the mouth: Kiss'
+                  }, '', popup_condition) }}
+              </li>
+
               <li>Own behaviours:
                 <ul>
                   <li>Sneezing</li>
                   <li>Hunger growls</li>
                   <li>Grumpy noises</li>
-                  <li><a href="https://www.facebook.com/vaikaiplay/videos/942541485815103/?theater" target="_blank">Heartbeats</a></li>
-                  <li>And more...</li>
+                  <li>
+                      {{ ctrl.link({
+                        type: 'link',
+                        url: 'https://vimeo.com/151007295',
+                        target: 'features-video-4:popup',
+                        action: 'open',
+                        label: 'Heartbeats'
+                      }, '', popup_condition) }}
+                  </li>
+                  <li>And more cute surprises!</li>
                 </ul>
               </li>
             </ul>
@@ -172,11 +198,40 @@
     }, '') %}
 
       {{ vid.vimeo({
-        id: 148027959
+        id: 151007294
       }, 'js-objfit', popup_condition) }}
 
   {% endcall %}
 
+  {% call pop.base({
+      name: 'features-video-2'
+    }, '') %}
+
+      {{ vid.vimeo({
+        id: 151007297
+      }, 'js-objfit', popup_condition) }}
+
+  {% endcall %}
+
+  {% call pop.base({
+      name: 'features-video-3'
+    }, '') %}
+
+      {{ vid.vimeo({
+        id: 151007296
+      }, 'js-objfit', popup_condition) }}
+
+  {% endcall %}
+
+    {% call pop.base({
+      name: 'features-video-4'
+    }, '') %}
+
+      {{ vid.vimeo({
+        id: 151007295
+      }, 'js-objfit', popup_condition) }}
+
+  {% endcall %}
 
   {{ super() }}
 
