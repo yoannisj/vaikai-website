@@ -1,0 +1,23 @@
+{% extends 'layouts/page-info.nunjucks' %}
+
+
+{% block body_main %}
+
+  <div class="page-inner" role="presentation">
+    <section id="imprint-contents" class="landmark">
+
+
+
+      <div class="copy landmark">
+        <h3>Thank you for pre-ordering!</h3>
+        <h4>Have a beautiful day.</h4>  
+        <p>Tell your friends about Avakai, share it on <a href="https://twitter.com/home?status=I%20just%20pre-ordered%20the%20Avakai%20Twins%20from%20%40vai_kai!%20http%3A//vaikai.com?utm_campaign=thankyou">Twitter</a> or <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//vaikai.com?utm_campaign=thankyou">Facebook</a><p>
+        <p>If you have any questions, please email us <a href="mailto:orders@vaikai.com">orders@vaikai.com</a>.
+      </div>
+
+      {% include 'objects/info-back.nunjucks' %}
+
+    </section>
+  </div>
+
+{% endblock %}
