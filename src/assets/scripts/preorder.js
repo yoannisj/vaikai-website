@@ -1,4 +1,15 @@
+// require modules
 require('modules/lazy-object');
+require('modules/svg');
+
+// require widgets
+require('widgets/control');
+require('widgets/popup');
+require('widgets/gallery');
+require('widgets/carousel');
+require('widgets/toggle');
+require('widgets/video');
+
 
 function getUrlArguments() {
   var search = location.search.substring(1);
