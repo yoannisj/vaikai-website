@@ -63,7 +63,7 @@
                 <a class="js-gallery-link block-link" href="{{ app.paths.images|joinpath(item.image.path) }}" data-item-name="{{ item.name }}">
                   {{ img.lazy(item.image|merge({
                     size: [680, 680]
-                  }), 'js-gallery-thumb block') }}
+                  }), 'js-gallery-object block') }}
                 </a>
 
               </li>

@@ -55,7 +55,7 @@
 
                   {{ img.lazy(item.image|merge({
                     size: image_size
-                  }), 'js-gallery-thumb block') }}
+                  }), 'js-gallery-object block') }}
 
                 </a>
               </li>
