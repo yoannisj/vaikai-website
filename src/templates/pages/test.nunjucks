@@ -1,3 +1,4 @@
+{% set template = 'test' %}
 {% extends 'layouts/base.nunjucks' %}
 {% import 'macros/image.nunjucks' as img %}
 

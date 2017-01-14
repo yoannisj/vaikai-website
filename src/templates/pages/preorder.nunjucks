@@ -1,4 +1,7 @@
+{% set template = 'preorder' %}
+
 {% extends "layouts/page-landing.nunjucks" %}
+
 {% import 'macros/image.nunjucks' as img %}
 {% import 'macros/control.nunjucks' as ctrl %}
 {% import 'macros/popup.nunjucks' as pop %}
@@ -36,11 +39,9 @@
             </p>
 
             <p>
-
               {% for item in page.units %}
-                <button type="button" class="btn {{ 'hide' if loop.index0 != 0 }}" data-celery="{{ item.celery_id }}" data-celery-version="v2" data-celery-sku="{{ item.sku }}" data-celery-prefill-coupon="" data-celery-autoadd data-vaikai-option="{{ item.name }}">Add to cart</button>
+                <button type="button" class="btn {{ 'hide' if loop.index0 != 0 }}" data-celery="{{ item.celery_id }}" data-celery-version="v2" data-celery-sku="{{ item.sku }}" data-celery-prefill-coupon data-vaikai-option="{{ item.name }}">Add to cart</button>
               {% endfor %}
-
             </p>
 
             <p class="smaller-text">*<b>Pay later</b>. Credit cards are only charged when only when we close the campaign. <b>Limited quantities</b> in the first production! Price is $USD <a href="https://www.google.de/search?q=google+currency+139+USD&oq=google+currency+129" target="_blank">click here</a> to check the price in your currency.</p>

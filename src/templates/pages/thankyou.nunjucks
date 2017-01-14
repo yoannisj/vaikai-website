@@ -1,5 +1,6 @@
-{% extends 'layouts/page-info.nunjucks' %}
+{% set template = 'thank you' %}
 
+{% extends 'layouts/page-info.nunjucks' %}
 
 {% block body_main %}
 

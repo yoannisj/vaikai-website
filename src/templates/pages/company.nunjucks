@@ -1,3 +1,5 @@
+{% set template = 'company' %}
+
 {% extends "layouts/page-landing.nunjucks" %}
 
 {% block head_styles %}
