@@ -85,11 +85,14 @@
       <!-- =NAVBAR-PREORDER -->
       <div class="menu-group m-show" role="presentation">
         <div class="menu-item" role="presentation">
+          {% set celeryParams = {} %}
+          {% if template != 'preorder' %}
+            {% set celeryParams = { url: 'preorder.html' } %}
+          {% endif %}
 
-          {% call ctrl.celery({}, 'navbar-btn btn btn--cta') %}
-            pre-order now
+          {% call ctrl.celery(celeryParams, 'navbar-btn btn btn--cta') %}
+            Pre-order Avakai
           {% endcall %}
-
         </div>
       </div>
 

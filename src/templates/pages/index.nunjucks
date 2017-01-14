@@ -1,3 +1,5 @@
+{% set template = 'index' %}
+
 {% extends "layouts/page-landing.nunjucks" %}
 
 {% block head_styles %}
