@@ -27,9 +27,9 @@
         <div class="split-body">
           <div class="milestone centrum centrum--left">
             <h3>Avakai twins:<br>
-            Less screentime, more play<br>
-            <span class="strikethrough" title="it's approximately 140€">$150</span> <span class="bluetext" title="it's approximately 129€">$139</span></h3>
-            <p>Avakai are crafted wooden toy twins that enable kids to discover free play and a connected world without screens. Be part of our first production and get a $11 discount.</p>
+              Less screentime, more play<br>
+              <span class="bluetext" title="it's approximately 139€">$149</span></h3>
+            <p>Avakai Twins help kids to discover free play in a connected world, without screens.</p>
             <p>
               <select class="js-select">
                 {% for item in page.units %}
@@ -44,9 +44,9 @@
               {% endfor %}
             </p>
 
-            <p class="smaller-text">*<b>Pay later</b>. Credit cards are only charged when only when we close the campaign. <b>Limited quantities</b> in the first production! Price is $USD <a href="https://www.google.de/search?q=google+currency+139+USD&oq=google+currency+129" target="_blank">click here</a> to check the price in your currency.</p>
-
-            <p class="smaller-text">The price doesn't include taxes, customs or shipping costs.</p>
+            <p class="smaller-text"><b>Limited quantity!</b> Starts shipping in September 2016.<br />
+              Price is $USD <a href="https://www.google.de/search?q=google+currency+149+USD" target="_blank">click here</a> to check the price in your currency.
+            </p>
           </div>
         </div>
 
@@ -83,35 +83,43 @@
             <ul>
               <li>Rolling: Laughing - Giggling</li>
               <li>
-                  {{ ctrl.link({
-                    type: 'link',
-                    url: 'https://vimeo.com/151007297',
-                    target: 'features-video-2:popup',
-                    action: 'open',
-                    label: 'Tilting: Singing - Humming'
-                  }, '', popup_condition) }}
+                {{ ctrl.link({
+                  type: 'link',
+                  url: 'https://vimeo.com/151007297',
+                  target: 'features-video-1:popup',
+                  action: 'open',
+                  label: 'Tilting: Singing - Humming'
+                }, '', popup_condition) }}
               </li>
               <li>
-                  {{ ctrl.link({
-                    type: 'link',
-                    url: 'https://vimeo.com/151007294',
-                    target: 'features-video-1:popup',
-                    action: 'open',
-                    label: 'Shaking: Angry - Scared'
-                  }, '', popup_condition) }}
+                {{ ctrl.link({
+                  type: 'link',
+                  url: 'https://vimeo.com/151007294',
+                  target: 'features-video-2:popup',
+                  action: 'open',
+                  label: 'Shaking: Angry - Scared'
+                }, '', popup_condition) }}
               </li>
 
-
-              <li><a href="https://www.facebook.com/vaikaiplay/videos/945601982175720/?theater" title="See waving interaction"  target="_blank">Waving: Excited</a></li>
+              <li>
+                {# <a href="https://www.facebook.com/vaikaiplay/videos/945601982175720/?theater" title="See waving interaction"  target="_blank">Waving: Excited</a> #}
+                {{ ctrl.link({
+                  type: 'link',
+                  url: 'https://vimeo.com/152263409',
+                  target: 'features-video-3:popup',
+                  action: 'open',
+                  label: 'Waving: excited'
+                }, '', popup_condition) }}
+              </li>
 
               <li>
-                  {{ ctrl.link({
-                    type: 'link',
-                    url: 'https://vimeo.com/151007296',
-                    target: 'features-video-3:popup',
-                    action: 'open',
-                    label: 'Tapping the mouth: Kiss'
-                  }, '', popup_condition) }}
+                {{ ctrl.link({
+                  type: 'link',
+                  url: 'https://vimeo.com/151007296',
+                  target: 'features-video-4:popup',
+                  action: 'open',
+                  label: 'Tapping the mouth: Kiss'
+                }, '', popup_condition) }}
               </li>
 
               <li>Own behaviours:
@@ -120,13 +128,13 @@
                   <li>Hunger growls</li>
                   <li>Grumpy noises</li>
                   <li>
-                      {{ ctrl.link({
-                        type: 'link',
-                        url: 'https://vimeo.com/151007295',
-                        target: 'features-video-4:popup',
-                        action: 'open',
-                        label: 'Heartbeats'
-                      }, '', popup_condition) }}
+                    {{ ctrl.link({
+                      type: 'link',
+                      url: 'https://vimeo.com/151007295',
+                      target: 'features-video-5:popup',
+                      action: 'open',
+                      label: 'Heartbeats'
+                    }, '', popup_condition) }}
                   </li>
                   <li>And more cute surprises!</li>
                 </ul>
@@ -136,7 +144,16 @@
 
             <h4>Games to play</h4>
             <ul>
-              <li><a href="https://www.facebook.com/vaikaiplay/videos/942541485815103/?theater" target="_blank">Treasure Hunt</a></li>
+              <li>
+                {# <a href="https://www.facebook.com/vaikaiplay/videos/942541485815103/?theater" target="_blank">Treasure Hunt</a> #}
+                {{ ctrl.link({
+                  type: 'link',
+                  url: 'https://vimeo.com/152263405',
+                  target: 'features-video-6:popup',
+                  action: 'open',
+                  label: 'Treasure Hunt'
+                }, '', popup_condition) }}
+              </li>
               <li>Catch</li>
               <li>Princess and Monster</li>
               <li>Sardines</li>
@@ -194,44 +211,40 @@
 
 {% block body_end %}
 
-  {% call pop.base({
-      name: 'features-video-1'
-    }, '') %}
-
-      {{ vid.vimeo({
-        id: 151007294
-      }, 'js-objfit', popup_condition) }}
-
+  {% call pop.base({ name: 'features-video-1' }, '') %}
+    {{ vid.vimeo({
+      id: 151007297
+    }, 'js-objfit', popup_condition) }}
   {% endcall %}
 
-  {% call pop.base({
-      name: 'features-video-2'
-    }, '') %}
-
-      {{ vid.vimeo({
-        id: 151007297
-      }, 'js-objfit', popup_condition) }}
-
+  {% call pop.base({ name: 'features-video-2' }, '') %}
+    {{ vid.vimeo({
+      id: 151007294
+    }, 'js-objfit', popup_condition) }}
   {% endcall %}
 
-  {% call pop.base({
-      name: 'features-video-3'
-    }, '') %}
-
-      {{ vid.vimeo({
-        id: 151007296
-      }, 'js-objfit', popup_condition) }}
-
+  {% call pop.base({ name: 'features-video-3' }, '') %}
+    {{ vid.vimeo({
+      id: 152263409
+    }, 'js-objfit', popup_condition) }}
   {% endcall %}
 
-    {% call pop.base({
-      name: 'features-video-4'
-    }, '') %}
+  {% call pop.base({ name: 'features-video-4' }, '') %}
+    {{ vid.vimeo({
+      id: 151007296
+    }, 'js-objfit', popup_condition) }}
+  {% endcall %}
 
-      {{ vid.vimeo({
-        id: 151007295
-      }, 'js-objfit', popup_condition) }}
+  {% call pop.base({ name: 'features-video-5' }, '') %}
+    {{ vid.vimeo({
+      id: 151007295
+    }, 'js-objfit', popup_condition) }}
+  {% endcall %}
 
+  {% call pop.base({ name: 'features-video-6' }, '') %}
+    {{ vid.vimeo({
+      id: 152263405
+    }, 'js-objfit', popup_condition) }}
   {% endcall %}
 
   {{ super() }}

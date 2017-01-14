@@ -32,9 +32,9 @@ $('select.js-select').on('change', function(event){
       selection = $select.val();
 
       // hide all
-      $('[data-vaikai-option]').hide();
+      $('[data-vaikai-option]').hide().addClass('hide');
       // show only the right one
-      $('[data-vaikai-option='+selection+']').show();
+      $('[data-vaikai-option='+selection+']').show().removeClass('hide');
 
 });
 
