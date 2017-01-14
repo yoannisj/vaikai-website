@@ -25,12 +25,9 @@
 // -----------------------------------------------------------------------------
 @mixin v-align($valign: "middle")
 {
-  @at-root (without: media)
-  {
-    & {
-      @extend .ws-collapse;
-    }
-  }
+  font-family: sans-serif;
+  text-rendering: optimizeSpeed;
+  letter-spacing: -0.31em;
 
   &:before,
   & > * {
@@ -44,11 +41,10 @@
     speak: none; /* you never know */
   }
 
-
-  @at-root (without: media) {
-    & > * {
-      @extend .ws-reset;
-    }
+  & > * {
+    font-family: $base-font-family; /* reset base-font */
+    text-rendering: auto;
+    letter-spacing: normal;
   }
 }
 

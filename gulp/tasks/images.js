@@ -9,10 +9,7 @@ function fallbackImages() {
 
   return gulp.src(svgSrc)
     .pipe(slurp.plumber())
-    .pipe(slurp.plugin('raster'))
-    .pipe(slurp.plugin('rename', {
-      extname: '.png'
-    }))
+    .pipe(slurp.plugin('svg2png'))
     .pipe(slurp.env.dev ? slurp.noop() : slurp.plugin('imagemin'))
     .pipe(slurp.dest('images'));
 }
