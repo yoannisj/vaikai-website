@@ -51,7 +51,6 @@
   <!-- =Intro-Video -->
   {% if section.video %}
 
-
     {% call pop.base({
       name: 'intro-video',
       parent : 'intro'
